@@ -1,3 +1,1 @@
 # NefrovidaWeb
-# NefrovidaApp
-# NefrovidaApp
