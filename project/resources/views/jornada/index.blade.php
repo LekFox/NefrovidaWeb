@@ -15,17 +15,31 @@
 <br/>
 <br/>
 <div class= "container box">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Search
+    <div class= "row">
+        <div class= "col-sm">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                   Buscar por nombre:
+                </div>
+                <div class="panel-body">
+                   <input type="text" name="search" id="searchnombre"
+                    class="form-control" placeholder="Nombre de Jornada..."/>
+                </div>
+                <div class="table-responsive">
+                    <h3 >Total Data :  <span id="total_records"></span></h3>
+                </div>
+            </div>
         </div>
-        <div class="panel-body">
-            <input type="text" name="search" id="search"
-            class="form-control" placeholder="Search"/>
-        </div>
-        <div class="table-responsive">
-            <h3 >Total Data :  <span id="total_records"></span></h3>
-            
+        <div class= "col-sm">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                   Buscar por localidad:
+                </div>
+                <div class="panel-body">
+                   <input type="text" name="search" id="searchlocalidad"
+                    class="form-control" placeholder="Localidad de Jornada..."/>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -73,9 +87,8 @@
 </div>
 
 <script>
-    $('body').on('keyup', '#search', function(){
+    $('body').on('keyup', '#searchnombre', function(){
         var searchQuest = $(this).val();
-        
         $.ajax({
             method: 'POST',
             url:'{{ route("search-jornadas") }}',
@@ -91,8 +104,27 @@
                     tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td></tr>';
 
                     $('#dynamic-row').append(tableRow);
+                });
+            }
+        });
+    });
+    $('body').on('keyup', '#searchlocalidad', function(){
+        var searchQuest = $(this).val();
+        $.ajax({
+            method: 'POST',
+            url:'{{ route("search-jornadas-loc") }}',
+            dataType: 'json',
+            data: {
+                '_token': '{{ csrf_token() }}',
+                searchQuest: searchQuest,
+            },
+            success: function(res){
+                var tableRow = '';
+                $('#dynamic-row').html('');
+                $.each(res, function(index, value){
+                    tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td></tr>';
 
-                
+                    $('#dynamic-row').append(tableRow);
                 });
             }
         });

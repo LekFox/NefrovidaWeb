@@ -29,6 +29,13 @@ class JornadaController extends Controller
         return json_encode( $jornadas );
     }
 
+    public function searchJornadasLoc(Request $request){
+
+        $jornadas = Jornada::where('localidad', 'like', '%'.$request->get('searchQuest'). '%')->get();
+
+        return json_encode( $jornadas );
+    }
+
  
 
     /**
