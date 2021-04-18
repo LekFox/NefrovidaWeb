@@ -14,6 +14,23 @@
 <a href="{{ url('jornada/create') }}" class="btn btn-success"> Registrar nueva Jornada </a>
 <br/>
 <br/>
+<div class= "container box">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Search
+        </div>
+        <div class="panel-body">
+            <input type="text" name="search" id="search"
+            class="form-control" placeholder="Search"/>
+        </div>
+        <div class="table-responsive">
+            <h3 >Total Data :  <span id="total_records"></span></h3>
+            
+        </div>
+    </div>
+</div>
+<br>
+<br>
 <table class="table table-light">
     
     <thead class="thead-light">
@@ -27,7 +44,7 @@
         </tr>
     </thead>
     
-    <tbody>
+    <tbody id="dynamic-row">
         @foreach ($Jornada as $Jornada)
         <tr>
             <td>{{$Jornada->id}}</td>
@@ -54,4 +71,31 @@
 
 </table>
 </div>
+
+<script>
+    $('body').on('keyup', '#search', function(){
+        var searchQuest = $(this).val();
+        
+        $.ajax({
+            method: 'POST',
+            url:'{{ route("search-jornadas") }}',
+            dataType: 'json',
+            data: {
+                '_token': '{{ csrf_token() }}',
+                searchQuest: searchQuest,
+            },
+            success: function(res){
+                var tableRow = '';
+                $('#dynamic-row').html('');
+                $.each(res, function(index, value){
+                    tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td></tr>';
+
+                    $('#dynamic-row').append(tableRow);
+
+                
+                });
+            }
+        });
+    });
+</script>
 @endsection

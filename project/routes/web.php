@@ -33,3 +33,5 @@ Route::group(['middleware' => 'auth'],  function () {
     return view('/home');
     //Route::get('/', [JornadaController::class, 'index'])->name('home');
 });
+
+Route::post('/jornadas/search', ['as' => 'search-jornadas', 'uses' => 'App\Http\Controllers\JornadaController@searchJornadas']);
