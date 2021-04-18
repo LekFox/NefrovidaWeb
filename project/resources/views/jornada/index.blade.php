@@ -1,10 +1,15 @@
+
 @extends('layouts.app')
 
 @section('content')
+
+@include('sidebar.jornada')
 <div class="container">
+
 @if (Session::has('mensaje'))
     {{Session::get('mensaje')}}   
 @endif
+
 
 <a href="{{ url('jornada/create') }}" class="btn btn-success"> Registrar nueva Jornada </a>
 <br/>
