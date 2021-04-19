@@ -6,14 +6,29 @@
 @include('sidebar.jornada')
 <div class="container">
 
-@if (Session::has('mensaje'))
-    {{Session::get('mensaje')}}   
+@if (Session::has('eliminado'))
+    <div class="alert alert-success" role="alert"> {{Session::get('eliminado')}} </div>      
 @endif
 
+@if (Session::has('nuevo'))
+    <div class="alert alert-success" role="alert"> {{Session::get('nuevo')}} </div>       
+@endif
 
-<a href="{{ url('jornada/create') }}" class="btn btn-success"> Registrar nueva Jornada </a>
+@if (Session::has('editado'))
+    <div class="alert alert-success" role="alert"> {{Session::get('editado')}} </div>    
+  
+@endif
+
+    
+<h1 id="JornadaTitulo">Jornadas</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-right">
+        <a id="JornadaAddB" href="{{ url('jornada/create') }}" class="btn btn-success"> Registrar nueva Jornada </a>
+    </div>
 <br/>
 <br/>
+
 <div class= "container box">
     <div class= "row">
         <div class= "col-sm">
@@ -45,6 +60,7 @@
 </div>
 <br>
 <br>
+
 <table class="table table-light">
     
     <thead class="thead-light">
@@ -69,14 +85,14 @@
             <td>{{$Jornada->localidad}}</td>
             <td>{{$Jornada->municipio}}</td>
             <td>
-                <a href="{{url('/Jornada/'.$Jornada->id.'/edit')}}" class="btn btn-warning">
+                <a href="{{url('/jornada/'.$Jornada->id.'/edit')}}" class="btn btn-warning">
                     Editar
                 </a>
                  
-                <form action="{{url('/Jornada/'.$Jornada->id)}}" class="d-inline" method="post">
+                <form action="{{url('/jornada/'.$Jornada->id)}}" class="d-inline" method="post">
                     @csrf
                     {{ @method_field('DELETE') }}
-                    <input type="submit" onclick="return confirm('¿Quieres borrar?')"  class="btn btn-danger" value="Borrar">
+                    <input type="submit" onclick="return confirm('¿Quieres borrar la jornada?')"  class="btn btn-danger" value="Borrar">
                 </form>
             </td>
         </tr>

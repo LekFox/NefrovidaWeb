@@ -71,7 +71,7 @@ class JornadaController extends Controller
             'municipio' => request('municipio'),
         ]);
 
-        return redirect('jornada')->with('mensaje','Empleado agregado con éxito');
+        return redirect('jornada')->with('nuevo','Jornada agregada con éxito');
     }
 
     /**
@@ -91,9 +91,11 @@ class JornadaController extends Controller
      * @param  \App\Models\Jornada  $jornada
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jornada $jornada)
+    public function edit($id)
     {
-        //
+        $jornada=Jornada::findOrFail($id);
+
+        return view('jornada.edit',compact('jornada'));
     }
 
     /**
@@ -120,9 +122,10 @@ class JornadaController extends Controller
             'municipio' => request('municipio'),
         ]);
 
-        return [
-            'success' => $success
-        ];
+        // return [
+        //     'success' => $success
+        // ];
+        return redirect('jornada')->with('editado','Cambios realizados con éxito');
     }
 
     /**
@@ -135,8 +138,12 @@ class JornadaController extends Controller
     {
         $success = $jornada->delete();
 
-        return [
-            'success' => $success
-        ];
+        // return [
+        //     'success' => $success
+        // ];
+
+        return redirect('jornada')->with('eliminado','Jornada borrada con éxito');
+
+        
     }
 }
