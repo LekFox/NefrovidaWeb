@@ -54,4 +54,51 @@
         <br><br>
   </div>
 </div>
+<br><br>
+<div class="card">
+  <div class="card-body">
+      <br>
+      <div class= "row">
+          <div class= "col-sm">
+                <h1 class="card-title">Beneficiarios de la jornada {{ $jornada->nombre }}</h1>
+                <br><br><br>
+                <table class="table table-light">
+                    <thead class="thead-light">
+                    <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Sexo</th>
+                    <th>Acciones</th>
+                    </tr>
+                    </thead>
+    
+                    <tbody id="dynamic-row">
+                        <tr>
+                            <td>{{$jornada->id}}</td>
+                    
+
+                            <td>{{$jornada->nombre}}</td>
+                            <td>{{$jornada->fecha}}</td>
+                            <td>
+                            <a href="{{url('/jornada/'.$jornada->id)}}" class="btn btn-primary">
+                                Consultar
+                            </a>
+                            <a href="{{url('/jornada/'.$jornada->id.'/edit')}}" class="btn btn-warning">
+                                Editar
+                            </a>
+                            <form action="{{url('/jornada/'.$jornada->id)}}" class="d-inline" method="post">
+                            @csrf
+                            {{ @method_field('DELETE') }}
+                            <input type="submit" onclick="return confirm('¿Quieres borrar la jornada?')"  class="btn btn-danger" value="Borrar">
+                            </form>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <br><br>
+  </div>
+</div>
 
