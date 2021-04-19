@@ -80,9 +80,11 @@ class JornadaController extends Controller
      * @param  \App\Models\Jornada  $jornada
      * @return \Illuminate\Http\Response
      */
-    public function show(Jornada $jornada)
+    public function show($id)
     {
-        //
+        $jornada=Jornada::findOrFail($id);
+
+        return view('jornada.show',compact('jornada'));
     }
 
     /**

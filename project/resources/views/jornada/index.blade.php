@@ -85,6 +85,9 @@
             <td>{{$Jornada->localidad}}</td>
             <td>{{$Jornada->municipio}}</td>
             <td>
+                <a href="{{url('/jornada/'.$Jornada->id)}}" class="btn btn-primary">
+                    Consultar
+                </a>
                 <a href="{{url('/jornada/'.$Jornada->id.'/edit')}}" class="btn btn-warning">
                     Editar
                 </a>
@@ -117,11 +120,14 @@
                 var tableRow = '';
                 $('#dynamic-row').html('');
                 $.each(res, function(index, value){
+                    var urlshow = 'jornada/'+value.id;
                     var urledit = 'Jornada/'+value.id+'/edit';
                     var urldel = 'Jornada/'+value.id;
                     tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
-                    tableRow += '<td><a href="'+urledit+'" class="btn btn-warning">Editar</a>';
+                    tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
+                    tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
                     tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                    tableRow += '</td></tr>'
                     $('#dynamic-row').append(tableRow);
                 });
             }
@@ -141,11 +147,14 @@
                 var tableRow = '';
                 $('#dynamic-row').html('');
                 $.each(res, function(index, value){
+                    var urlshow = 'jornada/'+value.id;
                     var urledit = 'Jornada/'+value.id+'/edit';
                     var urldel = 'Jornada/'+value.id;
                     tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
-                    tableRow += '<td><a href="'+urledit+'" class="btn btn-warning">Editar</a>';
+                    tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
+                    tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
                     tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                    tableRow += '</td></tr>'
                     $('#dynamic-row').append(tableRow);
                 });
             }
