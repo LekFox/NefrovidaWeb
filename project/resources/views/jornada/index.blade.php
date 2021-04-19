@@ -101,8 +101,9 @@
                 var tableRow = '';
                 $('#dynamic-row').html('');
                 $.each(res, function(index, value){
-                    tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td></tr>';
-
+                    var url = 'Jornada/'+value.id+'/edit';
+                    tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
+                    tableRow += '<td><a href="'+url+'" class="btn btn-warning">Editar</a>';
                     $('#dynamic-row').append(tableRow);
                 });
             }
@@ -122,8 +123,9 @@
                 var tableRow = '';
                 $('#dynamic-row').html('');
                 $.each(res, function(index, value){
-                    tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td></tr>';
-
+                    var url = 'Jornada/'+value.id+'/edit';
+                    tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
+                    tableRow += '<td><a href="'+url+'" class="btn btn-warning">Editar</a>';
                     $('#dynamic-row').append(tableRow);
                 });
             }
