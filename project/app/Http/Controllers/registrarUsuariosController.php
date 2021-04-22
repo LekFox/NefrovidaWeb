@@ -10,7 +10,7 @@ class registrarUsuariosController extends Controller
 {
     public function index()
     {
-        return view('usuarios.create');
+        return view('auth.register');
     }
 
     public function store(Request $request)
