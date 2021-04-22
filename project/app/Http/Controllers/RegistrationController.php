@@ -2,32 +2,38 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use App\Models\users;
+
+
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
-    public function create()
+    public function index()
     {
         return view('registration.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $this->validate(request(),[
+        $this->validate($request,[
             'name'=> 'requiered',
             'email' => 'requiered | email',
-            'role' => 'requiered',
+            //'role' => 'requiered',
             'password' => 'requiered'
         ]);
 
-        $user = User::create(request(['name','email', 'role','password']));
+        users::create(request([
+            'name'=> $request -> name,
+            'email' => $request -> email,
+            //'role' => $request -> role,
+            'password' => Hash::make($request->password),
+        ]));
 
-        //auth()->login($user);
+        
     }
 }

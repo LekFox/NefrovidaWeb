@@ -15,9 +15,9 @@ use App\Http\Controllers\JornadaController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('auth.login');
-});
+});*/
 
 Route::resource('jornada',JornadaController::class)->middleware('auth');
 
@@ -37,5 +37,6 @@ Route::group(['middleware' => 'auth'],  function () {
 Route::post('/jornadas/search', ['as' => 'search-jornadas', 'uses' => 'App\Http\Controllers\JornadaController@searchJornadas']);
 Route::post('/jornadas/searchloc', ['as' => 'search-jornadas-loc', 'uses' => 'App\Http\Controllers\JornadaController@searchJornadasLoc']);
 
-Route::get('/register', 'App\Http\Controllers\RegistrationController@create');
-//Route::get('/register', 'App\Http\Controllers\RegistrationController@store');
+Route::get('/register', 'App\Http\Controllers\RegistrationController@index');
+//Route::get('register', 'App\Http\Controllers\RegistrationController@store');
+Route::get('/register', 'App\Http\Controllers\RegistrationController@store');

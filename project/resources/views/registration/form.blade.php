@@ -12,8 +12,8 @@
         </div>
 
         <div class="form-group">
-            <label for="email">Rol:</label>
-            <select name="rol" id="rol" class="form-control">
+            <label for="role">Rol:</label>
+            <select name="role" id="role" class="form-control">
             <option value="administrador">Administrador</option>
             <option value="medico">Medico</option>
             </select>
