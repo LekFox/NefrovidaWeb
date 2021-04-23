@@ -35,7 +35,7 @@
                                 <select name="rol" id="rol" class="form-control @error('rol') is-invalid @enderror" required>
                                     <option disabled selected value> -- Selecciona Un Rol -- </option>
                                     <option value="Administrador">Administrador</option>
-                                    <option value="Médico">Médico</option>
+                                    <option value="Medico">Médico</option>
                                 </select>
 
                                 @error('rol')
