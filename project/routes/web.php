@@ -15,9 +15,9 @@ use App\Http\Controllers\JornadaController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('auth.login');
-});
+});*/
 
 Route::resource('jornada',JornadaController::class)->middleware('auth');
 
