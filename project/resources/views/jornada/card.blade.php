@@ -73,26 +73,29 @@
                     </thead>
     
                     <tbody id="dynamic-row">
+                        @foreach ($jornada -> beneficiarios as $beneficiario)
                         <tr>
-                            <td>{{$jornada->id}}</td>
-                    
+                            <td>{{$beneficiario->nombreBeneficiario}}</td>
+                            
 
-                            <td>{{$jornada->nombre}}</td>
-                            <td>{{$jornada->fecha}}</td>
+                            <td>{{$beneficiario->fechaNacimiento}}</td>
+                            
+                            <td>{{$beneficiario->sexo}}</td>
                             <td>
-                            <a href="{{url('/jornada/'.$jornada->id)}}" class="btn btn-primary">
+                            <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-primary">
                                 Consultar
                             </a>
-                            <a href="{{url('/jornada/'.$jornada->id.'/edit')}}" class="btn btn-warning">
+                            <a href="{{url('/beneficiario/'.$beneficiario->id.'/edit')}}" class="btn btn-warning">
                                 Editar
                             </a>
-                            <form action="{{url('/jornada/'.$jornada->id)}}" class="d-inline" method="post">
+                            <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
                             @csrf
                             {{ @method_field('DELETE') }}
-                            <input type="submit" onclick="return confirm('¿Quieres borrar la jornada?')"  class="btn btn-danger" value="Borrar">
+                            <input type="submit" onclick="return confirm('¿Quieres borrar este beneficiario?')"  class="btn btn-danger" value="Borrar">
                             </form>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
 
                 </table>

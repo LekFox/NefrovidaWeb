@@ -12,4 +12,8 @@ class Jornada extends Model
     protected $fillable =[
         'nombre', 'fecha', 'localidad', 'municipio'
     ];
+
+    public function beneficiarios(){
+        return $this->belongsToMany(Beneficiario::class);
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBeneficiariosJornadasTable extends Migration
+class CreateBeneficiarioJornadaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBeneficiariosJornadasTable extends Migration
      */
     public function up()
     {
-        Schema::create('beneficiarios_jornadas', function (Blueprint $table) {
+        Schema::create('beneficiario_jornada', function (Blueprint $table) {
             $table->id();
             $table->foreignId("beneficiario_id")
                 ->nullable()
@@ -37,6 +37,6 @@ class CreateBeneficiariosJornadasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('beneficiarios_jornadas');
+        Schema::dropIfExists('beneficiario_jornada');
     }
 }
