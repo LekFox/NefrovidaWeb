@@ -28,6 +28,25 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="rol" class="col-md-4 col-form-label text-md-right">{{ __('Rol') }}</label>
+
+                            <div class="col-md-6">
+
+                                <select name="rol" id="rol" class="form-control @error('rol') is-invalid @enderror" required>
+                                    <option disabled selected value> -- Selecciona Un Rol -- </option>
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Médico">Médico</option>
+                                </select>
+
+                                @error('rol')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo Electrónico') }}</label>
 
                             <div class="col-md-6">
