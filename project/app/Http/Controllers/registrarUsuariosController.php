@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use App\Models\users;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class registrarUsuariosController extends Controller
 {
     public function index()
     {
+        if (Auth::user()->cannot('create', User::class)) {
+            abort(403);
+        }
+        
         return view('auth.register');
     }
 
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         $this->validate($request,[
             'name'=> 'requiered',
@@ -31,5 +36,8 @@ class registrarUsuariosController extends Controller
 
         return view('usuarios.create');
         
-    }
+    }*/
+
+   
+
 }

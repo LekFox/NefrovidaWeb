@@ -13,8 +13,9 @@
             <a href="#" class="list-group-item list-group-item-action bg-light">Beneficiarios</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Comparar Jornadas</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Reportes</a>
+            @can('create', App\Models\User::class)
             <a href="{{url('/usuarios')}}" class="list-group-item list-group-item-action bg-light">Registrar Usuario</a>
-            
+            @endcan
         </div>
         </div>
         <!-- /#sidebar-wrapper -->
