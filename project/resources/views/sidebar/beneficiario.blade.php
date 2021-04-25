@@ -8,12 +8,11 @@
         <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Header </div>
         <div class="list-group list-group-flush">
-            <a href="{{url('/home')}}" class="list-group-item list-group-item-action bg-light active">Inicio</a>
-            <a href="{{url('/jornada')}}" class="list-group-item list-group-item-action bg-light">Jornadas</a>
-            <a href="{{url('/beneficiario')}}" class="list-group-item list-group-item-action bg-light">Beneficiarios</a>
+            <a href="{{url('/home')}}" class="list-group-item list-group-item-action bg-light">Inicio</a>
+            <a href="{{url('/jornada')}}" class="list-group-item list-group-item-action bg-light ">Jornadas</a>
+            <a href="{{url('/beneficiario')}}" class="list-group-item list-group-item-action bg-light active">Beneficiarios</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Comparar Jornadas</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Reportes</a>
-            
         </div>
         </div>
         <!-- /#sidebar-wrapper -->

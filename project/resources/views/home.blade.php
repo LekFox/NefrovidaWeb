@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <div class="col text-center">
                     <a href="jornada" class="btn btn-primary">Jornadas</a><br><br>
-                    <a href="" class="btn btn-primary">-</a><br><br>
+                    <a href="beneficiario" class="btn btn-primary">Beneficiarios</a><br><br>
                     <a href="" class="btn btn-primary">-</a><br><br>
                     </div>
                 </div>
