@@ -23,4 +23,11 @@ class BeneficiarioController extends Controller
         return view('beneficiario.show',compact('beneficiario'));
     }
 
+    public function searchBeneficiarios(Request $request){
+
+        $beneficiarios = Beneficiario::where('nombreBeneficiario', 'like', '%'.$request->get('searchQuest'). '%')->get();
+
+        return json_encode( $beneficiarios );
+    }
+
 }

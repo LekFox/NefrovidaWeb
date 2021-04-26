@@ -29,7 +29,7 @@
 <br/>
 <br/>
 
-{{-- <div class= "container box">
+<div class= "container box">
     <div class= "row">
         <div class= "col-sm">
             <div class="panel panel-default">
@@ -46,20 +46,11 @@
             </div>
         </div>
         <div class= "col-sm">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                   Buscar por localidad:
-                </div>
-                <div class="panel-body">
-                   <input type="text" name="search" id="searchlocalidad"
-                    class="form-control" placeholder="Localidad de beneficiario..."/>
-                </div>
-            </div>
         </div>
     </div>
 </div>
 <br>
-<br> --}}
+<br>
 
 <table class="table table-light">
     
@@ -105,7 +96,7 @@
 </table>
 </div>
 
-{{-- <script>
+<script>
     $('body').on('keyup', '#searchnombre', function(){
         var searchQuest = $(this).val();
         $.ajax({
@@ -123,7 +114,7 @@
                     var urlshow = 'beneficiario/'+value.id;
                     var urledit = 'beneficiario/'+value.id+'/edit';
                     var urldel = 'beneficiario/'+value.id;
-                    tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
+                    tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombreBeneficiario+'</td><td>'+value.fechaNacimiento+'</td><td>'+value.sexo+'</td><td>'+value.estatus+'</td>';
                     tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
                     tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
                     tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
@@ -133,32 +124,5 @@
             }
         });
     });
-    $('body').on('keyup', '#searchlocalidad', function(){
-        var searchQuest = $(this).val();
-        $.ajax({
-            method: 'POST',
-            url:'{{ route("search-beneficiarios-loc") }}',
-            dataType: 'json',
-            data: {
-                '_token': '{{ csrf_token() }}',
-                searchQuest: searchQuest,
-            },
-            success: function(res){
-                var tableRow = '';
-                $('#dynamic-row').html('');
-                $.each(res, function(index, value){
-                    var urlshow = 'beneficiario/'+value.id;
-                    var urledit = 'beneficiario/'+value.id+'/edit';
-                    var urldel = 'beneficiario/'+value.id;
-                    tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
-                    tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
-                    tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
-                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
-                    tableRow += '</td></tr>'
-                    $('#dynamic-row').append(tableRow);
-                });
-            }
-        });
-    });
-</script> --}}
+</script>
 @endsection
