@@ -29,7 +29,7 @@
 <br/>
 <br/>
 
-<div class= "container box">
+<div class= "container box" id="searchfields">
     <div class= "row">
         <div class= "col-sm">
             <div class="panel panel-default">
@@ -48,6 +48,38 @@
         <div class= "col-sm">
         </div>
     </div>
+    <div class= "row">
+        <div class= "col-sm">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                   Buscar por sexo:
+                </div>
+                <div class="panel-body">
+                    <select class="form-select" aria-label="selectsexo" id="searchsexo">
+                        <option value="">Todos</option>
+                        <option value="Mujer">Mujer</option>
+                        <option value="Hombre">Hombre</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class= "col-sm">
+        </div>
+        <div class= "col-sm">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                   Buscar por edad:
+                </div>
+                <div class="panel-body">
+                   <input type="text" name="search" id="searchedad"
+                    class="form-control" placeholder="Edad de beneficiario..."/>
+                </div>
+                <div class="table-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
 </div>
 <br>
 <br>
@@ -97,8 +129,10 @@
 </div>
 
 <script>
-    $('body').on('keyup', '#searchnombre', function(){
-        var searchQuest = $(this).val();
+    $('body').on('keyup change', '#searchfields', function(){
+        var searchQuest = $( "#searchnombre" ).val();
+        var searchQuestEdad = $( "#searchedad" ).val();
+        var searchQuestSexo = $("#searchsexo option:selected").val();
         $.ajax({
             method: 'POST',
             url:'{{ route("search-beneficiarios") }}',
@@ -106,6 +140,8 @@
             data: {
                 '_token': '{{ csrf_token() }}',
                 searchQuest: searchQuest,
+                searchQuestEdad: searchQuestEdad,
+                searchQuestSexo: searchQuestSexo,
             },
             success: function(res){
                 var tableRow = '';
