@@ -121,12 +121,12 @@
                 $('#dynamic-row').html('');
                 $.each(res, function(index, value){
                     var urlshow = 'jornada/'+value.id;
-                    var urledit = 'Jornada/'+value.id+'/edit';
-                    var urldel = 'Jornada/'+value.id;
+                    var urledit = 'jornada/'+value.id+'/edit';
+                    var urldel = 'jornada/'+value.id;
                     tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
                     tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
                     tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
-                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post">@csrf{{ @method_field('DELETE') }}<input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
                     tableRow += '</td></tr>'
                     $('#dynamic-row').append(tableRow);
                 });
@@ -148,12 +148,12 @@
                 $('#dynamic-row').html('');
                 $.each(res, function(index, value){
                     var urlshow = 'jornada/'+value.id;
-                    var urledit = 'Jornada/'+value.id+'/edit';
-                    var urldel = 'Jornada/'+value.id;
+                    var urledit = 'jornada/'+value.id+'/edit';
+                    var urldel = 'jornada/'+value.id;
                     tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
                     tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
                     tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
-                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post">@csrf{{ @method_field('DELETE') }}<input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
                     tableRow += '</td></tr>'
                     $('#dynamic-row').append(tableRow);
                 });
