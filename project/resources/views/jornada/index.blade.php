@@ -121,7 +121,7 @@
                     var urldel = 'jornada/'+value.id;
                     tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
                     tableRow += '<td><a href="'+urledit+'" class="btn btn-warning">Editar</a>';
-                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post">@csrf{{ @method_field('DELETE') }}<input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
                     $('#dynamic-row').append(tableRow);
                 });
             }
@@ -145,7 +145,7 @@
                     var urldel = 'jornada/'+value.id;
                     tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
                     tableRow += '<td><a href="'+urledit+'" class="btn btn-warning">Editar</a>';
-                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post">@csrf{{ @method_field('DELETE') }}<input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
                     $('#dynamic-row').append(tableRow);
                 });
             }
