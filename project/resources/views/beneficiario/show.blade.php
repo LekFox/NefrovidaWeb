@@ -8,7 +8,7 @@
     @csrf
     {{ method_field('PATCH') }}
     @include('beneficiario.card',['modo'=>'Detalle de'])
-
+    @include('notas.index')
 </div>
 
 @endsection

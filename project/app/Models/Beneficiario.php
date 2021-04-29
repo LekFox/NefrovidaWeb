@@ -12,4 +12,11 @@ class Beneficiario extends Model
     public function jornadas(){
         return $this->belongsToMany(Jornada::class);
     }
+
+    public function notas()
+    {
+        return $this->hasMany(Notas::class);
+    }
+
+    
 }

@@ -20,7 +20,8 @@ class BeneficiarioController extends Controller
     {
         $beneficiario=Beneficiario::findOrFail($id);
 
-        return view('beneficiario.show',compact('beneficiario'));
+        $Notas= Beneficiario::find($id)->notas;
+        return view('beneficiario.show',compact('beneficiario','Notas'));
     }
 
 }

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JornadaController;
 use App\Http\Controllers\BeneficiarioController;
+use App\Http\Controllers\NotasController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,7 @@ Route::get('/', function () {
 
 Route::resource('jornada',JornadaController::class)->middleware('auth');
 Route::resource('beneficiario',BeneficiarioController::class)->middleware('auth');
+Route::resource('notas',NotasController::class)->middleware('auth');
 
 
 Auth::routes(['reset'=>false]); //['register'=>false,'reset'=>false]

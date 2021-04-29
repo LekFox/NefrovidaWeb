@@ -17,7 +17,7 @@ class NotasController extends Controller
     public function index()
     {
         $datos['Notas']=NotasResource::collection(Notas::all());
-        return view('beneficiario.show',$datos);
+        return view('notas.index',$datos);
     }
 
     /**
@@ -51,7 +51,7 @@ class NotasController extends Controller
     {
         $notas=Notas::findOrFail($id);
 
-        return view('beneficiario.show',compact('notas'));
+        return view('notas.show',compact('notas'));
     }
 
     /**
