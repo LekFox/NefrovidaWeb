@@ -6,7 +6,7 @@
 @include('sidebar.beneficiario')
 <div class="container">
 
-{{-- @if (Session::has('eliminado'))
+ @if (Session::has('eliminado'))
     <div class="alert alert-success" role="alert"> {{Session::get('eliminado')}} </div>      
 @endif
 
@@ -17,7 +17,7 @@
 @if (Session::has('editado'))
     <div class="alert alert-success" role="alert"> {{Session::get('editado')}} </div>    
   
-@endif --}}
+@endif 
 
     
 <h1 id="JornadaTitulo">Beneficiarios</h1>

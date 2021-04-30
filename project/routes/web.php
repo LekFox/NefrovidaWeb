@@ -24,11 +24,13 @@ Route::get('/', function () {
 Route::resource('jornada',JornadaController::class)->middleware('auth');
 Route::resource('beneficiario',BeneficiarioController::class)->middleware('auth');
 Route::resource('notas',NotasController::class)->middleware('auth');
+//Route::resource('beneficiario',NotasController::class)->middleware('auth');
+
 
 
 Auth::routes(['reset'=>false]); //['register'=>false,'reset'=>false]
 
-//Route::get('/home', [JornadaController::class, 'index'])->name('home');
+// Route::get('/notas/create', [BeneficiarioController::class, 'create']);
 
 Route::get('/home', function () {
     return view('home');
@@ -42,5 +44,3 @@ Route::group(['middleware' => 'auth'],  function () {
 Route::post('/jornadas/search', ['as' => 'search-jornadas', 'uses' => 'App\Http\Controllers\JornadaController@searchJornadas']);
 Route::post('/jornadas/searchloc', ['as' => 'search-jornadas-loc', 'uses' => 'App\Http\Controllers\JornadaController@searchJornadasLoc']);
 
-
-Route::get('add-note/{id}', [BeneficiarioController::class]);

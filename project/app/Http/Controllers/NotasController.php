@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Notas;
+use App\Models\Beneficiario;
+
 use Illuminate\Http\Request;
 use App\Http\Resources\Notas as NotasResource;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
-use App\Models\Beneficiario;
 
 
 
@@ -31,7 +32,12 @@ class NotasController extends Controller
      */
     public function create()
     {
-        return view('notas.create');
+                //return Jornada::all();
+
+        $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
+        // $datos['Notas']=NotasResource::collection(Notas::all());
+
+        return view('notas.create',$datos);
     }
 
     /**
@@ -50,6 +56,7 @@ class NotasController extends Controller
         request()->validate([
             'fecha' => 'required',
             'comentario' => 'required',
+            'beneficiario_id' => 'required',
         ]);
     
         // $status = Beneficiario::where(['name'=>'sample_status'])->firstOrFail();
@@ -67,10 +74,12 @@ class NotasController extends Controller
             'tipoNota_id' => 1,
             'fecha' => request('fecha'),
             'comentario' => request('comentario'),
+            //'beneficiario_id' => request('beneficiario_id'),
         ]);
 
-        $beneficiario = Beneficiario::findOrFail($id);
-        $beneficiario->notas()->save($nota);
+         $id = request('beneficiario_id');
+         $beneficiario = Beneficiario::find($id);
+         $beneficiario->notas()->save($nota);
 
         return redirect('beneficiario')->with('nuevo','Nota agregada con éxito');
     }

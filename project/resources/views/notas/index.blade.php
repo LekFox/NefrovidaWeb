@@ -8,13 +8,11 @@
                 <a href="{{ url('notas/create') }}" class="btn btn-success">Agregar Notas</a>
             </div>
             <br><br>
-            
             <div class= "col-sm">
             <table class="table table-light table-sm">
     
                 <thead class="thead-light">
                     <tr>
-                        <th>#</th>
                         <th>Fecha</th>
                         <th>Comentarios</th>
                         <th>Acciones</th>
@@ -24,7 +22,6 @@
                 <tbody id="dynamic-row">
                     @foreach ($Notas as $Notas)
                     <tr>
-                        <td>{{$Notas->id}}</td>
             
                         <td>{{$Notas->fecha}}</td>
                         <td>{{$Notas->comentario}}</td>
