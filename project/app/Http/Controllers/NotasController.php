@@ -107,9 +107,13 @@ class NotasController extends Controller
      * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Notas $notas)
+    public function edit($id)
     {
-        //
+        $notas=Notas::findOrFail($id);
+        //$datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
+
+
+        return view('notas.edit',compact('notas'));
     }
 
     /**
@@ -119,9 +123,31 @@ class NotasController extends Controller
      * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Notas $notas)
+    public function update(Request $request, $id)
     {
-        //
+
+        $notas = Notas::find($id);
+        request()->validate([
+            'fecha' => 'required',
+            'comentario' => 'required',
+            'beneficiario_id' => 'required',
+        ]);
+
+        $id=$notas->beneficiario_id;
+
+        $success = $notas->update([
+            'tipoNota_id' => 1,
+            'fecha' => request('fecha'),
+            'comentario' => request('comentario'),
+        ]);
+
+        return redirect('beneficiario/'.$id)->with('editado','Cambios realizados con éxito');
+
+        // return [
+        //          'success' => $success,
+        //           'id' => $id,
+        //           'notas' => $notas
+        //       ];
     }
 
     /**
