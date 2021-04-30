@@ -9,6 +9,10 @@ class Notas extends Model
 {
     use HasFactory;
 
+    protected $fillable =[
+        'fecha', 'comentario', 'beneficiario_id'
+    ];
+
     public function beneficiario()
     {
         return $this->belongsTo(Beneficiario::class);

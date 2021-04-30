@@ -41,3 +41,6 @@ Route::group(['middleware' => 'auth'],  function () {
 
 Route::post('/jornadas/search', ['as' => 'search-jornadas', 'uses' => 'App\Http\Controllers\JornadaController@searchJornadas']);
 Route::post('/jornadas/searchloc', ['as' => 'search-jornadas-loc', 'uses' => 'App\Http\Controllers\JornadaController@searchJornadasLoc']);
+
+
+Route::get('add-note/{id}', [BeneficiarioController::class]);

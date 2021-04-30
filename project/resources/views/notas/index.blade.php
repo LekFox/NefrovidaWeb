@@ -5,7 +5,7 @@
                 <h3>Notas</h3> 
             </div>
             <div class= "col-sm-2">
-                <button type="button" class="btn btn-success">Agregar Notas</button>
+                <a href="{{ url('notas/create') }}" class="btn btn-success">Agregar Notas</a>
             </div>
             <br><br>
             

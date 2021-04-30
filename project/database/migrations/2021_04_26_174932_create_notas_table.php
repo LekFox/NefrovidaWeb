@@ -15,19 +15,22 @@ class CreateNotasTable extends Migration
     {
         Schema::create('notas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("beneficiario_id")
-            ->nullable()
-            ->constrained()
-            ->onUpdate('cascade')
-            ->onDelete('set null');
+            $table->unsignedBigInteger('beneficiario_id');
+            $table->foreign("beneficiario_id")->references('id')->on('beneficiarios')->onDelete('cascade');
+            // ->constrained()
+            // ->onUpdate('cascade')
+            // ->onDelete('set null');
+           
+            $table->timestamps();
+            $table->date("fecha");
+            $table->string("comentario");
             $table->foreignId("tipo_nota_id")
             ->nullable()
             ->constrained()
             ->onUpdate('cascade')
             ->onDelete('set null');
-            $table->timestamps();
-            $table->date("fecha");
-            $table->string("comentario");
+            // $table->foreign('beneficiario_id')->references('id')->on('beneficiarios')->onDelete('cascade');
+
         });
     }
 
