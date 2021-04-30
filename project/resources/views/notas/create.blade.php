@@ -41,6 +41,17 @@
       </select>
   </div>
 
+  {{-- <div class="form-group"> 
+    <label for="tipoNota_id">Beneficiario</label>
+      <select class="form-select" aria-label="Default select example" id="tipoNota_id"  name="tipoNota_id">
+        <option selected>Selecciona al beneficiario </option>
+        @foreach ($TipoNota as $TipoNota)
+        <option value={{$TipoNota->id}} id="tipoNota_id"  name="tipoNota_id"> {{$TipoNota->nombre}}</option>
+        @endforeach
+        
+      </select>
+  </div> --}}
+
   <div class="form-group">
       <label for="Fecha">Fecha</label>
       <input class="date form-control" type="date" name="fecha" value="{{ isset($notas->fecha)?$notas->fecha:old('fecha') }}" id="fecha">    
@@ -55,7 +66,7 @@
   <input class="btn btn-success" type="submit" value="Crear Nota">
 
   
-  <a href="{{ url('beneficiario/') }}" class="btn btn-primary"> Regresar </a>
+  <a href="{{ url()->previous() }}" class="btn btn-primary"> Regresar </a>
   
   <script type="text/javascript">
       $('.date').datepicker({  

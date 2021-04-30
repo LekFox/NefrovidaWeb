@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Notas;
 use App\Models\Beneficiario;
-
+use App\Models\tipoNota;
 use Illuminate\Http\Request;
 use App\Http\Resources\Notas as NotasResource;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
+use App\Http\Resources\tipoNota as tipoNotaResource;
 
 
 
@@ -35,6 +36,8 @@ class NotasController extends Controller
                 //return Jornada::all();
 
         $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
+        //$tipo['TipoNota']=tipoNotaResource::collection(tipoNota::all());
+
         // $datos['Notas']=NotasResource::collection(Notas::all());
 
         return view('notas.create',$datos);
@@ -81,7 +84,8 @@ class NotasController extends Controller
          $beneficiario = Beneficiario::find($id);
          $beneficiario->notas()->save($nota);
 
-        return redirect('beneficiario')->with('nuevo','Nota agregada con éxito');
+        return redirect('beneficiario/'.$id)->with('nuevo','Nota agregada con éxito');
+        //return redirect()->back()->with('nuevo','Nota agregada con éxito');
     }
 
     /**

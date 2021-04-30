@@ -24,13 +24,10 @@ Route::get('/', function () {
 Route::resource('jornada',JornadaController::class)->middleware('auth');
 Route::resource('beneficiario',BeneficiarioController::class)->middleware('auth');
 Route::resource('notas',NotasController::class)->middleware('auth');
-//Route::resource('beneficiario',NotasController::class)->middleware('auth');
 
 
 
 Auth::routes(['reset'=>false]); //['register'=>false,'reset'=>false]
-
-// Route::get('/notas/create', [BeneficiarioController::class, 'create']);
 
 Route::get('/home', function () {
     return view('home');
