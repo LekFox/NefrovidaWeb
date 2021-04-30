@@ -130,8 +130,18 @@ class NotasController extends Controller
      * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Notas $notas)
+    public function destroy($id)
     {
-        //
+        $notas = Notas::find($id);
+        $id=$notas->beneficiario_id;
+        $success = $notas->delete();
+
+        return redirect('beneficiario/'.$id)->with('nuevo','Nota borrada con éxito');
+
+        // return [
+        //      'success' => $success,
+        //      'id' => $id,
+        //      'notas' => $notas
+        //  ];
     }
 }
