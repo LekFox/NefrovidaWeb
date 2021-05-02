@@ -41,3 +41,7 @@ Route::group(['middleware' => 'auth'],  function () {
 Route::post('/jornadas/search', ['as' => 'search-jornadas', 'uses' => 'App\Http\Controllers\JornadaController@searchJornadas']);
 Route::post('/jornadas/searchloc', ['as' => 'search-jornadas-loc', 'uses' => 'App\Http\Controllers\JornadaController@searchJornadasLoc']);
 
+Route::get('/usuarios',[App\Http\Controllers\registrarUsuariosController::class,'index'])->name('registrarUsuario')->middleware('auth');
+
+//Route::get('/usuarios','App\Http\Controllers\registrarUsuariosController@index');
+//Route::post('/usuarios','App\Http\Controllers\RegistrarUsuarios@store');
