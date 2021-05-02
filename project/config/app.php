@@ -231,3 +231,6 @@ return [
     ],
 
 ];
+
+//Log out after closing tab or browser
+
