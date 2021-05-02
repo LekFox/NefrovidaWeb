@@ -18,8 +18,8 @@ use App\Http\Controllers\NotasController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
-});
+    return view('home');
+})->middleware('auth');
 
 Route::resource('jornada',JornadaController::class)->middleware('auth');
 Route::resource('beneficiario',BeneficiarioController::class)->middleware('auth');
@@ -31,7 +31,7 @@ Auth::routes(['reset'=>false]); //['register'=>false,'reset'=>false]
 
 Route::get('/home', function () {
     return view('home');
-});
+})->middleware('auth');
 
 Route::group(['middleware' => 'auth'],  function () {
     return view('/home');
