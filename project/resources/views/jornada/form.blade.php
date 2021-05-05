@@ -44,7 +44,6 @@
 
 
 
-
 <input class="btn btn-success" type="submit" value="{{$modo}} datos">
 
 <a href="{{ url('jornada') }}" class="btn btn-primary"> Regresar </a>
