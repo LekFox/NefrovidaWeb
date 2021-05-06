@@ -130,35 +130,85 @@
 
 <script>
     $('body').on('keyup change', '#searchfields', function(){
-        var searchQuest = $( "#searchnombre" ).val();
-        var searchQuestEdad = $( "#searchedad" ).val();
-        var searchQuestSexo = $("#searchsexo option:selected").val();
-        $.ajax({
-            method: 'POST',
-            url:'{{ route("search-beneficiarios") }}',
-            dataType: 'json',
-            data: {
-                '_token': '{{ csrf_token() }}',
-                searchQuest: searchQuest,
-                searchQuestEdad: searchQuestEdad,
-                searchQuestSexo: searchQuestSexo,
-            },
-            success: function(res){
-                var tableRow = '';
-                $('#dynamic-row').html('');
-                $.each(res, function(index, value){
-                    var urlshow = 'beneficiario/'+value.id;
-                    var urledit = 'beneficiario/'+value.id+'/edit';
-                    var urldel = 'beneficiario/'+value.id;
-                    tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombreBeneficiario+'</td><td>'+value.fechaNacimiento+'</td><td>'+value.sexo+'</td><td>'+value.estatus+'</td>';
-                    tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
-                    tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
-                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
-                    tableRow += '</td></tr>'
-                    $('#dynamic-row').append(tableRow);
-                });
+        if ($( "#searchedad" ).val() == '') {
+                var searchQuest = $( "#searchnombre" ).val();
+                var searchQuestSexo = $("#searchsexo option:selected").val();
+            $.ajax({
+                method: 'POST',
+                url:'{{ route("search-beneficiarios") }}',
+                dataType: 'json',
+                data: {
+                    '_token': '{{ csrf_token() }}',
+                    searchQuest: searchQuest,
+                    searchQuestSexo: searchQuestSexo,
+                },
+                success: function(res){
+                    var tableRow = '';
+                    $('#dynamic-row').html('');
+                    $.each(res, function(index, value){
+                        dob = new Date(value.fechaNacimiento);
+                        var today = new Date();
+                        var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+                        var urlshow = 'beneficiario/'+value.id;
+                        var urledit = 'beneficiario/'+value.id+'/edit';
+                        var urldel = 'beneficiario/'+value.id;
+                        tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombreBeneficiario+'</td><td>'+age+'</td><td>'+value.sexo+'</td><td>'+value.estatus+'</td>';
+                        tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
+                        tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
+                        tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                        tableRow += '</td></tr>'
+                        $('#dynamic-row').append(tableRow);
+                    });
+                }
+            });
+        }
+        else{
+            var searchQuest = $( "#searchnombre" ).val();
+            var today = new Date().getFullYear();
+            var searchQuestEdad = today - $( "#searchedad" ).val();
+            var m = new Date().getMonth() + 1;
+            if (m<10) {
+                m = '0' + m;
             }
-        });
+            var d = new Date().getDate();
+            if (d<10) {
+                d = '0' + d;
+            }
+            var fechaBegin = searchQuestEdad - 1 +'-'+m+'-'+d;
+            var fechaEnd = searchQuestEdad+'-'+m+'-'+d;
+            var searchQuestSexo = $("#searchsexo option:selected").val();
+            $.ajax({
+                method: 'POST',
+                url:'{{ route("search-beneficiarios-age") }}',
+                dataType: 'json',
+                data: {
+                    '_token': '{{ csrf_token() }}',
+                    searchQuest: searchQuest,
+                    searchQuestEdad: searchQuestEdad,
+                    searchQuestSexo: searchQuestSexo,
+                    fechaBegin: fechaBegin,
+                    fechaEnd: fechaEnd,
+                },
+                success: function(res){
+                    var tableRow = '';
+                    $('#dynamic-row').html('');
+                    $.each(res, function(index, value){
+                        dob = new Date(value.fechaNacimiento);
+                        var today = new Date();
+                        var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+                        var urlshow = 'beneficiario/'+value.id;
+                        var urledit = 'beneficiario/'+value.id+'/edit';
+                        var urldel = 'beneficiario/'+value.id;
+                        tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombreBeneficiario+'</td><td>'+age+'</td><td>'+value.sexo+'</td><td>'+value.estatus+'</td>';
+                        tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
+                        tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
+                        tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                        tableRow += '</td></tr>'
+                        $('#dynamic-row').append(tableRow);
+                    });
+                }
+            });
+        }
     });
 </script>
 @endsection

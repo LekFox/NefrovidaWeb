@@ -26,10 +26,19 @@ class BeneficiarioController extends Controller
     public function searchBeneficiarios(Request $request){
 
         $beneficiarios = Beneficiario::where('nombreBeneficiario', 'like', '%'.$request->get('searchQuest'). '%')
-                        ->where('fechaNacimiento', 'like', '%'.$request->get('searchQuestEdad'). '%')
                         ->where('sexo', 'like', '%'.$request->get('searchQuestSexo'). '%')
                         ->get();
+        
+        return json_encode( $beneficiarios );
+    }
 
+    public function searchBeneficiariosAge(Request $request){
+
+        $beneficiarios = Beneficiario::where('nombreBeneficiario', 'like', '%'.$request->get('searchQuest'). '%')
+                        ->whereBetween('fechaNacimiento', [$request->get('fechaBegin'), $request->get('fechaEnd')])
+                        ->where('sexo', 'like', '%'.$request->get('searchQuestSexo'). '%')
+                        ->get();
+        
         return json_encode( $beneficiarios );
     }
 
