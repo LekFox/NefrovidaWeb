@@ -24,14 +24,14 @@
   <div class="card-body">
       <div class= "row">
           <div class= "col-sm">
-                <h1 class="card-title">{{ $beneficiario->nombreBeneficiario }}</h1>
+                <h2 class="card-title">{{ $beneficiario->nombreBeneficiario }}</h2>
                 <br>
-                <h3>Fecha de Nacimiento: {{ $beneficiario->fechaNacimiento }}</h3>
-                <h3>Sexo: {{ $beneficiario->sexo }}</h3>
-                <h3>Teléfono: {{ $beneficiario->telefono }}</h3>
-                <h3>Dirección: {{ $beneficiario->direccion }}</h3>
-                <h3>Escolaridad: {{ $beneficiario->escolaridade_id }}</h3>
-                <h3>Estatus: {{ $beneficiario->estatus }}</h3>
+                <h4>Fecha de Nacimiento: {{ $beneficiario->fechaNacimiento }}</h4>
+                <h4>Sexo: {{ $beneficiario->sexo }}</h4>
+                <h4>Teléfono: {{ $beneficiario->telefono }}</h4>
+                <h4>Dirección: {{ $beneficiario->direccion }}</h4>
+                <h4>Escolaridad: {{ $beneficiario->escolaridade_id }}</h4>
+                <h4>Estatus: {{ $beneficiario->estatus }}</h4>
             </div>
             <div class="col-sm">
                 <div class= "pt-xl-5">
@@ -57,5 +57,5 @@
 </div>
 
 
-
+ <br><br>
 
