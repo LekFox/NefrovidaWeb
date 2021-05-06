@@ -40,14 +40,12 @@
                    <input type="text" name="search" id="searchnombre"
                     class="form-control" placeholder="Nombre de beneficiario..."/>
                 </div>
-                <div class="table-responsive">
-                    <h3 >Total Data :  <span id="total_records"></span></h3>
-                </div>
             </div>
         </div>
         <div class= "col-sm">
         </div>
     </div>
+    <br>
     <div class= "row">
         <div class= "col-sm">
             <div class="panel panel-default">
@@ -104,9 +102,17 @@
             
 
             <td>{{$Beneficiario->nombreBeneficiario}}</td>
-            <td>{{$Beneficiario->fechaNacimiento}}</td>
+            <td>{{$Beneficiario->age}}</td>
             <td>{{$Beneficiario->sexo}}</td>
-            <td>{{$Beneficiario->estatus}}</td>
+            @if($Beneficiario->seguimiento === 1)
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/>
+                </svg> Sí</td>
+            @else
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                </svg> No</td>
+            @endif
             <td>
                 <a href="{{url('/beneficiario/'.$Beneficiario->id)}}" class="btn btn-primary">
                     Consultar
@@ -152,7 +158,13 @@
                         var urlshow = 'beneficiario/'+value.id;
                         var urledit = 'beneficiario/'+value.id+'/edit';
                         var urldel = 'beneficiario/'+value.id;
-                        tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombreBeneficiario+'</td><td>'+age+'</td><td>'+value.sexo+'</td><td>'+value.estatus+'</td>';
+                        var segicon;
+                        if (value.seguimiento == 1) {
+                            segicon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/></svg> Sí';
+                        }else{
+                            segicon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/></svg> No'
+                        }
+                        tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombreBeneficiario+'</td><td>'+age+'</td><td>'+value.sexo+'</td><td>'+segicon+'</td>';
                         tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
                         tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
                         tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
@@ -199,7 +211,13 @@
                         var urlshow = 'beneficiario/'+value.id;
                         var urledit = 'beneficiario/'+value.id+'/edit';
                         var urldel = 'beneficiario/'+value.id;
-                        tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombreBeneficiario+'</td><td>'+age+'</td><td>'+value.sexo+'</td><td>'+value.estatus+'</td>';
+                        var segicon;
+                        if (value.seguimiento == 1) {
+                            segicon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/></svg> Sí';
+                        }else{
+                            segicon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/></svg> No'
+                        }
+                        tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombreBeneficiario+'</td><td>'+age+'</td><td>'+value.sexo+'</td><td>'+segicon+'</td>';
                         tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
                         tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
                         tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
