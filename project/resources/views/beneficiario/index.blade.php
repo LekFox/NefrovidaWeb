@@ -62,6 +62,18 @@
             </div>
         </div>
         <div class= "col-sm">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                   Buscar por seguimiento:
+                </div>
+                <div class="panel-body">
+                    <select class="form-select" aria-label="selectseguimiento" id="searchseguimiento">
+                        <option value="">Todos</option>
+                        <option value="1">Con seguimiento</option>
+                        <option value="0">Sin seguimiento</option>
+                    </select>
+                </div>
+            </div>
         </div>
         <div class= "col-sm">
             <div class="panel panel-default">
@@ -139,6 +151,7 @@
         if ($( "#searchedad" ).val() == '') {
                 var searchQuest = $( "#searchnombre" ).val();
                 var searchQuestSexo = $("#searchsexo option:selected").val();
+                var searchQuestSeguimiento = $("#searchseguimiento option:selected").val();
             $.ajax({
                 method: 'POST',
                 url:'{{ route("search-beneficiarios") }}',
@@ -147,6 +160,7 @@
                     '_token': '{{ csrf_token() }}',
                     searchQuest: searchQuest,
                     searchQuestSexo: searchQuestSexo,
+                    searchQuestSeguimiento: searchQuestSeguimiento,
                 },
                 success: function(res){
                     var tableRow = '';
@@ -189,6 +203,7 @@
             var fechaBegin = searchQuestEdad - 1 +'-'+m+'-'+d;
             var fechaEnd = searchQuestEdad+'-'+m+'-'+d;
             var searchQuestSexo = $("#searchsexo option:selected").val();
+            var searchQuestSeguimiento = $("#searchseguimiento option:selected").val();
             $.ajax({
                 method: 'POST',
                 url:'{{ route("search-beneficiarios-age") }}',
@@ -198,6 +213,7 @@
                     searchQuest: searchQuest,
                     searchQuestEdad: searchQuestEdad,
                     searchQuestSexo: searchQuestSexo,
+                    searchQuestSeguimiento: searchQuestSeguimiento,
                     fechaBegin: fechaBegin,
                     fechaEnd: fechaEnd,
                 },

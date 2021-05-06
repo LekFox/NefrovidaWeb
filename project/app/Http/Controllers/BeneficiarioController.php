@@ -29,6 +29,7 @@ class BeneficiarioController extends Controller
 
         $beneficiarios = Beneficiario::where('nombreBeneficiario', 'like', '%'.$request->get('searchQuest'). '%')
                         ->where('sexo', 'like', '%'.$request->get('searchQuestSexo'). '%')
+                        ->where('seguimiento', 'like', '%'.$request->get('searchQuestSeguimiento'). '%')
                         ->get();
         
         return json_encode( $beneficiarios );
@@ -40,6 +41,7 @@ class BeneficiarioController extends Controller
         $beneficiarios = Beneficiario::where('nombreBeneficiario', 'like', '%'.$request->get('searchQuest'). '%')
                         ->whereBetween('fechaNacimiento', [$request->get('fechaBegin'), $request->get('fechaEnd')])
                         ->where('sexo', 'like', '%'.$request->get('searchQuestSexo'). '%')
+                        ->where('seguimiento', 'like', '%'.$request->get('searchQuestSeguimiento'). '%')
                         ->get();
         
         return json_encode( $beneficiarios );
