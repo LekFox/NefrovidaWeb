@@ -7,8 +7,8 @@
 <div class="container">
     @csrf
     {{ method_field('PATCH') }}
-    @include('beneficiario.card',['modo'=>'Detalle de'])
-    @include('notas.index',['id'=>$id])
+    @include('notas.card',['modo'=>'Detalle de'])
+
 </div>
 
 @endsection

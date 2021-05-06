@@ -21,8 +21,10 @@ class BeneficiarioController extends Controller
     {
         $beneficiario=Beneficiario::findOrFail($id);
 
-        return view('beneficiario.show',compact('beneficiario'));
+        $Notas= Beneficiario::find($id)->notas;
+        return view('beneficiario.show',compact('beneficiario','Notas'))->with(['id'=>$id]);
     }
+
 
     // Permite buscar un beneficiario a partir del request AJAX.
     public function searchBeneficiarios(Request $request){
@@ -46,5 +48,4 @@ class BeneficiarioController extends Controller
         
         return json_encode( $beneficiarios );
     }
-
 }

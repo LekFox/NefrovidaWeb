@@ -16,7 +16,13 @@ class Beneficiario extends Model
 
     //Regresa el atributo edad parseado con Carbon a partir de la fecha de Nacimiento.
     public function getAgeAttribute()
-{
+    {
     return Carbon::parse($this->attributes['fechaNacimiento'])->age;
-}
+    }
+
+    public function notas()
+    {
+        return $this->hasMany(Notas::class);
+    }
+
 }
