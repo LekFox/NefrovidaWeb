@@ -19,8 +19,8 @@
 
 <div class="form-group">
 
-<label for="nombre">Nombre</label>
-<input type="text" class="form-control" name="nombre" value="{{ isset($jornada->nombre)?$jornada->nombre:old('nombre') }}" id="nombre">
+<label for="nombreBeneficiario">Nombre</label>
+<input type="text" class="form-control" name="nombreBeneficiario" value="" id="nombreBeneficiario">
 
 </div>
 @if(empty($jornadas))
@@ -48,45 +48,33 @@
 @endif
 
 <div class="form-group">
-    <label for="fecha">Fecha de nacimiento</label>
-    <input class="date form-control" type="date" name="fecha" value="{{ isset($jornada->fecha)?$jornada->fecha:old('fecha') }}" id="fecha">    
-</div>
-
-<div class="form-group">
-    <label for="localidad">Localidad</label>
-    <input type="text"class="form-control" name="localidad" value="{{ isset($jornada->localidad)?$jornada->localidad:old('localidad') }}" id="localidad">
-    
-</div>
-
-<div class="form-group">
-<label for="municipio">Municipio</label>
-<input type="text" class="form-control" name="municipio" value="{{ isset($jornada->municipio)?$jornada->municipio:old('municipio') }}" id="municipio">
-
+    <label for="fechaNacimiento">Fecha de nacimiento</label>
+    <input class="date form-control" type="date" name="fechaNacimiento" value="" id="fechaNacimiento">    
 </div>
 
 <div class="form-group">
 <label for="direccion">Dirección</label>
-<input type="text" class="form-control" name="direccion" value="{{ isset($jornada->municipio)?$jornada->municipio:old('municipio') }}" id="municipio">
+<input type="text" class="form-control" name="direccion" value="" id="direccion">
 
 </div>
 
 <div class="form-group">
 <label for="telefono">Número de telefono</label>
-<input type="text" class="form-control" name="telefono" value="{{ isset($jornada->municipio)?$jornada->municipio:old('municipio') }}" id="municipio">
+<input type="text" class="form-control" name="telefono" value="" id="telefono">
 
 </div>
 
 <div class="form-group">
     <label for="sexo">Sexo</label>
-    <select name="sexo" class="custom-select">
+    <select name="sexo" class="custom-select" id="sexo">
         <option value="1">Hombre</option>
         <option value="2">Mujer</option>
     </select>
 </div>
 
 <div class="form-group">
-    <label for="escolaridad">Escolaridad</label>
-    <select name="Escolaridad" class="custom-select">
+    <label for="escolaridade_id">Escolaridad</label>
+    <select name="escolaridade_id" class="custom-select" id="escolaridade_id">
         <option value="1">Primaria</option>
         <option value="2">Secundaria</option>
         <option value="3">Preparatoria</option>
@@ -95,6 +83,15 @@
     </select>
 </div>
 
+<div class="form-group">
+    <label for="estatus">Estatus</label>
+    <select name="estatus" class="custom-select" id="estatus">
+        <option value="1">Activo</option>
+        <option value="2">Inactivo</option>
+    </select>
+</div>
+
+<!--
 <div class="m-3">
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1">
@@ -103,6 +100,7 @@
   </label>
 </div>
 </div>
+-->
 
 <input class="btn btn-success" type="submit" value="{{$modo}} datos">
 

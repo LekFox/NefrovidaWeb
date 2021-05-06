@@ -9,6 +9,10 @@ class Beneficiario extends Model
 {
     use HasFactory;
 
+    protected $fillable =[
+        'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus'
+    ];
+
     public function jornadas(){
         return $this->belongsToMany(Jornada::class);
     }

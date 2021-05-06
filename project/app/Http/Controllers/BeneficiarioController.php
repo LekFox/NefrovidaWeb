@@ -39,7 +39,7 @@ class BeneficiarioController extends Controller
             'sexo' => 'required',
             'telefono' => 'required',
             'direccion' => 'required',
-            'escolaridad' => 'required',
+            'escolaridade_id' => 'required',
             'estatus' => 'required',
         ]);
     

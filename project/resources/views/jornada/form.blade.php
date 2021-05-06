@@ -32,16 +32,13 @@
 <div class="form-group">
     <label for="localidad">Localidad</label>
     <input type="text"class="form-control" name="localidad" value="{{ isset($jornada->localidad)?$jornada->localidad:old('localidad') }}" id="localidad">
-    
-    </div>
+</div>
 
 <div class="form-group">
 <label for="Municipio">Municipio</label>
 <input type="text" class="form-control" name="municipio" value="{{ isset($jornada->municipio)?$jornada->municipio:old('municipio') }}" id="municipio">
 
 </div>
-
-
 
 
 <input class="btn btn-success" type="submit" value="{{$modo}} datos">
