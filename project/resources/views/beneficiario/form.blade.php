@@ -92,6 +92,8 @@
 </div>
 
 <!--
+    //Aun no estamos seguro que tipo de información es estatus
+
 <div class="m-3">
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1">
