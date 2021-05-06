@@ -13,11 +13,7 @@
             <a href="{{url('/beneficiario')}}" class="list-group-item list-group-item-action bg-light">Beneficiarios</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Comparar Jornadas</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Reportes</a>
-<<<<<<< HEAD
             <a href="{{url('/register')}}" class="list-group-item list-group-item-action bg-light">Registrar Usuario</a>
-=======
-            <a href="{{url('/usuarios')}}" class="list-group-item list-group-item-action bg-light ">Registrar Usuario</a>
->>>>>>> usuarios
         </div>
         </div>
         <!-- /#sidebar-wrapper -->
