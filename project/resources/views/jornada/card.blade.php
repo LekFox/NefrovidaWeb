@@ -78,7 +78,7 @@
                             <td>{{$beneficiario->nombreBeneficiario}}</td>
                             
 
-                            <td>{{$beneficiario->fechaNacimiento}}</td>
+                            <td>{{$beneficiario->age}}</td>
                             
                             <td>{{$beneficiario->sexo}}</td>
                             <td>
