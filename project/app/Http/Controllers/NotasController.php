@@ -94,7 +94,7 @@ class NotasController extends Controller
      * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
-    public function show(Notas $notas)
+    public function show($id)
     {
         $notas=Notas::findOrFail($id);
 

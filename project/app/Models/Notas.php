@@ -17,4 +17,9 @@ class Notas extends Model
     {
         return $this->belongsTo(Beneficiario::class);
     }
+
+    // public function tipo_nota()
+    // {
+    //     return $this->hasMany(Tipo_nota::class);
+    // }
 }
