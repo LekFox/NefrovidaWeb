@@ -20,12 +20,8 @@
 @endif 
 
     
-<h1 id="JornadaTitulo">Beneficiarios</h1>
+<h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-people-fill"></i> Beneficiarios</h1>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 text-right">
-        <a id="beneficiarioAddB" href="{{ url('beneficiario/create') }}" class="btn btn-success"> Registrar nuevo beneficiario </a>
-    </div>
 <br/>
 <br/>
 
@@ -34,7 +30,7 @@
         <div class= "col-sm">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   Buscar por nombre:
+                   <h5>Buscar por nombre:</h5>
                 </div>
                 <div class="panel-body">
                    <input type="text" name="search" id="searchnombre"
@@ -43,6 +39,17 @@
             </div>
         </div>
         <div class= "col-sm">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                   <h5>Buscar por edad:</h5>
+                </div>
+                <div class="panel-body">
+                   <input type="text" name="search" id="searchedad"
+                    class="form-control" placeholder="Edad de beneficiario..."/>
+                </div>
+                <div class="table-responsive">
+                </div>
+            </div>
         </div>
     </div>
     <br>
@@ -50,7 +57,7 @@
         <div class= "col-sm">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   Buscar por sexo:
+                    <h5>Buscar por sexo:</h5>
                 </div>
                 <div class="panel-body">
                     <select class="form-select" aria-label="selectsexo" id="searchsexo">
@@ -64,7 +71,7 @@
         <div class= "col-sm">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   Buscar por seguimiento:
+                    <h5>Buscar por seguimiento:</h5>
                 </div>
                 <div class="panel-body">
                     <select class="form-select" aria-label="selectseguimiento" id="searchseguimiento">
@@ -76,27 +83,20 @@
             </div>
         </div>
         <div class= "col-sm">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                   Buscar por edad:
-                </div>
-                <div class="panel-body">
-                   <input type="text" name="search" id="searchedad"
-                    class="form-control" placeholder="Edad de beneficiario..."/>
-                </div>
-                <div class="table-responsive">
-                </div>
-            </div>
+            
         </div>
     </div>
     <br>
+    <div class="row">
+        <div class="col-sm text-right">
+        <a id="beneficiarioAddB" href="{{ url('beneficiario/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Beneficiario</a>
+    </div>
 </div>
-<br>
 <br>
 
 <table class="table table-light">
     
-    <thead class="thead-light">
+    <thead class="greennefrobg whitenefro">
         <tr>
             <th>#</th>
             <th>Nombre</th>
@@ -126,17 +126,17 @@
                 </svg> No</td>
             @endif
             <td>
-                <a href="{{url('/beneficiario/'.$Beneficiario->id)}}" class="btn btn-primary">
+                <a href="{{url('/beneficiario/'.$Beneficiario->id)}}" class="btn btn-outline-dark">
                     Consultar
                 </a>
-                <a href="{{url('/beneficiario/'.$Beneficiario->id.'/edit')}}" class="btn btn-warning">
+                <a href="{{url('/beneficiario/'.$Beneficiario->id.'/edit')}}" class="btn btn-outline-secondary">
                     Editar
                 </a>
                  
                 <form action="{{url('/beneficiario/'.$Beneficiario->id)}}" class="d-inline" method="post">
                     @csrf
                     {{ @method_field('DELETE') }}
-                    <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-danger" value="Borrar">
+                    <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-outline-danger" value="Borrar">
                 </form>
             </td>
         </tr>
@@ -179,9 +179,9 @@
                             segicon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/></svg> No'
                         }
                         tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombreBeneficiario+'</td><td>'+age+'</td><td>'+value.sexo+'</td><td>'+segicon+'</td>';
-                        tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
-                        tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
-                        tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                        tableRow += '<td><a href="'+urlshow+'" class="btn btn-outline-dark">Consultar</a>';
+                        tableRow += '<a href="'+urledit+'" class="btn btn-outline-secondary">Editar</a>';
+                        tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-outline-danger" value="Borrar"></form>';
                         tableRow += '</td></tr>'
                         $('#dynamic-row').append(tableRow);
                     });
@@ -234,9 +234,9 @@
                             segicon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/></svg> No'
                         }
                         tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombreBeneficiario+'</td><td>'+age+'</td><td>'+value.sexo+'</td><td>'+segicon+'</td>';
-                        tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
-                        tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
-                        tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                        tableRow += '<td><a href="'+urlshow+'" class="btn btn-outline-dark">Consultar</a>';
+                        tableRow += '<a href="'+urledit+'" class="btn btn-outline-secondary">Editar</a>';
+                        tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-outline-danger" value="Borrar"></form>';
                         tableRow += '</td></tr>'
                         $('#dynamic-row').append(tableRow);
                     });
