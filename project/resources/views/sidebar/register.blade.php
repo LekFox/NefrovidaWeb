@@ -6,14 +6,13 @@
         <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">Header </div>
         <div class="list-group list-group-flush">
-            <a href="{{url('/home')}}" class="list-group-item list-group-item-action bg-light">Inicio</a>
-            <a href="{{url('/jornada')}}" class="list-group-item list-group-item-action bg-light">Jornadas</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Beneficiarios</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Comparar Jornadas</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Reportes</a>
-            <a href="{{url('/register')}}" class="list-group-item list-group-item-action bg-light active">Registrar Usuario</a>
+            <a href="{{url('/home')}}" class="list-group-item list-group-item-action bg-light"><i class="bi bi-house-door-fill"></i> Inicio</a>
+            <a href="{{url('/jornada')}}" class="list-group-item list-group-item-action bg-light"><i class="bi bi-calendar3"></i> Jornadas</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light"><i class="bi bi-people-fill"></i> Beneficiarios</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light"><i class="bi bi-arrow-left-right"></i> Comparar Jornadas</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light"><i class="bi bi-bar-chart-line-fill"></i> Reportes</a>
+            <a href="{{url('/register')}}" class="list-group-item list-group-item-action bg-light active"><i class="bi bi-person-plus-fill"></i> Registrar Usuario</a>
 
             
         </div>

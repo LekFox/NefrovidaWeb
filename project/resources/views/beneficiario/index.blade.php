@@ -20,7 +20,7 @@
 @endif 
 
     
-<h1 id="JornadaTitulo">Beneficiarios</h1>
+<h1 id="JornadaTitulo"><i class="bi bi-people-fill"></i> Beneficiarios</h1>
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-right">
