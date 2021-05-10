@@ -29,7 +29,7 @@ class BeneficiarioFactory extends Factory
             'nombreBeneficiario' => $this->faker->name,
             'fechaNacimiento' => $this->faker->date,
             // 'sexo' => $this->$gender,
-            'sexo' => 'H',
+            'sexo' => 'hombre',
             'telefono' => $this->faker->phoneNumber,
             'direccion' => $this->faker->address,
             'estatus' => 'Y',
