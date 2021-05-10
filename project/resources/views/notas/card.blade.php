@@ -18,7 +18,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
 
-<a href="{{ url()->previous() }}" class="btn btn-primary"> Regresar </a>
+<a href="{{url('/beneficiario/'.$notas->beneficiario_id)}}" class="btn btn-primary"> Regresar </a>
 <br><br>
 <div class="card">
     <div class="card-header">
@@ -31,12 +31,27 @@
             </div> 
         </div>
       </div>
-  <div class="card-body">    
+
+    <div class="card-body">    
       <div class= "row">
           <div class= "col">
                 <h6>Comentario:</h6>
                 <p id="linebreak" class="text-break">{{ $notas->comentario }}</p>
             </div>
         </div>
-  </div>
+        <div class= "row">
+            <div id="fechaC"class= "col">
+                <a href="{{url('/notas/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                    Editar
+                </a>
+            <form action="{{url('/notas/'.$notas->id)}}" class="d-inline" method="post">
+                @csrf
+                {{ @method_field('DELETE') }}
+                <input type="submit" onclick="return confirm('¿Quieres borrar la nota?')"  class="btn btn-outline-danger" value="Borrar">
+            </form>
+            </div>
+          </div> 
+          <br>
+     </div>
+  
 </div>

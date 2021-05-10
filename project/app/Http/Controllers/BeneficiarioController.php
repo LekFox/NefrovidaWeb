@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beneficiario;
+use App\Models\Notas;
 use Illuminate\Http\Request;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
 
@@ -21,7 +22,9 @@ class BeneficiarioController extends Controller
     {
         $beneficiario=Beneficiario::findOrFail($id);
 
-        $Notas= Beneficiario::find($id)->notas;
+        //$Notas= Beneficiario::find($id)->notas->paginate(3);
+        $Notas = Notas::where('beneficiario_id', $id)->paginate(3);
+
         return view('beneficiario.show',compact('beneficiario','Notas'))->with(['id'=>$id]);
     }
 
@@ -48,4 +51,14 @@ class BeneficiarioController extends Controller
         
         return json_encode( $beneficiarios );
     }
+    
+//     function fetch(Request $request)
+//     {
+//      if($request->ajax())
+//      {
+//       $data = DB::table('sample_datas')->Paginate(3);
+//          return view('beneficiario.show', compact('data'))->render();
+//      }
+//     }
+
 }

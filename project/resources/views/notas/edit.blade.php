@@ -49,7 +49,7 @@
   <input class="btn btn-success" type="submit" value="Editar Nota">
 
   
-  <a href="{{ url()->previous() }}" class="btn btn-primary"> Regresar </a>
+  <a href="{{url('/beneficiario/'.$notas->beneficiario_id)}}" class="btn btn-primary"> Regresar </a>
   
   <script type="text/javascript">
       $('.date').datepicker({  

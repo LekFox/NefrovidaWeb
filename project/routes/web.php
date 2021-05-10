@@ -49,3 +49,5 @@ Route::get('/usuarios',[App\Http\Controllers\registrarUsuariosController::class,
 //Route::get('/usuarios','App\Http\Controllers\registrarUsuariosController@index');
 //Route::post('/usuarios','App\Http\Controllers\RegistrarUsuarios@store');
 
+Route::post('beneficiario/fetch', 'BeneficiarioController@fetch')->name('beneficiario.fetch');
+

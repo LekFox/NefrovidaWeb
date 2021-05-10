@@ -9,7 +9,7 @@
             </div>
             <br><br>
             <div class= "col-sm">
-            <table id="dtBasicExample" class="table table-bordered table-sm">
+            <table id="table_data" class="table table-bordered table-sm">
     
                 <thead class="thead-light">
                     <tr>
@@ -20,18 +20,18 @@
                 </thead>
                 
                 <tbody id="dynamic-row">
-                    @foreach ($Notas as $Notas)
+                    @foreach ($Notas as $notas)
                     <tr>
-                        <td id="center">{{$Notas->fecha}}</td>
-                        <td id="center" class="ellipsis">{{$Notas->comentario}}</td>
+                        <td id="center">{{$notas->fecha}}</td>
+                        <td id="center" class="ellipsis">{{$notas->comentario}}</td>
                         <td id="center">
-                            <a href="{{url('/notas/'.$Notas->id)}}" class="btn btn-outline-dark">
+                            <a href="{{url('/notas/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            <a href="{{url('/notas/'.$Notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                            <a href="{{url('/notas/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
-                            <form action="{{url('/notas/'.$Notas->id)}}" class="d-inline" method="post">
+                            <form action="{{url('/notas/'.$notas->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
                                 <input type="submit" onclick="return confirm('¿Quieres borrar la nota?')"  class="btn btn-outline-danger" value="Borrar">
@@ -39,6 +39,7 @@
                         </td>
                     </tr>
                     @endforeach 
+                    {{$Notas->links()}}
                 </tbody>
             
             </table>
@@ -46,8 +47,40 @@
         </div>
     </div>
 </div>
-
-<script>$(document).ready(function () {
-    $('#dtBasicExample').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-  });</script>
+{{-- 
+<script>
+    $(document).ready(function(){
+    
+     $(document).on('click', '.page-link', function(event){
+        event.preventDefault(); 
+        var page = $(this).attr('href').split('page=')[1];
+        fetch_data(page);
+     });
+    
+     function fetch_data(page)
+     {
+      var _token = $("input[name=_token]").val();
+      $.ajax({
+          url:"{{ route('beneficiario.fetch') }}",
+          method:"POST",
+          data:{_token:_token, page:page},
+          success:function(data)
+          {
+           $('#table_data').html(data);
+          }
+        });
+     }
+    
+    });
+    </script> --}}
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script>
+        $(window).scroll(function () {
+            sessionStorage.scrollTop = $(this).scrollTop();
+        });
+        $(document).ready(function () {
+            if (sessionStorage.scrollTop != "undefined") {
+                $(window).scrollTop(sessionStorage.scrollTop);
+            }
+        });
+</script>

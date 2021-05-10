@@ -22,8 +22,10 @@ class NotasController extends Controller
      */
     public function index()
     {
-        $datos['Notas']=NotasResource::collection(Notas::all());
-        return view('notas.index',$datos);
+        //$datos['Notas']=NotasResource::collection(Notas::all());
+        // $datos['Notas']=Notas::paginate(3);
+        // dd($datos);
+        //return view('notas.index',$datos);
     }
 
     /**
