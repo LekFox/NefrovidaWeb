@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JornadaController;
 use App\Http\Controllers\BeneficiarioController;
 use App\Http\Controllers\NotasController;
+use App\Http\Controllers\evaluacionController;
+use App\Http\Controllers\evaluacionFinalController;
 
 
 /*
@@ -46,6 +48,9 @@ Route::post('/beneficiarios/searchage', ['as' => 'search-beneficiarios-age', 'us
 
 Route::get('/usuarios',[App\Http\Controllers\registrarUsuariosController::class,'index'])->name('registrarUsuario')->middleware('auth');
 
+
 //Route::get('/usuarios','App\Http\Controllers\registrarUsuariosController@index');
 //Route::post('/usuarios','App\Http\Controllers\RegistrarUsuarios@store');
 
+Route::resource('evaluacion',evaluacionController::class)->middleware('auth');
+Route::resource('evaluacionFinal',evaluacionFinalController::class)->middleware('auth');
