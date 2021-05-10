@@ -12,7 +12,7 @@ class BeneficiarioController extends Controller
     //Regresa la colección de todos los beneficiarios.
     public function index()
     {
-        $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
+        $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::paginate(10));
         return view('beneficiario.index',$datos);
 
     }

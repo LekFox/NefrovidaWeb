@@ -108,15 +108,15 @@
     </thead>
     
     <tbody id="dynamic-row">
-        @foreach ($Beneficiario as $Beneficiario)
+        @foreach ($Beneficiario as $beneficiario)
         <tr>
-            <td>{{$Beneficiario->id}}</td>
+            <td>{{$beneficiario->id}}</td>
             
 
-            <td>{{$Beneficiario->nombreBeneficiario}}</td>
-            <td>{{$Beneficiario->age}}</td>
-            <td>{{$Beneficiario->sexo}}</td>
-            @if($Beneficiario->seguimiento === 1)
+            <td>{{$beneficiario->nombreBeneficiario}}</td>
+            <td>{{$beneficiario->age}}</td>
+            <td>{{$beneficiario->sexo}}</td>
+            @if($beneficiario->seguimiento === 1)
             <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16">
                     <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/>
                 </svg> Sí</td>
@@ -126,14 +126,14 @@
                 </svg> No</td>
             @endif
             <td>
-                <a href="{{url('/beneficiario/'.$Beneficiario->id)}}" class="btn btn-outline-dark">
+                <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-outline-dark">
                     Consultar
                 </a>
-                <a href="{{url('/beneficiario/'.$Beneficiario->id.'/edit')}}" class="btn btn-outline-secondary">
+                <a href="{{url('/beneficiario/'.$beneficiario->id.'/edit')}}" class="btn btn-outline-secondary">
                     Editar
                 </a>
                  
-                <form action="{{url('/beneficiario/'.$Beneficiario->id)}}" class="d-inline" method="post">
+                <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
                     @csrf
                     {{ @method_field('DELETE') }}
                     <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-outline-danger" value="Borrar">
@@ -144,6 +144,8 @@
     </tbody>
 
 </table>
+{{$Beneficiario->links()}}
+
 </div>
 
 <script>

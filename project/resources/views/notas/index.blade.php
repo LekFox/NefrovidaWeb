@@ -39,10 +39,11 @@
                         </td>
                     </tr>
                     @endforeach 
-                    {{$Notas->links()}}
+                   
                 </tbody>
             
             </table>
+            {{$Notas->links()}}
             </div>
         </div>
     </div>
