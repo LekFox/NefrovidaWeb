@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class tipoNota extends Model
 {
     use HasFactory;
+    protected $fillable =[
+        'nombre'
+    ];
+
+    public function notas()
+    {
+        return $this->belongsTo(Notas::class);
+    }
 }

@@ -10055,3 +10055,22 @@ h3 {
 #JornadaAddB { 
   padding-top: 0%;
 }
+
+#linebreak {
+  white-space: pre-wrap;
+}
+
+.ellipsis {
+  max-width: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#fechaC { 
+  text-align: right;
+}
+
+#center { 
+  text-align: center;
+}

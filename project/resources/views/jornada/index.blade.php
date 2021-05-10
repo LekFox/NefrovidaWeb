@@ -53,10 +53,8 @@
     <br>
     <br>
     <div class="row">
-        <div class="col-md-12 text-right">
-        <a id="JornadaAddB" href="{{ url('jornada/create') }}" class="btn btn-primary">
-        <i class="bi bi-plus-circle"></i> Registrar Jornada
-        </a>
+        <div class="col-sm text-right">
+        <a id="beneficiarioAddB" href="{{ url('jornada/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Jornada</a>
     </div>
 </div>
 <br>
