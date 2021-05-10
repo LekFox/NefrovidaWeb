@@ -20,35 +20,28 @@
 @endif
 
     
-<h1 id="JornadaTitulo">Jornadas</h1>
+<h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-calendar3"></i> Jornadas</h1>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 text-right">
-        <a id="JornadaAddB" href="{{ url('jornada/create') }}" class="btn btn-success"> Registrar nueva Jornada </a>
-    </div>
-<br/>
-<br/>
+    <br/>
+    <br/>
 
 <div class= "container box">
     <div class= "row">
         <div class= "col-sm">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   Buscar por nombre:
+                   <h5>Buscar por nombre:</h5>
                 </div>
                 <div class="panel-body">
-                   <input type="text" name="search" id="searchnombre"
+                   <input type="search" name="search" id="searchnombre"
                     class="form-control" placeholder="Nombre de Jornada..."/>
-                </div>
-                <div class="table-responsive">
-                    <h3 >Total Data :  <span id="total_records"></span></h3>
                 </div>
             </div>
         </div>
         <div class= "col-sm">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   Buscar por localidad:
+                   <h5>Buscar por localidad:</h5>
                 </div>
                 <div class="panel-body">
                    <input type="text" name="search" id="searchlocalidad"
@@ -57,13 +50,18 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm text-right">
+        <a id="beneficiarioAddB" href="{{ url('jornada/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Jornada</a>
+    </div>
 </div>
-<br>
 <br>
 
 <table class="table table-light">
     
-    <thead class="thead-light">
+    <thead class="greennefrobg whitenefro">
         <tr>
             <th>#</th>
             <th>Nombre</th>
@@ -75,34 +73,36 @@
     </thead>
     
     <tbody id="dynamic-row">
-        @foreach ($Jornada as $Jornada)
+        @foreach ($Jornada as $jornada)
         <tr>
-            <td>{{$Jornada->id}}</td>
+            <td>{{$jornada->id}}</td>
             
 
-            <td>{{$Jornada->nombre}}</td>
-            <td>{{$Jornada->fecha}}</td>
-            <td>{{$Jornada->localidad}}</td>
-            <td>{{$Jornada->municipio}}</td>
+            <td>{{$jornada->nombre}}</td>
+            <td>{{$jornada->fecha}}</td>
+            <td>{{$jornada->localidad}}</td>
+            <td>{{$jornada->municipio}}</td>
             <td>
-                <a href="{{url('/jornada/'.$Jornada->id)}}" class="btn btn-primary">
+                <a href="{{url('/jornada/'.$jornada->id)}}" class="btn btn-outline-dark">
                     Consultar
                 </a>
-                <a href="{{url('/jornada/'.$Jornada->id.'/edit')}}" class="btn btn-warning">
+                <a href="{{url('/jornada/'.$jornada->id.'/edit')}}" class="btn btn-outline-secondary">
                     Editar
                 </a>
                  
-                <form action="{{url('/jornada/'.$Jornada->id)}}" class="d-inline" method="post">
+                <form action="{{url('/jornada/'.$jornada->id)}}" class="d-inline" method="post">
                     @csrf
                     {{ @method_field('DELETE') }}
-                    <input type="submit" onclick="return confirm('¿Quieres borrar la jornada?')"  class="btn btn-danger" value="Borrar">
+                    <input type="submit" onclick="return confirm('¿Quieres borrar la jornada?')"  class="btn btn-outline-danger" value="Borrar">
                 </form>
             </td>
         </tr>
         @endforeach
+        
     </tbody>
 
 </table>
+{{$Jornada->links()}}
 </div>
 
 <script>
@@ -124,9 +124,9 @@
                     var urledit = 'jornada/'+value.id+'/edit';
                     var urldel = 'jornada/'+value.id;
                     tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
-                    tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
-                    tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
-                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post">@csrf{{ @method_field('DELETE') }}<input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                    tableRow += '<td><a href="'+urlshow+'" class="btn btn-outline-dark">Consultar</a>';
+                    tableRow += '<a href="'+urledit+'" class="btn btn-outline-secondary">Editar</a>';
+                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post">@csrf{{ @method_field('DELETE') }}<input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-outline-danger" value="Borrar"></form>';
                     tableRow += '</td></tr>'
                     $('#dynamic-row').append(tableRow);
                 });
@@ -151,9 +151,9 @@
                     var urledit = 'jornada/'+value.id+'/edit';
                     var urldel = 'jornada/'+value.id;
                     tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombre+'</td><td>'+value.fecha+'</td><td>'+value.localidad+'</td><td>'+value.municipio+'</td>';
-                    tableRow += '<td><a href="'+urlshow+'" class="btn btn-primary">Consultar</a>';
-                    tableRow += '<a href="'+urledit+'" class="btn btn-warning">Editar</a>';
-                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post">@csrf{{ @method_field('DELETE') }}<input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-danger" value="Borrar"></form>';
+                    tableRow += '<td><a href="'+urlshow+'" class="btn btn-outline-dark">Consultar</a>';
+                    tableRow += '<a href="'+urledit+'" class="btn btn-outline-secondary">Editar</a>';
+                    tableRow += '<form action="'+urldel+'" class="d-inline" method="post">@csrf{{ @method_field('DELETE') }}<input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-outline-danger" value="Borrar"></form>';
                     tableRow += '</td></tr>'
                     $('#dynamic-row').append(tableRow);
                 });
