@@ -10,6 +10,8 @@
     @include('beneficiario.card',['modo'=>'Detalle de'])
     @include('antecedentes.card',['modo'=>'Detalle de'])
     @include('notas.index',['id'=>$id])
+    @include('evaluacion.index')
+
 </div>
 
 @endsection

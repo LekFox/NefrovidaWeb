@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <div class= "row">
+        <div class="row">
             <div class= "col-sm-10">
                 <h3>Notas</h3> 
             </div>
