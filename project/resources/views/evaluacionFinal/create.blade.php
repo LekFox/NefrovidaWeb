@@ -23,11 +23,11 @@
       <br>
       <h5>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaUnoInicialSi" value="si" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaUnoInicialSi" value="1" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">Si</label>
         </div>
         <div class="form-check form-check-inline pl-5">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaUnoInicialNo" value="no" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaUnoInicialNo" value="0" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">No</label>
         </div>
       </h5>
@@ -36,11 +36,11 @@
       <br>
       <h5>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaDosInicialSi" value="si" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaDosInicialSi" value="1" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">Si</label>
         </div>
         <div class="form-check form-check-inline pl-5">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaDosInicialNo" value="no" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaDosInicialNo" value="0" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">No</label>
         </div>
       </h5>
@@ -49,11 +49,11 @@
       <br>
       <h5>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaTresInicialSi" value="si" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaTresInicialSi" value="1" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">Si</label>
         </div>
         <div class="form-check form-check-inline pl-5">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaTresInicialNo" value="no" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaTresInicialNo" value="0" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">No</label>
         </div>
       </h5>
@@ -63,11 +63,11 @@
       <br>
       <h5>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaCuatroInicialSi" value="si" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaCuatroInicialSi" value="1" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">Si</label>
         </div>
         <div class="form-check form-check-inline pl-5">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaCuatroInicialNo" value="no" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaCuatroInicialNo" value="0" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">No</label>
         </div>
       </h5>
@@ -76,11 +76,11 @@
       <br>
       <h5>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaCincoInicialSi" value="si" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaCincoInicialSi" value="1" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">Si</label>
         </div>
         <div class="form-check form-check-inline pl-5">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaCincoInicialNo" value="no" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaCincoInicialNo" value="0" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">No</label>
         </div>
       </h5>
@@ -89,11 +89,11 @@
       <br>
       <h5>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaSeisInicialSi" value="si" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaSeisInicialSi" value="1" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">Si</label>
         </div>
         <div class="form-check form-check-inline pl-5">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaSeisInicialNo" value="no" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaSeisInicialNo" value="0" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">No</label>
         </div>
       </h5>
@@ -103,11 +103,11 @@
       <br>
       <h5>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaSieteInicialSi" value="si" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaSieteInicialSi" value="1" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">Si</label>
         </div>
         <div class="form-check form-check-inline pl-5">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaSieteInicialNo" value="no" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaSieteInicialNo" value="0" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">No</label>
         </div>
       </h5>
@@ -116,11 +116,11 @@
       <br>
       <h5>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaOchoInicialSi" value="si" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaOchoInicialSi" value="1" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">Si</label>
         </div>
         <div class="form-check form-check-inline pl-5">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaOchoInicialNo" value="no" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaOchoInicialNo" value="0" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">No</label>
         </div>
       </h5>
@@ -129,23 +129,17 @@
       <br>
       <h5>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaNueveInicialSi" value="si" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaNueveInicialSi" value="1" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">Si</label>
         </div>
         <div class="form-check form-check-inline pl-5">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaNueveInicialNo" value="no" style="width:20px; height:20px;">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preguntaNueveInicialNo" value="0" style="width:20px; height:20px;">
           <label class="form-check-label" for="preguntaUnoInicialSi">No</label>
         </div>
       </h5>
     </div>
   </form>
 </div>
-
-
-
-
-
-
 
 
 
