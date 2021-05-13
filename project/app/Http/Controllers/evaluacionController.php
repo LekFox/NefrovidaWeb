@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Evaluacion;
 
 class evaluacionController extends Controller
 {
@@ -24,7 +25,9 @@ class evaluacionController extends Controller
      */
     public function create()
     {
-        return view('evaluacion.create');
+        
+        $preguntas = Evaluacion::find(1)->preguntasEvaluacion;
+        return view('evaluacion.create',["preguntas"=>$preguntas]);
     }
 
     /**
@@ -35,7 +38,23 @@ class evaluacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = [
+
+            $request->input('inlineRadioOptions1'),
+            $request->input('inlineRadioOptions2'),
+            $request->input('inlineRadioOptions3'),
+            $request->input('inlineRadioOptions4'),
+            $request->input('inlineRadioOptions5'),
+            $request->input('inlineRadioOptions6'),
+            $request->input('inlineRadioOptions7'),
+            $request->input('inlineRadioOptions8'),
+            $request->input('inlineRadioOptions9')
+
+        ];
+
+
+
+        Evaluacion::saveEvaluacionInicial($data);
     }
 
     /**
