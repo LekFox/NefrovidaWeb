@@ -21,15 +21,51 @@ class CreateAntecedentesTable extends Migration
                 ->onDelete('cascade');
             $table->enum('casa', ['propia', 'rentada', 'prestada']);
             $table->boolean('serviciosBasicos');
-            //Resto de campos pendientes
-            $table->string("nombreBeneficiario", 140);
-            $table->date("fechaNacimiento");
-            $table->string("sexo", 10);
-            $table->string("telefono", 15);
-            $table->string("direccion", 200);
-            
-            $table->string("estatus", 50);
-            $table->boolean('seguimiento')->default(1);
+            $table->text('personalesPatologicos', 400)
+                ->nullable()
+                ->default("N/A");
+            $table->text('personalesNoPatologicos', 400)
+                ->nullable()
+                ->default("N/A");
+            $table->boolean('padreVivo');
+            $table->text('enfermedadesPadre', 400)
+                ->nullable()
+                ->default("N/A");
+            $table->boolean('madreVivo');
+            $table->text('enfermedadesMadre', 400)
+                ->nullable()
+                ->default("N/A");
+            $table->integer('numHermanos')
+                ->nullable()
+                ->default(0);
+            $table->integer('numHermanosVivos')
+                ->nullable()
+                ->default(0);
+            $table->text('enfermedadesHermanos', 400)
+                ->nullable()
+                ->default("N/A");
+            $table->text('otrosHermanos', 400)
+                ->nullable()
+                ->default("N/A");
+            $table->integer('menarquia')
+                ->nullable();
+            $table->integer('ritmo')
+                ->nullable();
+            $table->date("fum")
+                ->nullable();
+            $table->integer('gestaciones')
+                ->nullable();
+            $table->integer('partos')
+                ->nullable();
+            $table->integer('abortos')
+                ->nullable();
+            $table->integer('cesareas')
+                ->nullable();
+            $table->integer('ivsa')
+                ->nullable();
+            $table->text('metodosAnticonceptivos', 400)
+                ->nullable()
+                ->default("N/A");
             $table->timestamps();
         });
     }
