@@ -96,8 +96,23 @@ class evaluacionController extends Controller
      */
     public function update(Request $request, $id)
     {
-      
-        return redirect('beneficiario/'.$id)->with('editado','Preguntas de evaluación actualizada con éxito!');
+        $data = [
+
+            $request->input('pregunta1'),
+            $request->input('pregunta2'),
+            $request->input('pregunta3'),
+            $request->input('pregunta4'),
+            $request->input('pregunta5'),
+            $request->input('pregunta6'),
+            $request->input('pregunta7'),
+            $request->input('pregunta8'),
+            $request->input('pregunta9')
+
+        ];
+
+        Evaluacion::updatePreguntas($data);
+        
+        return redirect('beneficiario/'.$id)->with('editado','Preguntas de evaluación actualizadas con éxito!');
 
     }
 

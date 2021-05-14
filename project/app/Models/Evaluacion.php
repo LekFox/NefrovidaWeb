@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\RespuestaEvaluacion;
+use Illuminate\Support\Facades\DB;
 
 class Evaluacion extends Model
 {
@@ -58,6 +59,24 @@ class Evaluacion extends Model
         }
 
         return $result;
+    }
+
+    public static function updatePreguntas($data)
+    {
+        $evaluacion = self::find(1);
+
+        $preguntas = $evaluacion->preguntasEvaluacion;
+
+        $index=0;
+
+        foreach($preguntas as $pregunta){
+            $respuesta = DB::table('preguntas_evaluacion')->where('id',$pregunta->id)->update([
+                'descripcion' => $data[$index]
+            ]);
+
+            $index++;
+            
+        }
     }
 
     
