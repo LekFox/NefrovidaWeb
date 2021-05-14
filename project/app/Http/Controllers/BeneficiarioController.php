@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Beneficiario;
 use Illuminate\Http\Request;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
+use App\Models\Evaluacion;
 
 class BeneficiarioController extends Controller
 {
@@ -22,7 +23,10 @@ class BeneficiarioController extends Controller
         $beneficiario=Beneficiario::findOrFail($id);
 
         $Notas= Beneficiario::find($id)->notas;
-        return view('beneficiario.show',compact('beneficiario','Notas'))->with(['id'=>$id]);
+
+        $evaluaciones = Evaluacion::all();
+
+        return view('beneficiario.show',compact('beneficiario','Notas','evaluaciones'))->with(['id'=>$id]);
     }
 
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class evaluacionFinalController extends Controller
+class preguntasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,7 @@ class evaluacionFinalController extends Controller
      */
     public function create()
     {
-        return view('evaluacionFinal.create');
+        //
     }
 
     /**

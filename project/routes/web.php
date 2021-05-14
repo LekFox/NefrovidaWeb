@@ -53,4 +53,5 @@ Route::get('/usuarios',[App\Http\Controllers\registrarUsuariosController::class,
 //Route::post('/usuarios','App\Http\Controllers\RegistrarUsuarios@store');
 
 Route::resource('evaluacion',evaluacionController::class)->middleware('auth');
-Route::resource('evaluacionFinal',evaluacionFinalController::class)->middleware('auth');
+
+Route::resource('preguntasEvaluacion',preguntasController::class)->middleware('auth');

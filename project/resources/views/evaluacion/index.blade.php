@@ -2,8 +2,8 @@
 <br><br>
 <div class="">
 <div class="card">
-  <!--<div class="card-body text-right">
-    <a href="{{ url('evaluacion/edit') }}" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+  <div class="card-body text-right">
+    <a href="{{url('evaluacion/1/edit')}}" data-bs-toggle="tooltip" data-bs-placement="top" title="Modificar Preguntas de Evaluación">
       <style>
         .bi-three-dots-vertical:hover{
           background-color:#000;
@@ -15,7 +15,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" href="{{ url('notas/create') }}" width="30" height="30" fill="gray" class="bi bi-three-dots-vertical" viewBox="0 0 16 16" >
         <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
       </svg>
-    </a>-->
+    </a>
         <br>
       <div class= "row">
           <div class= "col-sm">
@@ -36,8 +36,9 @@
                   Agregar Evaluación
                 </button>
                 <div class="dropdown-menu" >
-                    <a class="dropdown-item" href="{{ url('evaluacion/create') }}">Agregar Evaluación Inicial</a>
-                    <a class="dropdown-item" href="{{ url('evaluacionFinal/create') }}">Agregar Evaluación Final</a>
+                  @foreach($evaluaciones as $id=>$evaluacion)
+                    <a class="dropdown-item" href="{{route("evaluacion.show",$evaluacion['id'])}}">{{$evaluacion['nombre']}}</a>
+                  @endforeach
                 </div>
                 <br><br><br><br><br>
               </div>

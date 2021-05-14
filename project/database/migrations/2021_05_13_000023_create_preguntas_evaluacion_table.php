@@ -16,6 +16,7 @@ class CreatePreguntasEvaluacionTable extends Migration
         Schema::create('preguntas_evaluacion', function (Blueprint $table) {
             $table->id();
             $table->text('descripcion');
+            $table->string('seccion');
             $table->integer('orden');
             $table->foreignId('evaluacion_id');
             $table->timestamps();

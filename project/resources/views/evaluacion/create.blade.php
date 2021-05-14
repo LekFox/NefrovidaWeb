@@ -20,7 +20,7 @@
 
   @endforeach
 
-  <form action="{{url('/evaluacion')}}" method="post">
+  <form action="{{url('/evaluacion')}}" method="post" id="evaluacionInicial">
     @csrf
     <div class="form-group">
       <br><br><br><br>
@@ -29,7 +29,7 @@
       <br>
       <h5>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions{{$pregunta->id}}" id="preguntaUnoInicialSi" value="1" style="width:20px; height:20px;" required>
+          <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="preguntaUnoInicialSi" value="1" style="width:20px; height:20px;" required>
           <label class="form-check-label" for="preguntaUnoInicialSi">Si</label>
         </div>
         <div class="form-check form-check-inline pl-5">

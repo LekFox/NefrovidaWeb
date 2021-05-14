@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Evaluacion;
+use Illuminate\Support\Facades\Http;
+
 
 class evaluacionController extends Controller
 {
@@ -14,9 +16,11 @@ class evaluacionController extends Controller
      */
     public function index()
     {
-        
+       $evaluacion = Evaluacion::all();
 
+       return view('');
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -26,8 +30,7 @@ class evaluacionController extends Controller
     public function create()
     {
         
-        $preguntas = Evaluacion::find(1)->preguntasEvaluacion;
-        return view('evaluacion.create',["preguntas"=>$preguntas]);
+        
     }
 
     /**
@@ -65,7 +68,8 @@ class evaluacionController extends Controller
      */
     public function show($id)
     {
-        //
+        $preguntas = Evaluacion::find($id)->preguntasEvaluacion;
+        return view('evaluacion.create',["preguntas"=>$preguntas]);
     }
 
     /**
@@ -76,7 +80,11 @@ class evaluacionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $preguntas =  Evaluacion::getPreguntas($id);
+
+        $evaluacion = Evaluacion::find($id);
+
+        return view('evaluacion.edit',['preguntas' => $preguntas], ['evaluacion' => $evaluacion]);
     }
 
     /**
@@ -88,7 +96,9 @@ class evaluacionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      
+        return redirect('beneficiario/'.$id)->with('editado','Preguntas de evaluación actualizada con éxito!');
+
     }
 
     /**

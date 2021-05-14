@@ -15,7 +15,6 @@ class Evaluacion extends Model
     public function preguntasEvaluacion()
     {
         return $this->hasMany(PreguntaEvaluacion::class);
-
     } 
 
     public static function saveEvaluacionInicial($data)
@@ -39,6 +38,26 @@ class Evaluacion extends Model
         }
 
         //dd($preguntas);
+    }
+
+    public static function getPreguntas($id)
+    {
+        $evaluacion = self::find($id);
+
+        $result = [];
+
+        $preguntas = $evaluacion->preguntasEvaluacion; //para la relacion entre evaluacion y preguntas
+
+
+        foreach($preguntas as $pregunta){
+            $arr = [
+                'id' => $pregunta->id,
+                'descripcion' => $pregunta->descripcion
+            ];
+            $result[$pregunta->id] = $arr;
+        }
+
+        return $result;
     }
 
     
