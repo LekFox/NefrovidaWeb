@@ -68,6 +68,11 @@
 </div>
 
 <div class="form-group">
+    <label for="tiponota">Tipo de nota</label>
+    <input class="date form-control" type="text" name="tiponota" value="{{ isset($notas->tiponota)?$notas->tiponota:old('tiponota') }}" id="tiponota">    
+</div>
+
+<div class="form-group">
     <label for="comentario">Comentario</label>
     {{-- <input type="text-area"class="form-control" name="comentario" value="{{ isset($notas->localidad)?$notas->comentario:old('comentario') }}" id="comentario">  --}}
     <textarea class="form-control" id="exampleFormControlTextarea1" name="comentario" value="{{ isset($notas->localidad)?$notas->comentario:old('comentario') }}" id="comentario" rows="6"></textarea>

@@ -36,10 +36,24 @@
   </div>
 
   <div class="form-group">
+    <label for="tiponota">Tipo de nota</label>
+    <select class="form-select" aria-label="Default select example" name="tiponota" id="tiponota">
+      <option selected value="{{ isset($notas->tiponota)?$notas->tiponota:old('tiponota') }}">{{ isset($notas->tiponota)?$notas->tiponota:old('tiponota') }}</option>
+      <option value="General">General</option>
+      <option value="Médica">Médica</option>
+      <option value="Nutrición">Nutrición</option>
+      <option value="Laboratorio">Laboratorio</option>
+      <option value="Psicología">Psicología</option>
+    </select>
+    {{-- <input class="form-control" type="text" name="tiponota" value="{{ isset($notas->tiponota)?$notas->tiponota:old('tiponota') }}" id="tiponota">     --}}
+  </div>
+
+  <div class="form-group">
       <label for="Fecha">Fecha</label>
       <input class="date form-control" type="date" name="fecha" value="{{ isset($notas->fecha)?$notas->fecha:old('fecha') }}" id="fecha">    
   </div>
   
+
   <div class="form-group">
       <label for="comentario">Comentario</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" name="comentario" value="{{ isset($notas->comentario)?$notas->comentario:old('comentario') }}" id="comentario" rows="6">{{ isset($notas->comentario)?$notas->comentario:old('comentario') }}</textarea>

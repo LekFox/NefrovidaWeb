@@ -26,6 +26,7 @@ class NotasFactory extends Factory
             'fecha' => $this->faker->date,
             'comentario' => $this->faker->text(),
             //'beneficiario_id' => request('beneficiario_id'),
+            'tiponota' => 'General',
             'beneficiario_id' => \App\Models\Beneficiario::inRandomOrder()->first()->id,
         ];
     }
