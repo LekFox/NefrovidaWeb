@@ -55,3 +55,5 @@ Route::get('/usuarios',[App\Http\Controllers\registrarUsuariosController::class,
 Route::resource('evaluacion',evaluacionController::class)->middleware('auth');
 
 Route::resource('preguntasEvaluacion',preguntasController::class)->middleware('auth');
+
+Route::post('/evaluacion/storeFinal', ['uses' => 'App\Http\Controllers\EvaluacionController@storeFinal']);

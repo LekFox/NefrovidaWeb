@@ -55,12 +55,36 @@ class evaluacionController extends Controller
 
         ];
 
+       
+
 
 
         Evaluacion::saveEvaluacionInicial($data);
+
+        
     }
 
-    /**
+    public function storeFinal(Request $request)
+    {
+        $data = [
+
+            $request->input('inlineRadioOptions1'),
+            $request->input('inlineRadioOptions2'),
+            $request->input('inlineRadioOptions3'),
+            $request->input('inlineRadioOptions4'),
+            $request->input('inlineRadioOptions5'),
+            $request->input('inlineRadioOptions6'),
+            $request->input('inlineRadioOptions7'),
+            $request->input('inlineRadioOptions8'),
+            $request->input('inlineRadioOptions9')
+
+        ];
+
+        Evaluacion::saveEvaluacionFinal($data);
+    }
+
+
+    /*
      * Display the specified resource.
      *
      * @param  int  $id

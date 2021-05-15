@@ -20,4 +20,9 @@ class PreguntaEvaluacion extends Model
     {
         return $this->hasMany(RespuestaEvaluacion::class);
     } 
+
+    public function respuestasFinalesEvaluacion()
+    {
+        return $this->hasMany(FinalEvaluacion::class);
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRespuestasEvaluacionTable extends Migration
+class CreateFinalesEvaluacionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateRespuestasEvaluacionTable extends Migration
      */
     public function up()
     {
-        Schema::create('respuestas_evaluacion', function (Blueprint $table) {
+        Schema::create('finales_evaluacion', function (Blueprint $table) {
             $table->id();
             $table->foreignId('pregunta_evaluacion_id');
             $table->integer('respuesta');
@@ -34,6 +34,6 @@ class CreateRespuestasEvaluacionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('respuestas_evaluacion');
+        Schema::dropIfExists('finales_evaluacion');
     }
 }

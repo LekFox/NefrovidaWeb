@@ -4,7 +4,7 @@
 @include('sidebar.beneficiario')
 <div class="container">
 
-  <form action="/evaluacion/{{$evaluacion['id']}}" method="post" id="modificarEvaluacionInicial">
+  <form action="/evaluacion/{{$evaluacion['id']}}" method="post" id="modificarEvaluacion">
   @csrf
   {{ method_field('PATCH') }}
 

@@ -17,7 +17,7 @@
 
   
 
-  <form action="{{url('/evaluacion')}}" method="post" id="evaluacionIFinal">
+  <form action="{{url('/evaluacion/storeFinal')}}" method="post" id="evaluacionFinal">
     @csrf
     <div class="form-group">
       <br><br><br><br>
