@@ -68,8 +68,16 @@ class evaluacionController extends Controller
      */
     public function show($id)
     {
-        $preguntas = Evaluacion::find($id)->preguntasEvaluacion;
-        return view('evaluacion.create',["preguntas"=>$preguntas]);
+        $preguntas = Evaluacion::find(1)->preguntasEvaluacion;
+
+        if($id == 1)
+        {
+            return view('evaluacion.create',["preguntas"=>$preguntas]);
+        }
+        else if($id == 2)
+        {
+            return view('evaluacion.evaluacionFinal',["preguntas"=>$preguntas]);
+        }
     }
 
     /**
@@ -83,8 +91,12 @@ class evaluacionController extends Controller
         $preguntas =  Evaluacion::getPreguntas($id);
 
         $evaluacion = Evaluacion::find($id);
-
+        
         return view('evaluacion.edit',['preguntas' => $preguntas], ['evaluacion' => $evaluacion]);
+        
+        
+
+        
     }
 
     /**

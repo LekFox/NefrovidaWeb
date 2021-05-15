@@ -41,6 +41,20 @@ class Evaluacion extends Model
         //dd($preguntas);
     }
 
+    /*public static function saveEvaluacionFinal($data)
+    {
+        $evaluacion = self::find(2);
+
+        $preguntas = $evaluacion->preguntasEvaluacion;
+
+        $index = 0;
+
+        foreach($preguntas as $pregunta)
+        {
+            $respuesta = RespuestaEvaluacion::create
+        }
+    }*/
+
     public static function getPreguntas($id)
     {
         $evaluacion = self::find($id);
