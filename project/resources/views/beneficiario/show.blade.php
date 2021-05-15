@@ -10,6 +10,7 @@
     @include('beneficiario.card',['modo'=>'Detalle de'])
     @include('antecedentes.card',['modo'=>'Detalle de'])
     @include('notas.index',['id'=>$id])
+    @include('nutriologia.card',['id'=>$id])
 </div>
 
 @endsection
