@@ -98,7 +98,7 @@
                     </div>
                     <br>
                     <div class="text-center">
-                      <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                      <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
                     </div>
                 </div>
             </div>
@@ -123,8 +123,8 @@
                         </div>
                         <br>
                         <div class="text-center">
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Previous</button>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Anterior</button>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
                         </div>
                     </div>
                 </div>
@@ -196,8 +196,8 @@
                           <textarea class="form-control" id="otrosHermanos" name="otrosHermanos" maxlength="400" rows="3"></textarea>
                         </div>
                         <div class="text-center">
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Previous</button>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Anterior</button>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
                         </div>
                     </div>
                 </div>
@@ -258,8 +258,8 @@
                         </div>
                       <br>
                       <div class="text-center">
-                        <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Previous</button>
-                          <button class="btn btn-success btn-lg pull-right" type="submit">Submit</button>
+                        <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Anterior</button>
+                          <button class="btn btn-success btn-lg pull-right" type="submit">Registrar</button>
                       </div>
                   </div>
               </div>
