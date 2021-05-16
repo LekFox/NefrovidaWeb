@@ -21,5 +21,11 @@ class DatabaseSeeder extends Seeder
         Beneficiario::factory(15)->create();
         Jornada::factory(15)->create();
         Notas::factory(30)->create();
+
+        $this->call([
+            //SIN LLAVES FORÁNEAS
+            EscolaridadeSeeder::class,
+            //USA LLAVES FORÁNEAS
+        ]);
     }
 }

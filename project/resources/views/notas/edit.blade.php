@@ -8,7 +8,7 @@
   @csrf
   {{ method_field('PATCH') }}
 
-  {{-- @include('notas.form',['modo'=>'Crear'],['id'=>'2']) --}}
+  {{-- @include('notas.form',['modo'=>'Registrar'],['id'=>'2']) --}}
 
   @if (count($errors)>0)
       

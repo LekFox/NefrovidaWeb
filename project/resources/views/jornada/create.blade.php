@@ -7,7 +7,7 @@
 <div class="container"><form action="{{url('/jornada')}}" method="post">
   @csrf
   
-  @include('jornada.form',['modo'=>'Crear'])
+  @include('jornada.form',['modo'=>'Registrar'])
 
 
 </form>

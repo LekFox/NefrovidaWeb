@@ -30,7 +30,7 @@
                 <h4 class="font-weight-light">Sexo: {{ $beneficiario->sexo }}</h4>
                 <h4 class="font-weight-light">Teléfono: {{ $beneficiario->telefono }}</h4>
                 <h4 class="font-weight-light">Dirección: {{ $beneficiario->direccion }}</h4>
-                <h4 class="font-weight-light">Escolaridad: {{ $beneficiario->escolaridade_id }}</h4>
+                <h4 class="font-weight-light">Escolaridad: {{ $beneficiario->escolaridade->nombreEscolaridad }}</h4>
                 <h4 class="font-weight-light">Estatus: {{ $beneficiario->estatus }}</h4>
             </div>
             <div class="col-sm">

@@ -83,7 +83,7 @@
   
   <div class = "col"></div>
   <div class = "col text-center">
-      <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i> Crear</button>
+      <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i> Agregar</button>
   </div>
   <div class = "col"></div>
 

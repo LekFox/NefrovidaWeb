@@ -46,6 +46,7 @@ class BeneficiarioController extends Controller
             'direccion' => 'required',
             'escolaridade_id' => 'required',
             'estatus' => 'required',
+            'seguimiento' => 'required',
         ]);
     
         Beneficiario::create([
@@ -56,6 +57,7 @@ class BeneficiarioController extends Controller
             'direccion' => request('direccion'),
             'escolaridade_id' => request('escolaridade_id'),
             'estatus' => request('estatus'),
+            'seguimiento' => request('seguimiento'),
         ]);
 
         return redirect('beneficiario')->with('nuevo','Beneficiario agregada con éxito');
