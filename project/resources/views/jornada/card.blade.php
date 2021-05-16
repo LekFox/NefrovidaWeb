@@ -1,5 +1,5 @@
 
-<h1 id="JornadaTitulo">{{$modo}} Jornada</h1>
+<h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-calendar3-event"></i> {{$modo}} Jornada</h1>
 
 @if (count($errors)>0)
     
@@ -18,19 +18,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
 
-<a href="{{ url('jornada') }}" class="btn btn-primary"> Regresar </a>
+<a href="{{ url('jornada') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 <br><br>
 <div class="card">
   <div class="card-body">
       <br>
       <div class= "row">
           <div class= "col-sm">
-                <h1 class="card-title">{{ $jornada->nombre }}</h1>
-                <br><br><br>
-                <h3>Estado: {{ $jornada->estado }}</h3>
-                <h3>Municipio: {{ $jornada->municipio }}</h3>
-                <h3>Localidad: {{ $jornada->localidad }}</h3>
-                <h3>Fecha: {{ $jornada->fecha }}</h3>
+                <h2 class="card-title bluenefro">{{ $jornada->nombre }}</h2>
+                <br><br>
+                <h3 class="font-weight-light">Estado: {{ $jornada->estado }}</h3>
+                <h3 class="font-weight-light">Municipio: {{ $jornada->municipio }}</h3>
+                <h3 class="font-weight-light">Localidad: {{ $jornada->localidad }}</h3>
+                <h3 class="font-weight-light">Fecha: {{ $jornada->fecha }}</h3>
             </div>
             <div class="col-sm">
                 <div class= "pt-xl-5">
@@ -60,9 +60,11 @@
       <br>
       <div class= "row">
           <div class= "col-sm">
-                <h1 class="card-title">Beneficiarios de la jornada {{ $jornada->nombre }}</h1>
-                <table class="table table-light">
-                    <thead class="thead-light">
+                <div class="col text-center">
+                    <h2 class="card-title bluenefro"><i class="bi bi-people"></i> Beneficiarios de la jornada {{ $jornada->nombre }}</h2>
+                </div>
+                <table class="table table-bordered table-sm">
+                    <thead class="thead-light text-center">
                     <tr>
                     <th>Nombre</th>
                     <th>Edad</th>
@@ -71,7 +73,7 @@
                     </tr>
                     </thead>
     
-                    <tbody id="dynamic-row">
+                    <tbody id="dynamic-row" class="text-center">
                         @foreach ($jornada -> beneficiarios as $beneficiario)
                         <tr>
                             <td>{{$beneficiario->nombreBeneficiario}}</td>
@@ -81,16 +83,16 @@
                             
                             <td>{{$beneficiario->sexo}}</td>
                             <td>
-                            <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-primary">
+                            <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            <a href="{{url('/beneficiario/'.$beneficiario->id.'/edit')}}" class="btn btn-warning">
+                            <a href="{{url('/beneficiario/'.$beneficiario->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
                             <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
                             @csrf
                             {{ @method_field('DELETE') }}
-                            <input type="submit" onclick="return confirm('¿Quieres borrar este beneficiario?')"  class="btn btn-danger" value="Borrar">
+                            <input type="submit" onclick="return confirm('¿Quieres borrar este beneficiario?')"  class="btn btn-outline-danger" value="Borrar">
                             </form>
                             </td>
                         </tr>

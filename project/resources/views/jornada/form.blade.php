@@ -1,5 +1,7 @@
 
-<h1 id="JornadaTitulo">{{$modo}} Jornada</h1>
+<h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-calendar3-event"></i> {{$modo}} Jornada</h1>
+<a href="{{ url('jornada') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+<br><br>
 
 @if (count($errors)>0)
     
@@ -40,10 +42,10 @@
 
 </div>
 
+<div class="col text-center">
+    <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i> {{$modo}}</button>
+</div>
 
-<input class="btn btn-success" type="submit" value="{{$modo}} datos">
-
-<a href="{{ url('jornada') }}" class="btn btn-primary"> Regresar </a>
 
 <script type="text/javascript">
     $('.date').datepicker({  
