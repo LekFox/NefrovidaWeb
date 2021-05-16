@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Beneficiario;
+use App\Models\Jornada;
+use App\Models\Notas;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,5 +18,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        Beneficiario::factory(15)->create();
+        Jornada::factory(15)->create();
+        Notas::factory(30)->create();
     }
 }

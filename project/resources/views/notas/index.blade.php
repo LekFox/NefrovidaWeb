@@ -13,6 +13,7 @@
     
                 <thead class="thead-light">
                     <tr>
+                        <th id="center">Tipo de Nota</th>
                         <th id="center">Fecha</th>
                         <th id="center">Comentarios</th>
                         <th id="center">Acciones</th>
@@ -22,6 +23,7 @@
                 <tbody id="dynamic-row">
                     @foreach ($Notas as $notas)
                     <tr>
+                        <td id="center">{{$notas->tiponota}}</td>
                         <td id="center">{{$notas->fecha}}</td>
                         <td id="center" class="ellipsis">{{$notas->comentario}}</td>
                         <td id="center">

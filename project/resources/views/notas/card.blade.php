@@ -33,6 +33,11 @@
       </div>
 
     <div class="card-body">    
+        <div class= "row">
+            <div class= "col">
+                  <p> <strong> Tipo de nota: </strong>{{ $notas->tiponota }}</p>
+              </div>
+          </div>
       <div class= "row">
           <div class= "col">
                 <h6>Comentario:</h6>

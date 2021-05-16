@@ -62,6 +62,7 @@ class NotasController extends Controller
             'fecha' => 'required',
             'comentario' => 'required',
             'beneficiario_id' => 'required',
+            'tiponota' => 'required',
         ]);
     
         // $status = Beneficiario::where(['name'=>'sample_status'])->firstOrFail();
@@ -79,6 +80,7 @@ class NotasController extends Controller
             'tipoNota_id' => 1,
             'fecha' => request('fecha'),
             'comentario' => request('comentario'),
+            'tiponota' => request('tiponota'),
             //'beneficiario_id' => request('beneficiario_id'),
         ]);
 
@@ -133,6 +135,7 @@ class NotasController extends Controller
             'fecha' => 'required',
             'comentario' => 'required',
             'beneficiario_id' => 'required',
+            'tiponota' => 'required',
         ]);
 
         $id=$notas->beneficiario_id;
@@ -141,6 +144,7 @@ class NotasController extends Controller
             'tipoNota_id' => 1,
             'fecha' => request('fecha'),
             'comentario' => request('comentario'),
+            'tiponota' => request('tiponota'),
         ]);
 
         return redirect('beneficiario/'.$id)->with('editado','Cambios realizados con éxito');

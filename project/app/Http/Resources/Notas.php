@@ -20,6 +20,7 @@ class Notas extends JsonResource
             'tipoNota_id' => $this->tipoNota_id,
             'fecha' => $this->fecha,
             'comentario' => $this->comentario,
+            'tiponota' => $this->tiponota,
         ];
     }
 }
