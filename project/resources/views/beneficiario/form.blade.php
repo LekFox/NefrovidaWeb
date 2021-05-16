@@ -23,7 +23,7 @@
 <div class="form-group">
 
 <label for="nombreBeneficiario">Nombre</label>
-<input type="text" class="form-control" name="nombreBeneficiario" value="" id="nombreBeneficiario">
+<input type="text" class="form-control" name="nombreBeneficiario" value="{{isset($beneficiario) ? $beneficiario->nombreBeneficiario: ''}}" id="nombreBeneficiario">
 
 </div>
 @if(empty($jornadas))
@@ -38,7 +38,7 @@
         <option selected>No existen jornadas</option>
     @else
         <select name="jornada_id" id="jornada_id" class="custom-select">
-        <option selected>Seleccione la jornada</option>
+        <option value="{{isset($beneficiario) ? $beneficiario->jornadas[0]->pivot->jornada_id: ''}}" selected>{{$beneficiario->getJornadaName()}}</option>
     @endif
     @foreach($jornadas as $jornada)
         <option value={{$jornada['id']}}>{{$jornada['nombre']}}</option>
@@ -52,24 +52,27 @@
 
 <div class="form-group">
     <label for="fechaNacimiento">Fecha de nacimiento</label>
-    <input class="date form-control" type="date" name="fechaNacimiento" value="" id="fechaNacimiento">    
+    <input class="date form-control" type="date" name="fechaNacimiento" value="{{isset($beneficiario) ? $beneficiario->fechaNacimiento: ''}}" id="fechaNacimiento">    
 </div>
 
 <div class="form-group">
 <label for="direccion">Dirección</label>
-<input type="text" class="form-control" name="direccion" value="" id="direccion">
+<input type="text" class="form-control" name="direccion" value="{{isset($beneficiario) ? $beneficiario->direccion: ''}}" id="direccion">
 
 </div>
 
 <div class="form-group">
 <label for="telefono">Número de telefono</label>
-<input type="text" class="form-control" name="telefono" value="" id="telefono">
+<input type="text" class="form-control" name="telefono" value="{{isset($beneficiario) ? $beneficiario->telefono: ''}}" id="telefono">
 
 </div>
 
 <div class="form-group">
     <label for="sexo">Sexo</label>
     <select name="sexo" class="custom-select" id="sexo">
+        @if($modo == 'Editar')
+            <option value="{{isset($beneficiario) ? $beneficiario->sexo: ''}}" selected>{{$beneficiario->sexo}}</option>
+        @endif
         <option value="Hombre">Hombre</option>
         <option value="Mujer">Mujer</option>
     </select>
@@ -78,6 +81,9 @@
 <div class="form-group">
     <label for="escolaridade_id">Escolaridad</label>
     <select name="escolaridade_id" class="custom-select" id="escolaridade_id">
+        @if($modo == 'Editar')
+            <option value="{{isset($beneficiario) ? $beneficiario->escolaridade_id: ''}}" selected>{{$beneficiario->escolaridade->nombreEscolaridad}}</option>
+        @endif
         <option value="1">Preparatoria</option>
         <option value="2">Primaria</option>
         <option value="3">Secundaria</option>
@@ -90,6 +96,9 @@
 <div class="form-group">
     <label for="estatus">Estatus</label>
     <select name="estatus" class="custom-select" id="estatus">
+        @if($modo == 'Editar')
+            <option value="{{isset($beneficiario) ? $beneficiario->estatus: ''}}" selected>{{$beneficiario->estatus}}</option>
+        @endif
         <option value="Activo">Activo</option>
         <option value="Inactivo">Inactivo</option>
     </select>
@@ -98,6 +107,13 @@
 <div class="form-group">
     <label for="estatus">De seguimiento</label>
     <select name="seguimiento" class="custom-select" id="seguimiento">
+        @if($modo == 'Editar')
+            @if ($beneficiario->seguimiento == 1)
+                <option value="{{isset($beneficiario) ? $beneficiario->seguimiento: ''}}" selected>Sí</option>
+            @else
+                <option value="{{isset($beneficiario) ? $beneficiario->seguimiento: ''}}" selected>No</option>
+            @endif
+        @endif
         <option value="1">Sí</option>
         <option value="0">No</option>
     </select>

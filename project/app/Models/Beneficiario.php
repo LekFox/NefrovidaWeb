@@ -14,11 +14,18 @@ class Beneficiario extends Model
         'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus', 'seguimiento'
     ];
 
+    protected $table = "beneficiarios";
+
     //Regresa las jornadas a las que pertenece un beneficiario
     public function jornadas(){
         return $this->belongsToMany(Jornada::class)->withTimestamps();;
     }
 
+    public function getJornadaName(){
+        $name = $this->jornadas->pluck("nombre");
+        //head($name);
+        return $name[0];
+    }
     //Regresa el atributo edad parseado con Carbon a partir de la fecha de Nacimiento.
     public function getAgeAttribute()
     {

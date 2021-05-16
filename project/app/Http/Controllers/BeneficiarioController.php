@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Beneficiario as Beneficiario;
 use App\Models\Notas;
 use App\Models\nutricionConsulta;
 use Illuminate\Http\Request;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use App\Models\Jornada as Jornada;
+use App\Models\Beneficiario as Beneficiario;
 
 class BeneficiarioController extends Controller
 {
@@ -74,12 +74,54 @@ class BeneficiarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function create()
     {
         //$arr = Jornada::getAllJornadas();
         $arr = Jornada::getAllJornadas();
         //dd(empty($arr));
         return view('beneficiario.create', ["jornadas" => $arr]);
+    }
+    
+    public function edit($id)
+    {
+        $beneficiarioEdit = Beneficiario::find($id);
+        //dd($beneficiarioEdit->escolaridade->nombreEscolaridad);
+        $arr = Jornada::getAllJornadas();
+        return view('beneficiario.create', ["jornadas" => $arr, "beneficiario" => $beneficiarioEdit]);
+    }
+
+    public function update(Request $request, Beneficiario $beneficiario)
+    {
+        $data =[
+        'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus'
+        ];
+
+        request()->validate([
+            'nombreBeneficiario' => 'required',
+            'jornada_id' => 'required',
+            'fechaNacimiento' => 'required',
+            'sexo' => 'required',
+            'telefono' => 'required',
+            'direccion' => 'required',
+            'escolaridade_id' => 'required',
+            'estatus' => 'required',
+            'seguimiento' => 'required',
+
+        ]);
+        $beneficiario->update([
+            'nombreBeneficiario' => $request->input('nombreBeneficiario'),
+            'fechaNacimiento' => $request->input('fechaNacimiento'), 
+            'sexo'  => $request->input('sexo'), 
+            'telefono'  => $request->input('telefono'), 
+            'direccion'  => $request->input('direccion'), 
+            'escolaridade_id'  => $request->input('escolaridade_id'), 
+            'estatus' => $request->input('estatus'),
+            'seguimiento' => $request->input('seguimiento')
+            ]);
+        $jornadaId = $beneficiario->jornadas[0]->pivot->jornada_id;
+        $beneficiario->jornadas()->updateExistingPivot($jornadaId, ['jornada_id' => $request->input('jornada_id'),]);
+        return redirect('beneficiario')->with('nuevo','Beneficiario editado con éxito');
     }
 
     // Permite buscar un beneficiario a partir del request AJAX.
