@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class registrarUsuariosController extends Controller
 {
-    public static function index()
+    public function index()
     {
-        /*if (Auth::user()->cannot('create', User::class)) {
+        if (Auth::user()->cannot('create', User::class)) {
             abort(403);
-        }*/
+        }
         
         return view('auth.register');
     }
