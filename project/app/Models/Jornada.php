@@ -54,6 +54,6 @@ class Jornada extends Model
     }
 
     public function beneficiarios(){
-        return $this->belongsToMany(Beneficiario::class);
+        return $this->belongsToMany(Beneficiario::class)->withTimestamps();;
     }
 }

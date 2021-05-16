@@ -16,7 +16,7 @@ class Beneficiario extends Model
 
     //Regresa las jornadas a las que pertenece un beneficiario
     public function jornadas(){
-        return $this->belongsToMany(Jornada::class);
+        return $this->belongsToMany(Jornada::class)->withTimestamps();;
     }
 
     //Regresa el atributo edad parseado con Carbon a partir de la fecha de Nacimiento.
