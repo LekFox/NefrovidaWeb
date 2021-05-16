@@ -34,11 +34,11 @@
         <select id="disabledSelect" class="custom-select">
         <option selected>No existen jornadas</option>
     @else
-        <select name="jornada" class="custom-select">
+        <select name = "jornada_id" id = "jornada_id"" class="custom-select">
         <option selected>Seleccione la jornada</option>
     @endif
     @foreach($jornadas as $jornada)
-        <option value="$jornada['id']">{{$jornada['nombre']}}</option>
+        <option value={{$jornada['id']}}>{{$jornada['nombre']}}</option>
     @endforeach
 </select>
 
@@ -49,7 +49,7 @@
 
 <div class="form-group">
     <label for="fechaNacimiento">Fecha de nacimiento</label>
-    <input class="date form-control" type="date" name="fechaNacimiento" value="" id="fechaNacimiento">    
+    <input class="date form-control" type="date" name="fechaNacimiento" value="{{isset($beneficiario) ? $beneficiario->fechaNacimiento: ''}}" id="fechaNacimiento">    
 </div>
 
 <div class="form-group">
@@ -67,8 +67,8 @@
 <div class="form-group">
     <label for="sexo">Sexo</label>
     <select name="sexo" class="custom-select" id="sexo">
-        <option value="1">Hombre</option>
-        <option value="2">Mujer</option>
+        <option value="Hombre">Hombre</option>
+        <option value="Mujer">Mujer</option>
     </select>
 </div>
 
@@ -86,8 +86,8 @@
 <div class="form-group">
     <label for="estatus">Estatus</label>
     <select name="estatus" class="custom-select" id="estatus">
-        <option value="1">Activo</option>
-        <option value="2">Inactivo</option>
+        <option value="Activo">Activo</option>
+        <option value="Inactivo">Inactivo</option>
     </select>
 </div>
 

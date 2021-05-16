@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Beneficiario;
 use App\Models\Notas;
 use Illuminate\Http\Request;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use App\Models\Jornada as Jornada;
+use App\Models\Beneficiario as Beneficiario;
 
 class BeneficiarioController extends Controller
 {
@@ -40,6 +40,7 @@ class BeneficiarioController extends Controller
                 //
         request()->validate([
             'nombreBeneficiario' => 'required',
+            'jornada_id' => 'required',
             'fechaNacimiento' => 'required',
             'sexo' => 'required',
             'telefono' => 'required',
@@ -48,6 +49,8 @@ class BeneficiarioController extends Controller
             'estatus' => 'required',
         ]);
     
+        dd(request('jornada_id'));    
+
         Beneficiario::create([
             'nombreBeneficiario' => request('nombreBeneficiario'),
             'fechaNacimiento' => request('fechaNacimiento'),
@@ -66,6 +69,7 @@ class BeneficiarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function create()
     {
         //$arr = Jornada::getAllJornadas();
@@ -73,7 +77,42 @@ class BeneficiarioController extends Controller
         //dd(empty($arr));
         return view('beneficiario.create', ["jornadas" => $arr]);
     }
+    
+    public function edit($id)
+    {
+        //$arr = Jornada::getAllJornadas();
+        $beneficiarioEdit = Beneficiario::find($id);
+        $arr = Jornada::getAllJornadas();
+        //dd(empty($arr));
+        return view('beneficiario.create', ["jornadas" => $arr, "beneficiario" => $beneficiarioEdit]);
+    }
 
+    public function update(Request $request, Beneficiario $beneficiario)
+    {
+        $data =[
+        'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus'
+        ];
+
+        request()->validate([
+            'nombreBeneficiario' => 'required',
+            'fechaNacimiento' => 'required',
+            'sexo' => 'required',
+            'telefono' => 'required',
+            'direccion' => 'required',
+            'escolaridade_id' => 'required',
+            'estatus' => 'required',
+        ]);
+        
+        $beneficiario->update([
+            'nombreBeneficiario' => $request->input('nombreBeneficiario'),
+            'fechaNacimiento' => $request->input('fechaNacimiento'), 
+            'sexo'  => $request->input('sexo'), 
+            'telefono'  => $request->input('telefono'), 
+            'direccion'  => $request->input('direccion'), 
+            'escolaridade_id'  => $request->input('escolaridade_id'), 
+            'estatus' => $request->input('estatus')
+            ]);
+    }
 
     // Permite buscar un beneficiario a partir del request AJAX.
     public function searchBeneficiarios(Request $request){

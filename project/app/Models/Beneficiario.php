@@ -14,6 +14,8 @@ class Beneficiario extends Model
         'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus'
     ];
 
+    protected $table = "beneficiarios";
+
     //Regresa las jornadas a las que pertenece un beneficiario
     public function jornadas(){
         return $this->belongsToMany(Jornada::class);

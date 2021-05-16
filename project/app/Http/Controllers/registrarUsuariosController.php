@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class registrarUsuariosController extends Controller
 {
-    public function index()
+    public static function index()
     {
         /*if (Auth::user()->cannot('create', User::class)) {
             abort(403);
