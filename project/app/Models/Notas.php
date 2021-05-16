@@ -10,11 +10,16 @@ class Notas extends Model
     use HasFactory;
 
     protected $fillable =[
-        'fecha', 'comentario', 'beneficiario_id'
+        'fecha', 'comentario', 'beneficiario_id', 'tiponota'
     ];
 
     public function beneficiario()
     {
         return $this->belongsTo(Beneficiario::class);
     }
+
+    // public function tipo_nota()
+    // {
+    //     return $this->hasMany(Tipo_nota::class);
+    // }
 }

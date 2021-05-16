@@ -17,7 +17,7 @@ class JornadaController extends Controller
     public function index()
     {
         //return Jornada::all();
-        $datos['Jornada']=JornadaResource::collection(Jornada::all());
+        $datos['Jornada']=JornadaResource::collection(Jornada::paginate(10));
         return view('jornada.index',$datos);
 
     }

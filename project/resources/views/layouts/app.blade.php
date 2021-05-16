@@ -78,10 +78,9 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm aquanefrobg">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Nefrovida') }}
+                <img src="/img/logo.webp" width="190" height="50" class="d-inline-block align-top" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -90,7 +89,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                     
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -125,7 +124,6 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
         </nav>
         
         <main class="py-4">

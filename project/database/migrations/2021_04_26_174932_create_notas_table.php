@@ -24,6 +24,7 @@ class CreateNotasTable extends Migration
             $table->timestamps();
             $table->date("fecha");
             $table->string("comentario");
+            $table->string("tiponota");
             $table->foreignId("tipo_nota_id")
             ->nullable()
             ->constrained()

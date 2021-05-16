@@ -18,7 +18,7 @@ class CreateBeneficiariosTable extends Migration
             $table->string("nombreBeneficiario", 140);
             $table->date("fechaNacimiento");
             $table->string("sexo", 10);
-            $table->string("telefono", 15);
+            $table->string("telefono");
             $table->string("direccion", 200);
             $table->foreignId("escolaridade_id")
                 ->nullable()

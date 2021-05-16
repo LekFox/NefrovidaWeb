@@ -46,8 +46,10 @@ Route::post('/jornadas/searchloc', ['as' => 'search-jornadas-loc', 'uses' => 'Ap
 Route::post('/beneficiarios/search', ['as' => 'search-beneficiarios', 'uses' => 'App\Http\Controllers\BeneficiarioController@searchBeneficiarios']);
 Route::post('/beneficiarios/searchage', ['as' => 'search-beneficiarios-age', 'uses' => 'App\Http\Controllers\BeneficiarioController@searchBeneficiariosAge']);
 
-Route::get('/usuarios',[App\Http\Controllers\registrarUsuariosController::class,'index'])->name('registrarUsuario')->middleware('auth');
+Route::get('/usuarios',[App\Http\Controllers\registrarUsuariosController::class,'index'])->name('registrarUsuario');
 
 //Route::get('/usuarios','App\Http\Controllers\registrarUsuariosController@index');
 //Route::post('/usuarios','App\Http\Controllers\RegistrarUsuarios@store');
+
+// Route::post('beneficiario/fetch', 'BeneficiarioController@fetch')->name('beneficiario.fetch');
 

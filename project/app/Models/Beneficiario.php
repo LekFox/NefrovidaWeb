@@ -9,6 +9,11 @@ use Carbon\Carbon;
 class Beneficiario extends Model
 {
     use HasFactory;
+
+    protected $fillable =[
+        'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus'
+    ];
+
     //Regresa las jornadas a las que pertenece un beneficiario
     public function jornadas(){
         return $this->belongsToMany(Jornada::class);

@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -28,6 +29,11 @@
   --danger: #e3342f;
   --light: #f8f9fa;
   --dark: #343a40;
+  --greennefro: #65b872;
+  --bluenefro: #4062bb;
+  --aquanefro: #59c3c3;
+  --whitenefro: #ebebeb;
+  --rednefro: #f45b69;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -42,7 +48,6 @@
 *::after {
   box-sizing: border-box;
 }
-
 
 .stepwizard-step p {
   margin-top: 10px;
@@ -82,6 +87,45 @@
   font-size: 12px;
   line-height: 1.428571429;
   border-radius: 15px;
+ }
+.greennefrobg {
+  background-color: var(--greennefro);
+}
+
+.greennefro {
+  color: var(--greennefro);
+}
+
+.bluenefrobg {
+  background-color: var(--bluenefro);
+}
+
+.bluenefro {
+  color: var(--bluenefro);
+}
+
+.aquanefrobg {
+  background-color: var(--aquanefro);
+}
+
+.aquanefro {
+  color: var(--aquanefro);
+}
+
+.whitenefrobg {
+  background-color: var(--whitenefro);
+}
+
+.whitenefro {
+  color: var(--whitenefro);
+}
+
+.rednefrobg {
+  background-color: var(--rednefro);
+}
+
+.rednefro {
+  color: var(--rednefro);
 }
 
 html {
@@ -10049,4 +10093,23 @@ h3 {
 
 #JornadaAddB { 
   padding-top: 0%;
+}
+
+#linebreak {
+  white-space: pre-wrap;
+}
+
+.ellipsis {
+  max-width: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#fechaC { 
+  text-align: right;
+}
+
+#center { 
+  text-align: center;
 }

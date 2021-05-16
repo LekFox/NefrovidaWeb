@@ -22,8 +22,10 @@ class NotasController extends Controller
      */
     public function index()
     {
-        $datos['Notas']=NotasResource::collection(Notas::all());
-        return view('notas.index',$datos);
+        //$datos['Notas']=NotasResource::collection(Notas::all());
+        // $datos['Notas']=Notas::paginate(3);
+        // dd($datos);
+        //return view('notas.index',$datos);
     }
 
     /**
@@ -60,6 +62,7 @@ class NotasController extends Controller
             'fecha' => 'required',
             'comentario' => 'required',
             'beneficiario_id' => 'required',
+            'tiponota' => 'required',
         ]);
     
         // $status = Beneficiario::where(['name'=>'sample_status'])->firstOrFail();
@@ -77,6 +80,7 @@ class NotasController extends Controller
             'tipoNota_id' => 1,
             'fecha' => request('fecha'),
             'comentario' => request('comentario'),
+            'tiponota' => request('tiponota'),
             //'beneficiario_id' => request('beneficiario_id'),
         ]);
 
@@ -94,7 +98,7 @@ class NotasController extends Controller
      * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
-    public function show(Notas $notas)
+    public function show($id)
     {
         $notas=Notas::findOrFail($id);
 
@@ -131,6 +135,7 @@ class NotasController extends Controller
             'fecha' => 'required',
             'comentario' => 'required',
             'beneficiario_id' => 'required',
+            'tiponota' => 'required',
         ]);
 
         $id=$notas->beneficiario_id;
@@ -139,6 +144,7 @@ class NotasController extends Controller
             'tipoNota_id' => 1,
             'fecha' => request('fecha'),
             'comentario' => request('comentario'),
+            'tiponota' => request('tiponota'),
         ]);
 
         return redirect('beneficiario/'.$id)->with('editado','Cambios realizados con éxito');

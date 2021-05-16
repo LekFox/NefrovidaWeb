@@ -61,7 +61,6 @@
       <div class= "row">
           <div class= "col-sm">
                 <h1 class="card-title">Beneficiarios de la jornada {{ $jornada->nombre }}</h1>
-                <br><br><br>
                 <table class="table table-light">
                     <thead class="thead-light">
                     <tr>
