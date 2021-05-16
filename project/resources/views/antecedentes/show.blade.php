@@ -58,6 +58,12 @@
           </div>
           <div class="col text-right">
                 <a href="{{url('/antecedentes/'.$antecedentes->id.'/edit')}}" class="btn btn-primary"> Editar </a>
+                <form action="{{url('/antecedentes/'.$antecedentes->id)}}" class="d-inline" method="post">
+                    @csrf
+                    {{ @method_field('DELETE') }}
+                    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $antecedentes->beneficiario->id }}">
+                    <input type="submit" onclick="return confirm('¿Quieres borrar los antecedentes? Esta acción no puede deshacerse.')"  class="btn btn-danger" value="Eliminar">
+                </form>
           </div>
         </div>
         <div class= "row">

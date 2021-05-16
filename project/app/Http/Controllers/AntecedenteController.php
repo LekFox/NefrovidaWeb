@@ -153,8 +153,11 @@ class AntecedenteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $antecedentes=Antecedente::findOrFail($id);
+        $id_beneficiario = request('id_beneficiario');
+        $success = $antecedentes->delete();
+        return redirect('beneficiario/'.$id_beneficiario)->with('eliminado','Antecedentes borrados con éxito');
     }
 }
