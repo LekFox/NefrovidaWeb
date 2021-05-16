@@ -25,12 +25,8 @@ class AntecedenteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create($id)
-    {
-        //$datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
-        //$beneficiario =  new BeneficiarioResource(Beneficiario::findOrFail($id));
-        
+    {   
         $beneficiario=Beneficiario::findOrFail($id);
-        //var_dump($beneficiario);
         return view('antecedentes.create',compact('beneficiario'));
     }
 
@@ -89,7 +85,8 @@ class AntecedenteController extends Controller
      */
     public function show($id)
     {
-        //
+        $antecedentes=Antecedente::findOrFail($id);
+        return view('antecedentes.show',compact('antecedentes'));
     }
 
     /**
