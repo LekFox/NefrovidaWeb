@@ -40,4 +40,8 @@ class Beneficiario extends Model
         return $this->belongsTo(Escolaridade::class);
     }
 
+    public function nutricionConsulta()
+    {
+        return $this->hasMany(nutricionConsulta::class);
+    }
 }
