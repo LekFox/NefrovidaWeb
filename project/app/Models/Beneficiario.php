@@ -11,7 +11,7 @@ class Beneficiario extends Model
     use HasFactory;
 
     protected $fillable =[
-        'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus'
+        'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus', 'seguimiento'
     ];
 
     //Regresa las jornadas a las que pertenece un beneficiario
@@ -33,6 +33,11 @@ class Beneficiario extends Model
     //Regresa los registros de Antecedentes de un beneficiario
     public function antecedentes(){
         return $this->hasOne(Antecedente::class);
+    }
+
+    public function escolaridade()
+    {
+        return $this->belongsTo(Escolaridade::class);
     }
 
 }

@@ -1,4 +1,4 @@
-<h1 id="JornadaTitulo">{{$modo}} Beneficiario</h1>
+<h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-person-plus-fill"></i> {{$modo}} Beneficiario</h1>
 
 @if (count($errors)>0)
     
@@ -16,6 +16,9 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+
+<a href="{{ url('beneficiario') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+<br><br>
 
 <div class="form-group">
 
@@ -67,27 +70,36 @@
 <div class="form-group">
     <label for="sexo">Sexo</label>
     <select name="sexo" class="custom-select" id="sexo">
-        <option value="1">Hombre</option>
-        <option value="2">Mujer</option>
+        <option value="Hombre">Hombre</option>
+        <option value="Mujer">Mujer</option>
     </select>
 </div>
 
 <div class="form-group">
     <label for="escolaridade_id">Escolaridad</label>
     <select name="escolaridade_id" class="custom-select" id="escolaridade_id">
-        <option value="1">Primaria</option>
-        <option value="2">Secundaria</option>
-        <option value="3">Preparatoria</option>
-        <option value="4">Licenciatura</option>
-        <option value="5">Ninguno</option>
+        <option value="1">Preparatoria</option>
+        <option value="2">Primaria</option>
+        <option value="3">Secundaria</option>
+        <option value="4">Universidad</option>
+        <option value="5">Maestría</option>
+        <option value="6">Analfabeta</option>
     </select>
 </div>
 
 <div class="form-group">
     <label for="estatus">Estatus</label>
     <select name="estatus" class="custom-select" id="estatus">
-        <option value="1">Activo</option>
-        <option value="2">Inactivo</option>
+        <option value="Activo">Activo</option>
+        <option value="Inactivo">Inactivo</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="estatus">De seguimiento</label>
+    <select name="seguimiento" class="custom-select" id="seguimiento">
+        <option value="1">Sí</option>
+        <option value="0">No</option>
     </select>
 </div>
 
@@ -104,9 +116,9 @@
 </div>
 -->
 
-<input class="btn btn-success" type="submit" value="{{$modo}} datos">
-
-<a href="{{ url('beneficiario') }}" class="btn btn-primary"> Regresar </a>
+<div class="col text-center">
+    <button class="btn btn-success btn-lg" type="submit"><i class="bi bi-pencil-square"></i> {{$modo}}</button>
+</div>
 
 <script type="text/javascript">
     $('.date').datepicker({  

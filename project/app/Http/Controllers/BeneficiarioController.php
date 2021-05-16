@@ -47,6 +47,7 @@ class BeneficiarioController extends Controller
             'direccion' => 'required',
             'escolaridade_id' => 'required',
             'estatus' => 'required',
+            'seguimiento' => 'required',
         ]);
     
 
@@ -58,6 +59,7 @@ class BeneficiarioController extends Controller
             'direccion' => request('direccion'),
             'escolaridade_id' => request('escolaridade_id'),
             'estatus' => request('estatus'),
+            'seguimiento' => request('seguimiento'),
         ]);
 
         $beneficiario->jornadas()->attach(request('jornada_id'));

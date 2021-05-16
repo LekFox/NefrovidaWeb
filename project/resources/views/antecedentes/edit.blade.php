@@ -27,8 +27,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center">Editar Antecedentes de {{ $antecedentes->beneficiario->nombreBeneficiario }}</h1>
-  <a href="{{ url('/antecedentes/'.$antecedentes->id) }}" class="btn btn-primary"> Regresar </a>
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-person-lines-fill"></i> Editar Antecedentes de {{ $antecedentes->beneficiario->nombreBeneficiario }}</h1>
+  <a href="{{ url('/antecedentes/'.$antecedentes->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
   
   
   <div class="container mt-3">
@@ -36,19 +36,19 @@
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
                 <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                <p>Datos de Vivienda</p>
+                <p><i class="bi bi-house-fill"></i> Datos de Vivienda</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                <p>Antecedentes Personales</p>
+                <p><i class="bi bi-person-square"></i> Antecedentes Personales</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                <p>Antecedentes Familiares</p>
+                <p><i class="bi bi-people-fill"></i> Antecedentes Familiares</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
-                <p>Antecedentes Gineco-obstétricos</p>
+                <p><i class="bi bi-journal-medical"></i> Antecedentes Gineco-obstétricos</p>
             </div>
         </div>
     </div>
@@ -59,7 +59,7 @@
             </div>
             <div class="col">
                 <div class="col">
-                    <h3 class="text-center">Datos de Vivienda</h3>
+                    <h3 class="text-center"><i class="bi bi-house-fill"></i> Datos de Vivienda</h3>
                     <br>
                     <input type="hidden" id="id" name="id" value="{{ $antecedentes->id }}">
                     <h5>Vive en casa:</h5>
@@ -102,7 +102,7 @@
                     </div>
                     <br>
                     <div class="text-center">
-                      <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
+                      <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="col">
                     <div class="col">
-                        <h3 class="text-center">Antecedentes Personales</h3>
+                        <h3 class="text-center"><i class="bi bi-person-square"></i> Antecedentes Personales</h3>
                         <br>
                         <h5>Personales Patológicos:</h5>
                         <div class="form-group">
@@ -127,8 +127,8 @@
                         </div>
                         <br>
                         <div class="text-center">
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Anterior</button>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
+                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                 </div>
                 <div class="col">
                     <div class="col">
-                        <h3 class="text-center">Antecedentes Familiares</h3>
+                        <h3 class="text-center"><i class="bi bi-people-fill"></i> Antecedentes Familiares</h3>
                         <br>
                         <h5>Padre vivo:</h5>
                         <div class="form-check">
@@ -204,8 +204,8 @@
                           <textarea class="form-control" id="otrosHermanos" name="otrosHermanos" maxlength="400" rows="3">{{ isset($antecedentes->otrosHermanos)?$antecedentes->otrosHermanos:old('otrosHermanos') }}</textarea>
                         </div>
                         <div class="text-center">
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Anterior</button>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
+                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -218,7 +218,7 @@
               </div>
               <div class="col">
                   <div class="col">
-                      <h3 class="text-center">Antecedentes Gineco-obstétricos</h3>
+                      <h3 class="text-center"><i class="bi bi-journal-medical"></i> Antecedentes Gineco-obstétricos</h3>
                       <br>
                       <h5>Menarquia:</h5>
                         <div class="form-group">
@@ -266,8 +266,8 @@
                         </div>
                       <br>
                       <div class="text-center">
-                        <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Anterior</button>
-                          <button class="btn btn-success btn-lg pull-right" type="submit">Guardar</button>
+                        <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
+                          <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Guardar</button>
                       </div>
                   </div>
               </div>
