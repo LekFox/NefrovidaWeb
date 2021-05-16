@@ -85,10 +85,9 @@ class BeneficiarioController extends Controller
     
     public function edit($id)
     {
-        //$arr = Jornada::getAllJornadas();
         $beneficiarioEdit = Beneficiario::find($id);
+        //dd($beneficiarioEdit->escolaridade->nombreEscolaridad);
         $arr = Jornada::getAllJornadas();
-        //dd(empty($arr));
         return view('beneficiario.create', ["jornadas" => $arr, "beneficiario" => $beneficiarioEdit]);
     }
 
@@ -100,14 +99,16 @@ class BeneficiarioController extends Controller
 
         request()->validate([
             'nombreBeneficiario' => 'required',
+            'jornada_id' => 'required',
             'fechaNacimiento' => 'required',
             'sexo' => 'required',
             'telefono' => 'required',
             'direccion' => 'required',
             'escolaridade_id' => 'required',
             'estatus' => 'required',
+            'seguimiento' => 'required',
+
         ]);
-        
         $beneficiario->update([
             'nombreBeneficiario' => $request->input('nombreBeneficiario'),
             'fechaNacimiento' => $request->input('fechaNacimiento'), 
@@ -115,8 +116,12 @@ class BeneficiarioController extends Controller
             'telefono'  => $request->input('telefono'), 
             'direccion'  => $request->input('direccion'), 
             'escolaridade_id'  => $request->input('escolaridade_id'), 
-            'estatus' => $request->input('estatus')
+            'estatus' => $request->input('estatus'),
+            'seguimiento' => $request->input('seguimiento')
             ]);
+        $jornadaId = $beneficiario->jornadas[0]->pivot->jornada_id;
+        $beneficiario->jornadas()->updateExistingPivot($jornadaId, ['jornada_id' => $request->input('jornada_id'),]);
+        return redirect('beneficiario')->with('nuevo','Beneficiario editado con éxito');
     }
 
     // Permite buscar un beneficiario a partir del request AJAX.
