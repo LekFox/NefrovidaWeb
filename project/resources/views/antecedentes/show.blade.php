@@ -40,10 +40,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center">Antecedentes de {{$antecedentes->beneficiario->nombreBeneficiario}}</h1>
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-person-lines-fill"></i> Antecedentes de {{$antecedentes->beneficiario->nombreBeneficiario}}</h1>
   <div class="row">
     <div class="col">
-      <a href="{{ url('/beneficiario/'.$antecedentes->beneficiario->id) }}" class="btn btn-primary"> Regresar </a>
+      <a href="{{ url('/beneficiario/'.$antecedentes->beneficiario->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
     </div>
     <div class="col">
     </div>
@@ -54,15 +54,15 @@
       <div class= "row">
           <div class="col"></div>
           <div class= "col text-center align-bottom">
-                <h2 class="card-title ">Vivienda</h2>
+                <h2 class="card-title "><i class="bi bi-house-fill"></i> Vivienda</h2>
           </div>
           <div class="col text-right">
-                <a href="{{url('/antecedentes/'.$antecedentes->id.'/edit')}}" class="btn btn-primary"> Editar </a>
+                <a href="{{url('/antecedentes/'.$antecedentes->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
                 <form action="{{url('/antecedentes/'.$antecedentes->id)}}" class="d-inline" method="post">
                     @csrf
                     {{ @method_field('DELETE') }}
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $antecedentes->beneficiario->id }}">
-                    <input type="submit" onclick="return confirm('¿Quieres borrar los antecedentes? Esta acción no puede deshacerse.')"  class="btn btn-danger" value="Eliminar">
+                    <button type="submit" onclick="return confirm('¿Quieres borrar los antecedentes? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
           </div>
         </div>
@@ -89,7 +89,7 @@
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <h2 class="card-title ">Antecedentes Personales</h2>
+                <h2 class="card-title "><i class="bi bi-person-square"></i> Antecedentes Personales</h2>
           </div>
         </div>
         <div class= "row">
@@ -119,7 +119,7 @@
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <h2 class="card-title ">Antecedentes Familiares</h2>
+                <h2 class="card-title "><i class="bi bi-people-fill"></i> Antecedentes Familiares</h2>
           </div>
         </div>
         <div class= "row">
@@ -221,7 +221,7 @@
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <h2 class="card-title ">Antecedentes Gineco-obstétricos</h2>
+                <h2 class="card-title "><i class="bi bi-journal-medical"></i> Antecedentes Gineco-obstétricos</h2>
           </div>
         </div>
         <div class= "row">

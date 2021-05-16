@@ -1,5 +1,5 @@
 
-<h1 id="JornadaTitulo">{{$modo}} Beneficiario</h1>
+<h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-person-bounding-box"></i> {{$modo}} Beneficiario</h1>
 
 @if (count($errors)>0)
     
@@ -18,20 +18,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
 
-<a href="{{ url('beneficiario') }}" class="btn btn-primary"> Regresar </a>
+<a href="{{ url('beneficiario') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 <br><br>
 <div class="card">
   <div class="card-body">
       <div class= "row">
           <div class= "col-sm">
-                <h2 class="card-title">{{ $beneficiario->nombreBeneficiario }}</h2>
+                <h2 class="card-title bluenefro">{{ $beneficiario->nombreBeneficiario }}</h2>
                 <br>
-                <h4>Fecha de Nacimiento: {{ $beneficiario->fechaNacimiento }}</h4>
-                <h4>Sexo: {{ $beneficiario->sexo }}</h4>
-                <h4>Teléfono: {{ $beneficiario->telefono }}</h4>
-                <h4>Dirección: {{ $beneficiario->direccion }}</h4>
-                <h4>Escolaridad: {{ $beneficiario->escolaridade_id }}</h4>
-                <h4>Estatus: {{ $beneficiario->estatus }}</h4>
+                <h4 class="font-weight-light">Fecha de Nacimiento: {{ $beneficiario->fechaNacimiento }}</h4>
+                <h4 class="font-weight-light">Sexo: {{ $beneficiario->sexo }}</h4>
+                <h4 class="font-weight-light">Teléfono: {{ $beneficiario->telefono }}</h4>
+                <h4 class="font-weight-light">Dirección: {{ $beneficiario->direccion }}</h4>
+                <h4 class="font-weight-light">Escolaridad: {{ $beneficiario->escolaridade_id }}</h4>
+                <h4 class="font-weight-light">Estatus: {{ $beneficiario->estatus }}</h4>
             </div>
             <div class="col-sm">
                 <div class= "pt-xl-5">

@@ -1,13 +1,17 @@
 <div class="card">
     <div class="card-body">
         <div class= "row">
-            <div class= "col-sm-10">
-                <h3><i class="bi bi-journal"></i> Notas</h3> 
+            <div class="col">
             </div>
-            <div class= "col-sm-2">
-                <a href="{{ url('notas/create') }}" class="btn btn-success">Agregar Notas</a>
+            <div class= "col text-center">
+                <h2><i class="bi bi-journal greennefro"></i> Notas</h2> 
+            </div>
+            <div class= "col text-right">
+                <a href="{{ url('notas/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Nota</a>
             </div>
             <br><br>
+        </div>
+        <div class="row">
             <div class= "col-sm">
             <table id="table_data" class="table table-bordered table-sm">
     
