@@ -40,7 +40,7 @@
                 <div class= "pt-xl-5">
                     <a href="{{url('/beneficiario/'.$beneficiario->id.'/edit')}}">
                     <button type="button" class="btn btn-primary">
-                        Editaaaar beneficiario
+                        Editar beneficiario
                     </button>
                     </a>
                 </div>
