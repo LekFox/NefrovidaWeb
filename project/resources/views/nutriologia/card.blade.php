@@ -1,17 +1,14 @@
+<br><br>
 <div class="card">
     <div class="card-body">
         <div class= "row">
-            <div class="col">
+            <div class= "col-sm-10">
+                <h3><i class="bi bi-basket"></i> Nutriología</h3> 
             </div>
-            <div class= "col text-center">
-                <h2><i class="bi bi-journal greennefro"></i> Notas</h2> 
-            </div>
-            <div class= "col text-right">
-                <a href="{{ url('notas/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Nota</a>
+            <div class= "col-sm-2">
+                <a href="{{ url('notas/create') }}" class="btn btn-success">Agregar Consulta</a>
             </div>
             <br><br>
-        </div>
-        <div class="row">
             <div class= "col-sm">
             <table id="table_data" class="table table-bordered table-sm">
     
@@ -54,32 +51,7 @@
         </div>
     </div>
 </div>
-{{-- 
-<script>
-    $(document).ready(function(){
-    
-     $(document).on('click', '.page-link', function(event){
-        event.preventDefault(); 
-        var page = $(this).attr('href').split('page=')[1];
-        fetch_data(page);
-     });
-    
-     function fetch_data(page)
-     {
-      var _token = $("input[name=_token]").val();
-      $.ajax({
-          url:"{{ route('beneficiario.fetch') }}",
-          method:"POST",
-          data:{_token:_token, page:page},
-          success:function(data)
-          {
-           $('#table_data').html(data);
-          }
-        });
-     }
-    
-    });
-    </script> --}}
+
     <script src="~/Scripts/jquery-3.5.1.min.js"></script>
 <script>
         $(window).scroll(function () {

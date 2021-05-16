@@ -11,14 +11,14 @@ class Beneficiario extends Model
     use HasFactory;
 
     protected $fillable =[
-        'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus'
+        'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus', 'seguimiento'
     ];
 
     protected $table = "beneficiarios";
 
     //Regresa las jornadas a las que pertenece un beneficiario
     public function jornadas(){
-        return $this->belongsToMany(Jornada::class);
+        return $this->belongsToMany(Jornada::class)->withTimestamps();;
     }
 
     //Regresa el atributo edad parseado con Carbon a partir de la fecha de Nacimiento.
@@ -37,4 +37,13 @@ class Beneficiario extends Model
         return $this->hasOne(Antecedente::class);
     }
 
+    public function escolaridade()
+    {
+        return $this->belongsTo(Escolaridade::class);
+    }
+
+    public function nutricionConsulta()
+    {
+        return $this->hasMany(nutricionConsulta::class);
+    }
 }
