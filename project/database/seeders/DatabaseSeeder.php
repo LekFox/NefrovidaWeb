@@ -18,15 +18,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        Beneficiario::factory(15)->create();
-        Jornada::factory(15)->create();
-        Notas::factory(30)->create();
-
         $this->call([
             //SIN LLAVES FORÁNEAS
             EscolaridadeSeeder::class,
             //USA LLAVES FORÁNEAS
         ]);
+        // \App\Models\User::factory(10)->create();
+        Beneficiario::factory(15)->create();
+        Jornada::factory(15)->create();
+        Notas::factory(30)->create();
+
+        
     }
 }
