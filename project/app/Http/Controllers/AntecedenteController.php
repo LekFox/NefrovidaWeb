@@ -97,7 +97,8 @@ class AntecedenteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $antecedentes=Antecedente::findOrFail($id);
+        return view('antecedentes.edit',compact('antecedentes'));
     }
 
     /**
@@ -109,7 +110,41 @@ class AntecedenteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        request()->validate([
+            'casa' => 'required',
+            'serviciosBasicos' => 'required',
+            'id' => 'required',
+            'padreVivo' => 'required',
+            'madreVivo' => 'required',
+        ]);
+
+        $antecedentes=Antecedente::findOrFail($id);
+
+        $success = $antecedentes->update([
+            'casa' => request('casa'),
+            'serviciosBasicos' => request('serviciosBasicos'),
+            'personalesPatologicos' => request('personalesPatologicos'),
+            'personalesNoPatologicos' => request('personalesNoPatologicos'),
+            'padreVivo' => request('padreVivo'),
+            'enfermedadesPadre' => request('enfermedadesPadre'),
+            'madreVivo' => request('madreVivo'),
+            'enfermedadesMadre' => request('enfermedadesMadre'),
+            'numHermanos' => request('numHermanos'),
+            'numHermanosVivos' => request('numHermanosVivos'),
+            'enfermedadesHermanos' => request('enfermedadesHermanos'),
+            'otrosHermanos' => request('otrosHermanos'),
+            'menarquia' => request('menarquia'),
+            'ritmo' => request('ritmo'),
+            'fum' => request('fum'),
+            'gestaciones' => request('gestaciones'),
+            'partos' => request('partos'),
+            'abortos' => request('abortos'),
+            'cesareas' => request('cesareas'),
+            'ivsa' => request('ivsa'),
+            'metodosAnticonceptivos' => request('metodosAnticonceptivos'),
+        ]);
+
+        return redirect('antecedentes/'.$id)->with('editado','Cambios realizados con éxito');
     }
 
     /**

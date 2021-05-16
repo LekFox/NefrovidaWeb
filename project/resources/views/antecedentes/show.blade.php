@@ -20,6 +20,18 @@
       </div>
       
   @endif
+  @if (Session::has('eliminado'))
+    <div class="alert alert-success" role="alert"> {{Session::get('eliminado')}} </div>      
+  @endif
+
+  @if (Session::has('nuevo'))
+    <div class="alert alert-success" role="alert"> {{Session::get('nuevo')}} </div>       
+  @endif
+
+  @if (Session::has('editado'))
+    <div class="alert alert-success" role="alert"> {{Session::get('editado')}} </div>    
+  
+  @endif
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
@@ -29,14 +41,23 @@
 
   
   <h1 id="AntecedentesTitulo" class="text-center">Antecedentes de {{$antecedentes->beneficiario->nombreBeneficiario}}</h1>
-  <a href="{{ url()->previous() }}" class="btn btn-primary"> Regresar </a>
-  
+  <div class="row">
+    <div class="col">
+      <a href="{{ url('/beneficiario/'.$antecedentes->beneficiario->id) }}" class="btn btn-primary"> Regresar </a>
+    </div>
+    <div class="col">
+    </div>
+  </div>
   <br><br>
   <div class="card">
     <div class="card-body">
       <div class= "row">
+          <div class="col"></div>
           <div class= "col text-center align-bottom">
                 <h2 class="card-title ">Vivienda</h2>
+          </div>
+          <div class="col text-right">
+                <a href="{{url('/antecedentes/'.$antecedentes->id.'/edit')}}" class="btn btn-primary"> Editar </a>
           </div>
         </div>
         <div class= "row">
