@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Beneficiario;
+use App\Models\Beneficiario as Beneficiario;
 use App\Models\Notas;
 use Illuminate\Http\Request;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
@@ -40,6 +40,7 @@ class BeneficiarioController extends Controller
                 //
         request()->validate([
             'nombreBeneficiario' => 'required',
+            'jornada_id' => 'required',
             'fechaNacimiento' => 'required',
             'sexo' => 'required',
             'telefono' => 'required',
@@ -48,7 +49,8 @@ class BeneficiarioController extends Controller
             'estatus' => 'required',
         ]);
     
-        Beneficiario::create([
+
+        $beneficiario = Beneficiario::create([
             'nombreBeneficiario' => request('nombreBeneficiario'),
             'fechaNacimiento' => request('fechaNacimiento'),
             'sexo' => request('sexo'),
@@ -57,6 +59,8 @@ class BeneficiarioController extends Controller
             'escolaridade_id' => request('escolaridade_id'),
             'estatus' => request('estatus'),
         ]);
+
+        $beneficiario->jornadas()->attach(request('jornada_id'));
 
         return redirect('beneficiario')->with('nuevo','Beneficiario agregada con éxito');
     }
@@ -73,7 +77,6 @@ class BeneficiarioController extends Controller
         //dd(empty($arr));
         return view('beneficiario.create', ["jornadas" => $arr]);
     }
-
 
     // Permite buscar un beneficiario a partir del request AJAX.
     public function searchBeneficiarios(Request $request){

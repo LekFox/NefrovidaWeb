@@ -29,16 +29,16 @@
 
 <div class="form-group">
 
-<label for="jornada">Jornada</label>
+<label for="jornada_id">Jornada</label>
     @if(empty($jornadas))
         <select id="disabledSelect" class="custom-select">
         <option selected>No existen jornadas</option>
     @else
-        <select name="jornada" class="custom-select">
+        <select name="jornada_id" id="jornada_id" class="custom-select">
         <option selected>Seleccione la jornada</option>
     @endif
     @foreach($jornadas as $jornada)
-        <option value="$jornada['id']">{{$jornada['nombre']}}</option>
+        <option value={{$jornada['id']}}>{{$jornada['nombre']}}</option>
     @endforeach
 </select>
 
