@@ -32,4 +32,9 @@ class Beneficiario extends Model
         return $this->hasMany(Notas::class);
     }
 
+    //Regresa los registros de Antecedentes de un beneficiario
+    public function antecedentes(){
+        return $this->hasOne(Antecedente::class);
+    }
+
 }
