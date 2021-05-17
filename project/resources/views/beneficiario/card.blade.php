@@ -1,3 +1,8 @@
+@if (Session::has('editado'))
+    <div class="alert alert-success" role="alert"> {{Session::get('editado')}} </div>    
+  
+@endif
+
 
 <h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-person-bounding-box"></i> {{$modo}} Beneficiario</h1>
 

@@ -5,6 +5,8 @@ use App\Http\Controllers\JornadaController;
 use App\Http\Controllers\BeneficiarioController;
 use App\Http\Controllers\NotasController;
 use App\Http\Controllers\AntecedenteController;
+use App\Http\Controllers\evaluacionController;
+use App\Http\Controllers\evaluacionFinalController;
 
 
 /*
@@ -48,8 +50,14 @@ Route::post('/beneficiarios/searchage', ['as' => 'search-beneficiarios-age', 'us
 
 Route::get('/usuarios',[App\Http\Controllers\registrarUsuariosController::class,'index'])->name('registrarUsuario');
 
+
 //Route::get('/usuarios','App\Http\Controllers\registrarUsuariosController@index');
 //Route::post('/usuarios','App\Http\Controllers\RegistrarUsuarios@store');
 
 // Route::post('beneficiario/fetch', 'BeneficiarioController@fetch')->name('beneficiario.fetch');
 
+Route::resource('evaluacion',evaluacionController::class)->middleware('auth');
+
+//Route::resource('preguntasEvaluacion',preguntasController::class)->middleware('auth');
+
+Route::post('/evaluacion/storeFinal', ['uses' => 'App\Http\Controllers\EvaluacionController@storeFinal']);
