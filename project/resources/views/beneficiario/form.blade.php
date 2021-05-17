@@ -38,7 +38,11 @@
         <option selected>No existen jornadas</option>
     @else
         <select name="jornada_id" id="jornada_id" class="custom-select">
-        <option value="{{isset($beneficiario) ? $beneficiario->jornadas[0]->pivot->jornada_id: ''}}" selected>{{$beneficiario->getJornadaName()}}</option>
+        @if ($modo == "Editar")
+            <option value="{{isset($beneficiario) ? $beneficiario->jornadas[0]->pivot->jornada_id: ''}}" selected>{{$beneficiario->getJornadaName()}}</option>
+        @elseif ($modo == "Crear")
+            <option selected>Selecciona una Jornada</option>
+        @endif
     @endif
     @foreach($jornadas as $jornada)
         <option value={{$jornada['id']}}>{{$jornada['nombre']}}</option>
