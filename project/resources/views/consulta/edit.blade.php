@@ -4,10 +4,11 @@
 
 @include('sidebar.beneficiario')
 
-<div class="container"><form action="{{url('/consulta')}}" method="post">
+<div class="container"><form action="{{url('/consulta/'.$consulta->id)}}" method="post">
   @csrf
-  
-  {{-- @include('consulta.form',['modo'=>'Crear'],['id'=>'2']) --}}
+  {{ method_field('PATCH') }}
+
+  {{-- @include('consulta.form',['modo'=>'Registrar'],['id'=>'2']) --}}
 
   @if (count($errors)>0)
       
@@ -27,8 +28,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
   
-  <h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-heart"></i> Nueva Consulta</h1>
-  <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
+  <h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-journal"></i> Editar Consulta</h1>
+  <a href="{{url('/beneficiario/'.$consulta->beneficiario_id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+
   <br>
   <br>
 
