@@ -3,14 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Consulta;
+use App\Http\Resources\Consulta as ConsultaResource;
 use App\Models\Beneficiario;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use Illuminate\Http\Request;
-
-use App\Models\Notas;
-use App\Models\tipoNota;
-use App\Http\Resources\Notas as NotasResource;
-use App\Http\Resources\tipoNota as tipoNotaResource;
 
 class ConsultaController extends Controller
 {
@@ -32,7 +28,6 @@ class ConsultaController extends Controller
     public function create()
     {
 
-
         $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
 
         return view('consulta.create',$datos);
@@ -48,13 +43,27 @@ class ConsultaController extends Controller
     {
 
         request()->validate([
-            'fecha' => 'required',
             'padecimiento' => 'required',
+            'TAbrazoDerecho'=> 'required',
+            'TAbrazoIzquierdo'=> 'required',
+            'frecuenciaCardiaca'=> 'required',
+            'frecuenciaRespiratoria'=> 'required',
+            'temperatura'=> 'required',
+            'peso'=> 'required',
+            'talla'=> 'required',
+            'cabezaCuello'=> 'required',
+            'torax'=> 'required',
+            'abdomen'=> 'required',
+            'extremidades'=> 'required',
+            'estadoMentalNeurologico'=> 'required',
+            'observaciones'=> 'required',
+            'diagnostico'=> 'required',
+            'tratamiento'=> 'required',
+
         ]);
     
 
         $consulta = new Consulta([
-            'fecha' => request('fecha'),
             'padecimiento' => request('padecimiento'),
             'TAbrazoDerecho' => request('TAbrazoDerecho'),
             'TAbrazoIzquierdo' => request('TAbrazoIzquierdo'),
@@ -103,8 +112,6 @@ class ConsultaController extends Controller
     public function edit($id)
     {
         $consulta=Consulta::findOrFail($id);
-        //$datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
-
 
         return view('consulta.edit',compact('consulta'));
     }
@@ -121,10 +128,6 @@ class ConsultaController extends Controller
 
         $consulta = Consulta::find($id);
         request()->validate([
-            'fecha' => 'required',
-            'comentario' => 'required',
-            'beneficiario_id' => 'required',
-            'tiponota' => 'required',
             'padecimiento'=> 'required',
             'TAbrazoDerecho'=> 'required',
             'TAbrazoIzquierdo'=> 'required',
@@ -146,7 +149,6 @@ class ConsultaController extends Controller
         $id=$consulta->beneficiario_id;
 
         $success = $consulta->update([
-            'fecha' => request('fecha'),
             'padecimiento' => request('padecimiento'),
             'TAbrazoDerecho' => request('TAbrazoDerecho'),
             'TAbrazoIzquierdo' => request('TAbrazoIzquierdo'),

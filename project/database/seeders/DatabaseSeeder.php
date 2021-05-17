@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Beneficiario;
 use App\Models\Jornada;
 use App\Models\Notas;
+use App\Models\Consulta;
 
 
 class DatabaseSeeder extends Seeder
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
         Beneficiario::factory(15)->create();
         Jornada::factory(15)->create();
         Notas::factory(30)->create();
+        Consulta::factory(30)->create();
 
         
     }

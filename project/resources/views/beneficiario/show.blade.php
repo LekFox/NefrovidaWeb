@@ -23,6 +23,7 @@
     @include('antecedentes.card',['modo'=>'Detalle de'])
     @include('notas.index',['id'=>$id])
     @include('nutriologia.card',['id'=>$id])
+    @include('consulta.index',['id'=>$id])
     @include('consulta.card',['id'=>$id])
 </div>
 

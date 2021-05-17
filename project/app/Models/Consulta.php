@@ -10,7 +10,6 @@ class Consulta extends Model
     use HasFactory;
 
     protected $fillable =[
-        'fecha', 
         'padecimiento', 
         'TAbrazoDerecho',
         'TAbrazoIzquierdo',
