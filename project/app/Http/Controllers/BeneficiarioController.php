@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use App\Models\Jornada as Jornada;
 use App\Models\Beneficiario as Beneficiario;
+use App\Models\Evaluacion;
 
 class BeneficiarioController extends Controller
 {
@@ -27,8 +28,9 @@ class BeneficiarioController extends Controller
         //$Notas= Beneficiario::find($id)->notas->paginate(3);
         $Notas = Notas::where('beneficiario_id', $id)->paginate(3);
         $Nutricion = nutricionConsulta::where('beneficiario_id', $id)->paginate(3);
+        $evaluaciones = Evaluacion::all();
 
-        return view('beneficiario.show',compact('beneficiario','Notas','Nutricion'))->with(['id'=>$id]);
+        return view('beneficiario.show',compact('beneficiario','Notas','Nutricion','evaluaciones'))->with(['id'=>$id]);
     }
     
     /**
