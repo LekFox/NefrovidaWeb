@@ -22,19 +22,15 @@ class CreateAntecedentesTable extends Migration
             $table->enum('casa', ['propia', 'rentada', 'prestada']);
             $table->boolean('serviciosBasicos');
             $table->text('personalesPatologicos', 400)
-                ->nullable()
-                ->default("N/A");
+                ->nullable();
             $table->text('personalesNoPatologicos', 400)
-                ->nullable()
-                ->default("N/A");
+                ->nullable();
             $table->boolean('padreVivo');
             $table->text('enfermedadesPadre', 400)
-                ->nullable()
-                ->default("N/A");
+                ->nullable();
             $table->boolean('madreVivo');
             $table->text('enfermedadesMadre', 400)
-                ->nullable()
-                ->default("N/A");
+                ->nullable();
             $table->integer('numHermanos')
                 ->nullable()
                 ->default(0);
@@ -42,11 +38,9 @@ class CreateAntecedentesTable extends Migration
                 ->nullable()
                 ->default(0);
             $table->text('enfermedadesHermanos', 400)
-                ->nullable()
-                ->default("N/A");
+                ->nullable();
             $table->text('otrosHermanos', 400)
-                ->nullable()
-                ->default("N/A");
+                ->nullable();
             $table->integer('menarquia')
                 ->nullable();
             $table->integer('ritmo')
@@ -64,8 +58,7 @@ class CreateAntecedentesTable extends Migration
             $table->integer('ivsa')
                 ->nullable();
             $table->text('metodosAnticonceptivos', 400)
-                ->nullable()
-                ->default("N/A");
+                ->nullable();
             $table->timestamps();
         });
     }
