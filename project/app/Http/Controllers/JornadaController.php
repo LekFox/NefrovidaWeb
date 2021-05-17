@@ -138,6 +138,7 @@ class JornadaController extends Controller
      */
     public function destroy(Jornada $jornada)
     {
+        $jornada->beneficiarios()->detach();
         $success = $jornada->delete();
 
         // return [
