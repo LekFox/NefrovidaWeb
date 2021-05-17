@@ -79,12 +79,6 @@
    
 </div>
 
-<div class="form-group">
-    <label for="TAbrazoDerechos">T.A. Brazo Derecho</label>
-    {{-- <input type="text"class="form-control" name="TAbrazoDerechos" value="{{ isset($consulta->localidad)?$consulta->TAbrazoDerechos:old('TAbrazoDerechos') }}" id="TAbrazoDerechos">  --}}
-    <textarea class="form-control" id="exampleFormControlTextarea1" name="TAbrazoDerechos" value="{{ isset($consulta->localidad)?$consulta->TAbrazoDerechoso:old('TAbrazoDerechos') }}" id="TAbrazoDerechos" rows="4"></textarea>
-</div>
-
 <input class="btn btn-success" type="submit" value="{{$modo}} datos">
 
 <a href="{{ url('beneficiario') }}" class="btn btn-primary"> Regresar </a>

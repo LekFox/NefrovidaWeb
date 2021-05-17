@@ -41,7 +41,7 @@ class ConsultaController extends Controller
 
         // $datos['Notas']=NotasResource::collection(Notas::all());
 
-        return view('notas.create',$datos);
+        return view('consulta.create',$datos);
     }
 
     /**
@@ -59,9 +59,7 @@ class ConsultaController extends Controller
         //$beneficiario_id=Beneficiario::
         request()->validate([
             'fecha' => 'required',
-            'comentario' => 'required',
-            'beneficiario_id' => 'required',
-            'tiponota' => 'required',
+            'padecimiento' => 'required',
         ]);
     
         // $status = Beneficiario::where(['name'=>'sample_status'])->firstOrFail();
@@ -75,7 +73,7 @@ class ConsultaController extends Controller
         //     'comentario' => request('comentario'),
         // ]);
 
-        $nota= new Notas([
+        $consulta = new Consulta([
             'tipoNota_id' => 1,
             'fecha' => request('fecha'),
             'comentario' => request('comentario'),
@@ -87,49 +85,48 @@ class ConsultaController extends Controller
          $beneficiario = Beneficiario::find($id);
          $beneficiario->notas()->save($nota);
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Nota agregada con éxito');
-        //return redirect()->back()->with('nuevo','Nota agregada con éxito');
+        return redirect('beneficiario/'.$id)->with('nuevo','Consulta Agregada Exitosamente');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Notas  $notas
+     * @param  \App\Models\Consulta  $consulta
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $notas=Notas::findOrFail($id);
+        $consulta=Consulta::findOrFail($id);
 
-        return view('notas.show',compact('notas'));
+        return view('consulta.show',compact('consulta'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Notas  $notas
+     * @param  \App\Models\Consulta  $consulta
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $notas=Notas::findOrFail($id);
+        $consulta=Consulta::findOrFail($id);
         //$datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
 
 
-        return view('notas.edit',compact('notas'));
+        return view('consulta.edit',compact('consulta'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Notas  $notas
+     * @param  \App\Models\Consulta  $consulta
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
 
-        $notas = Notas::find($id);
+        $consulta = Consulta::find($id);
         request()->validate([
             'fecha' => 'required',
             'comentario' => 'required',
@@ -137,9 +134,9 @@ class ConsultaController extends Controller
             'tiponota' => 'required',
         ]);
 
-        $id=$notas->beneficiario_id;
+        $id=$consulta->beneficiario_id;
 
-        $success = $notas->update([
+        $success = $consulta->update([
             'tipoNota_id' => 1,
             'fecha' => request('fecha'),
             'comentario' => request('comentario'),
@@ -148,31 +145,20 @@ class ConsultaController extends Controller
 
         return redirect('beneficiario/'.$id)->with('editado','Cambios realizados con éxito');
 
-        // return [
-        //          'success' => $success,
-        //           'id' => $id,
-        //           'notas' => $notas
-        //       ];
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Notas  $notas
+     * @param  \App\Models\Consulta  $consulta
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $notas = Notas::find($id);
-        $id=$notas->beneficiario_id;
-        $success = $notas->delete();
+        $consulta = Consulta::find($id);
+        $id=$consulta->beneficiario_id;
+        $success = $consulta->delete();
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Nota borrada con éxito');
-
-        // return [
-        //      'success' => $success,
-        //      'id' => $id,
-        //      'notas' => $notas
-        //  ];
+        return redirect('beneficiario/'.$id)->with('nuevo','Consulta Borrada con Exitosamente');
     }
 }

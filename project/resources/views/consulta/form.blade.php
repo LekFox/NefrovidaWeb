@@ -47,6 +47,28 @@
 
             <td>{{$Consulta->padecimiento}}</td>
 
+            <td>{{$Consulta->TAbrazoDerecho}}</td>
+
+            <td>{{$Consulta->TAbrazoIzquierdo}}</td>
+
+            <td>{{$Consulta->frecuenciaCardiaca}}</td>
+
+            <td>{{$Consulta->frecuenciaRespiratoria}}</td>
+
+            <td>{{$Consulta->temperatura}}</td>
+
+            <td>{{$Consulta->peso}}</td>
+
+            <td>{{$Consulta->talla}}</td>
+
+            <td>{{$Consulta->cabezaCuello}}</td>
+
+            <td>{{$Consulta->torax}}</td>
+
+            <td>{{$Consulta->abdomen}}</td>
+
+            <td>{{$Consulta->extremidades}}</td>
+
             <td>{{$Consulta->estadoMentalNeurologico}}</td>
             
             <td>{{$Consulta->observaciones}}</td>
@@ -172,12 +194,6 @@
     <label for="tratamiento">Tratamiento</label>
     {{-- <input type="text-area"class="form-control" name="tratamiento" value="{{ isset($consulta->localidad)?$consulta->tratamiento:old('tratamiento') }}" id="tratamiento">  --}}
     <textarea class="form-control" id="exampleFormControlTextarea1" name="tratamiento" value="{{ isset($consulta->localidad)?$consulta->tratamiento:old('tratamiento') }}" id="tratamiento" rows="4"></textarea>
-</div>
-
-
-<div class="form-group">
-    <label for="tiponota">Tipo de nota</label>
-    <input class="date form-control" type="text" name="tiponota" value="{{ isset($notas->tiponota)?$notas->tiponota:old('tiponota') }}" id="tiponota">    
 </div>
 
 
