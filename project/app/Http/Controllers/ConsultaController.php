@@ -21,10 +21,7 @@ class ConsultaController extends Controller
      */
     public function index()
     {
-        //$datos['Notas']=NotasResource::collection(Notas::all());
-        // $datos['Notas']=Notas::paginate(3);
-        // dd($datos);
-        //return view('notas.index',$datos);
+
     }
 
     /**
@@ -34,12 +31,9 @@ class ConsultaController extends Controller
      */
     public function create()
     {
-                //return Jornada::all();
+
 
         $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
-        //$tipo['TipoNota']=tipoNotaResource::collection(tipoNota::all());
-
-        // $datos['Notas']=NotasResource::collection(Notas::all());
 
         return view('consulta.create',$datos);
     }
@@ -52,38 +46,37 @@ class ConsultaController extends Controller
      */
     public function store(Request $request)
     {
-        //$beneficiario_id=auth()->beneficiario()->id();
-        // $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
-        // $beneficiario_id =  $datos->id();
-        // $request['beneficiario_id'] = $beneficiario_id;
-        //$beneficiario_id=Beneficiario::
+
         request()->validate([
             'fecha' => 'required',
             'padecimiento' => 'required',
         ]);
     
-        // $status = Beneficiario::where(['name'=>'sample_status'])->firstOrFail();
-        // $order->order_status_id = $status->id;
-        // $order->save();
-        // Notas::create($request->all());
-        // Notas::create([
-        //     //'beneficiario_id' => request('beneficiario_id'),
-        //     'tipoNota_id' => 1,
-        //     'fecha' => request('fecha'),
-        //     'comentario' => request('comentario'),
-        // ]);
 
         $consulta = new Consulta([
-            'tipoNota_id' => 1,
             'fecha' => request('fecha'),
-            'comentario' => request('comentario'),
-            'tiponota' => request('tiponota'),
-            //'beneficiario_id' => request('beneficiario_id'),
+            'padecimiento' => request('padecimiento'),
+            'TAbrazoDerecho' => request('TAbrazoDerecho'),
+            'TAbrazoIzquierdo' => request('TAbrazoIzquierdo'),
+            'frecuenciaCardiaca' => request('frecuenciaCardiaca'),
+            'frecuenciaRespiratoria' => request('frecuenciaRespiratoria'),
+            'temperatura' => request('temperatura'),
+            'peso' => request('peso'),
+            'talla' => request('talla'),
+            'cabezaCuello' => request('cabezaCuello'),
+            'torax' => request('torax'),
+            'abdomen' => request('abdomen'),
+            'extremidades' => request('extremidades'),
+            'estadoMentalNeurologico' => request('estadoMentalNeurologico'),
+            'observaciones' => request('observaciones'),
+            'diagnostico' => request('diagnostico'),
+            'tratamiento' => request('tratamiento'),
+
         ]);
 
          $id = request('beneficiario_id');
          $beneficiario = Beneficiario::find($id);
-         $beneficiario->notas()->save($nota);
+         $beneficiario->consulta()->save($consulta);
 
         return redirect('beneficiario/'.$id)->with('nuevo','Consulta Agregada Exitosamente');
     }
@@ -132,18 +125,47 @@ class ConsultaController extends Controller
             'comentario' => 'required',
             'beneficiario_id' => 'required',
             'tiponota' => 'required',
+            'padecimiento'=> 'required',
+            'TAbrazoDerecho'=> 'required',
+            'TAbrazoIzquierdo'=> 'required',
+            'frecuenciaCardiaca'=> 'required',
+            'frecuenciaRespiratoria'=> 'required',
+            'temperatura'=> 'required',
+            'peso'=> 'required',
+            'talla'=> 'required',
+            'cabezaCuello'=> 'required',
+            'torax'=> 'required',
+            'abdomen'=> 'required',
+            'extremidades'=> 'required',
+            'estadoMentalNeurologico'=> 'required',
+            'observaciones'=> 'required',
+            'diagnostico'=> 'required',
+            'tratamiento'=> 'required',
         ]);
 
         $id=$consulta->beneficiario_id;
 
         $success = $consulta->update([
-            'tipoNota_id' => 1,
             'fecha' => request('fecha'),
-            'comentario' => request('comentario'),
-            'tiponota' => request('tiponota'),
+            'padecimiento' => request('padecimiento'),
+            'TAbrazoDerecho' => request('TAbrazoDerecho'),
+            'TAbrazoIzquierdo' => request('TAbrazoIzquierdo'),
+            'frecuenciaCardiaca' => request('frecuenciaCardiaca'),
+            'frecuenciaRespiratoria' => request('frecuenciaRespiratoria'),
+            'temperatura' => request('temperatura'),
+            'peso' => request('peso'),
+            'talla' => request('talla'),
+            'cabezaCuello' => request('cabezaCuello'),
+            'torax' => request('torax'),
+            'abdomen' => request('abdomen'),
+            'extremidades' => request('extremidades'),
+            'estadoMentalNeurologico' => request('estadoMentalNeurologico'),
+            'observaciones' => request('observaciones'),
+            'diagnostico' => request('diagnostico'),
+            'tratamiento' => request('tratamiento'),
         ]);
 
-        return redirect('beneficiario/'.$id)->with('editado','Cambios realizados con éxito');
+        return redirect('beneficiario/'.$id)->with('editado','Cambios Realizados Éxitosamente');
 
     }
 
@@ -159,6 +181,6 @@ class ConsultaController extends Controller
         $id=$consulta->beneficiario_id;
         $success = $consulta->delete();
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Consulta Borrada con Exitosamente');
+        return redirect('beneficiario/'.$id)->with('nuevo','Consulta Borrada Exitosamente');
     }
 }
