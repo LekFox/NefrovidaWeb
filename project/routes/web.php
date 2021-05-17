@@ -5,6 +5,7 @@ use App\Http\Controllers\JornadaController;
 use App\Http\Controllers\BeneficiarioController;
 use App\Http\Controllers\NotasController;
 use App\Http\Controllers\AntecedenteController;
+use App\Http\Controllers\NutricionConsultaController;
 
 
 /*
@@ -26,6 +27,7 @@ Route::resource('jornada',JornadaController::class)->middleware('auth');
 Route::resource('beneficiario',BeneficiarioController::class)->middleware('auth');
 Route::resource('notas',NotasController::class)->middleware('auth');
 Route::resource('beneficiario.antecedentes', AntecedenteController::class)->shallow()->middleware('auth');
+Route::resource('nutricion',NutricionConsultaController::class)->middleware('auth');
 
 
 
