@@ -148,7 +148,7 @@ class evaluacionController extends Controller
 
         Evaluacion::updatePreguntas($data);
         
-        return redirect('beneficiario/'.$id)->with('editado','Preguntas de evaluación actualizada con éxito!');
+        return redirect('beneficiario/'.$id)->with('editado','Preguntas de evaluación actualizadas con éxito!');
 
     }
 
