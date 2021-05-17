@@ -135,7 +135,7 @@
                  
                 <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
                     @csrf
-                    {{ @method_field('DELETE') }}
+                    @method('DELETE')
                     <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-outline-danger" value="Borrar">
                 </form>
             </td>
