@@ -134,8 +134,8 @@
                 </a>
                  
                 <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
+                    @method('DELETE')
                     @csrf
-                    {{ @method_field('DELETE') }}
                     <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-outline-danger" value="Borrar">
                 </form>
             </td>
@@ -183,10 +183,11 @@
                         tableRow = '<tr><td>'+value.id+'</td><td>'+value.nombreBeneficiario+'</td><td>'+age+'</td><td>'+value.sexo+'</td><td>'+segicon+'</td>';
                         tableRow += '<td><a href="'+urlshow+'" class="btn btn-outline-dark">Consultar</a>';
                         tableRow += '<a href="'+urledit+'" class="btn btn-outline-secondary">Editar</a>';
-                        tableRow += '<form action="'+urldel+'" class="d-inline" method="post"><input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-outline-danger" value="Borrar"></form>';
+                        tableRow += '<form action="'+urldel+'" class="d-inline" method="post">@method("DELETE") @csrf<input type="submit" onclick="return confirm("¿Quieres borrar?")"  class="btn btn-outline-danger" value="Borrar"></form>';
                         tableRow += '</td></tr>'
                         $('#dynamic-row').append(tableRow);
                     });
+                    console.log(tableRow);
                 }
             });
         }

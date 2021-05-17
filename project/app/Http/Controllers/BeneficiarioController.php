@@ -86,7 +86,6 @@ class BeneficiarioController extends Controller
     public function edit($id)
     {
         $beneficiarioEdit = Beneficiario::find($id);
-        //dd($beneficiarioEdit->escolaridade->nombreEscolaridad);
         $arr = Jornada::getAllJornadas();
         return view('beneficiario.create', ["jornadas" => $arr, "beneficiario" => $beneficiarioEdit]);
     }
@@ -119,9 +118,23 @@ class BeneficiarioController extends Controller
             'estatus' => $request->input('estatus'),
             'seguimiento' => $request->input('seguimiento')
             ]);
-        $jornadaId = $beneficiario->jornadas[0]->pivot->jornada_id;
-        $beneficiario->jornadas()->updateExistingPivot($jornadaId, ['jornada_id' => $request->input('jornada_id'),]);
+        if ($beneficiario->jornadas->isEmpty())
+        {
+            $beneficiario->jornadas()->attach($request->input('jornada_id'));
+        }
+        else {
+            $jornadaId = $beneficiario->jornadas[0]->pivot->jornada_id;
+            $beneficiario->jornadas()->updateExistingPivot($jornadaId, ['jornada_id' => $request->input('jornada_id'),]);
+        }
+        
         return redirect('beneficiario')->with('nuevo','Beneficiario editado con éxito');
+    }
+
+    public function destroy(Beneficiario $beneficiario)
+    {
+        $beneficiario->jornadas()->detach();
+        $success = $beneficiario->delete();
+        return redirect('beneficiario')->with('eliminado','Beneficiario borrado con éxito');
     }
 
     // Permite buscar un beneficiario a partir del request AJAX.

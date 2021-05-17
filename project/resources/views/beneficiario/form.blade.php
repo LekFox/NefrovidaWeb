@@ -39,7 +39,9 @@
     @else
         <select name="jornada_id" id="jornada_id" class="custom-select">
         @if ($modo == "Editar")
-            <option value="{{isset($beneficiario) ? $beneficiario->jornadas[0]->pivot->jornada_id: ''}}" selected>{{$beneficiario->getJornadaName()}}</option>
+            {{-- Checa si se paso un beneficiario como argumento y si 
+            este beneficiario tiene una entrada en la tabla pivote beneficiario_jornada --}}
+            <option value="{{isset($beneficiario) && $beneficiario->jornadas->isEmpty() == false ? $beneficiario->jornadas[0]->pivot->jornada_id: ''}}" selected>{{$beneficiario->jornadas->isEmpty() ? "Selecciona una jornada" : $beneficiario->getJornadaName()}}</option>
         @elseif ($modo == "Crear")
             <option selected>Selecciona una Jornada</option>
         @endif
