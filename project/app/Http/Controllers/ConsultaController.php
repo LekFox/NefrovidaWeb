@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Consulta;
+use App\Models\Beneficiario;
+use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use Illuminate\Http\Request;
+
+use App\Models\Notas;
+use App\Models\tipoNota;
+use App\Http\Resources\Notas as NotasResource;
+use App\Http\Resources\tipoNota as tipoNotaResource;
 
 class ConsultaController extends Controller
 {
@@ -14,7 +21,10 @@ class ConsultaController extends Controller
      */
     public function index()
     {
-        //
+        //$datos['Notas']=NotasResource::collection(Notas::all());
+        // $datos['Notas']=Notas::paginate(3);
+        // dd($datos);
+        //return view('notas.index',$datos);
     }
 
     /**
@@ -24,7 +34,14 @@ class ConsultaController extends Controller
      */
     public function create()
     {
-        //
+                //return Jornada::all();
+
+        $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
+        //$tipo['TipoNota']=tipoNotaResource::collection(tipoNota::all());
+
+        // $datos['Notas']=NotasResource::collection(Notas::all());
+
+        return view('notas.create',$datos);
     }
 
     /**
@@ -35,51 +52,127 @@ class ConsultaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$beneficiario_id=auth()->beneficiario()->id();
+        // $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
+        // $beneficiario_id =  $datos->id();
+        // $request['beneficiario_id'] = $beneficiario_id;
+        //$beneficiario_id=Beneficiario::
+        request()->validate([
+            'fecha' => 'required',
+            'comentario' => 'required',
+            'beneficiario_id' => 'required',
+            'tiponota' => 'required',
+        ]);
+    
+        // $status = Beneficiario::where(['name'=>'sample_status'])->firstOrFail();
+        // $order->order_status_id = $status->id;
+        // $order->save();
+        // Notas::create($request->all());
+        // Notas::create([
+        //     //'beneficiario_id' => request('beneficiario_id'),
+        //     'tipoNota_id' => 1,
+        //     'fecha' => request('fecha'),
+        //     'comentario' => request('comentario'),
+        // ]);
+
+        $nota= new Notas([
+            'tipoNota_id' => 1,
+            'fecha' => request('fecha'),
+            'comentario' => request('comentario'),
+            'tiponota' => request('tiponota'),
+            //'beneficiario_id' => request('beneficiario_id'),
+        ]);
+
+         $id = request('beneficiario_id');
+         $beneficiario = Beneficiario::find($id);
+         $beneficiario->notas()->save($nota);
+
+        return redirect('beneficiario/'.$id)->with('nuevo','Nota agregada con éxito');
+        //return redirect()->back()->with('nuevo','Nota agregada con éxito');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Consulta  $consulta
+     * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
-    public function show(Consulta $consulta)
+    public function show($id)
     {
-        //
+        $notas=Notas::findOrFail($id);
+
+        return view('notas.show',compact('notas'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Consulta  $consulta
+     * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Consulta $consulta)
+    public function edit($id)
     {
-        //
+        $notas=Notas::findOrFail($id);
+        //$datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
+
+
+        return view('notas.edit',compact('notas'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Consulta  $consulta
+     * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Consulta $consulta)
+    public function update(Request $request, $id)
     {
-        //
+
+        $notas = Notas::find($id);
+        request()->validate([
+            'fecha' => 'required',
+            'comentario' => 'required',
+            'beneficiario_id' => 'required',
+            'tiponota' => 'required',
+        ]);
+
+        $id=$notas->beneficiario_id;
+
+        $success = $notas->update([
+            'tipoNota_id' => 1,
+            'fecha' => request('fecha'),
+            'comentario' => request('comentario'),
+            'tiponota' => request('tiponota'),
+        ]);
+
+        return redirect('beneficiario/'.$id)->with('editado','Cambios realizados con éxito');
+
+        // return [
+        //          'success' => $success,
+        //           'id' => $id,
+        //           'notas' => $notas
+        //       ];
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Consulta  $consulta
+     * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Consulta $consulta)
+    public function destroy($id)
     {
-        //
+        $notas = Notas::find($id);
+        $id=$notas->beneficiario_id;
+        $success = $notas->delete();
+
+        return redirect('beneficiario/'.$id)->with('nuevo','Nota borrada con éxito');
+
+        // return [
+        //      'success' => $success,
+        //      'id' => $id,
+        //      'notas' => $notas
+        //  ];
     }
 }

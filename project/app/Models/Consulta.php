@@ -8,4 +8,30 @@ use Illuminate\Database\Eloquent\Model;
 class Consulta extends Model
 {
     use HasFactory;
+
+    protected $fillable =[
+        'fecha', 
+        'padecimiento', 
+        'TAbrazoDerecho',
+        'TAbrazoIzquierdo',
+        'frecuenciaCardiaca',
+        'frecuenciaRespiratoria',
+        'temperatura',
+        'peso',
+        'talla',
+        'cabezaCuello',
+        'torax',
+        'abdomen',
+        'extremidades',
+        'estadoMentalNeurologico',
+        'observaciones',
+        'diagnostico',
+        'tratamiento',
+    ];
+
+    public function beneficiario()
+    {
+        return $this->belongsTo(Beneficiario::class);
+    }
+
 }
