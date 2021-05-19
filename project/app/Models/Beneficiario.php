@@ -18,7 +18,7 @@ class Beneficiario extends Model
 
     //Regresa las jornadas a las que pertenece un beneficiario
     public function jornadas(){
-        return $this->belongsToMany(Jornada::class)->withTimestamps();;
+        return $this->belongsToMany(Jornada::class)->withTimestamps();
     }
 
     public function getJornadaName(){

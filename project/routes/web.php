@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'],  function () {
 Route::post('/jornadas/search', ['as' => 'search-jornadas', 'uses' => 'App\Http\Controllers\JornadaController@searchJornadas']);
 Route::post('/jornadas/searchloc', ['as' => 'search-jornadas-loc', 'uses' => 'App\Http\Controllers\JornadaController@searchJornadasLoc']);
 Route::get('/jornada/{jornada}/anadirBeneficiario', [JornadaController::class, 'anadirBeneficiario'])->name('anadirBeneficiario');
+Route::post('/jornada/asignarBeneficiario', [JornadaController::class, 'asignarBeneficiario']);
 
 Route::post('/beneficiarios/search', ['as' => 'search-beneficiarios', 'uses' => 'App\Http\Controllers\BeneficiarioController@searchBeneficiarios']);
 Route::post('/beneficiarios/searchage', ['as' => 'search-beneficiarios-age', 'uses' => 'App\Http\Controllers\BeneficiarioController@searchBeneficiariosAge']);
