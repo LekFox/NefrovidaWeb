@@ -7,6 +7,7 @@ use App\Http\Controllers\NotasController;
 use App\Http\Controllers\AntecedenteController;
 use App\Http\Controllers\evaluacionController;
 use App\Http\Controllers\evaluacionFinalController;
+use App\Http\Controllers\RiesgosController;
 
 
 /*
@@ -61,3 +62,5 @@ Route::resource('evaluacion',evaluacionController::class)->middleware('auth');
 //Route::resource('preguntasEvaluacion',preguntasController::class)->middleware('auth');
 
 Route::post('/evaluacion/storeFinal', ['uses' => 'App\Http\Controllers\EvaluacionController@storeFinal']);
+
+Route::resource('riesgos',RiesgosController::class)->middleware('auth');

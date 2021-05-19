@@ -51,4 +51,9 @@ class Beneficiario extends Model
     {
         return $this->hasMany(nutricionConsulta::class);
     }
+
+    public function factoresDeRiesgo()
+    {
+        return $this->hasOne(FactorDeRiesgo::class);
+    }
 }

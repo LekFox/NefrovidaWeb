@@ -23,7 +23,9 @@
     @include('antecedentes.card',['modo'=>'Detalle de'])
     @include('notas.index',['id'=>$id])
     @include('nutriologia.card',['id'=>$id])
+    @include('factorDeRiesgo.index')
     @include('evaluacion.index')
+    
 
 </div>
 
