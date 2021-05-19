@@ -27,7 +27,9 @@ Route::resource('jornada',JornadaController::class)->middleware('auth');
 Route::resource('beneficiario',BeneficiarioController::class)->middleware('auth');
 Route::resource('notas',NotasController::class)->middleware('auth');
 Route::resource('beneficiario.antecedentes', AntecedenteController::class)->shallow()->middleware('auth');
-Route::resource('nutricion',NutricionConsultaController::class)->middleware('auth');
+//Route::resource('nutricion',NutricionConsultaController::class)->middleware('auth');
+Route::resource('beneficiario.nutricion',NutricionConsultaController::class)->shallow()->middleware('auth');
+
 
 
 

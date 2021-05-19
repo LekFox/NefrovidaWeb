@@ -20,18 +20,21 @@ class nutricionConsulta extends JsonResource
             'ocupacion'=> $this->ocupacion,
             'horarioscomida'=> $this->horarioscomida,
             'cantidadalimentos'=> $this->cantidadalimentos,
+
             'apetito'=> $this->apetito,
             'distension'=> $this->distension,
             'estrenimiento'=> $this->estrenimiento,
             'flatulencias'=> $this->flatulencias,
             'vomitos'=> $this->vomitos,
             'caries'=> $this->caries,
+
             'edema'=> $this->edema,
             'mareo'=> $this->mareo,
             'zumbido'=> $this->zumbido,
             'cefaleas'=> $this->cefaleas,
             'disnea'=> $this->disnea,
             'poliuria'=> $this->poliuria,
+            
             'actividadfisica'=> $this->actividadfisica,
             'suenohoras'=> $this->suenohoras,
             'comidasdia'=> $this->comidasdia,

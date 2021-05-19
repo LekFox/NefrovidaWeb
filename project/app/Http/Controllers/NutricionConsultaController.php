@@ -24,11 +24,13 @@ class NutricionConsultaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
 
-        $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
-        return view('nutriologia.create',$datos);
+        // $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
+        // return view('nutriologia.create',$datos);
+        $beneficiario=Beneficiario::findOrFail($id);
+        return view('nutriologia.create',compact('beneficiario'));
     }
 
     /**
