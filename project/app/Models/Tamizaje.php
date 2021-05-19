@@ -9,6 +9,10 @@ class Tamizaje extends Model
 {
     use HasFactory;
 
+    protected $fillable =[
+        'sistolica', 'diastolica', 'beneficiario_id', 'circunferenciaCintura', 'circunferenciaCadera',
+        'glucosaCapilar', 'talla', 'peso', 'indiceCinturaCadera', 'comentario',
+    ];
 
     public function beneficiario()
     {

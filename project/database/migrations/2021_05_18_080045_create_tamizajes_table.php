@@ -15,6 +15,20 @@ class CreateTamizajesTable extends Migration
     {
         Schema::create('tamizajes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("beneficiario_id")
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->integer('sistolica');
+            $table->integer('diastolica');
+            $table->integer('circunferenciaCintura');
+            $table->integer('circunferenciaCadera');
+            $table->integer('glucosaCapilar');
+            $table->integer('talla');
+            $table->float('peso', 8, 2);
+            $table->float('indiceCinturaCadera', 8, 2)
+                ->nullable();
+            $table->string('comentario', 200);
             $table->timestamps();
         });
     }
