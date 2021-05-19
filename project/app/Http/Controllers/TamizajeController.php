@@ -142,8 +142,11 @@ class TamizajeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $tamizaje=Tamizaje::findOrFail($id);
+        $id_beneficiario = request('id_beneficiario');
+        $success = $tamizaje->delete();
+        return redirect('beneficiario/'.$id_beneficiario)->with('eliminado','Tamizaje borrado con éxito');
     }
 }
