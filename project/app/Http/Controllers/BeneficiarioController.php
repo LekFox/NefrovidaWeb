@@ -159,6 +159,11 @@ class BeneficiarioController extends Controller
         
         return json_encode( $beneficiarios );
     }
+
+    public function getBeneficiarioData ($id){
+        $beneficiario = Beneficiario::with('escolaridade:id,nombreEscolaridad')->where('beneficiarios.id', $id)->first();
+        return $beneficiario;
+    }
     
 //     function fetch(Request $request)
 //     {

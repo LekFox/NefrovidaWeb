@@ -149,4 +149,9 @@ class JornadaController extends Controller
 
         
     }
+
+    public function anadirBeneficiario($id){
+        $jornada=Jornada::findOrFail($id);
+        return view('jornada.assign', ["jornada" => $jornada]);
+    }
 }
