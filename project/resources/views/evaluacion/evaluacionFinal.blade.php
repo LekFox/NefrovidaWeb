@@ -14,8 +14,8 @@
           transition:.25s ease-in-out;
         }
   </style>
-
-  
+  <br><br>
+  <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
 
   <form action="{{url('/evaluacion/storeFinal')}}" method="post" id="evaluacionFinal">
     @csrf

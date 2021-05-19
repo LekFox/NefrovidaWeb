@@ -92,7 +92,7 @@ class evaluacionController extends Controller
      */
     public function show($id)
     {
-        $preguntas = Evaluacion::find($id)->preguntasEvaluacion;
+        $preguntas = Evaluacion::find(1)->preguntasEvaluacion;
 
         if($id == 1)
         {
@@ -143,8 +143,6 @@ class evaluacionController extends Controller
             $request->input('pregunta7'),
             $request->input('pregunta8'),
             $request->input('pregunta9')
-
-            
 
         ];
 

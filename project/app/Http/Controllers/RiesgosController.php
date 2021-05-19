@@ -45,9 +45,47 @@ class RiesgosController extends Controller
      */
     public function store(Request $request)
     {
-        $preguntas = PreguntaRiesgo::find(1)->preguntasRiesgos;
+        $data = [
+            $request->input('inlineRadioOptions1'),
+            $request->input('inlineRadioOptions2'),
+            $request->input('inlineRadioOptions3'),
+            $request->input('inlineRadioOptions4'),
+            $request->input('inlineRadioOptions5'),
+            $request->input('inlineRadioOptions6'),
+            $request->input('inlineRadioOptions7'),
+            $request->input('inlineRadioOptions8'),
+            $request->input('inlineRadioOptions9'),
+            $request->input('inlineRadioOptions10'),
+            $request->input('inlineRadioOptions11'),
+            $request->input('inlineRadioOptions12'),
+            
+        ];
 
-        return view('factorDeRiesgo.create',["preguntas"=>$preguntas]);
+        request()->validate([
+            'beneficiario_id'=>'required',
+        
+        ]);
+
+        /*$riesgos = new FactorDeRiesgo([
+            'pregunta_id' => request('1'),
+            'respuesta' => request('inlineRadioOptions1')
+        ]);
+
+        $id = request('beneficiario_id');
+        $beneficiario = Beneficiario::find($id);
+        $beneficiario->factoresDeRiesgo()->save($riesgos);*/
+
+
+
+        $id = request('beneficiario_id');
+
+        $enfermedad = $request->input('enfermedad');
+
+        
+
+        FactorDeRiesgo::saveFactoresDeRiesgo($id, $data, $enfermedad);
+
+
     }
 
     /**
