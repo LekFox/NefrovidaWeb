@@ -79,7 +79,8 @@ class TamizajeController extends Controller
      */
     public function show($id)
     {
-        //
+        $tamizaje=Tamizaje::findOrFail($id);
+        return view('tamizaje.show',compact('tamizaje'));
     }
 
     /**
