@@ -104,7 +104,7 @@
         </div>
         <div class= "row">
           <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Circunferncia en cadera:</h5>
+                <h5 class="card-title ">Circunferencia en cadera:</h5>
             </div>
             <div class= "col text-left align-bottom">
                 @if($tamizaje->circunferenciaCadera == NULL)
@@ -162,6 +162,31 @@
                 @endif
             </div>
         </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">Registrado en:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($tamizaje->created_at == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $tamizaje->created_at }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">Última actualización:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($tamizaje->updated_at == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $tamizaje->updated_at }}</p>
+                @endif
+            </div>
+        </div>
+        
         
 
         

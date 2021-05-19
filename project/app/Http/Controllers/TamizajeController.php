@@ -91,7 +91,8 @@ class TamizajeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tamizaje=Tamizaje::findOrFail($id);
+        return view('tamizaje.edit',compact('tamizaje'));
     }
 
     /**
@@ -103,7 +104,36 @@ class TamizajeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        request()->validate([
+            'id' => 'required',
+            'sistolica' => 'required',
+            'diastolica' => 'required',
+            'circunferenciaCintura' => 'required',
+            'circunferenciaCadera' => 'required',
+            'glucosaCapilar' => 'required',
+            'talla' => 'required',
+            'peso' => 'required',
+        ]);
+        $cintura = floatval(request('circunferenciaCintura'));
+        $cadera = floatval(request('circunferenciaCadera'));
+        $indiceCinturaCadera = $cintura/$cadera;
+
+        $tamizaje = Tamizaje::findOrFail($id);
+
+        $success= $tamizaje -> update([
+            'sistolica' => request('sistolica'),
+            'diastolica' => request('diastolica'),
+            'circunferenciaCintura' => request('circunferenciaCintura'),
+            'circunferenciaCadera' => request('circunferenciaCadera'),
+            'glucosaCapilar' => request('glucosaCapilar'),
+            'talla' => request('talla'),
+            'peso' => request('peso'),
+            'comentario' => request('comentario'),
+            'indiceCinturaCadera' => $indiceCinturaCadera,
+        ]);
+
+
+        return redirect('tamizaje/'.$id)->with('editado','Cambios realizados con éxito');
     }
 
     /**
