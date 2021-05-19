@@ -26,7 +26,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-person-lines-fill"></i> Registrar Tamizaje de {{ $beneficiario->nombreBeneficiario }}</h1>
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-droplet"></i> Registrar Tamizaje de {{ $beneficiario->nombreBeneficiario }}</h1>
   <a href="{{ url('/beneficiario/'.$beneficiario->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
   <br>
   <br>

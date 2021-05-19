@@ -28,7 +28,8 @@ class CreateTamizajesTable extends Migration
             $table->float('peso', 8, 2);
             $table->float('indiceCinturaCadera', 8, 2)
                 ->nullable();
-            $table->string('comentario', 200);
+            $table->string('comentario', 200)
+                ->nullable();
             $table->timestamps();
         });
     }

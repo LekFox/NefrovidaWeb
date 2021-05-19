@@ -40,7 +40,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
-  <h1 id="TamizajeTitulo" class="text-center bluenefro"><i class="bi bi-person-lines-fill"></i> Tamizaje de {{$tamizaje->beneficiario->nombreBeneficiario}}</h1>
+  <h1 id="TamizajeTitulo" class="text-center bluenefro"><i class="bi bi-droplet"></i> Tamizaje de {{$tamizaje->beneficiario->nombreBeneficiario}}</h1>
   <div class="row">
     <div class="col">
       <a href="{{ url('/beneficiario/'.$tamizaje->beneficiario->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>

@@ -6,7 +6,7 @@
           <div class= "col-sm">
             </div>
             <div class="col-sm text-center">
-                <h2 class="card-title"><i class="bi bi-folder greennefro"></i> Tamizaje</h2>
+                <h2 class="card-title"><i class="bi bi-droplet greennefro"></i> Tamizaje</h2>
             </div>
             <div class="col-sm">
             </div>
