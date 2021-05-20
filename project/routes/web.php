@@ -7,7 +7,9 @@ use App\Http\Controllers\NotasController;
 use App\Http\Controllers\AntecedenteController;
 use App\Http\Controllers\evaluacionController;
 use App\Http\Controllers\evaluacionFinalController;
-
+//----------------------------------------------------------------------------------------------------\\
+use App\Http\Controllers\consultaController;
+//----------------------------------------------------------------------------------------------------\\
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +30,9 @@ Route::resource('jornada',JornadaController::class)->middleware('auth');
 Route::resource('beneficiario',BeneficiarioController::class)->middleware('auth');
 Route::resource('notas',NotasController::class)->middleware('auth');
 Route::resource('beneficiario.antecedentes', AntecedenteController::class)->shallow()->middleware('auth');
-
-
+//----------------------------------------------------------------------------------------------------\\
+Route::resource('beneficiario.consulta', consultaController::class)->shallow()->middleware('auth');
+//----------------------------------------------------------------------------------------------------\\
 
 Auth::routes(['reset'=>false]); //['register'=>false,'reset'=>false]
 

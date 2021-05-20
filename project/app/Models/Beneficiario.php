@@ -42,6 +42,10 @@ class Beneficiario extends Model
         return $this->hasOne(Antecedente::class);
     }
 
+    public function consulta(){
+        return $this->hasOne(consulta::class);
+    }
+
     public function escolaridade()
     {
         return $this->belongsTo(Escolaridade::class);
