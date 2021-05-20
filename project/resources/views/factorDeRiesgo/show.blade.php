@@ -38,7 +38,7 @@
       <br>
       <div class="form-group">
         @if($riesgos[1]->respuesta == 1)
-          <h5>Si, padecen de {{$riesgos[1]->enfermedad}}.</h5>
+          <h5>{{$riesgos[1]->enfermedad}}.</h5>
         @endif
 
         @if($riesgos[1]->respuesta == 0)
