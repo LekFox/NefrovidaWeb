@@ -6,6 +6,7 @@ use App\Http\Controllers\BeneficiarioController;
 use App\Http\Controllers\NotasController;
 use App\Http\Controllers\AntecedenteController;
 use App\Http\Controllers\TamizajeController;
+use App\Http\Controllers\AnalisisLabController;
 use App\Http\Controllers\evaluacionController;
 use App\Http\Controllers\evaluacionFinalController;
 
@@ -30,6 +31,7 @@ Route::resource('beneficiario',BeneficiarioController::class)->middleware('auth'
 Route::resource('notas',NotasController::class)->middleware('auth');
 Route::resource('beneficiario.antecedentes', AntecedenteController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.tamizaje', TamizajeController::class)->shallow()->middleware('auth');
+Route::resource('beneficiario.analisislab', AnalisisLabController::class)->shallow()->middleware('auth');
 
 
 

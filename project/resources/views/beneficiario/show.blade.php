@@ -25,7 +25,7 @@
     @include('nutriologia.card',['id'=>$id])
     @include('tamizaje.card',['modo'=>'Detalle de'])
     @include('evaluacion.index')
-
+    @include('analisislab.card',['modo'=>'Index de'])
 </div>
 
 @endsection
