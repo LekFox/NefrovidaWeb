@@ -115,7 +115,7 @@
 
   <div class="form-group">
     <br><br>
-    <h4>5.- ¿Regularmente se auto medica con analgésicos de venta libre (Como ibuprofeno o naproxeno)?</h4>
+    <h4>5.- ¿Regularmente se automedica con analgésicos de venta libre (Como ibuprofeno o naproxeno)?</h4>
     <br>
     <h5>
     <div class="form-check form-check-inline">

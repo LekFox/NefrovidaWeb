@@ -54,10 +54,19 @@ class FactorDeRiesgo extends Model
                ]);*/
                $index++;
            }
+
+           $beneficiario = Beneficiario::find($id);
+           $beneficiario->factoresDeRiesgo()->save($respuesta);
            
             
            
            
+       }
+
+       public static function findBeneficiario($id)
+       {
+            $riesgos = FactorDeRiesgo::where('beneficiario_id',$id);
+            return $riesgos;
        }
     
 }

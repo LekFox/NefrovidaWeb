@@ -8,6 +8,8 @@ use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use App\Models\Beneficiario;
 use App\Models\FactorDeRiesgo;
 use App\Models\PreguntaRiesgo;
+use Illuminate\Support\Facades\DB;
+
 
 class RiesgosController extends Controller
 {
@@ -96,9 +98,15 @@ class RiesgosController extends Controller
      */
     public function show($id)
     {
-        $preguntas = PreguntaRiesgo::find(1)->preguntasRiesgos;
+        //$riesgos = DB::table('factor_de_riesgos')->where('beneficiario_id', $id);
 
-        return view('factorDeRiesgo.create',["preguntas"=>$preguntas]);
+        $riesgos = FactorDeRiesgo::where('beneficiario_id',$id)->get();
+
+        $beneficiario = Beneficiario::FindOrFail($id);
+
+        //dd($riesgos);
+        
+        return view('factorDeRiesgo.show',['riesgos'=>$riesgos, 'beneficiario'=>$beneficiario]);
     }
 
     /**
