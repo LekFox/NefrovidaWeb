@@ -58,76 +58,86 @@
     </div>
     <form role="form" action="" method="post">
         <div class="row setup-content" id="step-1">
-            <div class="col">
-                
-            </div>
-            <div class="col">
+          <div class="col">
+                </div>
                 <div class="col">
-                    <h3 class="text-center"><i class="bi bi-house-fill"></i> Datos de Vivienda</h3>
-                    <br>
-                    <input type="hidden" id="id" name="id" value="{{ $antecedentes->id }}">
-                    <h5>Vive en casa:</h5>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="casa" id="casa" value="propia"
-                      @if($antecedentes->casa == "propia") checked @endif>
-                      <label class="form-check-label" for="propia">
-                        Propia
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="casa" id="casa" value="rentada"
-                      @if($antecedentes->casa == "rentada") checked @endif>
-                      <label class="form-check-label" for="rentada">
-                        Rentada
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="casa" id="casa" value="prestada"
-                      @if($antecedentes->casa == "prestada") checked @endif>
-                      <label class="form-check-label" for="prestada">
-                        Prestada
-                      </label>
-                    </div>
-                    <br>
-                    <h5>Servicios básicos:</h5>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="serviciosBasicos" id="serviciosBasicos" value="1"
-                      @if($antecedentes->serviciosBasicos == "1") checked @endif>
-                      <label class="form-check-label" for="si">
-                        Sí
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="serviciosBasicos" id="serviciosBasicos" value="0"
-                      @if($antecedentes->serviciosBasicos == "0") checked @endif>
-                      <label class="form-check-label" for="no">
-                        No
-                      </label>
-                    </div>
-                    <br>
-                    <div class="text-center">
-                      <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
+                    <div class="col">
+                        <h3 class="text-center"><i class="bi bi-person-square"></i> Padecimiento Actual</h3>
+                        <br>
+                        <h5>Describa el Padecimiento Actual del Beneficiario:</h5>
+                        <div class="form-group">
+                          <textarea class="form-control" id="padecimiento" name="padecimiento" maxlength="400" rows="3">{{ isset($consulta->padecimiento)?$consulta->padecimiento:old('padecimiento') }}</textarea>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-            </div>
+                <div class="col">
+                </div>
         </div>
         <div class="row setup-content" id="step-2">
           <div class="col">
                 </div>
                 <div class="col">
                     <div class="col">
-                        <h3 class="text-center"><i class="bi bi-person-square"></i> Antecedentes Personales</h3>
+                        <h3 class="text-center"><i class="bi bi-person-square"></i> Exploración Física</h3>
                         <br>
-                        <h5>Personales Patológicos:</h5>
+                        <h5>T.A. Brazo Derecho:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="personalesPatologicos" name="personalesPatologicos" maxlength="400" rows="3">{{ isset($antecedentes->personalesPatologicos)?$antecedentes->personalesPatologicos:old('personalesPatologicos') }}</textarea>
+                          <textarea class="form-control" id="brazoD" name="brazoD" maxlength="50" rows="1">{{ isset($consulta->brazoD)?$consulta->brazoD:old('brazoD') }}</textarea>
                         </div>
                         <br>
-                        <h5>Personales No Patológicos:</h5>
+                        <h5>T.A. Brazo Izquierdo:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="personalesNoPatologicos" name="personalesNoPatologicos" maxlength="400" rows="3">{{ isset($antecedentes->personalesNoPatologicos)?$antecedentes->personalesNoPatologicos:old('personalesNoPatologicos') }}</textarea>
+                          <textarea class="form-control" id="brazoI" name="brazoI" maxlength="50" rows="1">{{ isset($consulta->brazoI)?$consulta->brazoI:old('brazoI') }}</textarea>
+                        </div>
+                        <br>
+                        <h5>Frecuencia Cardiaca:</h5>
+                        <div class="form-group">
+                          <textarea class="form-control" id="fCardiaca" name="fCardiaca" maxlength="50" rows="1">{{ isset($consulta->fCardiaca)?$consulta->fCardiaca:old('fCardiaca') }}</textarea>
+                        </div>
+                        <br>
+                        <h5>Frecuencia Respiratoria:</h5>
+                        <div class="form-group">
+                          <textarea class="form-control" id="fRespiratoria" name="fRespiratoria" maxlength="50" rows="1">{{ isset($consulta->fRespiratoria)?$consulta->fRespiratoria:old('fRespiratoria') }}</textarea>
+                        </div>
+                        <br>
+                        <h5>Temperatura:</h5>
+                        <div class="form-group">
+                          <textarea class="form-control" id="temperatura" name="temperatura" maxlength="50" rows="1">{{ isset($consulta->temperatura)?$consulta->temperatura:old('temperatura') }}</textarea>
+                        </div>
+                        <br>
+                        <h5>Peso:</h5>
+                        <div class="form-group">
+                          <textarea class="form-control" id="peso" name="peso" maxlength="50" rows="1">{{ isset($consulta->peso)?$consulta->peso:old('peso') }}</textarea>
+                        </div>
+                        <br>
+                        <h5>Talla:</h5>
+                        <div class="form-group">
+                          <textarea class="form-control" id="talla" name="talla" maxlength="50" rows="1">{{ isset($consulta->talla)?$consulta->talla:old('talla') }}</textarea>
+                        </div>
+                        <br>
+                        <h5>Cabeza y Cuello:</h5>
+                        <div class="form-group">
+                          <textarea class="form-control" id="cabezaCuello" name="cabezaCuello" maxlength="50" rows="1">{{ isset($consulta->cabezaCuello)?$consulta->cabezaCuello:old('cabezaCuello') }}</textarea>
+                        </div>
+                        <br>
+                        <h5>Tórax:</h5>
+                        <div class="form-group">
+                          <textarea class="form-control" id="torax" name="torax" maxlength="50" rows="1">{{ isset($consulta->torax)?$consulta->torax:old('torax') }}</textarea>
+                        </div>
+                        <br>
+                        <h5>Abdomen:</h5>
+                        <div class="form-group">
+                          <textarea class="form-control" id="abdomen" name="abdomen" maxlength="50" rows="1">{{ isset($consulta->abdomen)?$consulta->abdomen:old('abdomen') }}</textarea>
+                        </div>
+                        <br>
+                        <h5>Extremidades:</h5>
+                        <div class="form-group">
+                          <textarea class="form-control" id="extremidades" name="extremidades" maxlength="50" rows="1">{{ isset($consulta->extremidades)?$consulta->extremidades:old('extremidades') }}</textarea>
                         </div>
                         <br>
                         <div class="text-center">
@@ -144,69 +154,13 @@
                 </div>
                 <div class="col">
                     <div class="col">
-                        <h3 class="text-center"><i class="bi bi-people-fill"></i> Antecedentes Familiares</h3>
+                        <h3 class="text-center"><i class="bi bi-person-square"></i> Estádo Neurológico y Mental</h3>
                         <br>
-                        <h5>Padre vivo:</h5>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="padreVivo" id="padreVivo" value="1"
-                          @if($antecedentes->padreVivo == "1") checked @endif>
-                          <label class="form-check-label" for="si">
-                            Sí
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="padreVivo" id="padreVivo" value="0"
-                          @if($antecedentes->padreVivo == "0") checked @endif>
-                          <label class="form-check-label" for="no">
-                            No
-                          </label>
-                        </div>
-                        <br>
-                        <h5>Enfermedades del padre:</h5>
+                        <h5>Describa el Estado Mental y Neurológico del Beneficiario:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="enfermedadesPadre" name="enfermedadesPadre" maxlength="400" rows="3">{{ isset($antecedentes->enfermedadesPadre)?$antecedentes->enfermedadesPadre:old('enfermedadesPadre') }}</textarea>
+                          <textarea class="form-control" id="mental" name="mental" maxlength="400" rows="3">{{ isset($consulta->mental)?$consulta->mental:old('mental') }}</textarea>
                         </div>
                         <br>
-                        <h5>Madre viva:</h5>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="madreVivo" id="madreVivo" value="1"
-                          @if($antecedentes->madreVivo == "1") checked @endif>
-                          <label class="form-check-label" for="si">
-                            Sí
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="madreVivo" id="madreVivo" value="0"
-                          @if($antecedentes->madreVivo == "0") checked @endif>
-                          <label class="form-check-label" for="no">
-                            No
-                          </label>
-                        </div>
-                        <br>
-                        <h5>Enfermedades de la madre:</h5>
-                        <div class="form-group">
-                          <textarea class="form-control" id="enfermedadesMadre" name="enfermedadesMadre" maxlength="400" rows="3">{{ isset($antecedentes->enfermedadesMadre)?$antecedentes->enfermedadesMadre:old('enfermedadesMadre') }}</textarea>
-                        </div>
-                        <br>
-                        <h5>Número de hermanos:</h5>
-                        <div class="form-group">
-                          <input type="number" value="{{ isset($antecedentes->numHermanos)?$antecedentes->numHermanos:old('numHermanos') }}" class="form-control" id="numHermanos" name="numHermanos" placeholder="Número de hermanos">
-                        </div>
-                        <br>
-                        <h5>Número de hermanos vivos:</h5>
-                        <div class="form-group">
-                          <input type="number" value="{{ isset($antecedentes->numHermanosVivos)?$antecedentes->numHermanosVivos:old('numHermanosVivos') }}" class="form-control" id="numHermanosVivos" name="numHermanosVivos" placeholder="Número de hermanos vivos">
-                        </div>
-                        <br>
-                        <h5>Enfermedades de los hermanos:</h5>
-                        <div class="form-group">
-                          <textarea class="form-control" id="enfermedadesHermanos" name="enfermedadesHermanos" maxlength="400" rows="3">{{ isset($antecedentes->enfermedadesHermanos)?$antecedentes->enfermedadesHermanos:old('enfermedadesHermanos') }}</textarea>
-                        </div>
-                        <br>
-                        <h5>Observaciones de los hermanos:</h5>
-                        <div class="form-group">
-                          <textarea class="form-control" id="otrosHermanos" name="otrosHermanos" maxlength="400" rows="3">{{ isset($antecedentes->otrosHermanos)?$antecedentes->otrosHermanos:old('otrosHermanos') }}</textarea>
-                        </div>
                         <div class="text-center">
                           <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
                           <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
@@ -215,68 +169,53 @@
                 </div>
                 <div class="col">
                 </div>
-          </div>
         </div>
         <div class="row setup-content" id="step-4">
-              <div class="col">
-              </div>
-              <div class="col">
-                  <div class="col">
-                      <h3 class="text-center"><i class="bi bi-journal-medical"></i> Antecedentes Gineco-obstétricos</h3>
-                      <br>
-                      <h5>Menarquia:</h5>
+          <div class="col">
+                </div>
+                <div class="col">
+                    <div class="col">
+                        <h3 class="text-center"><i class="bi bi-person-square"></i> Otros</h3>
+                        <br>
+                        <h5>Observaiones:</h5>
                         <div class="form-group">
-                          <input type="number" value="{{ isset($antecedentes->menarquia)?$antecedentes->menarquia:old('menarquia') }}" class="form-control" id="menarquia" name="menarquia" placeholder="Edad de comienzo de menarquia">
+                          <textarea class="form-control" id="observaciones" name="observaciones" maxlength="400" rows="3">{{ isset($consulta->observaciones)?$consulta->observaciones:old('observaciones') }}</textarea>
                         </div>
                         <br>
-                      <h5>Ritmo:</h5>
-                        <div class="form-group">
-                            <input type="number" value="{{ isset($antecedentes->ritmo)?$antecedentes->ritmo:old('ritmo') }}" class="form-control" id="ritmo" name="ritmo" placeholder="Ritmo">
+                        <div class="text-center">
+                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
                         </div>
-                      <br>
-                      <h5>F.U.M.:</h5>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+        </div>
+        <div class="row setup-content" id="step-5">
+          <div class="col">
+                </div>
+                <div class="col">
+                    <div class="col">
+                        <h3 class="text-center"><i class="bi bi-person-square"></i> Diagnóstico y Plan de Tratamiento</h3>
+                        <br>
+                        <h5>Diagnósico:</h5>
                         <div class="form-group">
-                            <input class="date form-control" value="{{ isset($antecedentes->fum)?$antecedentes->fum:old('fum') }}" type="date" name="fum" id="fum">    
+                          <textarea class="form-control" id="diagnostico" name="diagnostico" maxlength="400" rows="3">{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}</textarea>
                         </div>
-                      <br>
-                      <h5>Gestaciones:</h5>
+                        <br>
+                        <h5>Tratamiento:</h5>
                         <div class="form-group">
-                            <input type="number" value="{{ isset($antecedentes->gestaciones)?$antecedentes->gestaciones:old('gestaciones') }}" class="form-control" id="gestaciones" name="gestaciones" placeholder="Número de gestaciones">
+                          <textarea class="form-control" id="tratamiento" name="tratamiento" maxlength="400" rows="3">{{ isset($consulta->tratamiento)?$consulta->tratamiento:old('tratamiento') }}</textarea>
                         </div>
-                      <br>
-                      <h5>Partos:</h5>
-                        <div class="form-group">
-                            <input type="number" value="{{ isset($antecedentes->partos)?$antecedentes->partos:old('partos') }}" class="form-control" id="partos" name="partos" placeholder="Número de partos">
+                        <br>
+                        <div class="text-center">
+                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
                         </div>
-                      <br>
-                      <h5>Abortos:</h5>
-                        <div class="form-group">
-                            <input type="number" value="{{ isset($antecedentes->abortos)?$antecedentes->abortos:old('abortos') }}" class="form-control" id="abortos" name="abortos" placeholder="Número de abortos">
-                        </div>
-                      <br>
-                      <h5>Cesáreas:</h5>
-                        <div class="form-group">
-                            <input type="number" value="{{ isset($antecedentes->cesareas)?$antecedentes->cesareas:old('cesareas') }}" class="form-control" id="cesareas" name="cesareas" placeholder="Número de cesáreas">
-                        </div>
-                      <br>
-                      <h5>I.V.S.A.:</h5>
-                        <div class="form-group">
-                            <input type="number" value="{{ isset($antecedentes->ivsa)?$antecedentes->ivsa:old('ivsa') }}" class="form-control" id="ivsa" name="ivsa" placeholder="Inicio de vida sexual activa">
-                        </div>
-                      <br>
-                      <h5>Métodos anticonceptivos:</h5>
-                        <div class="form-group">
-                          <textarea class="form-control" id="metodosAnticonceptivos" name="metodosAnticonceptivos" maxlength="400" rows="3">{{ isset($antecedentes->metodosAnticonceptivos)?$antecedentes->metodosAnticonceptivos:old('metodosAnticonceptivos') }}</textarea>
-                        </div>
-                      <br>
-                      <div class="text-center">
-                        <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                          <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Guardar</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="col">
-              </div>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
         </div>
     </form>
 </div>

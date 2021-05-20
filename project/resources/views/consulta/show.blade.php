@@ -40,10 +40,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-person-lines-fill"></i> Antecedentes de {{$antecedentes->beneficiario->nombreBeneficiario}}</h1>
+  <h1 id="consultaTitulo" class="text-center bluenefro"><i class="bi bi-person-lines-fill"></i> >Consulta de {{$consulta->beneficiario->nombreBeneficiario}}</h1>
   <div class="row">
     <div class="col">
-      <a href="{{ url('/beneficiario/'.$antecedentes->beneficiario->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+      <a href="{{ url('/beneficiario/'.$consulta->beneficiario->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
     </div>
     <div class="col">
     </div>
@@ -51,295 +51,230 @@
   <br><br>
   <div class="card">
     <div class="card-body">
-      <div class= "row">
-          <div class="col"></div>
+        <div class= "row">
           <div class= "col text-center align-bottom">
-                <h2 class="card-title "><i class="bi bi-house-fill"></i> Vivienda</h2>
-          </div>
-          <div class="col text-right">
-                <a href="{{url('/antecedentes/'.$antecedentes->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
-                <form action="{{url('/antecedentes/'.$antecedentes->id)}}" class="d-inline" method="post">
-                    @csrf
-                    {{ @method_field('DELETE') }}
-                    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $antecedentes->beneficiario->id }}">
-                    <button type="submit" onclick="return confirm('¿Quieres borrar los antecedentes? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
-                </form>
+                <h2 class="card-title "><i class="bi bi-person-square"></i> Padecimiento</h2>
           </div>
         </div>
         <div class= "row">
           <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Casa:</h5>
+                <h5 class="card-title ">Padecimiento:</h5>
             </div>
             <div class= "col text-left align-bottom">
-                <p class="font-weight-light" >{{ $antecedentes->casa }}</p>
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Servicios básicos:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->serviciosBasicos == 0)
-                <p class="font-weight-light" >No</p>
+                @if($consulta->padecimiento == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
                 @else
-                <p class="font-weight-light" >Sí</p>
+                <p class="font-weight-light" >{{ $consulta->padecimimetno }}</p>
                 @endif
             </div>
         </div>
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <h2 class="card-title "><i class="bi bi-person-square"></i> Antecedentes Personales</h2>
+                <h2 class="card-title "><i class="bi bi-person-square"></i> Exploración Física</h2>
           </div>
         </div>
         <div class= "row">
           <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Patológicos:</h5>
+                <h5 class="card-title ">T.A. Brazo Derecho:</h5>
             </div>
             <div class= "col text-left align-bottom">
-                @if($antecedentes->personalesPatologicos == NULL)
+                @if($consulta->brazoD == NULL)
                 <p class="font-weight-light" >No registrado / No aplica</p>
                 @else
-                <p class="font-weight-light" >{{ $antecedentes->personalesPatologicos }}</p>
+                <p class="font-weight-light" >{{ $consulta->brazoD }}</p>
                 @endif
             </div>
         </div>
         <div class= "row">
           <div class= "col text-right align-bottom">
-                <h5 class="card-title ">No patológicos:</h5>
+                <h5 class="card-title ">T.A. Brazo Izquierdo:</h5>
             </div>
             <div class= "col text-left align-bottom">
-                @if($antecedentes->personalesNoPatologicos == NULL)
+                @if($consulta->brazoI == NULL)
                 <p class="font-weight-light" >No registrado / No aplica</p>
                 @else
-                <p class="font-weight-light" >{{ $antecedentes->personalesNoPatologicos }}</p>
+                <p class="font-weight-light" >{{ $consulta->brazoI }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">Frecuencia Cardiaca:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($consulta->fCardiaca == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $consulta->fCardiaca }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">Frecuencia Respiratoria:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($consulta->fRespiratoria == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $consulta->fRespiratoria }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">Temperatura:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($consulta->temperatura == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $consulta->temperatura }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">Peso:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($consulta->peso == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $consulta->peso }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">Talla:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($consulta->talla == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $consulta->talla }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">Cabeza y Cuello:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($consulta->cabezaCuello == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $consulta->cabezaCuello }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">Torax:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($consulta->torax == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $consulta->torax }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">Abdomen:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($consulta->abdomen == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $consulta->abdomen }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">Extremidades:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($consulta->extremidades == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $consulta->extremidades }}</p>
                 @endif
             </div>
         </div>
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <h2 class="card-title "><i class="bi bi-people-fill"></i> Antecedentes Familiares</h2>
+                <h2 class="card-title "><i class="bi bi-person-square"></i> Estádo Neurológico y Mental</h2>
           </div>
         </div>
         <div class= "row">
           <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Padre vivo:</h5>
+                <h5 class="card-title ">Estado Neurológico y Mental:</h5>
             </div>
             <div class= "col text-left align-bottom">
-                @if($antecedentes->padreVivo == 0)
-                <p class="font-weight-light" >No</p>
-                @else
-                <p class="font-weight-light" >Sí</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Enfermedades del padre:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->enfermedadesPadre == NULL)
+                @if($consulta->mental == NULL)
                 <p class="font-weight-light" >No registrado / No aplica</p>
                 @else
-                <p class="font-weight-light" >{{ $antecedentes->enfermedadesPadre }}</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Madre viva:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->madreVivo == 0)
-                <p class="font-weight-light" >No</p>
-                @else
-                <p class="font-weight-light" >Sí</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Enfermedades de la madre:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->enfermedadesMadre == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->enfermedadesMadre }}</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Número de hermanos:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->numHermanos == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->numHermanos }}</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Número de hermanos vivos:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->numHermanosVivos == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->numHermanosVivos }}</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Enfermedades de los hermanos:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->enfermedadesHermanos == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->enfermedadesHermanos }}</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Otros datos de los hermanos:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->otrosHermanos == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->otrosHermanos }}</p>
+                <p class="font-weight-light" >{{ $consulta->mental }}</p>
                 @endif
             </div>
         </div>
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <h2 class="card-title "><i class="bi bi-journal-medical"></i> Antecedentes Gineco-obstétricos</h2>
+                <h2 class="card-title "><i class="bi bi-person-square"></i> Otros</h2>
           </div>
         </div>
         <div class= "row">
           <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Menarquia:</h5>
+                <h5 class="card-title "> Observaciones:</h5>
             </div>
             <div class= "col text-left align-bottom">
-                @if($antecedentes->menarquia == NULL)
+                @if($consulta->observaciones == NULL)
                 <p class="font-weight-light" >No registrado / No aplica</p>
                 @else
-                <p class="font-weight-light" >{{ $antecedentes->menarquia }}</p>
+                <p class="font-weight-light" >{{ $consulta->observaciones }}</p>
+                @endif
+            </div>
+        </div>
+        <br>
+        <div class= "row">
+          <div class= "col text-center align-bottom">
+                <h2 class="card-title "><i class="bi bi-person-square"></i> Diagnóstico y Tratamiento</h2>
+          </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title "> Diagnóstico:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($consulta->diagnostico == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $consulta->diagnostico }}</p>
                 @endif
             </div>
         </div>
         <div class= "row">
           <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Ritmo:</h5>
+                <h5 class="card-title "> Tratamiento:</h5>
             </div>
             <div class= "col text-left align-bottom">
-                @if($antecedentes->ritmo == NULL)
+                @if($consulta->tratamiento == NULL)
                 <p class="font-weight-light" >No registrado / No aplica</p>
                 @else
-                <p class="font-weight-light" >{{ $antecedentes->ritmo }}</p>
+                <p class="font-weight-light" >{{ $consulta->tratamiento }}</p>
                 @endif
             </div>
         </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">F.U.M.:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->fum == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->fum }}</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Gestaciones:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->gestaciones == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->gestaciones }}</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Partos:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->partos == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->partos }}</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Abortos:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->abortos == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->abortos }}</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Cesáreas:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->cesareas == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->cesareas }}</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">I.V.S.A.:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->ivsa == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->ivsa }}</p>
-                @endif
-            </div>
-        </div>
-        <div class= "row">
-          <div class= "col text-right align-bottom">
-                <h5 class="card-title ">Métodos anticonceptivos:</h5>
-            </div>
-            <div class= "col text-left align-bottom">
-                @if($antecedentes->metodosAnticonceptivos == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
-                @else
-                <p class="font-weight-light" >{{ $antecedentes->metodosAnticonceptivos }}</p>
-                @endif
-            </div>
-        </div>
-        
-
-        
+        <br>
     </div>
 </div>
-
- 
-
   <br>
 
   

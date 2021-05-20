@@ -93,51 +93,51 @@
                         <br>
                         <h5>T.A. Brazo Izquierdo:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="brazoI" name="brazoI" maxlength="20" rows="1"></textarea>
+                          <textarea class="form-control" id="brazoI" name="brazoI" maxlength="50" rows="1"></textarea>
                         </div>
                         <br>
                         <h5>Frecuencia Cardíaca:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="fCardiaca" name="fCardiaca" maxlength="20" rows="1"></textarea>
+                          <textarea class="form-control" id="fCardiaca" name="fCardiaca" maxlength="50" rows="1"></textarea>
                         </div>
                         <br>
                         <h5>Frecuencia Respiratoria:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="fRespiratoria" name="fRespiratoria" maxlength="20" rows="1"></textarea>
+                          <textarea class="form-control" id="fRespiratoria" name="fRespiratoria" maxlength="50" rows="1"></textarea>
                         </div>
                         <br>
                         <h5>Temperatura:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="temperatura" name="temperatura" maxlength="20" rows="1"></textarea>
+                          <textarea class="form-control" id="temperatura" name="temperatura" maxlength="50" rows="1"></textarea>
                         </div>
                         <br>
                         <h5>Peso:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="peso" name="peso" maxlength="20" rows="1"></textarea>
+                          <textarea class="form-control" id="peso" name="peso" maxlength="50" rows="1"></textarea>
                         </div>
                         <h5>Talla:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="talla" name="talla" maxlength="20" rows="1"></textarea>
+                          <textarea class="form-control" id="talla" name="talla" maxlength="50" rows="1"></textarea>
                         </div>
                         <br>
                         <h5>Cabeza y Cuello:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="cabezaCuello" name="cabezaCuello" maxlength="20" rows="1"></textarea>
+                          <textarea class="form-control" id="cabezaCuello" name="cabezaCuello" maxlength="50" rows="1"></textarea>
                         </div>
                         <br>
                         <h5>Torax:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="torax" name="torax" maxlength="20" rows="1"></textarea>
+                          <textarea class="form-control" id="torax" name="torax" maxlength="50" rows="1"></textarea>
                         </div>
                         <br>
                         <h5>Abdomen:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="abdomen" name="abdomen" maxlength="20" rows="1"></textarea>
+                          <textarea class="form-control" id="abdomen" name="abdomen" maxlength="50" rows="1"></textarea>
                         </div>
                         <br>
                         <h5>Extremidades:</h5>
                         <div class="form-group">
-                          <textarea class="form-control" id="extremidades" name="extremidades" maxlength="20" rows="1"></textarea>
+                          <textarea class="form-control" id="extremidades" name="extremidades" maxlength="50" rows="1"></textarea>
                         </div>
                         <br>
                         <div class="text-center">
@@ -156,7 +156,7 @@
                     <div class="col">
                         <h3 class="text-center"><i class="bi bi-person-square"></i> Estado Neurológico y Mental</h3>
                         <br>
-                        <h5>Describa el Estado Neurológico y Mental del Benefucuario</h5>
+                        <h5>Describa el Estado Neurológico y Mental del Beneficiario</h5>
                         <div class="form-group">
                           <textarea class="form-control" id="mental" name="mental" maxlength="400" rows="3"></textarea>
                         </div>
