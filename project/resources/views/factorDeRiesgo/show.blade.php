@@ -10,6 +10,8 @@
     <div class="text-center">
       <h1>Factores de Riesgo de {{$beneficiario->nombreBeneficiario}}</h1>
     </div>
+    <br><br>
+    <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
     <br><br><br><br>
     <div class="text-left"> 
       <h4>
