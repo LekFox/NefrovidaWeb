@@ -40,10 +40,10 @@
                             <a href= "{{url('/nutricion/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            <a href="{{url('/notas/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                            <a href="{{url('/nutricion/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
-                            <form action="{{url('/notas/'.$notas->id)}}" class="d-inline" method="post">
+                            <form action="{{url('/nutricion/'.$notas->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
                                 <input type="submit" onclick="return confirm('¿Quieres borrar la nota?')"  class="btn btn-outline-danger" value="Borrar">
@@ -55,7 +55,7 @@
                 </tbody>
             
             </table>
-            {{$Notas->links()}}
+            {{$Nutricion->links()}}
             </div>
         </div>
     </div>

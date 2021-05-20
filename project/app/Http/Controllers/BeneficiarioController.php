@@ -25,8 +25,8 @@ class BeneficiarioController extends Controller
         $beneficiario=Beneficiario::findOrFail($id);
 
         //$Notas= Beneficiario::find($id)->notas->paginate(3);
-        $Notas = Notas::where('beneficiario_id', $id)->paginate(3);
-        $Nutricion = nutricionConsulta::where('beneficiario_id', $id)->paginate(3);
+        $Notas = Notas::where('beneficiario_id', $id)->paginate(3,['*'],'Notas');
+        $Nutricion = nutricionConsulta::where('beneficiario_id', $id)->paginate(3,['*'],'Nutricion');
 
         return view('beneficiario.show',compact('beneficiario','Notas','Nutricion'))->with(['id'=>$id]);
     }
