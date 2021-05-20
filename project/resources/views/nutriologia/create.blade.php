@@ -27,53 +27,54 @@
 
   
   <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-basket"></i> Registrar Consulta</h1>
-  <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
-  
+  <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+
   
   <div class="container mt-3">
     <div class="stepwizard col">
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
                 <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                <p id="timeline"><i class="bi bi-house-fill"></i> Datos Nutrimentales</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i> Datos Nutrimentales</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                <p id="timeline"><i class="bi bi-person-square"></i>Datos Clínicos</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i>Datos Clínicos</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                <p id="timeline"><i class="bi bi-people-fill"></i> Estilo de Vida </p>
+                <p id="timeline"><i class="bi bi-clipboard"></i> Estilo de Vida </p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
-                <p id="timeline"><i class="bi bi-journal-medical"></i> Datos Dietéticos</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i> Datos Dietéticos</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-5" type="button" class="btn btn-default btn-circle" disabled="disabled">5</a>
-                <p id="timeline"><i class="bi bi-journal-medical"></i>Recordatorio de 24 Horas</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i>Recordatorio de 24 Horas</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-6" type="button" class="btn btn-default btn-circle" disabled="disabled">6</a>
-                <p id="timeline"><i class="bi bi-journal-medical"></i> Datos Antropométricos</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i> Datos Antropométricos</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-7" type="button" class="btn btn-default btn-circle" disabled="disabled">7</a>
-                <p id="timeline"><i class="bi bi-journal-medical"></i>Necesidades Energéticas y Nutrimentales</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i>Necesidades Energéticas y Nutrimentales</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-8" type="button" class="btn btn-default btn-circle" disabled="disabled">8</a>
-                <p id="timeline"><i class="bi bi-journal-medical"></i> Plan de Alimentación</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i> Plan de Alimentación</p>
             </div>
         </div>
     </div>
+    <br>
     <form role="form" action="" method="post">
         <div class="row setup-content" id="step-1">
 
             <div class="col-1">
             </div>
                 <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-house-fill"></i> Datos Nutrimentales</h3>
+                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Datos Nutrimentales</h3>
                     <br>
                     <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
 
@@ -108,7 +109,7 @@
         <div class="row setup-content" id="step-2">
             <div class="col-1">
             </div>
-            <h3 class="text-center"><i class="bi bi-person-square"></i>Datos Clínicos</h3>
+            <h3 class="text-center"><i class="bi bi-clipboard"></i> Datos Clínicos</h3>
             <br>
             <div class="container">
 
@@ -197,7 +198,7 @@
             </div>
 
                 <div class="col">
-                        <h3 class="text-center"><i class="bi bi-people-fill"></i> Estilo de Vida</h3>
+                        <h3 class="text-center"><i class="bi bi-clipboard"></i> Estilo de Vida</h3>
 
                         <div class="form-group">
                             <label for="actividadfisica">Actividad Física/Tipo/Frecuencia</label>
@@ -225,7 +226,7 @@
             <div class="col-1">
             </div>
               <div class="col">
-                      <h3 class="text-center"><i class="bi bi-journal-medical"></i>Datos Dietéticos</h3>
+                      <h3 class="text-center"><i class="bi bi-clipboard"></i> Datos Dietéticos</h3>
                         <div class="form-group">
                             <label for="comidasdia">N° de comidas al día</label>
                             <input class="form-control" name="comidasdia" value="{{ isset($consulta->comidasdia)?$consulta->comidasdia:old('comidasdia') }}" id="comidasdia" rows="6">
@@ -290,7 +291,7 @@
             <div class="col-1">
             </div>  
             <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-journal-medical"></i>Recordatorio de 24 Horas</h3>
+                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Recordatorio de 24 Horas</h3>
                       <div class="form-group">
                           <label for="recordatoriodesayuno">Desayuno</label>
                           <input class="form-control" name="recordatoriodesayuno" value="{{ isset($consulta->recordatoriodesayuno)?$consulta->recordatoriodesayuno:old('recordatoriodesayuno') }}" id="recordatoriodesayuno" rows="6">
@@ -329,7 +330,7 @@
                 <div class="col-1">
                 </div>  
                 <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-journal-medical"></i>Datos Antropométricos</h3>
+                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Datos Antropométricos</h3>
 
                     <div class="row">
                         <div class="col-6">
@@ -364,7 +365,7 @@
             <div class="col-1">
             </div>  
             <div class="col-10">
-                <h3 class="text-center"><i class="bi bi-journal-medical"></i>Necesidades Energéticas y Nutrimentales</h3>
+                <h3 class="text-center"><i class="bi bi-clipboard"></i> Necesidades Energéticas y Nutrimentales</h3>
 
                 <div class="col">
                     <div class="form-group">
@@ -417,7 +418,7 @@
                 <div class="col-1">
                 </div>  
                 <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-journal-medical"></i>Plan de Alimentación</h3>
+                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Plan de Alimentación</h3>
     
                     <div class="form-group">
                         <label for="diagnostico">Diagnostico (Dx)</label>

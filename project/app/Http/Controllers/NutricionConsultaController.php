@@ -106,7 +106,7 @@ class NutricionConsultaController extends Controller
     public function show($id)
     {
         $consulta=nutricionConsulta::findOrFail($id);
-        return view('nutricion.show',compact('consulta'));
+        return view('nutriologia.show',compact('consulta'));
     }
 
     /**

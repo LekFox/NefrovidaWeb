@@ -37,7 +37,7 @@
                     <tr>
                         <td id="center">{{$notas->created_at}}</td>
                         <td id="center">
-                            <a href="{{url('/notas/'.$notas->id)}}" class="btn btn-outline-dark">
+                            <a href= "{{url('/nutricion/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
                             <a href="{{url('/notas/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
