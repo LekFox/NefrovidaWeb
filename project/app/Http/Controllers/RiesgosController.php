@@ -87,6 +87,11 @@ class RiesgosController extends Controller
 
         FactorDeRiesgo::saveFactoresDeRiesgo($id, $data, $enfermedad);
 
+        $id = request('beneficiario_id');
+
+
+        return redirect('beneficiario/'.$id)->with('nuevo','Factores de riesgo registrados exitosamente.');
+
 
     }
 
