@@ -34,9 +34,10 @@ class nutricionConsulta extends JsonResource
             'cefaleas'=> $this->cefaleas,
             'disnea'=> $this->disnea,
             'poliuria'=> $this->poliuria,
-            
+
             'actividadfisica'=> $this->actividadfisica,
             'suenohoras'=> $this->suenohoras,
+
             'comidasdia'=> $this->comidasdia,
             'lugarcomida'=> $this->lugarcomida,
             'preparacomida'=> $this->preparacomida,
@@ -46,19 +47,23 @@ class nutricionConsulta extends JsonResource
             'suplementos'=> $this->suplementos,
             'medicamentos'=> $this->medicamentos,
             'consumoagua'=> $this->consumoagua,
+
             'recordatoriodesayuno'=> $this->recordatoriodesayuno,
             'recordatoriocolacionm'=> $this->recordatoriocolacionm,
             'recordatoriocomida'=> $this->recordatoriocomida,
             'recordatoriocolaciont'=> $this->recordatoriocolaciont,
             'recordatoriocena'=> $this->recordatoriocena,
+
             'peso'=> $this->peso,
             'estatura'=> $this->estatura,
+
             'tipodieta'=> $this->tipodieta,
             'kilocaloriastotal'=> $this->kilocaloriastotal,
             'kilocaloriashidratos'=> $this->kilocaloriashidratos,
             'porcentajehidratos'=> $this->porcentajehidratos,
             'porcentajeproteinas'=> $this->porcentajeproteinas,
             'porcentajegrasas'=> $this->porcentajegrasas,
+            
             'diagnostico'=> $this->diagnostico,
             'nota'=> $this->nota,
         ];

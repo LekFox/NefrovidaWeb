@@ -94,7 +94,7 @@ class NutricionConsultaController extends Controller
          $beneficiario = Beneficiario::find($id);
          $beneficiario->nutricionconsulta()->save($consulta);
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Nota consulta con éxito');
+        return redirect('beneficiario/'.$id)->with('nuevo','Consulta agregada con éxito');
     }
 
     /**
