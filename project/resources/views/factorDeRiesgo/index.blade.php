@@ -9,7 +9,7 @@
             <div class="col-sm text-center">
             <br>  
                 @if($beneficiario->factoresDeRiesgo == NULL)
-                <h2 class="card-title">Factores de Riesgo en NULL</h2>
+                <h2 class="card-title">Factores de Riesgo</h2>
                 @endif
                 @if($beneficiario->factoresDeRiesgo != NULL)
                 <h2 class="card-title">Factores de Riesgo de {{$beneficiario->nombreBeneficiario}}</h2>
