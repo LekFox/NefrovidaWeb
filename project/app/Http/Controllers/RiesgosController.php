@@ -107,6 +107,8 @@ class RiesgosController extends Controller
 
         $riesgos = FactorDeRiesgo::where('beneficiario_id',$id)->get();
 
+        
+
         $beneficiario = Beneficiario::FindOrFail($id);
 
         //dd($riesgos);
@@ -145,6 +147,17 @@ class RiesgosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $riesgos = FactorDeRiesgo::where('beneficiario_id',$id);
+
+        
+        $success = $riesgos->delete();
+
+        
+
+        // return [
+        //     'success' => $success
+        // ];
+
+        return redirect('beneficiario/'.$id)->with('eliminado','Factores de Riesgo Eliminados Exitosamente');
     }
 }
