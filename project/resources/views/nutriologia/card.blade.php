@@ -1,43 +1,52 @@
 <br><br>
 <div class="card">
     <div class="card-body">
-        <div class= "row">
-            <div class= "col-sm-10">
-                <h3><i class="bi bi-basket"></i> Nutriología</h3> 
+            <div class= "row">
+                <div class="col">
+                </div>
+                <div class= "col text-center">
+                    <h2><i class="bi bi-basket greennefro"></i> Nutrición</h2> 
+                </div>
+                <div class= "col text-right">
+                    <a href= "{{url('/beneficiario/'.$beneficiario->id.'/nutricion/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
+                </div>
+                <br><br>
             </div>
-            <div class= "col-sm-2">
-                <a href="{{ url('notas/create') }}" class="btn btn-success">Agregar Consulta</a>
-            </div>
+            <div class= "row">
             <br><br>
             <div class= "col-sm">
+                <div class="col-sm text-center">
+                    {{-- @if ($beneficiario->nutricionConsulta == NULL)
+                        <p>No hay consultas registradas.</p>
+                    @else
+                    <p>ede</p>
+                    @endif --}}
+
+                    </div>
             <table id="table_data" class="table table-bordered table-sm">
     
                 <thead class="thead-light">
                     <tr>
-                        <th id="center">Tipo de Nota</th>
-                        <th id="center">Fecha</th>
-                        <th id="center">Comentarios</th>
+                        <th id="center">Fecha de la consulta</th>
                         <th id="center">Acciones</th>
                     </tr>
                 </thead>
                 
                 <tbody id="dynamic-row">
-                    @foreach ($Notas as $notas)
+                    @foreach ($Nutricion as $notas)
                     <tr>
-                        <td id="center">{{$notas->tiponota}}</td>
-                        <td id="center">{{$notas->fecha}}</td>
-                        <td id="center" class="ellipsis">{{$notas->comentario}}</td>
+                        <td id="center">{{$notas->created_at}}</td>
                         <td id="center">
-                            <a href="{{url('/notas/'.$notas->id)}}" class="btn btn-outline-dark">
+                            <a href= "{{url('/nutricion/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            <a href="{{url('/notas/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                            <a href="{{url('/nutricion/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
-                            <form action="{{url('/notas/'.$notas->id)}}" class="d-inline" method="post">
+                            <form action="{{url('/nutricion/'.$notas->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
-                                <input type="submit" onclick="return confirm('¿Quieres borrar la nota?')"  class="btn btn-outline-danger" value="Borrar">
+                                <input type="submit" onclick="return confirm('¿Quieres borrar la consulta?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
                         </td>
                     </tr>
@@ -46,7 +55,7 @@
                 </tbody>
             
             </table>
-            {{$Notas->links()}}
+            {{$Nutricion->links()}}
             </div>
         </div>
     </div>

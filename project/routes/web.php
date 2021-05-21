@@ -9,6 +9,7 @@ use App\Http\Controllers\TamizajeController;
 use App\Http\Controllers\AnalisisLabController;
 use App\Http\Controllers\evaluacionController;
 use App\Http\Controllers\evaluacionFinalController;
+use App\Http\Controllers\NutricionConsultaController;
 
 
 /*
@@ -32,6 +33,9 @@ Route::resource('notas',NotasController::class)->middleware('auth');
 Route::resource('beneficiario.antecedentes', AntecedenteController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.tamizaje', TamizajeController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.analisislab', AnalisisLabController::class)->shallow()->middleware('auth');
+//Route::resource('nutricion',NutricionConsultaController::class)->middleware('auth');
+Route::resource('beneficiario.nutricion',NutricionConsultaController::class)->shallow()->middleware('auth');
+
 
 
 

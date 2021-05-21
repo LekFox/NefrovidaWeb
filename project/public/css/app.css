@@ -10113,3 +10113,8 @@ h3 {
 #center { 
   text-align: center;
 }
+
+#timeline {
+  font-size:smaller;
+  size: 1cm;
+}
