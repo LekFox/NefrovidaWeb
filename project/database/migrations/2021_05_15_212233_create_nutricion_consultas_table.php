@@ -38,17 +38,17 @@ class CreateNutricionConsultasTable extends Migration
             $table->string("comidasdia")->nullable();
             $table->string("lugarcomida")->nullable();
             $table->string("preparacomida")->nullable();
-            $table->string("entrecomidas")->nullable();
-            $table->string("alimentospreferidos")->nullable();
-            $table->string("alimentosodiados")->nullable();
+            $table->text("entrecomidas")->nullable();
+            $table->text("alimentospreferidos")->nullable();
+            $table->text("alimentosodiados")->nullable();
             $table->string("suplementos")->nullable();
             $table->string("medicamentos")->nullable();
             $table->string("consumoagua")->nullable();
-            $table->string("recordatoriodesayuno")->nullable();
-            $table->string("recordatoriocolacionm")->nullable();
-            $table->string("recordatoriocomida")->nullable();
-            $table->string("recordatoriocolaciont")->nullable();
-            $table->string("recordatoriocena")->nullable();
+            $table->text("recordatoriodesayuno")->nullable();
+            $table->text("recordatoriocolacionm")->nullable();
+            $table->text("recordatoriocomida")->nullable();
+            $table->text("recordatoriocolaciont")->nullable();
+            $table->text("recordatoriocena")->nullable();
             $table->decimal('peso', 5, 2)->nullable();
             $table->decimal('estatura', 5, 2)->nullable();
             $table->string("tipodieta")->nullable();
@@ -57,8 +57,8 @@ class CreateNutricionConsultasTable extends Migration
             $table->decimal('porcentajehidratos', 5, 2)->nullable();
             $table->decimal('porcentajeproteinas', 5, 2)->nullable();
             $table->decimal('porcentajegrasas', 5, 2)->nullable();
-            $table->string("diagnostico")->nullable();
-            $table->string("nota")->nullable();
+            $table->text("diagnostico")->nullable();
+            $table->text("nota")->nullable();
 
             $table->timestamps();
         });

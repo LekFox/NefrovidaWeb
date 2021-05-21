@@ -57,8 +57,8 @@
                 <h2 class="card-title ">Nutrición</h2>
           </div>
           <div class="col text-right">
-                <a href="{{url('/consulta/'.$consulta->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
-                <form action="{{url('/consulta/'.$consulta->id)}}" class="d-inline" method="post">
+                <a href="{{url('/nutricion/'.$consulta->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
+                <form action="{{url('/nutricion/'.$consulta->id)}}" class="d-inline" method="post">
                     @csrf
                     {{ @method_field('DELETE') }}
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $consulta->beneficiario->id }}">

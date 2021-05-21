@@ -121,7 +121,7 @@ class NutricionConsultaController extends Controller
         //$datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
 
 
-        return view('nutricion.edit',compact('consulta'));
+        return view('nutriologia.edit',compact('consulta'));
     }
 
     /**
@@ -140,7 +140,8 @@ class NutricionConsultaController extends Controller
 
         $consulta=nutricionConsulta::findOrFail($id);
 
-        $consulta= new nutricionConsulta([
+        $id=$consulta->beneficiario_id;
+        $success = $consulta->update([
             'ocupacion'=> request('ocupacion'),
             'horarioscomida'=> request('horarioscomida'),
             'cantidadalimentos'=> request('cantidadalimentos'),
@@ -200,7 +201,7 @@ class NutricionConsultaController extends Controller
         $id=$consulta->beneficiario_id;
         $success = $consulta->delete();
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Nota borrada con éxito');
+        return redirect('beneficiario/'.$id)->with('nuevo','Consulta borrada con éxito');
 
         // return [
         //      'success' => $success,
