@@ -38,7 +38,38 @@ class ExamenOrinaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'beneficiario_id' => 'required',
+        ]);
+        $examenorina= new ExamenOrina([
+            'color' => request('color'),
+            'aspecto' => request('aspecto'),
+            'ph' => request('ph'),
+            'densidad' => request('densidad'),
+            'nitritos' => request('nitritos'),
+            'glucosa' => request('glucosa'),
+            'proteinas' => request('proteinas'),
+            'hemoglobina' => request('hemoglobina'),
+            'cuerposCetonicos' => request('cuerposCetonicos'),
+            'bilirribuna' => request('bilirribuna'),
+            'urobilinogeno' => request('urobilinogeno'),
+            'leucocitos' => request('leucocitos'),
+            'eritrocitosIntactos' => request('eritrocitosIntactos'),
+            'eritrocitosCrenados' => request('eritrocitosCrenados'),
+            'observacionLeucocitos' => request('observacionLeucocitos'),
+            'cristales' => request('cristales'),
+            'cilindros' => request('cilindros'),
+            'celulasEpiteliales' => request('celulasEpiteliales'),
+            'bacterias' => request('bacterias'),
+            'nota' => request('nota'),
+            'metodo' => request('metodo'),
+        ]);
+
+         $id = request('beneficiario_id');
+         $beneficiario = Beneficiario::find($id);
+         $beneficiario->antecedentes()->save($examenorina);
+
+        return redirect('beneficiario/'.$id)->with('nuevo','Examen de orina registrado con éxito');
     }
 
     /**

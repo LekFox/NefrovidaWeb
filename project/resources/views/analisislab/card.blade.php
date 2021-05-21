@@ -25,20 +25,20 @@
                 </thead>
                 
                 <tbody id="dynamic-row">
-                    @foreach ($Notas as $notas)
+                    @foreach ($ExamenesOrina as $examenorina)
                     <tr>
-                        <td id="center">{{$notas->fecha}}</td>
+                        <td id="center">{{$examenorina->created_at}}</td>
                         <td id="center">
-                            <a href="{{url('/notas/'.$notas->id)}}" class="btn btn-outline-dark">
+                            <a href="{{url('/examenorina/'.$examenorina->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            <a href="{{url('/notas/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                            <a href="{{url('/examenorina/'.$examenorina->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
-                            <form action="{{url('/notas/'.$notas->id)}}" class="d-inline" method="post">
+                            <form action="{{url('/examenorina/'.$examenorina->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
-                                <input type="submit" onclick="return confirm('¿Quieres borrar la nota?')"  class="btn btn-outline-danger" value="Borrar">
+                                <input type="submit" onclick="return confirm('¿Quieres borrar el examen de orina?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
                         </td>
                     </tr>
