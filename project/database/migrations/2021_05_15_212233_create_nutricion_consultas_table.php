@@ -52,7 +52,8 @@ class CreateNutricionConsultasTable extends Migration
             $table->decimal('peso', 5, 2)->nullable();
             $table->decimal('estatura', 5, 2)->nullable();
             $table->string("tipodieta")->nullable();
-            $table->decimal('kilocaloriastotal', 5, 2)->nullable();
+            // $table->decimal('kilocaloriastotal', 5, 2)->nullable();
+            $table->string('kilocaloriastotal')->nullable();
             $table->decimal('kilocaloriashidratos', 5, 2)->nullable();
             $table->decimal('porcentajehidratos', 5, 2)->nullable();
             $table->decimal('porcentajeproteinas', 5, 2)->nullable();
