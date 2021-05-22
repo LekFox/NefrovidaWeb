@@ -69,8 +69,8 @@
 
                 <div class="container">
                     <div class="form-group">
-                        <label for="padecimiento">Padecimiento</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="padecimiento" value="{{ isset($consulta->padecimiento)?$consulta->padecimiento:old('padecimiento') }}" id="padecimiento" rows="6"></textarea>        
+                        <label for="padecimiento">Padecimiento</label>      
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="padecimiento" value="{{ isset($consulta->padecimiento)?$consulta->padecimiento:old('padecimiento') }}" id="padecimiento" rows="6">{{ isset($consulta->padecimiento)?$consulta->padecimiento:old('padecimiento') }}</textarea>
                     </div>
             <div class="col-1">
             </div>                    
@@ -173,7 +173,7 @@
                 <div class="container">
                     <div class="form-group">
                         <label for="mental">Estado Neurológico y Mental del Paciente</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="mental" value="{{ isset($consulta->mental)?$consulta->mental:old('mental') }}" id="mental" rows="6"></textarea>        
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="mental" value="{{ isset($consulta->mental)?$consulta->mental:old('mental') }}" id="mental" rows="6">{{ isset($consulta->mental)?$consulta->mental:old('mental') }}</textarea>
                     </div>
             <div class="col-1">
             </div>                    
@@ -195,7 +195,7 @@
                 <div class="container">
                     <div class="form-group">
                         <label for="observaciones">Observaciones</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="observaciones" value="{{ isset($consulta->observaciones)?$consulta->observaciones:old('observaciones') }}" id="observaciones" rows="6"></textarea>        
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="observaciones" value="{{ isset($consulta->observaciones)?$consulta->observaciones:old('observaciones') }}" id="observaciones" rows="6">{{ isset($consulta->observaciones)?$consulta->observaciones:old('observaciones') }}</textarea>
                     </div>
             <div class="col-1">
             </div>                    
@@ -217,11 +217,11 @@
                 <div class="container">
                     <div class="form-group">
                         <label for="diagnostico">Diagnoóstico</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6"></textarea>        
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6">{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="tratamiento">Tratamiento</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="tratamiento" value="{{ isset($consulta->tratamiento)?$consulta->tratamiento:old('tratamiento') }}" id="tratamiento" rows="6"></textarea>        
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="tratamiento" value="{{ isset($consulta->tratamiento)?$consulta->tratamiento:old('tratamiento') }}" id="tratamiento" rows="6">{{ isset($consulta->tratamiento)?$consulta->tratamiento:old('tratamiento') }}</textarea>
                     </div>
                     <div class="text-center">
                           <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
