@@ -65,12 +65,12 @@
                 <div class="col-10">
                     <h3 class="text-center"><i class="bi bi-clipboard"></i> Padecimiento</h3>
                     <br>
-                    <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
+                    <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $consulta->beneficiario_id }}">
 
                 <div class="container">
                     <div class="form-group">
                         <label for="padecimiento">Padecimiento</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="padecimiento" value="{{ isset(consulta$->padecimiento)?$consulta->padecimiento:old('padecimiento') }}" id="padecimiento" rows="6"></textarea>        
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="padecimiento" value="{{ isset($consulta->padecimiento)?$consulta->padecimiento:old('padecimiento') }}" id="padecimiento" rows="6"></textarea>        
                     </div>
             <div class="col-1">
             </div>                    
@@ -134,7 +134,7 @@
 
                     <div class="form-group">
                         <label for="fRespiratoria">Frecuencia Respiratoria</label>
-                        <input class="form-control" name="fRespiratoria" value="{{ isset($consulta->fRespiratoria)?$consulta->fRespiratoriao:old('fRespiratoria') }}" id="fRespiratoria" rows="6">
+                        <input class="form-control" name="fRespiratoria" value="{{ isset($consulta->fRespiratoria)?$consulta->fRespiratoria:old('fRespiratoria') }}" id="fRespiratoria" rows="6">
                     </div>
 
                     <div class="form-group">
@@ -163,7 +163,6 @@
             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
           </div>  
         </div>
-        
         <div class="row setup-content" id="step-3">
 
             <div class="col-1">
@@ -173,32 +172,18 @@
 
                 <div class="container">
                     <div class="form-group">
-                        <label for="mental">Estado Neurológico y Mental</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="mental" value="{{ isset($consulta->mental)?$consulta->mentalo:old('mental') }}" id="mental" rows="6"></textarea>        
-                    </div>
-                    <div class="text-center">
-                      <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
+                        <label for="mental">Estado Neurológico y Mental del Paciente</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="mental" value="{{ isset($consulta->mental)?$consulta->mental:old('mental') }}" id="mental" rows="6"></textarea>        
                     </div>
             <div class="col-1">
-        </div>
-               <div class="row setup-content" id="step-3">
-
-            <div class="col-1">
+            </div>                    
             </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Estado Neurológico y Mental</h3>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
 
-                <div class="container">
-                    <div class="form-group">
-                        <label for="mental">Estado Neurológico y Mental</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="mental" value="{{ isset($consulta->mental)?$consulta->mentalo:old('mental') }}" id="mental" rows="6"></textarea>        
-                    </div>
-                    <div class="text-center">
-                      <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
-                    </div>
-            <div class="col-1">
+            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
+          </div>  
         </div>
         <div class="row setup-content" id="step-4">
 
@@ -209,80 +194,18 @@
 
                 <div class="container">
                     <div class="form-group">
-                        <label for="observaciones">Estado Neurológico y Mental</label>
+                        <label for="observaciones">Observaciones</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" name="observaciones" value="{{ isset($consulta->observaciones)?$consulta->observaciones:old('observaciones') }}" id="observaciones" rows="6"></textarea>        
                     </div>
-                    <div class="text-center">
-                        <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
-                    </div>
             <div class="col-1">
-        </div>
-                <div class="row setup-content" id="step-5">
-
-            <div class="col-1">
+            </div>                    
             </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Diagnóstico y Tratamiento</h3>
-
-                <div class="container">
-                    <div class="form-group">
-                        <label for="diagnostico">Diagnoóstico</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6"></textarea>        
-                    </div>
-                    <div class="form-group">
-                        <label for="tratamiento">Tratamiento</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="tratamiento" value="{{ isset($consulta->tratamiento)?$consulta->tratamiento:old('tratamiento') }}" id="tratamiento" rows="6"></textarea>        
-                    </div>
-                    <div class="text-center">
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                          <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
-                    </div>
-            <div class="col-1">
         </div>
-        <div class="row setup-content" id="step-5">
+        <div class="text-center">
+            <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
 
-            <div class="col-1">
-            </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Diagnóstico y Tratamiento</h3>
-
-                <div class="container">
-                    <div class="form-group">
-                        <label for="diagnostico">Diagnoóstico</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6"></textarea>        
-                    </div>
-                    <div class="form-group">
-                        <label for="tratamiento">Tratamiento</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="tratamiento" value="{{ isset($consulta->tratamiento)?$consulta->tratamiento:old('tratamiento') }}" id="tratamiento" rows="6"></textarea>        
-                    </div>
-                    <div class="text-center">
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                          <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
-                    </div>
-            <div class="col-1">
-        </div>
-                <div class="row setup-content" id="step-5">
-
-            <div class="col-1">
-            </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Diagnóstico y Tratamiento</h3>
-
-                <div class="container">
-                    <div class="form-group">
-                        <label for="diagnostico">Diagnoóstico</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6"></textarea>        
-                    </div>
-                    <div class="form-group">
-                        <label for="tratamiento">Tratamiento</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="tratamiento" value="{{ isset($consulta->tratamiento)?$consulta->tratamiento:old('tratamiento') }}" id="tratamiento" rows="6"></textarea>        
-                    </div>
-                    <div class="text-center">
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                          <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
-                    </div>
-            <div class="col-1">
+            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
+          </div>  
         </div>
         <div class="row setup-content" id="step-5">
 

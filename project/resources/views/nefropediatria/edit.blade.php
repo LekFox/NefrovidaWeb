@@ -4,7 +4,7 @@
 
 @include('sidebar.beneficiario')
 
-<div class="container"><form action="{{url('/nefropediatria/'.$nefropediatria->id)}}" method="post">
+<div class="container"><form action="{{url('/consulta/'.$consulta->id)}}" method="post">
   @csrf
   {{ method_field('PATCH') }}
 
@@ -29,8 +29,9 @@
 
   
   <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-heart"></i> Registrar Consulta</h1>
-  <a href="{{url('/beneficiario/'.$nefropediatria->beneficiario_id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+  <a href="{{url('/beneficiario/'.$consulta->beneficiario_id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 
+  
   <div class="container mt-3">
     <div class="stepwizard col">
         <div class="stepwizard-row setup-panel">
@@ -57,255 +58,38 @@
         </div>
     </div>
     <br>
-    <form role="form" action="" method="post">
-        <div class="row setup-content" id="step-1">
+    
 
-            <div class="col-1">
-            </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Padecimiento</h3>
-                    <br>
-                    <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
 
-                <div class="container">
-                    <div class="form-group">
-                        <label for="padecimiento">Padecimiento</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="padecimiento" value="{{ isset(nefropediatria$->padecimiento)?$nefropediatria->padecimiento:old('padecimiento') }}" id="padecimiento" rows="6"></textarea>        
-                    </div>
-            <div class="col-1">
-            </div>                    
-                    <div class="text-center">
-                      <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row setup-content" id="step-2">
-            <div class="col-1">
-            </div>
-            <h3 class="text-center"><i class="bi bi-clipboard"></i> Exploración Física</h3>
-            <br>
-            <div class="container">
 
-            <div class="row">
+
+    
+
+            <div class="row setup-content" id="step-8">
                 <div class="col-1">
-                </div>
-                <div class="col">
-
-
-                    <div class="form-group">
-                        <label for="brazoD">T.A. Brazo Derecho</label>
-                        <input class="form-control" name="brazoD" value="{{ isset($nefropediatria->brazoD)?$nefropediatria->brazoD:old('brazoD') }}" id="brazoD" rows="6">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="fCardiaca">Frecuencia Cardíaca</label>
-                        <input class="form-control" name="fCardiaca" value="{{ isset($nefropediatria->fCardiaca)?$nefropediatria->fCardiaca:old('fCardiaca') }}" id="fCardiaca" rows="6">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="temperatura">Temperatura</label>
-                        <input class="form-control" name="temperatura" value="{{ isset($nefropediatria->temperatura)?$nefropediatria->temperatura:old('temperatura') }}" id="temperatura" rows="6">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="talla">Talla</label>
-                        <input class="form-control" name="talla" value="{{ isset($nefropediatria->talla)?$nefropediatria->talla:old('talla') }}" id="talla" rows="6">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cabeza">Cabeza y Cuello</label>
-                        <input class="form-control" name="cabeza" value="{{ isset($nefropediatria->cabeza)?$nefropediatria->cabeza:old('cabeza') }}" id="cabeza" rows="6">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="abdomen">Abdomen</label>
-                        <input class="form-control" name="abdomen" value="{{ isset($nefropediatria->abdomen)?$nefropediatria->abdomen:old('abdomen') }}" id="abdomen" rows="6">
-                    </div>
-
-                </div>
-
-                <div class="col">
-
-                    <div class="form-group">
-                        <label for="brazoI">T.A. Brazo Izquierdo</label>
-                        <input class="form-control" name="brazoI" value="{{ isset($nefropediatria->brazoI)?$nefropediatria->brazoI:old('brazoI') }}" id="brazoI" rows="6">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="fRespiratoria">Frecuencia Respiratoria</label>
-                        <input class="form-control" name="fRespiratoria" value="{{ isset($nefropediatria->fRespiratoria)?$nefropediatria->fRespiratoriao:old('fRespiratoria') }}" id="fRespiratoria" rows="6">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="peso">Peso</label>
-                        <input class="form-control" name="peso" value="{{ isset($nefropediatria->peso)?$nefropediatria->peso:old('peso') }}" id="peso" rows="6">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="torax">Torax</label>
-                        <input class="form-control" name="torax" value="{{ isset($nefropediatria->torax)?$nefropediatria->torax:old('torax') }}" id="torax" rows="6">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="extremidades">Extremidades</label>
-                        <input class="form-control" name="extremidades" value="{{ isset($nefropediatria->extremidades)?$nefropediatria->extremidades:old('extremidades') }}" id="extremidadess" rows="6">
-                    </div>
-                    
-                </div>
-                <div class="col-1">
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-
-            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
-          </div>  
-        </div>
-        
-        <div class="row setup-content" id="step-3">
-
-            <div class="col-1">
-            </div>
+                </div>  
                 <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Estado Neurológico y Mental</h3>
-
-                <div class="container">
+                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Plan de Alimentación</h3>
+    
                     <div class="form-group">
-                        <label for="mental">Estado Neurológico y Mental</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="mental" value="{{ isset($nefropediatria->mental)?$nefropediatria->mentalo:old('mental') }}" id="mental" rows="6"></textarea>        
+                        <label for="diagnostico">Diagnostico (Dx)</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6"></textarea>        
                     </div>
-                    <div class="text-center">
-                      <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
-                    </div>
-            <div class="col-1">
-        </div>
-               <div class="row setup-content" id="step-3">
 
-            <div class="col-1">
-            </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Estado Neurológico y Mental</h3>
-
-                <div class="container">
                     <div class="form-group">
-                        <label for="mental">Estado Neurológico y Mental</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="mental" value="{{ isset($nefropediatria->mental)?$nefropediatria->mentalo:old('mental') }}" id="mental" rows="6"></textarea>        
+                        <label for="nota">Nota</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="nota" value="{{ isset($consulta->nota)?$consulta->nota:old('nota') }}" id="nota" rows="6"></textarea>
                     </div>
-                    <div class="text-center">
-                      <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
+                   
+                    <br><br>
                     </div>
-            <div class="col-1">
-        </div>
-        <div class="row setup-content" id="step-4">
-
-            <div class="col-1">
-            </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Otros</h3>
-
-                <div class="container">
-                    <div class="form-group">
-                        <label for="observaciones">Estado Neurológico y Mental</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="observaciones" value="{{ isset($nefropediatria->observaciones)?$nefropediatria->observaciones:old('observaciones') }}" id="observaciones" rows="6"></textarea>        
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
-                    </div>
-            <div class="col-1">
-        </div>
-                <div class="row setup-content" id="step-5">
-
-            <div class="col-1">
-            </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Diagnóstico y Tratamiento</h3>
-
-                <div class="container">
-                    <div class="form-group">
-                        <label for="diagnostico">Diagnoóstico</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($nefropediatria->diagnostico)?$nefropediatria->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6"></textarea>        
-                    </div>
-                    <div class="form-group">
-                        <label for="tratamiento">Tratamiento</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="tratamiento" value="{{ isset($nefropediatria->tratamiento)?$nefropediatria->tratamiento:old('tratamiento') }}" id="tratamiento" rows="6"></textarea>        
-                    </div>
-                    <div class="text-center">
+                       
+                        <div class="text-center">
                           <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
                           <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
-                    </div>
-            <div class="col-1">
-        </div>
-        <div class="row setup-content" id="step-5">
-
-            <div class="col-1">
-            </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Diagnóstico y Tratamiento</h3>
-
-                <div class="container">
-                    <div class="form-group">
-                        <label for="diagnostico">Diagnoóstico</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($nefropediatria->diagnostico)?$nefropediatria->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6"></textarea>        
-                    </div>
-                    <div class="form-group">
-                        <label for="tratamiento">Tratamiento</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="tratamiento" value="{{ isset($nefropediatria->tratamiento)?$nefropediatria->tratamiento:old('tratamiento') }}" id="tratamiento" rows="6"></textarea>        
-                    </div>
-                    <div class="text-center">
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                          <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
-                    </div>
-            <div class="col-1">
-        </div>
-                <div class="row setup-content" id="step-5">
-
-            <div class="col-1">
-            </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Diagnóstico y Tratamiento</h3>
-
-                <div class="container">
-                    <div class="form-group">
-                        <label for="diagnostico">Diagnoóstico</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($nefropediatria->diagnostico)?$nefropediatria->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6"></textarea>        
-                    </div>
-                    <div class="form-group">
-                        <label for="tratamiento">Tratamiento</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="tratamiento" value="{{ isset($nefropediatria->tratamiento)?$nefropediatria->tratamiento:old('tratamiento') }}" id="tratamiento" rows="6"></textarea>        
-                    </div>
-                    <div class="text-center">
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                          <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
-                    </div>
-            <div class="col-1">
-        </div>
-        <div class="row setup-content" id="step-5">
-
-            <div class="col-1">
-            </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Diagnóstico y Tratamiento</h3>
-
-                <div class="container">
-                    <div class="form-group">
-                        <label for="diagnostico">Diagnoóstico</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($nefropediatria->diagnostico)?$nefropediatria->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6"></textarea>        
-                    </div>
-                    <div class="form-group">
-                        <label for="tratamiento">Tratamiento</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="tratamiento" value="{{ isset($nefropediatria->tratamiento)?$nefropediatria->tratamiento:old('tratamiento') }}" id="tratamiento" rows="6"></textarea>        
-                    </div>
-                    <div class="text-center">
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-                          <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
-                    </div>
-            <div class="col-1">
-        </div>
+                        </div>
+                    <div class="col-1">
+                    </div>  
             </div>
         </div>
       </div> 

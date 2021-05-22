@@ -7,7 +7,7 @@ use App\Models\Beneficiario;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use App\Models\nefropediatria;
 
-class nefropediatria extends Controller
+class nefropediatriaController extends Controller
 {
     /**
      * Display a listing of the resource.
