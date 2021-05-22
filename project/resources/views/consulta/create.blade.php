@@ -201,7 +201,7 @@
             <div class="col-1">
         </div>
 
-               <div class="row setup-content" id="step-3">
+        <div class="row setup-content" id="step-3">
 
             <div class="col-1">
             </div>
