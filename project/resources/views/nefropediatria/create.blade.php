@@ -26,7 +26,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-heart"></i> Registrar Consulta</h1>
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-x-diamond"></i> Registrar Consulta</h1>
   <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 
   
