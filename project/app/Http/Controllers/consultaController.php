@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Request;
 use App\Models\Beneficiario;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use App\Models\consulta;
 
-class consulta extends Controller
+class consultaController extends Controller
 {
     /**
      * Display a listing of the resource.
