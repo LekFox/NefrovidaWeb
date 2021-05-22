@@ -424,12 +424,12 @@
     
                     <div class="form-group">
                         <label for="diagnostico">Diagnostico (Dx)</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6"></textarea>        
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6">{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}</textarea>        
                     </div>
 
                     <div class="form-group">
                         <label for="nota">Nota</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="nota" value="{{ isset($consulta->nota)?$consulta->nota:old('nota') }}" id="nota" rows="6"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="nota" value="{{ isset($consulta->nota)?$consulta->nota:old('nota') }}" id="nota" rows="6">{{ isset($consulta->nota)?$consulta->nota:old('nota') }}</textarea>
                     </div>
                    
                     <br><br>
