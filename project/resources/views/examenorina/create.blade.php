@@ -142,7 +142,7 @@
     <div class="col-2">
       </div>
     <div class="col-4">
-      <label for="nombre">Bilirribuna</label>
+      <label for="nombre">Bilirrubina</label>
     </div>
   </div>
   <div class="form-row">
@@ -199,16 +199,18 @@
   <div class="form-row">
       <div class="col-4">
         <textarea class="form-control" id="eritrocitosIntactos" name="eritrocitosIntactos" maxlength="200" rows="1">{{ isset($examenorina->eritrocitosIntactos)?$examenorina->eritrocitosIntactos:old('eritrocitosIntactos') }}</textarea>
+        <small id="cinturaHelp" class="form-text text-muted">/CPO.</small>
       </div>
       <div class="col-2">
       </div>
       <div class="col-4">
       <textarea class="form-control" id="eritrocitosCrenados" name="eritrocitosCrenados" maxlength="200" rows="1">{{ isset($examenorina->eritrocitosCrenados)?$examenorina->eritrocitosCrenados:old('eritrocitosCrenados') }}</textarea>
+      <small id="cinturaHelp" class="form-text text-muted">/CPO.</small>
       </div>
   </div>
   <div class="form-row">
     <div class="col-4">
-      <label for="nombre">Observación de Leucocitos</label>
+      <label for="nombre">Leucocitos</label>
     </div>
     <div class="col-2">
       </div>
@@ -219,11 +221,13 @@
   <div class="form-row">
       <div class="col-4">
         <textarea class="form-control" id="observacionLeucocitos" name="observacionLeucocitos" maxlength="200" rows="1">{{ isset($examenorina->observacionLeucocitos)?$examenorina->observacionLeucocitos:old('observacionLeucocitos') }}</textarea>
+        <small id="cinturaHelp" class="form-text text-muted">/CPO.</small>
       </div>
       <div class="col-2">
       </div>
       <div class="col-4">
       <textarea class="form-control" id="cristales" name="cristales" maxlength="200" rows="1">{{ isset($examenorina->cristales)?$examenorina->cristales:old('cristales') }}</textarea>
+      <small id="cinturaHelp" class="form-text text-muted">/CPO.</small>
       </div>
   </div>
   <div class="form-row">
@@ -239,11 +243,13 @@
   <div class="form-row">
       <div class="col-4">
         <textarea class="form-control" id="cilindros" name="cilindros" maxlength="200" rows="1">{{ isset($examenorina->cilindros)?$examenorina->cilindros:old('cilindros') }}</textarea>
+        <small id="cinturaHelp" class="form-text text-muted">/CPO.</small>
       </div>
       <div class="col-2">
       </div>
       <div class="col-4">
       <textarea class="form-control" id="celulasEpiteliales" name="celulasEpiteliales" maxlength="200" rows="1">{{ isset($examenorina->celulasEpiteliales)?$examenorina->celulasEpiteliales:old('celulasEpiteliales') }}</textarea>
+      <small id="cinturaHelp" class="form-text text-muted">/CPO.</small>
       </div>
   </div>
   <div class="form-row">
@@ -270,6 +276,10 @@
       <label for="comentario">Método</label>
       <div class="form-group">
       <textarea class="form-control" id="metodo" name="metodo" maxlength="200" rows="1">{{ isset($examenorina->metodo)?$examenorina->metodo:old('metodo') }}</textarea>
+      </div>
+      <label for="comentario">Observaciones</label>
+      <div class="form-group">
+      <textarea class="form-control" id="observaciones" name="observaciones" maxlength="200" rows="2">{{ isset($examenorina->observaciones)?$examenorina->observaciones:old('observaciones') }}</textarea>
       </div>
       <label for="comentario">Nota</label>
       <div class="form-group">

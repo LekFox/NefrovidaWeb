@@ -63,6 +63,7 @@ class ExamenOrinaController extends Controller
             'bacterias' => request('bacterias'),
             'nota' => request('nota'),
             'metodo' => request('metodo'),
+            'observaciones' => request('observaciones'),
         ]);
 
          $id = request('beneficiario_id');

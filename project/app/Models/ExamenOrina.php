@@ -13,7 +13,7 @@ class ExamenOrina extends Model
         'color', 'aspecto', 'beneficiario_id', 'ph', 'densidad',
         'nitritos', 'glucosa', 'proteinas', 'hemoglobina', 'cuerposCetonicos',
         'bilirribuna', 'urobilinogeno', 'leucocitos', 'eritrocitosIntactos', 'eritrocitosCrenados',
-        'observacionLeucocitos', 'cristales', 'cilindros', 'celulasEpiteliales', 'bacterias', 'nota', 'metodo',
+        'observacionLeucocitos', 'cristales', 'cilindros', 'celulasEpiteliales', 'bacterias', 'nota', 'metodo', 'observaciones',
     ];
 
     public function beneficiario()
