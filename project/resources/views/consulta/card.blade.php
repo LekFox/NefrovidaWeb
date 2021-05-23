@@ -5,7 +5,7 @@
                 <div class="col">
                 </div>
                 <div class= "col text-center">
-                    <h2><i class="bi bi-heart greennefro"></i> Consulta</h2> 
+                    <h2><i class="bi bi-heart greennefro"></i> Consulta Médica</h2> 
                 </div>
                 <div class= "col text-right">
                     <a href= "{{url('/beneficiario/'.$beneficiario->id.'/consulta/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
