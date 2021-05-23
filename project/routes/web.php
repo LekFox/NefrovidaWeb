@@ -10,6 +10,10 @@ use App\Http\Controllers\AnalisisLabController;
 use App\Http\Controllers\ExamenOrinaController;
 use App\Http\Controllers\evaluacionController;
 use App\Http\Controllers\evaluacionFinalController;
+use App\Http\Controllers\NutricionConsultaController;
+
+use App\Http\Controllers\consultaController;
+use App\Http\Controllers\nefropediatriaController;
 
 
 /*
@@ -29,11 +33,17 @@ Route::get('/', function () {
 
 Route::resource('jornada',JornadaController::class)->middleware('auth');
 Route::resource('beneficiario',BeneficiarioController::class)->middleware('auth');
-Route::resource('notas',NotasController::class)->middleware('auth');
+// Route::resource('notas',NotasController::class)->middleware('auth');
 Route::resource('beneficiario.antecedentes', AntecedenteController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.tamizaje', TamizajeController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.analisislab', AnalisisLabController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.examenorina', ExamenOrinaController::class)->shallow()->middleware('auth');
+//Route::resource('nutricion',NutricionConsultaController::class)->middleware('auth');
+Route::resource('beneficiario.nutricion',NutricionConsultaController::class)->shallow()->middleware('auth');
+Route::resource('beneficiario.notas',NotasController::class)->shallow()->middleware('auth');
+Route::resource('beneficiario.consulta',consultaController::class)->shallow()->middleware('auth');
+Route::resource('beneficiario.nefropediatria',nefropediatriaController::class)->shallow()->middleware('auth');
+
 
 
 

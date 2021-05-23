@@ -60,4 +60,14 @@ class Beneficiario extends Model
     {
         return $this->hasMany(nutricionConsulta::class);
     }
+
+    public function consulta()
+    {
+        return $this->hasMany(consulta::class);
+    }
+
+    public function nefropediatria()
+    {
+        return $this->hasMany(nefropediatria::class);
+    }
 }

@@ -4,11 +4,9 @@
 
 @include('sidebar.beneficiario')
 
-<div class="container"><form action="{{url('/notas')}}" method="post">
-  @csrf
-  
-  {{-- @include('notas.form',['modo'=>'Crear'],['id'=>'2']) --}}
+<div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/notas')}}" method="post">
 
+  @csrf
   @if (count($errors)>0)
       
       <div class="alert alert-danger" role="alert">
@@ -28,33 +26,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
   
   <h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-journal"></i> Nueva Nota</h1>
-  <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
+  <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+
   <br>
   <br>
-
-
-  <div class="form-group"> 
-    <label for="beneficiario_id">Beneficiario</label>
-      <select class="form-select" aria-label="Default select example" id="beneficiario_id"  name="beneficiario_id">
-        <option selected>Selecciona al beneficiario </option>
-        @foreach ($Beneficiario as $Beneficiario)
-        <option value={{$Beneficiario->id}} id="beneficiario_id"  name="beneficiario_id"> {{$Beneficiario->nombreBeneficiario}}</option>
-        @endforeach
-        
-      </select>
-  </div>
-
-  {{-- <div class="form-group"> 
-    <label for="tipoNota_id">Beneficiario</label>
-      <select class="form-select" aria-label="Default select example" id="tipoNota_id"  name="tipoNota_id">
-        <option selected>Selecciona al beneficiario </option>
-        @foreach ($TipoNota as $TipoNota)
-        <option value={{$TipoNota->id}} id="tipoNota_id"  name="tipoNota_id"> {{$TipoNota->nombre}}</option>
-        @endforeach
-        
-      </select>
-  </div> --}}
-
+  
+    <div class="row">
+      <strong>Beneficiario: {{$beneficiario->nombreBeneficiario}}</strong>
+     <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
+    </div>
+    <br>
+  
   <div class="form-group">
     <label for="tiponota">Tipo de nota</label>
     <select class="form-select" aria-label="Default select example" name="tiponota" id="tiponota">
@@ -65,7 +47,6 @@
       <option value="Laboratorio">Laboratorio</option>
       <option value="Psicología">Psicología</option>
     </select>
-    {{-- <input class="form-control" type="text" name="tiponota" value="{{ isset($notas->tiponota)?$notas->tiponota:old('tiponota') }}" id="tiponota">     --}}
   </div>
 
   <div class="form-group">
