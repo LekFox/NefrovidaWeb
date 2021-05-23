@@ -124,7 +124,7 @@
           <tr>
             <th>Densidad</th>
             <td> 
-                @if($examenorina->densidad == 0)
+                @if($examenorina->densidad == NULL)
                 <p class="font-weight-light" >No registrado</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->densidad }}</p>
@@ -134,8 +134,8 @@
           <tr>
             <th>Nitritos</th>
             <td> 
-                @if($examenorina->nitritos == 0)
-                <p class="font-weight-light" >No registrado / No aplica</p>
+                @if($examenorina->nitritos == NULL)
+                <p class="font-weight-light" >No registrado</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->nitritos }}</p>
                 @endif
@@ -145,7 +145,7 @@
             <th>Glucosa</th>
             <td> 
                 @if($examenorina->glucosa == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
+                <p class="font-weight-light" >No registrado</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->glucosa }}</p>
                 @endif
@@ -155,7 +155,7 @@
             <th>Proteínas</th>
             <td> 
                 @if($examenorina->proteinas == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
+                <p class="font-weight-light" >No registrado</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->proteinas }}</p>
                 @endif
@@ -165,7 +165,7 @@
             <th>Hemoglobina</th>
             <td> 
                 @if($examenorina->hemoglobina == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
+                <p class="font-weight-light" >No registrado</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->hemoglobina }}</p>
                 @endif
@@ -175,7 +175,7 @@
             <th>Cuerpos Cetónicos</th>
             <td> 
                 @if($examenorina->cuerposCetonicos == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
+                <p class="font-weight-light" >No registrado</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->cuerposCetonicos }}</p>
                 @endif
@@ -185,7 +185,7 @@
             <th>Bilirrubina</th>
             <td> 
                 @if($examenorina->bilirribuna == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
+                <p class="font-weight-light" >No registrado</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->bilirribuna }}</p>
                 @endif
@@ -195,7 +195,7 @@
             <th>Urobilinógeno</th>
             <td> 
                 @if($examenorina->urobilinogeno == NULL)
-                <p class="font-weight-light" >No registrado / No aplica</p>
+                <p class="font-weight-light" >No registrado</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->urobilinogeno }}</p>
                 @endif

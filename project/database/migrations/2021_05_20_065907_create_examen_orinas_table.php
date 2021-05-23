@@ -28,19 +28,26 @@ class CreateExamenOrinasTable extends Migration
             $table->float('densidad', 8, 2)
                 ->nullable();
             $table->string('nitritos', 200)
-                ->default('0.2');
+                ->default('0.2')
+                ->nullable();
             $table->string('glucosa', 200)
-                ->default('0.2');
+                ->default('0.2')
+                ->nullable();
             $table->string('proteinas', 200)
-                ->default('0.2');
+                ->default('0.2')
+                ->nullable();
             $table->string('hemoglobina', 200)
-                ->default('0.2');
+                ->default('0.2')
+                ->nullable();
             $table->string('cuerposCetonicos', 200)
-                ->default('0.2');
+                ->default('0.2')
+                ->nullable();
             $table->string('bilirribuna', 200)
-                ->default('0.2');
+                ->default('0.2')
+                ->nullable();
             $table->string('urobilinogeno', 200)
-                ->default('0.2');
+                ->default('0.2')
+                ->nullable();
             $table->string('leucocitos', 200)
                 ->nullable();
             $table->string('eritrocitosIntactos', 200)

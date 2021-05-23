@@ -138,7 +138,8 @@ class ExamenOrinaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $examenorina=ExamenOrina::findOrFail($id);
+        return view('examenorina.edit',compact('examenorina'));
     }
 
     /**
@@ -150,7 +151,40 @@ class ExamenOrinaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        request()->validate([
+            'id' => 'required',
+        ]);
+
+        $examenorina = ExamenOrina::findOrFail($id);
+
+        $success= $examenorina -> update([
+            'color' => request('color'),
+            'aspecto' => request('aspecto'),
+            'ph' => request('ph'),
+            'densidad' => request('densidad'),
+            'nitritos' => request('nitritos'),
+            'glucosa' => request('glucosa'),
+            'proteinas' => request('proteinas'),
+            'hemoglobina' => request('hemoglobina'),
+            'cuerposCetonicos' => request('cuerposCetonicos'),
+            'bilirribuna' => request('bilirribuna'),
+            'urobilinogeno' => request('urobilinogeno'),
+            'leucocitos' => request('leucocitos'),
+            'eritrocitosIntactos' => request('eritrocitosIntactos'),
+            'eritrocitosCrenados' => request('eritrocitosCrenados'),
+            'observacionLeucocitos' => request('observacionLeucocitos'),
+            'cristales' => request('cristales'),
+            'cilindros' => request('cilindros'),
+            'celulasEpiteliales' => request('celulasEpiteliales'),
+            'bacterias' => request('bacterias'),
+            'nota' => request('nota'),
+            'metodo' => request('metodo'),
+            'observaciones' => request('observaciones'),
+        ]);
+
+        return redirect('examenorina/'.$id)->with('editado','Cambios realizados con éxito');
+
+
     }
 
     /**
