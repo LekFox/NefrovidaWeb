@@ -38,7 +38,8 @@
                             <form action="{{url('/examenorina/'.$examenorina->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
-                                <input type="submit" onclick="return confirm('¿Quieres borrar el examen de orina?')"  class="btn btn-outline-danger" value="Borrar">
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quieres borrar el E.G.O.? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
                         </td>
                     </tr>
@@ -47,7 +48,7 @@
                 </tbody>
             
             </table>
-            {{$Notas->links()}}
+            {{$ExamenesOrina->links()}}
             </div>
         </div>
         <h3>Depuración de creatinina en orina de 24 h</h3>
