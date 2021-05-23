@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Notas;
+use App\Models\ExamenOrina;
 use App\Models\nutricionConsulta;
 use App\Models\consulta;
 use App\Models\nefropediatria;
@@ -31,10 +32,11 @@ class BeneficiarioController extends Controller
         $Notas = Notas::where('beneficiario_id', $id)->paginate(3,['*'],'Notas');
         $Nutricion = nutricionConsulta::where('beneficiario_id', $id)->paginate(3,['*'],'Nutricion');
         $evaluaciones = Evaluacion::all();
+        $ExamenesOrina = ExamenOrina::where('beneficiario_id', $id)->paginate(3);
         $consulta = consulta::where('beneficiario_id', $id)->paginate(3,['*'],'consulta');
         $nefropediatria = nefropediatria::where('beneficiario_id', $id)->paginate(3,['*'],'nefropediatria');
 
-        return view('beneficiario.show',compact('beneficiario','Notas','Nutricion','evaluaciones','consulta','nefropediatria'))->with(['id'=>$id]);
+        return view('beneficiario.show',compact('beneficiario','Notas','Nutricion','evaluaciones','consulta','nefropediatria', 'ExamenesOrina'))->with(['id'=>$id]);
     }
     
     /**

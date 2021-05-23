@@ -46,6 +46,11 @@ class Beneficiario extends Model
         return $this->hasOne(Tamizaje::class);
     }
 
+    public function examenOrinas()
+    {
+        return $this->hasMany(ExamenOrina::class);
+    }
+
     public function escolaridade()
     {
         return $this->belongsTo(Escolaridade::class);

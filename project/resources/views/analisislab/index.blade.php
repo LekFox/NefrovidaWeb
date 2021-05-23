@@ -38,7 +38,7 @@
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-outline-primary">Examen general de orina</a>
+                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/examenorina/create') }}" class="btn btn-outline-primary">Examen general de orina</a>
           </div>
         </div>
         <br>
