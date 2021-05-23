@@ -273,10 +273,6 @@
       </div>
   </div>
 
-      <label for="comentario">Método</label>
-      <div class="form-group">
-      <textarea class="form-control" id="metodo" name="metodo" maxlength="200" rows="1">{{ isset($examenorina->metodo)?$examenorina->metodo:old('metodo') }}</textarea>
-      </div>
       <label for="comentario">Observaciones</label>
       <div class="form-group">
       <textarea class="form-control" id="observaciones" name="observaciones" maxlength="200" rows="2">{{ isset($examenorina->observaciones)?$examenorina->observaciones:old('observaciones') }}</textarea>
