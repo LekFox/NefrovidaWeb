@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Jornada;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Http\Resources\Jornada as JornadaResource;
-
+use App\Models\Beneficiario;
 
 class JornadaController extends Controller
 {
@@ -148,5 +149,24 @@ class JornadaController extends Controller
         return redirect('jornada')->with('eliminado','Jornada borrada con éxito');
 
         
+    }
+
+    public function anadirBeneficiario($id){
+        $beneficiarios = Beneficiario::all();
+        return view('jornada.assign', ["jornadaId" => $id, "beneficiarios" => $beneficiarios]);
+    }
+
+    public function asignarBeneficiario(Request $request){
+        $jornadaId = request('jornada_id');
+         request()->validate([
+            'beneficiario_id' => ['required',Rule::unique('beneficiario_jornada', 'beneficiario_id')->where(function($query){
+                                        return $query->where('jornada_id', request('jornada_id'));
+                                    }),],
+            'jornada_id' => 'required',
+        ]);
+        
+        $jornada = Jornada::find($jornadaId);
+        $jornada->beneficiarios()->attach(request('beneficiario_id'));
+        return redirect('jornada')->with('asignado','Beneficiario asignado con éxito');
     }
 }

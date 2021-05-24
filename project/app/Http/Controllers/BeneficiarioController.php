@@ -50,7 +50,7 @@ class BeneficiarioController extends Controller
                 //
         request()->validate([
             'nombreBeneficiario' => 'required',
-            'jornada_id' => 'required',
+            'jornada_id' => 'required|numeric',
             'fechaNacimiento' => 'required',
             'sexo' => 'required',
             'telefono' => 'required',
@@ -106,7 +106,7 @@ class BeneficiarioController extends Controller
 
         request()->validate([
             'nombreBeneficiario' => 'required',
-            'jornada_id' => 'required',
+            'jornada_id' => 'required|numeric',
             'fechaNacimiento' => 'required',
             'sexo' => 'required',
             'telefono' => 'required',
@@ -166,6 +166,11 @@ class BeneficiarioController extends Controller
                         ->get();
         
         return json_encode( $beneficiarios );
+    }
+
+    public function getBeneficiarioData ($id){
+        $beneficiario = Beneficiario::with('escolaridade:id,nombreEscolaridad')->where('beneficiarios.id', $id)->first();
+        return $beneficiario;
     }
     
 //     function fetch(Request $request)

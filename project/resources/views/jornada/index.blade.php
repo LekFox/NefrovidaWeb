@@ -19,6 +19,11 @@
   
 @endif
 
+@if (Session::has('asignado'))
+    <div class="alert alert-success" role="alert"> {{Session::get('asignado')}} </div>    
+  
+@endif
+
     
 <h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-calendar3"></i> Jornadas</h1>
 <div class="container">
