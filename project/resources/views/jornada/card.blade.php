@@ -47,9 +47,11 @@
                     
                 </div>
                 <div class= "pt-xl-5">
+                    <a href="{{ url('beneficiario/create') }}">
                     <button type="button" class="btn btn-success">
                         Añadir nuevo beneficiario
                     </button>
+                    </a>
                 </div>
             </div>
         </div>

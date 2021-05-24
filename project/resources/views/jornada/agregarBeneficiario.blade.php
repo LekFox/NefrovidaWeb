@@ -18,6 +18,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
+<a href="{{ url('jornada/'.$jornadaId) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+<br><br>
+
 <form>
 <input type="hidden" value = "{{$jornadaId}}" name="jornada_id">
 
@@ -50,7 +53,7 @@
   </div>
 </div>
 
-
+<br><br>
 <div class="col text-center">
     <button class="btn btn-success btn-lg" type="submit"><i class="bi bi-pencil-square"></i> {{$modo}}</button>
 </div>

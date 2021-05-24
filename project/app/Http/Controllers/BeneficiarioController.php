@@ -42,7 +42,7 @@ class BeneficiarioController extends Controller
                 //
         request()->validate([
             'nombreBeneficiario' => 'required',
-            'jornada_id' => 'required',
+            'jornada_id' => 'required|numeric',
             'fechaNacimiento' => 'required',
             'sexo' => 'required',
             'telefono' => 'required',
@@ -98,7 +98,7 @@ class BeneficiarioController extends Controller
 
         request()->validate([
             'nombreBeneficiario' => 'required',
-            'jornada_id' => 'required',
+            'jornada_id' => 'required|numeric',
             'fechaNacimiento' => 'required',
             'sexo' => 'required',
             'telefono' => 'required',
