@@ -33,16 +33,18 @@ class NotasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
                 //return Jornada::all();
 
-        $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
+        // $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
         //$tipo['TipoNota']=tipoNotaResource::collection(tipoNota::all());
 
         // $datos['Notas']=NotasResource::collection(Notas::all());
 
-        return view('notas.create',$datos);
+        $beneficiario=Beneficiario::findOrFail($id);
+        return view('notas.create',compact('beneficiario'));
+        // return view('notas.create',$datos);
     }
 
     /**

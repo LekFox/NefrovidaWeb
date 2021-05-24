@@ -7,7 +7,8 @@
                 <h2><i class="bi bi-journal greennefro"></i> Notas</h2> 
             </div>
             <div class= "col text-right">
-                <a href="{{ url('notas/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Nota</a>
+                {{-- <a href="{{ url('notas/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Nota</a> --}}
+                <a href= "{{url('/beneficiario/'.$beneficiario->id.'/notas/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Nota</a>
             </div>
             <br><br>
         </div>

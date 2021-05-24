@@ -5,10 +5,10 @@
                 <div class="col">
                 </div>
                 <div class= "col text-center">
-                    <h2><i class="bi bi-basket greennefro"></i> Nutrición</h2> 
+                    <h2><i class="bi bi-heart greennefro"></i> Consulta Médica</h2> 
                 </div>
                 <div class= "col text-right">
-                    <a href= "{{url('/beneficiario/'.$beneficiario->id.'/nutricion/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
+                    <a href= "{{url('/beneficiario/'.$beneficiario->id.'/consulta/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
                 </div>
                 <br><br>
             </div>
@@ -16,7 +16,7 @@
             <br><br>
             <div class= "col-sm">
                 <div class="col-sm text-center">
-                    {{-- @if ($beneficiario->nutricionConsulta == NULL)
+                    {{-- @if ($beneficiario->consulta == NULL)
                         <p>No hay consultas registradas.</p>
                     @else
                     <p>ede</p>
@@ -33,20 +33,20 @@
                 </thead>
                 
                 <tbody id="dynamic-row">
-                    @foreach ($Nutricion as $notas)
+                    @foreach ($consulta as $notas)
                     <tr>
                         <td id="center">{{$notas->created_at}}</td>
                         <td id="center">
-                            <a href= "{{url('/nutricion/'.$notas->id)}}" class="btn btn-outline-dark">
+                            <a href= "{{url('/consulta/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            <a href="{{url('/nutricion/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                            <a href="{{url('/consulta/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
-                            <form action="{{url('/nutricion/'.$notas->id)}}" class="d-inline" method="post">
+                            <form action="{{url('/consulta/'.$notas->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
-                                <input type="submit" onclick="return confirm('¿Quieres borrar la consulta?')"  class="btn btn-outline-danger" value="Borrar">
+                                <input type="submit" onclick="return confirm('¿Quiere borrar la consulta?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
                         </td>
                     </tr>
@@ -55,7 +55,7 @@
                 </tbody>
             
             </table>
-            {{$Nutricion->links()}}
+            {{$consulta->links()}}
             </div>
         </div>
     </div>

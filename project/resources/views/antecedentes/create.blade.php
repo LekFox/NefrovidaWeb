@@ -29,8 +29,8 @@
 
   
   <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-person-lines-fill"></i> Registrar Antecedentes</h1>
-  <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
-  
+  <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+
   
   <div class="container mt-3">
     <div class="stepwizard col">

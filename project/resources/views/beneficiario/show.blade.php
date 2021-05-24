@@ -22,7 +22,12 @@
     @include('beneficiario.card',['modo'=>'Detalle de'])
     @include('antecedentes.card',['modo'=>'Detalle de'])
     @include('notas.index',['id'=>$id])
+    @include('consulta.card',['id'=>$id])
+    @include('nefropediatria.card',['id'=>$id])
     @include('nutriologia.card',['id'=>$id])
+    @include('tamizaje.card',['modo'=>'Detalle de'])
+    @include('evaluacion.index')
+    @include('analisislab.card',['modo'=>'Index de'])
 </div>
 
 @endsection

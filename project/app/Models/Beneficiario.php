@@ -42,6 +42,15 @@ class Beneficiario extends Model
         return $this->hasOne(Antecedente::class);
     }
 
+    public function tamizaje(){
+        return $this->hasOne(Tamizaje::class);
+    }
+
+    public function examenOrinas()
+    {
+        return $this->hasMany(ExamenOrina::class);
+    }
+
     public function escolaridade()
     {
         return $this->belongsTo(Escolaridade::class);
@@ -50,5 +59,15 @@ class Beneficiario extends Model
     public function nutricionConsulta()
     {
         return $this->hasMany(nutricionConsulta::class);
+    }
+
+    public function consulta()
+    {
+        return $this->hasMany(consulta::class);
+    }
+
+    public function nefropediatria()
+    {
+        return $this->hasMany(nefropediatria::class);
     }
 }
