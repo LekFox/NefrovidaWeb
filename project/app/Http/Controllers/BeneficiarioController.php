@@ -12,6 +12,7 @@ use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use App\Models\Jornada as Jornada;
 use App\Models\Beneficiario as Beneficiario;
 use App\Models\Evaluacion;
+use Illuminate\Support\Facades\DB;
 
 class BeneficiarioController extends Controller
 {
@@ -19,7 +20,12 @@ class BeneficiarioController extends Controller
     public function index()
     {
         $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::paginate(10));
+        // $datos = DB::table('beneficiarios')
+        //         ->orderBy('id', 'desc')
+        //         ->paginate(10);
+        // return view('beneficiario.index',['Beneficiario' => $datos]);
         return view('beneficiario.index',$datos);
+
         
     }
 
@@ -29,12 +35,12 @@ class BeneficiarioController extends Controller
         $beneficiario=Beneficiario::findOrFail($id);
 
         //$Notas= Beneficiario::find($id)->notas->paginate(3);
-        $Notas = Notas::where('beneficiario_id', $id)->paginate(3,['*'],'Notas');
-        $Nutricion = nutricionConsulta::where('beneficiario_id', $id)->paginate(3,['*'],'Nutricion');
+        $Notas = Notas::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Notas');
+        $Nutricion = nutricionConsulta::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Nutricion');
         $evaluaciones = Evaluacion::all();
-        $ExamenesOrina = ExamenOrina::where('beneficiario_id', $id)->paginate(3);
-        $consulta = consulta::where('beneficiario_id', $id)->paginate(3,['*'],'consulta');
-        $nefropediatria = nefropediatria::where('beneficiario_id', $id)->paginate(3,['*'],'nefropediatria');
+        $ExamenesOrina = ExamenOrina::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Orina');
+        $consulta = consulta::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Consulta');
+        $nefropediatria = nefropediatria::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Nefropediatria');
 
         return view('beneficiario.show',compact('beneficiario','Notas','Nutricion','evaluaciones','consulta','nefropediatria', 'ExamenesOrina'))->with(['id'=>$id]);
     }

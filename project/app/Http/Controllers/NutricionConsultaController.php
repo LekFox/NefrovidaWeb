@@ -45,6 +45,18 @@ class NutricionConsultaController extends Controller
             'beneficiario_id' => 'required',
         ]);
 
+        $peso = floatval(request('peso'));
+        $estatura = floatval(request('estatura'));
+        if($estatura != null){ 
+            $estatura = $estatura/100;
+            $estatura = pow($estatura,2);
+            $imc = $peso/$estatura;
+            $imc = round($imc,2);
+        }
+        else{
+            $imc = null;
+        }
+       
         $consulta= new nutricionConsulta([
             'ocupacion'=> request('ocupacion'),
             'horarioscomida'=> request('horarioscomida'),
@@ -87,6 +99,7 @@ class NutricionConsultaController extends Controller
             'porcentajegrasas'=> request('porcentajegrasas'),
             'diagnostico'=> request('diagnostico'),
             'nota'=> request('nota'),
+            'imc'=> $imc,
             //'beneficiario_id' => request('beneficiario_id'),
         ]);
 
@@ -141,6 +154,17 @@ class NutricionConsultaController extends Controller
         $consulta=nutricionConsulta::findOrFail($id);
 
         $id=$consulta->beneficiario_id;
+        $peso = floatval(request('peso'));
+        $estatura = floatval(request('estatura'));
+        if($estatura != null){      
+            $estatura = $estatura/100;
+            $estatura = pow($estatura,2);
+            $imc = $peso/$estatura;
+            $imc = round($imc,2);
+        }
+        else{
+            $imc = null;
+        }
         $success = $consulta->update([
             'ocupacion'=> request('ocupacion'),
             'horarioscomida'=> request('horarioscomida'),
@@ -183,6 +207,7 @@ class NutricionConsultaController extends Controller
             'porcentajegrasas'=> request('porcentajegrasas'),
             'diagnostico'=> request('diagnostico'),
             'nota'=> request('nota'),
+            'imc'=> $imc,
             //'beneficiario_id' => request('beneficiario_id'),
         ]);
 

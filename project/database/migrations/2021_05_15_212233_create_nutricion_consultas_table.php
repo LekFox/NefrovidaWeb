@@ -60,7 +60,7 @@ class CreateNutricionConsultasTable extends Migration
             $table->decimal('porcentajegrasas', 5, 2)->nullable();
             $table->text("diagnostico")->nullable();
             $table->text("nota")->nullable();
-
+            $table->string("imc")->nullable();
             $table->timestamps();
         });
     }
