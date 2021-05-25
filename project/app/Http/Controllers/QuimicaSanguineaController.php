@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Beneficiario;
-use App\Models\ExamenOrina;
+use App\Models\QuimicaSanguinea;
 
 class QuimicaSanguineaController extends Controller
 {
@@ -23,7 +23,7 @@ class QuimicaSanguineaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         $beneficiario=Beneficiario::findOrFail($id);
         return view('quimicasanguinea.create',compact('beneficiario'));
@@ -37,7 +37,35 @@ class QuimicaSanguineaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'beneficiario_id' => 'required',
+            'Glucosa' => 'required|numeric|gte:0',
+            'Urea' => 'required|numeric|gte:0',
+            'Bun' => 'required|numeric|gte:0',
+            'Creatina' => 'required|numeric|gte:0',
+            'acidoUrico' => 'required|numeric|gte:0',
+            'colesterolTotal' => 'required|numeric|gte:0',
+            'trigliceridos' => 'required|numeric|gte:0',
+            'Metodo' => 'required',
+            'nota' => 'required',
+        ]);
+
+
+        $quimSang = QuimicaSanguinea::create([
+            'beneficiario_id' => request('beneficiario_id'),
+            'glucosa' => request('Glucosa|gt'),
+            'urea'=> request('Urea'),
+            'bun'=> request('Bun'),
+            'creatina'=> request('Creatina'),
+            'acidoUrico' => request('acidoUrico'),
+            'colesterolTotal' => request('colesterolTotal'),
+            'trigliceridos' => request('trigliceridos'),
+            'nota'=> request('Metodo'),
+            'metodo'=> request('nota'),
+        ]);
+
+    $id = request('beneficiario_id');
+    return redirect('beneficiario/'.$id)->with('nuevo','Química sanguinea registrada con éxito');
     }
 
     /**

@@ -44,13 +44,13 @@
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/quimicasanguinea/create') }}" class="btn btn-outline-primary">Depuración de creatinina en orina de 24 h</a>
+                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-outline-primary">Depuración de creatinina en orina de 24 h</a>
           </div>
         </div>
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-outline-primary">Química sanguínea</a>
+                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/quimicasanguinea/create') }}" class="btn btn-outline-primary">Química sanguínea</a>
           </div>
         </div>
         <br>
