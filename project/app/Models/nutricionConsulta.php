@@ -52,6 +52,7 @@ class nutricionConsulta extends Model
         'porcentajegrasas',
         'diagnostico',
         'nota',
+        'imc',
     ];
 
     public function beneficiario()

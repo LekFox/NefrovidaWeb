@@ -347,6 +347,10 @@
             </thead>
             <tbody>
               <tr>
+                <th>IMC</th>
+                <td>{{ $consulta->imc }}</td>
+              </tr>
+              <tr>
                 <th>DX</th>
                 <td>{{ $consulta->diagnostico }}</td>
               </tr>

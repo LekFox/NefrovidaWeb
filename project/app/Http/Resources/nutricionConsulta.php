@@ -66,6 +66,7 @@ class nutricionConsulta extends JsonResource
             
             'diagnostico'=> $this->diagnostico,
             'nota'=> $this->nota,
+            'imc'=> $this->imc,
         ];
     }
 }

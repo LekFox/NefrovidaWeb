@@ -28,6 +28,7 @@
                 <thead class="thead-light">
                     <tr>
                         <th id="center">Fecha de la consulta</th>
+                        <th id="center">IMC</th>
                         <th id="center">Acciones</th>
                     </tr>
                 </thead>
@@ -36,6 +37,7 @@
                     @foreach ($Nutricion as $notas)
                     <tr>
                         <td id="center">{{$notas->created_at}}</td>
+                        <td id="center">{{$notas->imc}}</td>
                         <td id="center">
                             <a href= "{{url('/nutricion/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
