@@ -9,6 +9,7 @@ use App\Http\Controllers\TamizajeController;
 use App\Http\Controllers\AnalisisLabController;
 use App\Http\Controllers\ExamenOrinaController;
 use App\Http\Controllers\evaluacionController;
+use App\Http\Controllers\QuimicaSanguineaController;
 use App\Http\Controllers\evaluacionFinalController;
 use App\Http\Controllers\NutricionConsultaController;
 
@@ -38,6 +39,8 @@ Route::resource('beneficiario.antecedentes', AntecedenteController::class)->shal
 Route::resource('beneficiario.tamizaje', TamizajeController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.analisislab', AnalisisLabController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.examenorina', ExamenOrinaController::class)->shallow()->middleware('auth');
+Route::resource('beneficiario.quimicasanguinea', QuimicaSanguineaController::class)->shallow()->middleware('auth');
+
 //Route::resource('nutricion',NutricionConsultaController::class)->middleware('auth');
 Route::resource('beneficiario.nutricion',NutricionConsultaController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.notas',NotasController::class)->shallow()->middleware('auth');

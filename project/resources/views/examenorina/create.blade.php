@@ -40,7 +40,7 @@
       </div>
       <div class = "col-3">
       </div>
-    </div>
+</div>
   <div class="form-row">
     <div class="col-4">
       <label for="nombre">Color</label>
