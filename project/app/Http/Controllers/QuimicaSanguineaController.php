@@ -136,8 +136,12 @@ class QuimicaSanguineaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $quimicasanguinea=QuimicaSanguinea::findOrFail($id);
+        $id_beneficiario = request('id_beneficiario');
+        $success = $quimicasanguinea->delete();
+        return redirect('beneficiario/'.$id_beneficiario)->with('eliminado','Química sanguinea borrada con éxito');
+    //
     }
 }

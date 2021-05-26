@@ -62,7 +62,7 @@
                     @csrf
                     {{ @method_field('DELETE') }}
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $quimicasanguinea->beneficiario->id }}">
-                    <button type="submit" onclick="return confirm('¿Quieres borrar la química sanguinea? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                    <button type="submit" onclick="return confirm('¿Quieres borrar la Química sanguinea? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
           </div>
         </div>        

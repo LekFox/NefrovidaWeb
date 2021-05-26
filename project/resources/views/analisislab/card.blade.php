@@ -112,10 +112,11 @@
                             <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
-                            <form action="" class="d-inline" method="post">
+                            <form action="{{url('/quimicasanguinea/'.$quimicasanguinea->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
-                                <input type="submit" onclick="return confirm('¿Quieres borrar la nota?')"  class="btn btn-outline-danger" value="Borrar">
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quieres borrar la Química sanguinea?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
                         </td>
                     </tr>
