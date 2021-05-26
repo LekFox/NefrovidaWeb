@@ -57,7 +57,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" name="microalbumina" value="{{ isset($micro->microalbumina)?$micro->microalbumina:old('microalbumina') }}" id="microalbumina">
+        <input type="number" placeholder="0.00" step="0.01" min="0.00" class="form-control" name="microalbumina" value="{{ isset($micro->microalbumina)?$micro->microalbumina:old('microalbumina') }}" id="microalbumina" rows="1">
     </div>
     <div class="col-2">
     </div>
@@ -98,7 +98,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" name="creatinina" value="{{ isset($micro->creatinina)?$micro->creatinina:old('creatinina') }}" id="creatinina">
+        <input type="number" placeholder="0.00" step="0.01" min="0.00" class="form-control" name="creatinina" value="{{ isset($micro->creatinina)?$micro->creatinina:old('creatinina') }}" id="creatinina" rows="1">
     </div>
     <div class="col-2">
     </div>
@@ -140,7 +140,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" name="microalbuminaCreatinina" value="{{ isset($micro->microalbuminaCreatinina)?$micro->microalbuminaCreatinina:old('microalbuminaCreatinina') }}" id="microalbuminaCreatinina">
+        <input type="number" placeholder="0.00" step="0.01" min="0.00" class="form-control" name="microalbuminaCreatinina" value="{{ isset($micro->microalbuminaCreatinina)?$micro->microalbuminaCreatinina:old('microalbuminaCreatinina') }}" id="microalbuminaCreatinina" rows="1">
     </div>
     <div class="col-2">
         <div class="d-flex justify-content-center">

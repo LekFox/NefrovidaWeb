@@ -78,7 +78,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th>Micro Albumina</th>
+                    <th>Micro Albumina (mg/dL)</th>
                     <td> 
                         @if($micro->microalbumina == NULL)
                         <p class="font-weight-light" >No registrado</p>
@@ -88,9 +88,9 @@
                     </td>
                   </tr>
                   <tr>
-                    <th>Creatinina</th>
+                    <th>Creatinina (mg/dL)</th>
                     <td> 
-                        @if($micro->acreatinina == NULL)
+                        @if($micro->creatinina == NULL)
                         <p class="font-weight-light" >No registrado</p>
                         @else
                         <p class="font-weight-light" >{{ $micro->creatinina }}</p>
@@ -98,7 +98,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <th>Microalbumina/Creatinina</th>
+                    <th>Microalbumina/Creatinina (mg/g)</th>
                     <td> 
                         @if($micro->microalbuminaCreatinina == NULL)
                         <p class="font-weight-light" >No registrado</p>
