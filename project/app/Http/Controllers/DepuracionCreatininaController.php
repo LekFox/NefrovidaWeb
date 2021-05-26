@@ -37,7 +37,33 @@ class DepuracionCreatininaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'beneficiario_id' => 'required',
+            'talla' => 'numeric|gte:0|nullable',
+            'peso' => 'numeric|gte:0|nullable',
+            'volumen' => 'numeric|gte:0|nullable',
+            'superficieCorporal' => 'numeric|gte:0|nullable',
+            'creatininaSuero' => 'numeric|gte:0|nullable',
+            'creatininaDepuracion' => 'numeric|gte:0|nullable',
+            'Metodo' => 'nullable',
+            'nota' => 'nullable',
+        ]);
+
+
+        $depCreatinina = DepuracionCreatinina::create([
+            'beneficiario_id' => request('beneficiario_id'),
+            'talla' => request('talla'),
+            'peso'=> request('peso'),
+            'volumen'=> request('volumen'),
+            'superficieCorporal'=> request('superficieCorporal'),
+            'creatininaSuero' => request('creatininaSuero'),
+            'creatininaDepuracion' => request('creatininaDepuracion'),
+            'nota'=> request('Metodo'),
+            'metodo'=> request('nota'),
+        ]);
+    
+    $id = request('beneficiario_id');
+    return redirect('beneficiario/'.$id)->with('nuevo','Depuración de Creatinina en Orina de 24 Hrs registrada con éxito');
     }
 
     /**

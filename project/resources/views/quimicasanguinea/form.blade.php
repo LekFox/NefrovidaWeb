@@ -153,7 +153,7 @@
 
 <div class="form-row">
     <div class="col-4">
-        <label for="nombre">Creatina</label>
+        <label for="nombre">Creatinina</label>
     </div>
     <div class="col-2">
     </div>

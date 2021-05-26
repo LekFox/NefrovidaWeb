@@ -71,3 +71,176 @@
         <input type="number" class="form-control" placeholder="Superficie Corporal" id="superficieCorporal" name="superficieCorporal" >
     </div>
 </div>
+
+<br>
+<br>
+
+<div class="form-row">
+    <div class="col-4">
+        <label for="nombre">Creatinina en Suero</label>
+    </div>
+    <div class="col-2">
+    </div>
+    <div class="col-4">
+    </div>
+</div>
+<div class="form-row">
+    <div class="col-4">
+        <input type="number" class="form-control" placeholder="Creatinina en Suero" id="creatininaSuero" name="creatininaSuero" >
+    </div>
+    <div class="col-2">
+    </div>
+    <div class="col-4">
+        <div class="d-flex justify-content-center">
+            <div class="form-group row">
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="0.5" disabled>
+                </div>
+                <div class="col-0">
+                    <div class="d-flex justify-content-center">
+                        <p>-</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="1" disabled>
+                </div>
+                <div class="col-5">
+                    <p>mg/dL Mujeres</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="col-4">
+    </div>
+    <div class="col-2">
+    </div>
+    <div class="col-4">
+        <div class="d-flex justify-content-center">
+            <div class="form-group row">
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="0.7" disabled>
+                </div>
+                <div class="col-0">
+                    <div class="d-flex justify-content-center">
+                        <p>-</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="1.2" disabled>
+                </div>
+                <div class="col-5">
+                    <p>mg/dL Hombres</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="form-row">
+    <div class="col-4">
+        <label for="nombre">Depuración de Creatinina</label>
+    </div>
+    <div class="col-2">
+    </div>
+    <div class="col-4">
+    </div>
+</div>
+<div class="form-row">
+    <div class="col-4">
+        <input type="number" class="form-control" placeholder="Depuración de Creatina" id="creatininaDepuracion" name="creatininaDepuracion" >
+    </div>
+    <div class="col-2">
+    </div>
+    <div class="col-4">
+        <div class="d-flex justify-content-center">
+            <div class="form-group row">
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="88" disabled>
+                </div>
+                <div class="col-0">
+                    <div class="d-flex justify-content-center">
+                        <p>-</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="128" disabled>
+                </div>
+                <div class="col-5">
+                    <p>mg/dL Mujeres</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="col-4">
+    </div>
+    <div class="col-2">
+    </div>
+    <div class="col-4">
+        <div class="d-flex justify-content-center">
+            <div class="form-group row">
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="97" disabled>
+                </div>
+                <div class="col-0">
+                    <div class="d-flex justify-content-center">
+                        <p>-</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="137" disabled>
+                </div>
+                <div class="col-5">
+                    <p>mg/dL Hombres</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="form-row">
+    <div class="col-4">
+    </div>
+    <div class="col-2">
+        <div class="d-flex justify-content-center">
+            <label for="nombre">Método</label>
+        </div>
+    </div>
+    <div class="col-4">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="col-2">
+    </div>
+    <div class="col-6">
+        <input type="text" class="form-control" placeholder="Metodo" id="Metodo" name="Metodo" >
+    </div>
+    <div class="col-2">
+    </div>
+</div>
+
+<br>
+<br>
+
+<label for="comentario">Nota</label>
+<div class="form-group">
+    <textarea class="form-control" id="nota" name="nota" maxlength="200" rows="2"></textarea>
+</div>
+
+<br>
+
+<div class="col text-center">
+    <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
+</div>
