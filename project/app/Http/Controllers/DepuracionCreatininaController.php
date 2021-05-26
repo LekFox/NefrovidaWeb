@@ -39,9 +39,9 @@ class DepuracionCreatininaController extends Controller
     {
         request()->validate([
             'beneficiario_id' => 'required',
-            'talla' => 'numeric|gte:0|nullable',
-            'peso' => 'numeric|gte:0|nullable',
-            'volumen' => 'numeric|gte:0|nullable',
+            'talla' => 'numeric|gte:0|required',
+            'peso' => 'numeric|gte:0|required',
+            'volumen' => 'numeric|gte:0|required',
             'superficieCorporal' => 'numeric|gte:0|nullable',
             'creatininaSuero' => 'numeric|gte:0|nullable',
             'creatininaDepuracion' => 'numeric|gte:0|nullable',
