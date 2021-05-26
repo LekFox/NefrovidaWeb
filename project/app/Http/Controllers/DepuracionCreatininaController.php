@@ -44,7 +44,7 @@ class DepuracionCreatininaController extends Controller
             'volumen' => 'numeric|gte:0|required',
             'superficieCorporal' => 'numeric|gte:0|nullable',
             'creatininaOrina' => 'numeric|gte:0|required',
-            'creatininaSuero' => 'numeric|gte:0|required',
+            'creatininaSuero' => 'numeric|gt:0|required',
             'creatininaDepuracion' => 'numeric|gte:0|nullable',
             'Metodo' => 'nullable',
             'nota' => 'nullable',
@@ -103,8 +103,8 @@ class DepuracionCreatininaController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+        $depuracioncreatinina=DepuracionCreatinina::findOrFail($id);
+        return view('depuracioncreatinina.create',compact('depuracioncreatinina'));    }
 
     /**
      * Update the specified resource in storage.
@@ -115,7 +115,45 @@ class DepuracionCreatininaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        request()->validate([
+            'depuracioncreatinina_id' => 'required',
+            'talla' => 'numeric|gte:0|required',
+            'peso' => 'numeric|gte:0|required',
+            'volumen' => 'numeric|gte:0|required',
+            'superficieCorporal' => 'numeric|gte:0|nullable',
+            'creatininaOrina' => 'numeric|gte:0|required',
+            'creatininaSuero' => 'numeric|gt:0|required',
+            'creatininaDepuracion' => 'numeric|gte:0|nullable',
+            'Metodo' => 'nullable',
+            'nota' => 'nullable',
+        ]);    
+        
+        //$superCorp = request('superficieCorporal');
+        //$creatiDepuracion = request('creatininaDepuracion');
+
+        $talla = request('talla');
+        $peso = request('peso');
+        $superCorp = ($talla+$peso-60)/100;
+
+        $creatiOrina = request('creatininaOrina');
+        $creatiSuero = request('creatininaSuero');
+        $volumen = request('volumen');
+        $creatiDepuracion = ($creatiOrina*$volumen*1.73)/($creatiSuero*1440*$superCorp);
+
+        $depuracioncreatinina=DepuracionCreatinina::findOrFail($id);
+        $success = $depuracioncreatinina->update([
+            'talla' => request('talla'),
+            'peso'=> request('peso'),
+            'volumen'=> request('volumen'),
+            'superficieCorporal'=> $superCorp,
+            'creatininaSuero' => request('creatininaSuero'),
+            'creatininaDepuracion' => $creatiDepuracion,
+            'nota'=> request('Metodo'),
+            'metodo'=> request('nota'),
+            'creatininaOrina' => request('creatininaOrina'),
+        ]);
+
+        return redirect('depuracioncreatinina/'.$id)->with('editado','Cambios realizados con éxito');
     }
 
     /**

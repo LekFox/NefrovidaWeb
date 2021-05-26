@@ -10,11 +10,6 @@
       </div>
       
   @endif
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
-
   
   <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> {{$mode}} Química Sanguinea de {{ $quimicasanguinea->beneficiario->nombreBeneficiario }}</h1>
   <a href="{{ url('/quimicasanguinea/'.$quimicasanguinea->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
@@ -48,7 +43,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Glucosa" id="Glucosa" name="Glucosa" value="{{isset($quimicasanguinea->glucosa) ? $quimicasanguinea->glucosa: ''}}">
+        <textarea type="number" class="form-control" placeholder="Glucosa" id="Glucosa" name="Glucosa" maxlength="200" rows="1" >{{isset($quimicasanguinea->glucosa) ? $quimicasanguinea->glucosa: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -88,7 +83,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Urea" id="Urea" name="Urea" value="{{isset($quimicasanguinea->urea) ? $quimicasanguinea->urea: ''}}">
+        <textarea type="number" class="form-control" placeholder="Urea" id="Urea" name="Urea" maxlength="200" rows="1" >{{isset($quimicasanguinea->urea) ? $quimicasanguinea->urea: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -128,7 +123,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Bun" id="Bun" name="Bun" value="{{isset($quimicasanguinea->bun) ? $quimicasanguinea->bun: ''}}">
+        <textarea type="number" class="form-control" placeholder="Bun" id="Bun" name="Bun" maxlength="200" rows="1" >{{isset($quimicasanguinea->bun) ? $quimicasanguinea->bun: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -168,7 +163,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Creatina" id="Creatina" name="Creatina" value="{{isset($quimicasanguinea->creatina) ? $quimicasanguinea->creatina: ''}}">
+        <textarea type="number" class="form-control" placeholder="Creatina" id="Creatina" name="Creatina" maxlength="200" rows="1" >{{isset($quimicasanguinea->creatina) ? $quimicasanguinea->creatina: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -290,7 +285,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Acido Urico" id="acidoUrico" name="acidoUrico" value="{{isset($quimicasanguinea->acidoUrico) ? $quimicasanguinea->acidoUrico: ''}}">
+        <textarea type="number" class="form-control" placeholder="Acido Urico" id="acidoUrico" name="acidoUrico" maxlength="200" rows="1" >{{isset($quimicasanguinea->acidoUrico) ? $quimicasanguinea->acidoUrico: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -357,7 +352,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Colesterol Total" id="colesterolTotal" name="colesterolTotal" value="{{isset($quimicasanguinea->colesterolTotal) ? $quimicasanguinea->colesterolTotal: ''}}">
+        <textarea type="number" class="form-control" placeholder="Colesterol Total" id="colesterolTotal" name="colesterolTotal" maxlength="200" rows="1" >{{isset($quimicasanguinea->colesterolTotal) ? $quimicasanguinea->colesterolTotal: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -397,7 +392,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Trigliceridos" id="trigliceridos" name="trigliceridos" value="{{isset($quimicasanguinea->trigliceridos) ? $quimicasanguinea->trigliceridos: ''}}">
+        <textarea type="number" class="form-control" placeholder="Trigliceridos" id="trigliceridos" name="trigliceridos" maxlength="200" rows="1" >{{isset($quimicasanguinea->trigliceridos) ? $quimicasanguinea->trigliceridos: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
