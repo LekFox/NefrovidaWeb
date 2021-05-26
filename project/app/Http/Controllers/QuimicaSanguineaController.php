@@ -53,7 +53,7 @@ class QuimicaSanguineaController extends Controller
 
         $quimSang = QuimicaSanguinea::create([
             'beneficiario_id' => request('beneficiario_id'),
-            'glucosa' => request('Glucosa|gt'),
+            'glucosa' => request('Glucosa'),
             'urea'=> request('Urea'),
             'bun'=> request('Bun'),
             'creatina'=> request('Creatina'),
@@ -75,8 +75,9 @@ class QuimicaSanguineaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        $quimicasanguinea=QuimicaSanguinea::findOrFail($id);
+        return view('quimicasanguinea.show',compact('quimicasanguinea'));
     }
 
     /**

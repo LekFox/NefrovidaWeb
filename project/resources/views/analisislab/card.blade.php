@@ -102,17 +102,17 @@
                 </thead>
                 
                 <tbody id="dynamic-row">
-                    @foreach ($Notas as $notas)
+                    @foreach ($QuimicasSanguinea as $quimicasanguinea)
                     <tr>
-                        <td id="center">{{$notas->fecha}}</td>
+                        <td id="center">{{$quimicasanguinea->created_at}}</td>
                         <td id="center">
-                            <a href="{{url('/notas/'.$notas->id)}}" class="btn btn-outline-dark">
+                            <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            <a href="{{url('/notas/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                            <a href="" class="btn btn-outline-secondary">
                                 Editar
                             </a>
-                            <form action="{{url('/notas/'.$notas->id)}}" class="d-inline" method="post">
+                            <form action="" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
                                 <input type="submit" onclick="return confirm('¿Quieres borrar la nota?')"  class="btn btn-outline-danger" value="Borrar">
@@ -124,7 +124,7 @@
                 </tbody>
             
             </table>
-            {{$Notas->links()}}
+            {{$QuimicasSanguinea->links()}}
             </div>
         </div>
         <h3>Microalbuminuría</h3>
