@@ -42,15 +42,23 @@ class TamizajeController extends Controller
             'beneficiario_id' => 'required',
             'sistolica' => 'required',
             'diastolica' => 'required',
-            'circunferenciaCintura' => 'required',
-            'circunferenciaCadera' => 'required',
             'glucosaCapilar' => 'required',
             'talla' => 'required',
             'peso' => 'required',
         ]);
-        $cintura = floatval(request('circunferenciaCintura'));
-        $cadera = floatval(request('circunferenciaCadera'));
-        $indiceCinturaCadera = $cintura/$cadera;
+
+        if (request('circunferenciaCadera') != NULL) {
+            $cintura = floatval(request('circunferenciaCintura'));
+            $cadera = floatval(request('circunferenciaCadera'));
+            $indiceCinturaCadera = $cintura/$cadera;
+        } else {
+            $indiceCinturaCadera = NULL;
+        }
+
+        $talla = floatval(request('talla'));
+        $peso = floatval(request('peso'));
+        $imc = $peso/(($talla/100)*($talla/100));
+        
 
         $tamizaje= new Tamizaje([
             'sistolica' => request('sistolica'),
@@ -60,7 +68,9 @@ class TamizajeController extends Controller
             'glucosaCapilar' => request('glucosaCapilar'),
             'talla' => request('talla'),
             'peso' => request('peso'),
+            'imc' => $imc,
             'comentario' => request('comentario'),
+            'dx' => request('dx'),
             'indiceCinturaCadera' => $indiceCinturaCadera,
         ]);
 
@@ -108,15 +118,21 @@ class TamizajeController extends Controller
             'id' => 'required',
             'sistolica' => 'required',
             'diastolica' => 'required',
-            'circunferenciaCintura' => 'required',
-            'circunferenciaCadera' => 'required',
             'glucosaCapilar' => 'required',
             'talla' => 'required',
             'peso' => 'required',
         ]);
-        $cintura = floatval(request('circunferenciaCintura'));
-        $cadera = floatval(request('circunferenciaCadera'));
-        $indiceCinturaCadera = $cintura/$cadera;
+        if (request('circunferenciaCadera') != NULL) {
+            $cintura = floatval(request('circunferenciaCintura'));
+            $cadera = floatval(request('circunferenciaCadera'));
+            $indiceCinturaCadera = $cintura/$cadera;
+        } else {
+            $indiceCinturaCadera = NULL;
+        }
+
+        $talla = floatval(request('talla'));
+        $peso = floatval(request('peso'));
+        $imc = $peso/(($talla/100)*($talla/100));
 
         $tamizaje = Tamizaje::findOrFail($id);
 
@@ -128,7 +144,9 @@ class TamizajeController extends Controller
             'glucosaCapilar' => request('glucosaCapilar'),
             'talla' => request('talla'),
             'peso' => request('peso'),
+            'imc' => $imc,
             'comentario' => request('comentario'),
+            'dx' => request('dx'),
             'indiceCinturaCadera' => $indiceCinturaCadera,
         ]);
 

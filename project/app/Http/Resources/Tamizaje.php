@@ -26,6 +26,8 @@ class Tamizaje extends JsonResource
             'peso' => $this->talla,
             'indiceCinturaCadera' => $this->indiceCinturaCadera,
             'comentario' => $this->comentario,
+            'dx' => $this->dx,
+            'imc' => $this->imc,
         ];
     }
 }
