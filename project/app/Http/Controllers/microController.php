@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Beneficiario;
+use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use App\Models\micro;
 
 class microController extends Controller
@@ -45,8 +46,7 @@ class microController extends Controller
             'metodo' => 'required',
         ]);
 
-        $micro = micro::create([
-            'beneficiario_id' => request('beneficiario_id'),
+        $micro = new micro([
             'microalbumina' => request('microalbumina'),
             'creatinina'=> request('creatinina'),
             'microalbuminaCreatinina' => request('microalbuminaCreatinina'),
@@ -55,51 +55,93 @@ class microController extends Controller
         ]);
 
         $id = request('beneficiario_id');
+        $beneficiario = Beneficiario::find($id);
+        $beneficiario->micro()->save($micro);
         return redirect('beneficiario/'.$id)->with('nuevo','Laboratorio Microalbuminuría Registrado Exitósamente.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $micro=micro::findOrFail($id);
+        return view('micro.show',compact('micro'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $micro=micro::findOrFail($id);
+        return view('micro.edit',compact('micro'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $micro=micro::findOrFail($id);
+        
+        $id=$micro->beneficiario_id;
+        $success = $consulta->update([
+            'microalbumina' => request('microalbumina'),
+            'creatinina'=> request('creatinina'),
+            'microalbuminaCreatinina' => request('microalbuminaCreatinina'),
+            'metodo' => request('metodo'),
+            'nota'=> request('nota'),
+        ]);
+        return redirect('beneficiario/'.$id)->with('editado','Cambios Realizados Exitósamente');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $micro = micro::find($id);
+        $id=$micro->beneficiario_id;
+        $success = $micro->delete();
+
+        return redirect('beneficiario/'.$id)->with('nuevo','Laboratorio Microalbuminuría Borrado Exitósamente');
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
