@@ -56,6 +56,11 @@ class Beneficiario extends Model
         return $this->hasMany(QuimicaSanguinea::class);
     }
 
+    public function depuracionCreatininas()
+    {
+        return $this->hasMany(DepuracionCreatinina::class);
+    }
+
     public function escolaridade()
     {
         return $this->belongsTo(Escolaridade::class);
