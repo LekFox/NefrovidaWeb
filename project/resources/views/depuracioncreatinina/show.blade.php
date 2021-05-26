@@ -38,10 +38,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Química sanguinea de {{$quimicasanguinea->beneficiario->nombreBeneficiario}}</h1>
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Depuración de Creatinina en Orina de 24 Hrs de {{$depuracioncreatinina->beneficiario->nombreBeneficiario}}</h1>
   <div class="row">
     <div class="col">
-      <a href="{{ url('/beneficiario/'.$quimicasanguinea->beneficiario->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+      <a href="{{ url('/beneficiario/'.$depuracioncreatinina->beneficiario->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
     </div>
     <div class="col">
     </div>
@@ -52,15 +52,15 @@
       <div class= "row">
         <div class="col"></div>
           <div class= "col text-center align-bottom">
-            <h2 class="card-title "><i class="bi bi-clipboard"></i> Química sanguinea </h2>
+            <h2 class="card-title "><i class="bi bi-clipboard"></i> Depuración de Creatinina en Orina de 24 Hrs </h2>
           </div>
           <div class="col text-right">
-                <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
-                <form action="{{url('/quimicasanguinea/'.$quimicasanguinea->id)}}" class="d-inline" method="post">
+                <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
+                <form action="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="d-inline" method="post">
                     @csrf
                     {{ @method_field('DELETE') }}
-                    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $quimicasanguinea->beneficiario->id }}">
-                    <button type="submit" onclick="return confirm('¿Quieres borrar la Química sanguinea? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $depuracioncreatinina->beneficiario->id }}">
+                    <button type="submit" onclick="return confirm('¿Quieres borrar la Depuración de Creatinina en Orina de 24 Hrs? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
           </div>
         </div>        
@@ -69,93 +69,83 @@
         <div class="container">
             <table class="table table-sm">
                 <tbody>
-                  <tr>
-                    <th>Glucosa</th>
+                <tr>
+                    <th>Talla</th>
                     <td> 
-                        @if($quimicasanguinea->glucosa == NULL)
+                        @if($depuracioncreatinina->talla == NULL)
                           <p class="font-weight-light" >No registrado</p>
                         @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->glucosa }}</p>
+                          <p class="font-weight-light" >{{ $depuracioncreatinina->talla }}</p>
                         @endif
                     </td>
-                  </tr>
-                  <tr>
-                    <th>Urea</th>
+                </tr>
+                <tr>
+                    <th>Peso</th>
                     <td> 
-                        @if($quimicasanguinea->urea == NULL)
+                        @if($depuracioncreatinina->peso == NULL)
                           <p class="font-weight-light" >No registrado</p>
                         @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->urea }}</p>
+                          <p class="font-weight-light" >{{ $depuracioncreatinina->peso }}</p>
                         @endif
                     </td>
-                  </tr>
-                  <tr>
-                    <th>Bun</th>
+                </tr>
+                <tr>
+                    <th>Volumen</th>
                     <td> 
-                        @if($quimicasanguinea->bun == NULL)
+                        @if($depuracioncreatinina->volumen == NULL)
                           <p class="font-weight-light" >No registrado</p>
                         @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->bun }}</p>
+                          <p class="font-weight-light" >{{ $depuracioncreatinina->volumen }}</p>
                         @endif
                     </td>
-                  </tr> 
-                  <tr>
-                    <th>Creatinina</th>
+                </tr> 
+                <tr>
+                    <th>Superficie Corporal</th>
                     <td> 
-                        @if($quimicasanguinea->creatina == NULL)
+                        @if($depuracioncreatinina->superficieCorporal == NULL)
                           <p class="font-weight-light" >No registrado</p>
                         @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->creatina }}</p>
+                          <p class="font-weight-light" >{{ $depuracioncreatinina->superficieCorporal }}</p>
                         @endif
                     </td>
-                  </tr> 
-                  <tr>
-                    <th>Acido Urico</th>
+                </tr> 
+                <tr>
+                    <th>Creatinina Suero</th>
                     <td> 
-                        @if($quimicasanguinea->acidoUrico == NULL)
+                        @if($depuracioncreatinina->creatininaSuero == NULL)
                           <p class="font-weight-light" >No registrado</p>
                         @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->acidoUrico }}</p>
+                          <p class="font-weight-light" >{{ $depuracioncreatinina->creatininaSuero }}</p>
                         @endif
                     </td>
-                  </tr>
-                  <tr>
-                    <th>Colesterol Total</th>
+                </tr>
+                <tr>
+                    <th>Depuracion de Creatinina</th>
                     <td> 
-                        @if($quimicasanguinea->colesterolTotal == NULL)
+                        @if($depuracioncreatinina->creatininaDepuracion == NULL)
                           <p class="font-weight-light" >No registrado</p>
                         @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->colesterolTotal }}</p>
+                          <p class="font-weight-light" >{{ $depuracioncreatinina->creatininaDepuracion }}</p>
                         @endif
                     </td>
-                  </tr>  
-                  <tr>
-                    <th>Trigliceridos</th>
-                    <td> 
-                        @if($quimicasanguinea->trigliceridos == NULL)
-                          <p class="font-weight-light" >No registrado</p>
-                        @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->trigliceridos }}</p>
-                        @endif
-                    </td>
-                  </tr>  
-                   <tr>
+                </tr>  
+                <tr>
                     <th>Método</th>
                     <td> 
-                        @if($quimicasanguinea->metodo == NULL)
+                        @if($depuracioncreatinina->metodo == NULL)
                           <p class="font-weight-light" >No registrado</p>
                         @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->metodo }}</p>
+                          <p class="font-weight-light" >{{ $depuracioncreatinina->metodo }}</p>
                         @endif
                     </td>
                   </tr> 
                   <tr>
                     <th>Nota</th>
                     <td> 
-                        @if($quimicasanguinea->nota == NULL)
+                        @if($depuracioncreatinina->nota == NULL)
                           <p class="font-weight-light" >No registrado</p>
                         @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->nota }}</p>
+                          <p class="font-weight-light" >{{ $depuracioncreatinina->nota }}</p>
                         @endif
                     </td>
                   </tr>

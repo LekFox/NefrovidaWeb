@@ -64,20 +64,20 @@
                 </thead>
                 
                 <tbody id="dynamic-row">
-                    @foreach ($Notas as $notas)
+                    @foreach ($DepuracionesCreatinina as $depuracioncreatinina)
                     <tr>
-                        <td id="center">{{$notas->fecha}}</td>
+                        <td id="center">{{$depuracioncreatinina->created_at}}</td>
                         <td id="center">
-                            <a href="{{url('/notas/'.$notas->id)}}" class="btn btn-outline-dark">
+                            <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            <a href="{{url('/notas/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                            <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
-                            <form action="{{url('/notas/'.$notas->id)}}" class="d-inline" method="post">
+                            <form action="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
-                                <input type="submit" onclick="return confirm('¿Quieres borrar la nota?')"  class="btn btn-outline-danger" value="Borrar">
+                                <input type="submit" onclick="return confirm('¿Quieres borrar la Depuración de creatinina en orina de 24 h?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
                         </td>
                     </tr>
@@ -86,7 +86,7 @@
                 </tbody>
             
             </table>
-            {{$Notas->links()}}
+            {{$DepuracionesCreatinina->links()}}
             </div>
         </div>
         <h3>Química sanguínea</h3>
