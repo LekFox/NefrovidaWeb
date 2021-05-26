@@ -75,8 +75,9 @@ class QuimicaSanguineaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        $quimicasanguinea=QuimicaSanguinea::findOrFail($id);
+        return view('quimicasanguinea.show',compact('quimicasanguinea'));
     }
 
     /**
