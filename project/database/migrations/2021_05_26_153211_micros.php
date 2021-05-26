@@ -18,11 +18,11 @@ class Micros extends Migration
             $table->unsignedBigInteger('beneficiario_id')->nullable();
             $table->foreign("beneficiario_id")->references('id')->on('beneficiarios')->onDelete('set null');
 
-            $table->float('microalbumina', 8, 2)->nullable();
-            $table->float('creatinina', 8, 2)->nullable();
-            $table->float('microalbuminaCreatinina', 8, 2)->nullable();
+            $table->decimal('microalbumina', 5, 2)->nullable();
+            $table->decimal('creatinina', 5, 2)->nullable();
+            $table->decimal('microalbuminaCreatinina', 5, 2)->nullable();
             $table->string('metodo', 200)->nullable();
-            $table->string('nota', 200)->nullable();
+            $table->string('nota', 500)->nullable();
 
             $table->timestamps();
         });

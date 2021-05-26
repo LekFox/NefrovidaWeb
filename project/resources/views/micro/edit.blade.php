@@ -44,7 +44,7 @@
       </div>
 </div>
 
-<input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
+
 
 <div class="form-row">
     <div class="col-4">
@@ -57,7 +57,6 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Micro Albumina" id="microalbumina" name="microalbumina" >{{ isset($micro->microalbumina)?$micro->microalbumina:old('microalbumina') }}
         <input type="number" class="form-control" name="microalbumina" value="{{ isset($micro->microalbumina)?$micro->microalbumina:old('microalbumina') }}" id="microalbumina">
     </div>
     <div class="col-2">
@@ -250,7 +249,7 @@
     <div class="col-2">
     </div>
     <div class="col-6">
-        <input type="number" class="form-control" name="metodo" value="{{ isset($micro->metodo)?$micro->metodo:old('metodo') }}" id="metodo">
+    <textarea class="form-control" id="metodo" name="metodo" maxlength="200" rows="1">{{ isset($micro->metodo)?$micro->metodo:old('metodo') }}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -262,8 +261,7 @@
 
 <label for="comentario">Nota</label>
 <div class="form-group">
-    <textarea class="form-control" placeholder="Nota" id="nota" name="nota" maxlength="200" rows="5"></textarea>
-    <textarea class="form-control" id="exampleFormControlTextarea1" name="nota" value="{{ isset($micro->nota)?$micro->nota:old('nota') }}" id="nota" rows="6">{{ isset($micro->nota)?$micro->nota:old(nota') }}</textarea>
+<textarea class="form-control" id="nota" name="nota" maxlength="500" rows="5">{{ isset($micro->nota)?$micro->nota:old('nota') }}</textarea>
 </div>
 
 <br>
@@ -273,6 +271,7 @@
 </div>
 
 <br>
+
   
   <script type="text/javascript">
       $('.date').datepicker({  

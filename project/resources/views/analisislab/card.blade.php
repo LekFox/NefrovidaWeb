@@ -66,7 +66,7 @@
                 <tbody id="dynamic-row">
                     @foreach ($Notas as $notas)
                     <tr>
-                        <td id="center">{{$notas->fecha}}</td>
+                        <td id="center">{{$notas->created_at}}</td>
                         <td id="center">
                             <a href="{{url('/notas/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
@@ -142,7 +142,7 @@
                 <tbody id="dynamic-row">
                     @foreach ($micro as $micro)
                     <tr>
-                        <td id="center">{{$micro->fecha}}</td>
+                        <td id="center">{{$micro->created_at}}</td>
                         <td id="center">
                             <a href="{{url('/micro/'.$micro->id)}}" class="btn btn-outline-dark">
                                 Consultar
@@ -160,9 +160,8 @@
                     @endforeach 
                    
                 </tbody>
-            
+                {{$Notas->links()}}
             </table>
-            {{$micro->links()}}
             </div>
         </div>
     </div>

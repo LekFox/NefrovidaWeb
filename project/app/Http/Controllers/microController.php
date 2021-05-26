@@ -106,7 +106,7 @@ class microController extends Controller
         $micro=micro::findOrFail($id);
         
         $id=$micro->beneficiario_id;
-        $success = $consulta->update([
+        $success = $micro->update([
             'microalbumina' => request('microalbumina'),
             'creatinina'=> request('creatinina'),
             'microalbuminaCreatinina' => request('microalbuminaCreatinina'),

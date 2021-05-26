@@ -56,7 +56,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Micro Albumina" id="microalbumina" name="microalbumina" >
+        <input type="number" placeholder="0.00" step="0.01" min="0.00" class="form-control" name="microalbumina" id="microalbumina" rows="1">
     </div>
     <div class="col-2">
     </div>
@@ -97,7 +97,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Creatinina" id="creatinina" name="creatinina">
+        <input type="number" placeholder="0.00" step="0.01" min="0.00" class="form-control" name="creatinina" id="creatinina" rows="1">
     </div>
     <div class="col-2">
     </div>
@@ -139,7 +139,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Microalbumina/Creatinina" id="microalbuminaCreatinina" name="microalbuminaCreatinina">
+        <input type="number" placeholder="0.00" step="0.01" min="0.00" class="form-control" name="microalbuminaCreatinina" id="microalbuminaCreatinina" rows="1">
     </div>
     <div class="col-2">
         <div class="d-flex justify-content-center">
@@ -260,7 +260,7 @@
 
 <label for="comentario">Nota</label>
 <div class="form-group">
-    <textarea class="form-control" placeholder="Nota" id="nota" name="nota" maxlength="200" rows="5"></textarea>
+    <textarea class="form-control" placeholder="Nota" id="nota" name="nota" maxlength="500" rows="5"></textarea>
 </div>
 
 <br>
