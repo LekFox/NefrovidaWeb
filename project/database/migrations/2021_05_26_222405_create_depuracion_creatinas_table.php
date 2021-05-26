@@ -29,6 +29,8 @@ class CreateDepuracionCreatinasTable extends Migration
                 ->nullable();
             $table->float('creatininaSuero', 8, 2)
                 ->nullable();
+            $table->float('creatininaOrina', 8, 2)
+            ->nullable();    
             $table->float('creatininaDepuracion', 8, 2)
                 ->nullable();
             $table->text('nota', 400)

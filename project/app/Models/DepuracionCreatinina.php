@@ -11,7 +11,7 @@ class DepuracionCreatinina extends Model
     use HasFactory;
 
     protected $fillable = [
-        'beneficiario_id', 'talla', 'peso', 'volumen', 'superficieCorporal', 'creatininaSuero' , 'creatininaDepuracion', 'nota', 'metodo',
+        'beneficiario_id', 'talla', 'peso', 'volumen', 'superficieCorporal', 'creatininaSuero', 'creatininaOrina' , 'creatininaDepuracion', 'nota', 'metodo',
     ];
 
     public function beneficiario()

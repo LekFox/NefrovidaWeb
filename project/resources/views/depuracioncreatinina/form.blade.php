@@ -40,12 +40,12 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Talla" id="talla" name="talla" >
+        <textarea type="number" class="form-control" placeholder="Talla (cm)" id="talla" name="talla" maxlength="200" rows="1" ></textarea>
     </div>
     <div class="col-2">
     </div>
     <div class="col-4">
-    <input type="number" class="form-control" placeholder="Peso" id="peso" name="peso" >
+    <textarea type="number" class="form-control" placeholder="Peso (kg)" id="peso" name="peso" maxlength="200" rows="1"></textarea>
     </div>
 </div>
     
@@ -63,12 +63,12 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Volumen" id="volumen" name="volumen" >
+        <textarea type="number" class="form-control" placeholder="Volumen (mL)" id="volumen" name="volumen" maxlength="200" rows="1"></textarea>
     </div>
     <div class="col-2">
     </div>
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Superficie Corporal" id="superficieCorporal" name="superficieCorporal" >
+        <textarea type="number" class="form-control" placeholder="Superficie Corporal (m2)" id="superficieCorporal" name="superficieCorporal" maxlength="200" rows="1"></textarea>
     </div>
 </div>
 
@@ -86,7 +86,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Creatinina en Suero" id="creatininaSuero" name="creatininaSuero" >
+        <textarea type="number" class="form-control" placeholder="Creatinina en Suero" id="creatininaSuero" name="creatininaSuero" maxlength="200" rows="1"></textarea>
     </div>
     <div class="col-2">
     </div>
@@ -144,6 +144,73 @@
 
 <div class="form-row">
     <div class="col-4">
+        <label for="nombre">Creatinina en Orina</label>
+    </div>
+    <div class="col-2">
+    </div>
+    <div class="col-4">
+    </div>
+</div>
+<div class="form-row">
+    <div class="col-4">
+        <textarea type="number" class="form-control" placeholder="Creatinina en Orina" id="creatininaOrina" name="creatininaOrina" maxlength="200" rows="1"></textarea>
+    </div>
+    <div class="col-2">
+    </div>
+    <div class="col-4">
+        <div class="d-flex justify-content-center">
+            <div class="form-group row">
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="28" disabled>
+                </div>
+                <div class="col-0">
+                    <div class="d-flex justify-content-center">
+                        <p>-</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="217" disabled>
+                </div>
+                <div class="col-5">
+                    <p>mg/dL Mujeres</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="col-4">
+    </div>
+    <div class="col-2">
+    </div>
+    <div class="col-4">
+        <div class="d-flex justify-content-center">
+            <div class="form-group row">
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="39" disabled>
+                </div>
+                <div class="col-0">
+                    <div class="d-flex justify-content-center">
+                        <p>-</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="259" disabled>
+                </div>
+                <div class="col-5">
+                    <p>mg/dL Hombres</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="form-row">
+    <div class="col-4">
         <label for="nombre">Depuración de Creatinina</label>
     </div>
     <div class="col-2">
@@ -153,7 +220,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Depuración de Creatina" id="creatininaDepuracion" name="creatininaDepuracion" >
+        <textarea type="number" class="form-control" placeholder="Depuración de Creatina" id="creatininaDepuracion" name="creatininaDepuracion" maxlength="200" rows="1"></textarea>
     </div>
     <div class="col-2">
     </div>
@@ -172,7 +239,7 @@
                     <input class="form-control" type="text" placeholder="128" disabled>
                 </div>
                 <div class="col-5">
-                    <p>mg/dL Mujeres</p>
+                    <p>ml/min Mujeres</p>
                 </div>
             </div>
         </div>
@@ -199,7 +266,7 @@
                     <input class="form-control" type="text" placeholder="137" disabled>
                 </div>
                 <div class="col-5">
-                    <p>mg/dL Hombres</p>
+                    <p>ml/min Hombres</p>
                 </div>
             </div>
         </div>

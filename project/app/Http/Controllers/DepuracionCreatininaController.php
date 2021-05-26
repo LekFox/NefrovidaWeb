@@ -43,23 +43,40 @@ class DepuracionCreatininaController extends Controller
             'peso' => 'numeric|gte:0|required',
             'volumen' => 'numeric|gte:0|required',
             'superficieCorporal' => 'numeric|gte:0|nullable',
-            'creatininaSuero' => 'numeric|gte:0|nullable',
+            'creatininaOrina' => 'numeric|gte:0|required',
+            'creatininaSuero' => 'numeric|gte:0|required',
             'creatininaDepuracion' => 'numeric|gte:0|nullable',
             'Metodo' => 'nullable',
             'nota' => 'nullable',
         ]);
+        
+        $superCorp = request('superficieCorporal');
+        $creatiDepuracion = request('creatininaDepuracion');
 
+        if (request('superficieCorporal') == null) {
+            $talla = request('talla');
+            $peso = request('peso');
+            $superCorp = ($talla+$peso-60)/100;
+        }
+
+        if (request('creatininaDepuracion') == null) {
+            $creatiOrina = request('creatininaOrina');
+            $creatiSuero = request('creatininaSuero');
+            $volumen = request('volumen');
+            $creatiDepuracion = ($creatiOrina*$volumen*1.73)/($creatiSuero*1440*$superCorp);
+        }
 
         $depCreatinina = DepuracionCreatinina::create([
             'beneficiario_id' => request('beneficiario_id'),
             'talla' => request('talla'),
             'peso'=> request('peso'),
             'volumen'=> request('volumen'),
-            'superficieCorporal'=> request('superficieCorporal'),
+            'superficieCorporal'=> $superCorp,
             'creatininaSuero' => request('creatininaSuero'),
-            'creatininaDepuracion' => request('creatininaDepuracion'),
+            'creatininaDepuracion' => $creatiDepuracion,
             'nota'=> request('Metodo'),
             'metodo'=> request('nota'),
+            'creatininaOrina' => request('creatininaOrina'),
         ]);
     
     $id = request('beneficiario_id');

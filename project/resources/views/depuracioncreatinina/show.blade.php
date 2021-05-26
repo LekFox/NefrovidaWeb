@@ -110,12 +110,22 @@
                     </td>
                 </tr> 
                 <tr>
-                    <th>Creatinina Suero</th>
+                    <th>Creatinina en Suero</th>
                     <td> 
                         @if($depuracioncreatinina->creatininaSuero == NULL)
                           <p class="font-weight-light" >No registrado</p>
                         @else
                           <p class="font-weight-light" >{{ $depuracioncreatinina->creatininaSuero }}</p>
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <th>Creatinina en Orina</th>
+                    <td> 
+                        @if($depuracioncreatinina->creatininaOrina == NULL)
+                          <p class="font-weight-light" >No registrado</p>
+                        @else
+                          <p class="font-weight-light" >{{ $depuracioncreatinina->creatininaOrina }}</p>
                         @endif
                     </td>
                 </tr>
