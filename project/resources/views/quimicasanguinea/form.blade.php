@@ -11,7 +11,6 @@
     
 @endif
 
-   
 <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> {{$mode}} Química Sanguinea de {{ $beneficiario->nombreBeneficiario }}</h1>
 <a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 <br>
@@ -42,7 +41,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Glucosa" id="Glucosa" name="Glucosa" >
+        <textarea type="number" class="form-control" placeholder="Glucosa" id="Glucosa" name="Glucosa" maxlength="200" rows="1" ></textarea>
     </div>
     <div class="col-2">
     </div>
@@ -82,7 +81,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Urea" id="Urea" name="Urea" >
+        <textarea type="number" class="form-control" placeholder="Urea" id="Urea" name="Urea" maxlength="200" rows="1" ></textarea>
     </div>
     <div class="col-2">
     </div>
@@ -122,7 +121,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Bun" id="Bun" name="Bun" >
+        <textarea type="number" class="form-control" placeholder="Bun" id="Bun" name="Bun" maxlength="200" rows="1" ></textarea>
     </div>
     <div class="col-2">
     </div>
@@ -162,7 +161,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Creatina" id="Creatina" name="Creatina" >
+        <textarea type="number" class="form-control" placeholder="Creatina" id="Creatina" name="Creatina" maxlength="200" rows="1" ></textarea>
     </div>
     <div class="col-2">
     </div>
@@ -283,7 +282,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Acido Urico" id="acidoUrico" name="acidoUrico" >
+        <textarea type="number" class="form-control" placeholder="Acido Urico" id="acidoUrico" name="acidoUrico" maxlength="200" rows="1" ></textarea>
     </div>
     <div class="col-2">
     </div>
@@ -350,7 +349,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Colesterol Total" id="colesterolTotal" name="colesterolTotal" >
+        <textarea type="number" class="form-control" placeholder="Colesterol Total" id="colesterolTotal" name="colesterolTotal" maxlength="200" rows="1" ></textarea>
     </div>
     <div class="col-2">
     </div>
@@ -390,7 +389,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Trigliceridos" id="trigliceridos" name="trigliceridos" >
+        <textarea type="number" class="form-control" placeholder="Trigliceridos" id="trigliceridos" name="trigliceridos" maxlength="200" rows="1" ></textarea>
     </div>
     <div class="col-2">
     </div>
