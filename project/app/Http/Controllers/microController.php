@@ -42,9 +42,19 @@ class microController extends Controller
             'beneficiario_id' => 'required',
             'microalbumina' => 'required|numeric|gte:0',
             'creatinina' => 'required|numeric|gte:0',
-            'microalbuminaCreatinina' => 'required|numeric|gte:0',
+            //'microalbuminaCreatinina' => 'required|numeric|gte:0',
             'metodo' => 'required',
         ]);
+
+        $microalbumina = floatval(request('microalbumina'));
+        $creatinina = floatval(request('creatinina'));
+        if($creatinina != null){
+            $microalbuminaCreatinina = ($microalbumina*100)/$creatinina;
+            $microalbuminaCreatinina = round($microalbuminaCreatinina,2);
+        }
+        else{
+            $microalbuminaCreatinina = null;
+        }
 
         $micro = new micro([
             'microalbumina' => request('microalbumina'),

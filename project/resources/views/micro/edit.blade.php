@@ -1,39 +1,51 @@
+@extends('layouts.app')
 
-@if (count($errors)>0)
-    
-    <div class="alert alert-danger" role="alert">
-        <ul>
-        @foreach($errors->all() as $error)
-            <li> {{$error}} </li>
-        @endforeach 
-        </ul>
-    </div>
-    
-@endif
+@section('content')
 
-   
-<h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> {{$mode}} Microalbuminuría de {{ $beneficiario->nombreBeneficiario }}</h1>
-<br>
-<br>
-<a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
-<br>
-<br>
+@include('sidebar.beneficiario')
 
-<input type="hidden" value = "{{$beneficiario->id}}" id = "beneficiario_id" name = "beneficiario_id">
+<div class="container"><form action="{{url('/micro/'.$micro->id)}}" method="post">
+  @csrf
+  {{ method_field('PATCH') }}
+  
+  {{-- @include('notas.form',['modo'=>'Crear'],['id'=>'2']) --}}
 
-<div class="form-row">
-    <div class="col-4">
-    </div>
-    <div class="col-2">
-    </div>
-    <div class="col-3">
-    <div class="d-flex justify-content-center">
-        <p class="font-weight-bold">Valores de Referencia</p>
-    </div>
-    </div>
+  @if (count($errors)>0)
+      
+      <div class="alert alert-danger" role="alert">
+          <ul>
+          @foreach($errors->all() as $error)
+             <li> {{$error}} </li>
+          @endforeach 
+          </ul>
+      </div>
+      
+  @endif
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+
+  
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Editar Examen de Microalbuminuría de {{ $micro->beneficiario->nombreBeneficiario }}</h1>
+  <br>
+  <a href="{{ url('/micro/'.$micro->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+  <br>
+  <br>
+
+  <div>
+<div class= "row">
+      <div class = "col-1">
+      </div>
+      <div class = "col">
+        <h3 class="text-center">Examen de Microalbuminuría</h3>
+      </div>
+      <div class = "col-3">
+      </div>
 </div>
 
-<!--<x-labInput label = "Glucosa" : min = "70" : max = "100"/>-->
+<input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
+
 <div class="form-row">
     <div class="col-4">
         <label for="nombre">Micro Albumina</label>
@@ -45,7 +57,8 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Micro Albumina" id="microalbumina" name="microalbumina" >
+        <input type="number" class="form-control" placeholder="Micro Albumina" id="microalbumina" name="microalbumina" >{{ isset($micro->microalbumina)?$micro->microalbumina:old('microalbumina') }}
+        <input type="number" class="form-control" name="microalbumina" value="{{ isset($micro->microalbumina)?$micro->microalbumina:old('microalbumina') }}" id="microalbumina">
     </div>
     <div class="col-2">
     </div>
@@ -86,7 +99,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Creatinina" id="creatinina" name="creatinina">
+        <input type="number" class="form-control" name="creatinina" value="{{ isset($micro->creatinina)?$micro->creatinina:old('creatinina') }}" id="creatinina">
     </div>
     <div class="col-2">
     </div>
@@ -128,7 +141,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" class="form-control" placeholder="Microalbumina/Creatinina" id="microalbuminaCreatinina" name="creatinina">
+        <input type="number" class="form-control" name="microalbuminaCreatinina" value="{{ isset($micro->microalbuminaCreatinina)?$micro->microalbuminaCreatinina:old('microalbuminaCreatinina') }}" id="microalbuminaCreatinina">
     </div>
     <div class="col-2">
         <div class="d-flex justify-content-center">
@@ -237,7 +250,7 @@
     <div class="col-2">
     </div>
     <div class="col-6">
-        <input type="text" class="form-control" placeholder="Metodo" id="metodo" name="metodo" >
+        <input type="number" class="form-control" name="metodo" value="{{ isset($micro->metodo)?$micro->metodo:old('metodo') }}" id="metodo">
     </div>
     <div class="col-2">
     </div>
@@ -250,10 +263,23 @@
 <label for="comentario">Nota</label>
 <div class="form-group">
     <textarea class="form-control" placeholder="Nota" id="nota" name="nota" maxlength="200" rows="5"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="nota" value="{{ isset($micro->nota)?$micro->nota:old('nota') }}" id="nota" rows="6">{{ isset($micro->nota)?$micro->nota:old(nota') }}</textarea>
 </div>
 
 <br>
 
 <div class="col text-center">
-    <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
+        <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i> Guardar</button>
 </div>
+
+<br>
+  
+  <script type="text/javascript">
+      $('.date').datepicker({  
+         format: 'yyyy-mm-dd'
+       });  
+  </script>
+
+</form>
+</div>
+@endsection
