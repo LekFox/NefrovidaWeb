@@ -41,6 +41,7 @@
 
   
   <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Examen de Microalbuminuría de {{$micro->beneficiario->nombreBeneficiario}}</h1>
+  <br>
   <div class="row">
   <br>
     <div class="col">
@@ -80,10 +81,14 @@
                   <tr>
                     <th>Micro Albumina (mg/dL)</th>
                     <td> 
-                        @if($micro->microalbumina == NULL)
-                        <p class="font-weight-light" >No registrado</p>
+                      @if($micro->microalbumina == NULL)
+                        <p class="font-weight-light" >No registrado</p>                          
                         @else
-                        <p class="font-weight-light" >{{ $micro->microalbumina }}</p>
+                          @if($micro->microalbumina >= 10 && $micro->microalbumina <= 30)
+                            <p class="font-weight-light" style="color:green">{{ $micro->microalbumina }}</p>
+                          @else
+                            <p class="font-weight-light" style="color:red">{{ $micro->microalbumina }}</p>
+                          @endif  
                         @endif
                     </td>
                   </tr>
@@ -91,20 +96,32 @@
                     <th>Creatinina (mg/dL)</th>
                     <td> 
                         @if($micro->creatinina == NULL)
-                        <p class="font-weight-light" >No registrado</p>
+                        <p class="font-weight-light" >No registrado</p>                          
                         @else
-                        <p class="font-weight-light" >{{ $micro->creatinina }}</p>
+                          @if($micro->creatinina >= 10 && $micro->creatinina <= 300)
+                            <p class="font-weight-light" style="color:green">{{ $micro->creatinina }}</p>
+                          @else
+                            <p class="font-weight-light" style="color:red">{{ $micro->creatinina }}</p>
+                          @endif  
                         @endif
                     </td>
                   </tr>
                   <tr>
                     <th>Microalbumina/Creatinina (mg/g)</th>
                     <td> 
-                        @if($micro->microalbuminaCreatinina == NULL)
-                        <p class="font-weight-light" >No registrado</p>
-                        @else
-                        <p class="font-weight-light" >{{ $micro->microalbuminaCreatinina }}</p>
-                        @endif
+                      @if($micro->microalbuminaCreatinina == NULL)
+                        <p class="font-weight-light" >No registrado</p>                          
+                      @else
+                          @if($micro->microalbuminaCreatinina >= 0 && $micro->microalbuminaCreatinina <= 30)
+                            <p class="font-weight-light" style="color:green">{{ $micro->microalbuminaCreatinina }}</p>
+                          @else
+                            @if($micro->microalbuminaCreatinina > 30 && $micro->microalbuminaCreatinina <= 300)
+                              <p class="font-weight-light" style="color:#cccc00">{{ $micro->microalbuminaCreatinina }}</p>
+                            @else($micro->microalbuminaCreatinina > 300)
+                              <p class="font-weight-light" style="color:red">{{ $micro->microalbuminaCreatinina }}</p>
+                            @endif
+                          @endif
+                      @endif
                     </td>
                   </tr>
                   <tr>

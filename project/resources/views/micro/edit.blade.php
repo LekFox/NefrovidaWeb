@@ -151,7 +151,7 @@
         <div class="d-flex justify-content-center">
             <div class="form-row">
                 <div class="col-4">
-                    <input class="form-control" type="text" placeholder="30.00" disabled>
+                    <input class="form-control" type="text" placeholder="0.00" disabled>
                 </div>
                 <div class="col-1">
                     <div class="d-flex justify-content-center">
@@ -159,7 +159,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <input class="form-control" type="text" placeholder="300.00" disabled>
+                    <input class="form-control" type="text" placeholder="30.00" disabled>
                 </div>
                 <div class="col-3">
                     <p>mg/g</p>
@@ -222,7 +222,7 @@
                     <input class="form-control" type="text" placeholder="Mayor" disabled>
                 </div>
                 <div class="col-3">
-                    <p>mg/dL</p>
+                    <p>mg/g</p>
                 </div>
             </div>
         </div>
