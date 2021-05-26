@@ -162,7 +162,7 @@
                 </tbody>
             
             </table>
-            {{$Notas->links()}}
+            {{$micro->links()}}
             </div>
         </div>
     </div>
