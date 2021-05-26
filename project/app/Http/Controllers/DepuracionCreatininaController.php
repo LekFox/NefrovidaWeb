@@ -74,7 +74,8 @@ class DepuracionCreatininaController extends Controller
      */
     public function show($id)
     {
-        //
+        $depuracioncreatinina=DepuracionCreatinina::findOrFail($id);
+        return view('depuracioncreatinina.show',compact('depuracioncreatinina'));
     }
 
     /**
