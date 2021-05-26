@@ -142,6 +142,5 @@ class QuimicaSanguineaController extends Controller
         $id_beneficiario = request('id_beneficiario');
         $success = $quimicasanguinea->delete();
         return redirect('beneficiario/'.$id_beneficiario)->with('eliminado','Química sanguinea borrada con éxito');
-    //
     }
 }
