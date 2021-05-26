@@ -162,8 +162,11 @@ class DepuracionCreatininaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $depuracioncreatinina=DepuracionCreatinina::findOrFail($id);
+        $id_beneficiario = request('id_beneficiario');
+        $success = $depuracioncreatinina->delete();
+        return redirect('beneficiario/'.$id_beneficiario)->with('eliminado','Depuración de creatinina en orina de 24 h borrada con éxito');
     }
 }

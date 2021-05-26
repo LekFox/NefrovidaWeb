@@ -77,6 +77,7 @@
                             <form action="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
                                 <input type="submit" onclick="return confirm('¿Quieres borrar la Depuración de creatinina en orina de 24 h?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
                         </td>

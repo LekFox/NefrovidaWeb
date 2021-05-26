@@ -70,7 +70,7 @@
             <table class="table table-sm">
                 <tbody>
                 <tr>
-                    <th>Talla</th>
+                    <th>Talla (cm)</th>
                     <td> 
                         @if($depuracioncreatinina->talla == NULL)
                           <p class="font-weight-light" >No registrado</p>
@@ -80,7 +80,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Peso</th>
+                    <th>Peso (kg)</th>
                     <td> 
                         @if($depuracioncreatinina->peso == NULL)
                           <p class="font-weight-light" >No registrado</p>
@@ -90,7 +90,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Volumen</th>
+                    <th>Volumen (mL)</th>
                     <td> 
                         @if($depuracioncreatinina->volumen == NULL)
                           <p class="font-weight-light" >No registrado</p>
