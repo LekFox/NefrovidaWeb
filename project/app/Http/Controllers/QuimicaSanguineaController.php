@@ -53,7 +53,7 @@ class QuimicaSanguineaController extends Controller
 
         $quimSang = QuimicaSanguinea::create([
             'beneficiario_id' => request('beneficiario_id'),
-            'glucosa' => request('Glucosa|gt'),
+            'glucosa' => request('Glucosa'),
             'urea'=> request('Urea'),
             'bun'=> request('Bun'),
             'creatina'=> request('Creatina'),
