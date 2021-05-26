@@ -109,7 +109,7 @@
                             <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            <a href="" class="btn btn-outline-secondary">
+                            <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
                             <form action="" class="d-inline" method="post">

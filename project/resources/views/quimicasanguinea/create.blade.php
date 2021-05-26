@@ -13,7 +13,7 @@
   <div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/quimicasanguinea')}}" method="post">
     @include('quimicasanguinea.form',['mode'=>'Registrar'])
 @elseif (isset($quimicasanguinea))
-  <div class="container"><form action="{{url('/quimicasanguinea/'.$quimicasanguinea->id.'/edit')}}" method="post">
+  <div class="container"><form action="{{url('/quimicasanguinea/'.$quimicasanguinea->id)}}" method="post">
     @method('PUT')
     @include('quimicasanguinea.edit',['mode'=>'Editar'])
 @else
