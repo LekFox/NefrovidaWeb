@@ -101,11 +101,15 @@
       </div>
       <div class="col-4">
         <input type="number" class="form-control" placeholder="Talla" id="talla" name="talla" value="{{ isset($tamizaje->talla)?$tamizaje->talla:old('talla') }}">
-        <small id="tallaHelp" class="form-text text-muted"></small>
+        <small id="tallaHelp" class="form-text text-muted">cm</small>
       </div>
     </div>
     <br>
 
+    <label for="dx">DX</label>
+      <div class="form-group">
+      <textarea class="form-control" id="dx" name="dx" maxlength="200" rows="1">{{ isset($tamizaje->dx)?$tamizaje->dx:old('dx') }}</textarea>
+      </div>
       <label for="comentario">Comentarios</label>
       <div class="form-group">
       <textarea class="form-control" id="comentario" name="comentario" maxlength="200" rows="2">{{ isset($tamizaje->comentario)?$tamizaje->comentario:old('comentario') }}</textarea>
