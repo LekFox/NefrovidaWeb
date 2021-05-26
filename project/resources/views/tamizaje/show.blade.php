@@ -146,7 +146,31 @@
                 @if($tamizaje->talla == NULL)
                 <p class="font-weight-light" >No registrado / No aplica</p>
                 @else
-                <p class="font-weight-light" >{{ $tamizaje->talla }}</p>
+                <p class="font-weight-light" >{{ $tamizaje->talla }} cm</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">IMC:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($tamizaje->imc == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $tamizaje->imc }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
+                <h5 class="card-title ">DX:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($tamizaje->dx == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $tamizaje->dx }}</p>
                 @endif
             </div>
         </div>

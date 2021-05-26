@@ -21,14 +21,19 @@ class CreateTamizajesTable extends Migration
                 ->onDelete('cascade');
             $table->integer('sistolica');
             $table->integer('diastolica');
-            $table->integer('circunferenciaCintura');
-            $table->integer('circunferenciaCadera');
+            $table->integer('circunferenciaCintura')
+                ->nullable();
+            $table->integer('circunferenciaCadera')
+                ->nullable();
             $table->integer('glucosaCapilar');
             $table->integer('talla');
             $table->float('peso', 8, 2);
+            $table->float('imc', 10, 4);
             $table->float('indiceCinturaCadera', 8, 2)
                 ->nullable();
             $table->string('comentario', 200)
+                ->nullable();
+            $table->string('dx', 200)
                 ->nullable();
             $table->timestamps();
         });
