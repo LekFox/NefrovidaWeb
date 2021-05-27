@@ -39,21 +39,21 @@ class QuimicaSanguineaController extends Controller
     {
         request()->validate([
             'beneficiario_id' => 'required',
-            'Glucosa' => 'required|numeric|gte:0',
-            'Urea' => 'required|numeric|gte:0',
-            'Bun' => 'required|numeric|gte:0',
-            'Creatina' => 'required|numeric|gte:0',
-            'acidoUrico' => 'required|numeric|gte:0',
-            'colesterolTotal' => 'required|numeric|gte:0',
-            'trigliceridos' => 'required|numeric|gte:0',
-            'Metodo' => 'required',
-            'nota' => 'required',
+            'Glucosa' => 'numeric|gte:0|nullable',
+            'Urea' => 'numeric|gte:0|nullable',
+            'Bun' => 'numeric|gte:0|nullable',
+            'Creatina' => 'numeric|gte:0|nullable',
+            'acidoUrico' => 'numeric|gte:0|nullable',
+            'colesterolTotal' => 'numeric|gte:0|nullable',
+            'trigliceridos' => 'numeric|gte:0|nullable',
+            'Metodo' => 'nullable',
+            'nota' => 'nullable',
         ]);
 
 
         $quimSang = QuimicaSanguinea::create([
             'beneficiario_id' => request('beneficiario_id'),
-            'glucosa' => request('Glucosa|gt'),
+            'glucosa' => request('Glucosa'),
             'urea'=> request('Urea'),
             'bun'=> request('Bun'),
             'creatina'=> request('Creatina'),
@@ -75,8 +75,9 @@ class QuimicaSanguineaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        $quimicasanguinea=QuimicaSanguinea::findOrFail($id);
+        return view('quimicasanguinea.show',compact('quimicasanguinea'));
     }
 
     /**
@@ -87,7 +88,8 @@ class QuimicaSanguineaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $quimicasanguinea=QuimicaSanguinea::findOrFail($id);
+        return view('quimicasanguinea.create',compact('quimicasanguinea'));
     }
 
     /**
@@ -99,7 +101,33 @@ class QuimicaSanguineaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        request()->validate([
+            'quimicasanguinea_id' => 'required',
+            'Glucosa' => 'numeric|gte:0|nullable',
+            'Urea' => 'numeric|gte:0|nullable',
+            'Bun' => 'numeric|gte:0|nullable',
+            'Creatina' => 'numeric|gte:0|nullable',
+            'acidoUrico' => 'numeric|gte:0|nullable',
+            'colesterolTotal' => 'numeric|gte:0|nullable',
+            'trigliceridos' => 'numeric|gte:0|nullable',
+            'Metodo' => 'nullable',
+            'nota' => 'nullable',
+        ]);
+
+            $quimicasanguinea = QuimicaSanguinea::findOrFail($id);
+            $success = $quimicasanguinea->update([
+            'glucosa' => request('Glucosa'),
+            'urea'=> request('Urea'),
+            'bun'=> request('Bun'),
+            'creatina'=> request('Creatina'),
+            'acidoUrico' => request('acidoUrico'),
+            'colesterolTotal' => request('colesterolTotal'),
+            'trigliceridos' => request('trigliceridos'),
+            'nota'=> request('Metodo'),
+            'metodo'=> request('nota'),
+        ]);
+
+        return redirect('quimicasanguinea/'.$id)->with('editado','Cambios realizados con éxito');
     }
 
     /**
@@ -108,8 +136,11 @@ class QuimicaSanguineaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $quimicasanguinea=QuimicaSanguinea::findOrFail($id);
+        $id_beneficiario = request('id_beneficiario');
+        $success = $quimicasanguinea->delete();
+        return redirect('beneficiario/'.$id_beneficiario)->with('eliminado','Química sanguinea borrada con éxito');
     }
 }

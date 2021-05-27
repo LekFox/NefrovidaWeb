@@ -10,15 +10,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
 @if (isset($beneficiario))
-  <div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/quimicasanguinea')}}" method="post">
-    @include('quimicasanguinea.form',['mode'=>'Registrar'])
-@elseif (isset($quimicasanguinea))
-  <div class="container"><form action="{{url('/quimicasanguinea/'.$quimicasanguinea->id)}}" method="post">
+  <div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/depuracioncreatinina')}}" method="post">
+    @include('depuracioncreatinina.form',['mode'=>'Registrar'])
+@elseif (isset($depuracioncreatinina))
+  <div class="container"><form action="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" method="post">
     @method('PUT')
-    @include('quimicasanguinea.edit',['mode'=>'Editar'])
+    @include('depuracioncreatinina.edit',['mode'=>'Editar'])
 @else
-  <div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/quimicasanguinea')}}" method="post">
-    @include('quimicasanguinea.form',['mode'=>'Registrar'])
+  <div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/depuracioncreatinina')}}" method="post">
+    @include('depuracioncreatinina.form',['mode'=>'Registrar'])
 @endif
   @csrf
 

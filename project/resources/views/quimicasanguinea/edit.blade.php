@@ -1,22 +1,23 @@
 
-@if (count($errors)>0)
-    
-    <div class="alert alert-danger" role="alert">
-        <ul>
-        @foreach($errors->all() as $error)
-            <li> {{$error}} </li>
-        @endforeach 
-        </ul>
-    </div>
-    
-@endif
+  @if (count($errors)>0)
+      
+      <div class="alert alert-danger" role="alert">
+          <ul>
+          @foreach($errors->all() as $error)
+             <li> {{$error}} </li>
+          @endforeach 
+          </ul>
+      </div>
+      
+  @endif
+  
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> {{$mode}} Química Sanguinea de {{ $quimicasanguinea->beneficiario->nombreBeneficiario }}</h1>
+  <a href="{{ url('/quimicasanguinea/'.$quimicasanguinea->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+  <br>
+  <br>
 
-<h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> {{$mode}} Química Sanguinea de {{ $beneficiario->nombreBeneficiario }}</h1>
-<a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
-<br>
-<br>
 
-<input type="hidden" value = "{{$beneficiario->id}}" id = "beneficiario_id" name = "beneficiario_id">
+<input type="hidden" value = "{{$quimicasanguinea->id}}" id = "quimicasanguinea_id" name = "quimicasanguinea_id">
 
 <div class="form-row">
     <div class="col-4">
@@ -30,6 +31,7 @@
     </div>
 </div>
 
+
 <div class="form-row">
     <div class="col-4">
         <label for="nombre">Glucosa</label>
@@ -41,7 +43,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <textarea type="number" class="form-control" placeholder="Glucosa" id="Glucosa" name="Glucosa" maxlength="200" rows="1" ></textarea>
+        <textarea type="number" class="form-control" placeholder="Glucosa" id="Glucosa" name="Glucosa" maxlength="200" rows="1" >{{isset($quimicasanguinea->glucosa) ? $quimicasanguinea->glucosa: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -81,7 +83,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <textarea type="number" class="form-control" placeholder="Urea" id="Urea" name="Urea" maxlength="200" rows="1" ></textarea>
+        <textarea type="number" class="form-control" placeholder="Urea" id="Urea" name="Urea" maxlength="200" rows="1" >{{isset($quimicasanguinea->urea) ? $quimicasanguinea->urea: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -121,7 +123,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <textarea type="number" class="form-control" placeholder="Bun" id="Bun" name="Bun" maxlength="200" rows="1" ></textarea>
+        <textarea type="number" class="form-control" placeholder="Bun" id="Bun" name="Bun" maxlength="200" rows="1" >{{isset($quimicasanguinea->bun) ? $quimicasanguinea->bun: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -152,7 +154,7 @@
 
 <div class="form-row">
     <div class="col-4">
-        <label for="nombre">Creatinina</label>
+        <label for="nombre">Creatina</label>
     </div>
     <div class="col-2">
     </div>
@@ -161,7 +163,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <textarea type="number" class="form-control" placeholder="Creatina" id="Creatina" name="Creatina" maxlength="200" rows="1" ></textarea>
+        <textarea type="number" class="form-control" placeholder="Creatina" id="Creatina" name="Creatina" maxlength="200" rows="1" >{{isset($quimicasanguinea->creatina) ? $quimicasanguinea->creatina: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -271,6 +273,7 @@
 <br>
 <br>
 
+
 <div class="form-row">
     <div class="col-4">
         <label for="nombre">Acido Urico</label>
@@ -282,7 +285,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <textarea type="number" class="form-control" placeholder="Acido Urico" id="acidoUrico" name="acidoUrico" maxlength="200" rows="1" ></textarea>
+        <textarea type="number" class="form-control" placeholder="Acido Urico" id="acidoUrico" name="acidoUrico" maxlength="200" rows="1" >{{isset($quimicasanguinea->acidoUrico) ? $quimicasanguinea->acidoUrico: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -349,7 +352,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <textarea type="number" class="form-control" placeholder="Colesterol Total" id="colesterolTotal" name="colesterolTotal" maxlength="200" rows="1" ></textarea>
+        <textarea type="number" class="form-control" placeholder="Colesterol Total" id="colesterolTotal" name="colesterolTotal" maxlength="200" rows="1" >{{isset($quimicasanguinea->colesterolTotal) ? $quimicasanguinea->colesterolTotal: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -389,7 +392,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <textarea type="number" class="form-control" placeholder="Trigliceridos" id="trigliceridos" name="trigliceridos" maxlength="200" rows="1" ></textarea>
+        <textarea type="number" class="form-control" placeholder="Trigliceridos" id="trigliceridos" name="trigliceridos" maxlength="200" rows="1" >{{isset($quimicasanguinea->trigliceridos) ? $quimicasanguinea->trigliceridos: ''}}</textarea>
     </div>
     <div class="col-2">
     </div>
@@ -434,7 +437,7 @@
     <div class="col-2">
     </div>
     <div class="col-6">
-        <input type="text" class="form-control" placeholder="Metodo" id="Metodo" name="Metodo" >
+        <input type="text" class="form-control" placeholder="Metodo" id="Metodo" name="Metodo" value="{{isset($quimicasanguinea->metodo) ? $quimicasanguinea->metodo: ''}}">
     </div>
     <div class="col-2">
     </div>
@@ -445,11 +448,11 @@
 
 <label for="comentario">Nota</label>
 <div class="form-group">
-    <textarea class="form-control" id="nota" name="nota" maxlength="200" rows="2"></textarea>
+    <textarea class="form-control" id="nota" name="nota" maxlength="200" rows="2">{{ isset($quimicasanguinea->nota) ? $quimicasanguinea->nota: '' }}</textarea>
 </div>
 
 <br>
 
 <div class="col text-center">
-    <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
+    <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i>Guardar</button>
 </div>
