@@ -47,7 +47,7 @@ class NutricionConsultaController extends Controller
 
         $peso = floatval(request('peso'));
         $estatura = floatval(request('estatura'));
-        if($estatura != null){ 
+        if($estatura != null){      
             $estatura = $estatura/100;
             $estatura = pow($estatura,2);
             $imc = $peso/$estatura;

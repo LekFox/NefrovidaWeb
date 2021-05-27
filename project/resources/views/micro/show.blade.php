@@ -84,7 +84,7 @@
                       @if($micro->microalbumina == NULL)
                         <p class="font-weight-light" >No registrado</p>                          
                         @else
-                          @if($micro->microalbumina >= 10 && $micro->microalbumina <= 30)
+                          @if($micro->microalbumina <= 30)
                             <p class="font-weight-light" style="color:green">{{ $micro->microalbumina }}</p>
                           @else
                             <p class="font-weight-light" style="color:red">{{ $micro->microalbumina }}</p>
@@ -107,10 +107,11 @@
                     </td>
                   </tr>
                   <tr>
+                  <tr>
                     <th>Microalbumina/Creatinina (mg/g)</th>
                     <td> 
                       @if($micro->microalbuminaCreatinina == NULL)
-                        <p class="font-weight-light" >No registrado</p>                          
+                        <p class="font-weight-light" >No registrado</p>                       
                       @else
                           @if($micro->microalbuminaCreatinina >= 0 && $micro->microalbuminaCreatinina <= 30)
                             <p class="font-weight-light" style="color:green">{{ $micro->microalbuminaCreatinina }}</p>

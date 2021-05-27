@@ -42,7 +42,6 @@ class microController extends Controller
             'beneficiario_id' => 'required',
             'microalbumina' => 'required|numeric|gte:0',
             'creatinina' => 'required|numeric|gte:0',
-            //'microalbuminaCreatinina' => 'required|numeric|gte:0',
             'metodo' => 'required',
         ]);
 
@@ -55,11 +54,11 @@ class microController extends Controller
         else{
             $microalbuminaCreatinina = null;
         }
-
+        
         $micro = new micro([
             'microalbumina' => request('microalbumina'),
             'creatinina'=> request('creatinina'),
-            'microalbuminaCreatinina' => request('microalbuminaCreatinina'),
+            'microalbuminaCreatinina' => $microalbuminaCreatinina,
             'metodo' => request('metodo'),
             'nota'=> request('nota'),
         ]);
@@ -104,12 +103,22 @@ class microController extends Controller
     public function update(Request $request, $id)
     {
         $micro=micro::findOrFail($id);
-        
+
         $id=$micro->beneficiario_id;
+        $microalbumina = floatval(request('microalbumina'));
+        $creatinina = floatval(request('creatinina'));
+        if($creatinina != null){
+            $microalbuminaCreatinina = ($microalbumina*100)/$creatinina;
+            $microalbuminaCreatinina = round($microalbuminaCreatinina,2);
+        }
+        else{
+            $microalbuminaCreatinina = null;
+        }
+        
         $success = $micro->update([
             'microalbumina' => request('microalbumina'),
             'creatinina'=> request('creatinina'),
-            'microalbuminaCreatinina' => request('microalbuminaCreatinina'),
+            'microalbuminaCreatinina' => $microalbuminaCreatinina,
             'metodo' => request('metodo'),
             'nota'=> request('nota'),
         ]);

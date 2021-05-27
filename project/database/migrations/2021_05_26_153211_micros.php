@@ -20,7 +20,7 @@ class Micros extends Migration
 
             $table->decimal('microalbumina', 5, 2)->nullable();
             $table->decimal('creatinina', 5, 2)->nullable();
-            $table->decimal('microalbuminaCreatinina', 5, 2)->nullable();
+            $table->string("microalbuminaCreatinina")->nullable();
             $table->string('metodo', 200)->nullable();
             $table->string('nota', 500)->nullable();
 

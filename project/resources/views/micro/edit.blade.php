@@ -140,7 +140,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <input type="number" placeholder="0.00" step="0.01" min="0.00" class="form-control" name="microalbuminaCreatinina" value="{{ isset($micro->microalbuminaCreatinina)?$micro->microalbuminaCreatinina:old('microalbuminaCreatinina') }}" id="microalbuminaCreatinina" rows="1">
+        <input class="form-control" type="text" placeholder="Calculo Autmático"  rows="1" disabled>
     </div>
     <div class="col-2">
         <div class="d-flex justify-content-center">
