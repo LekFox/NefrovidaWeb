@@ -154,7 +154,7 @@
                                 @csrf
                                 {{ @method_field('DELETE') }}
                                 <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
-                                <input type="submit" onclick="return confirm('¿Quiere Borrar el Exámen de Microalbuminuría?')"  class="btn btn-outline-danger" value="Borrar">
+                                <input type="submit" onclick="return confirm('¿Quiere Borrar el Examen de Microalbuminuría?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
                         </td>
                     </tr>
