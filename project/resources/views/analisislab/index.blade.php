@@ -56,7 +56,7 @@
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-outline-primary">Microalbuminuría</a>
+                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/micro/create') }}" class="btn btn-outline-primary">Microalbuminuría</a>
           </div>
         </div>
         <br>

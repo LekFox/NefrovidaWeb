@@ -129,7 +129,7 @@
             {{$QuimicasSanguinea->links()}}
             </div>
         </div>
-        <h3>Microalbuminuría</h3>
+        <h3>Examen de Microalbuminuría</h3>
         <div class="row">
             <div class= "col-sm">
             <table id="table_data" class="table table-bordered table-sm">
@@ -142,20 +142,21 @@
                 </thead>
                 
                 <tbody id="dynamic-row">
-                    @foreach ($Notas as $notas)
+                    @foreach ($microE as $micro)
                     <tr>
-                        <td id="center">{{$notas->fecha}}</td>
+                        <td id="center">{{$micro->created_at}}</td>
                         <td id="center">
-                            <a href="{{url('/notas/'.$notas->id)}}" class="btn btn-outline-dark">
+                            <a href="{{url('/micro/'.$micro->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            <a href="{{url('/notas/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                            <a href="{{url('/micro/'.$micro->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
-                            <form action="{{url('/notas/'.$notas->id)}}" class="d-inline" method="post">
+                            <form action="{{url('/micro/'.$micro->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
-                                <input type="submit" onclick="return confirm('¿Quieres borrar la nota?')"  class="btn btn-outline-danger" value="Borrar">
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quiere Borrar el Examen de Microalbuminuría?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
                         </td>
                     </tr>
@@ -164,7 +165,7 @@
                 </tbody>
             
             </table>
-            {{$Notas->links()}}
+            {{$microE->links()}}
             </div>
         </div>
     </div>
