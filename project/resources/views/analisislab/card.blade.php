@@ -127,7 +127,7 @@
             {{$Notas->links()}}
             </div>
         </div>
-        <h3>Microalbuminuría</h3>
+        <h3>Examen de Microalbuminuría</h3>
         <div class="row">
             <div class= "col-sm">
             <table id="table_data" class="table table-bordered table-sm">
@@ -140,7 +140,7 @@
                 </thead>
                 
                 <tbody id="dynamic-row">
-                    @foreach ($micro as $micro)
+                    @foreach ($microE as $micro)
                     <tr>
                         <td id="center">{{$micro->created_at}}</td>
                         <td id="center">
@@ -153,15 +153,17 @@
                             <form action="{{url('/micro/'.$micro->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
-                                <input type="submit" onclick="return confirm('¿Quiere Borrar el Estudio?')"  class="btn btn-outline-danger" value="Borrar">
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quiere Borrar el Exámen de Microalbuminuría?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
                         </td>
                     </tr>
                     @endforeach 
                    
                 </tbody>
-                {{$Notas->links()}}
+            
             </table>
+            {{$microE->links()}}
             </div>
         </div>
     </div>

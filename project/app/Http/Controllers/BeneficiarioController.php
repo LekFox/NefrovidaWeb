@@ -40,11 +40,11 @@ class BeneficiarioController extends Controller
         $Nutricion = nutricionConsulta::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Nutricion');
         $evaluaciones = Evaluacion::all();
         $ExamenesOrina = ExamenOrina::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Orina');
-        $micro = micro::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'micro');
+        $microE = micro::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'micro');
         $consulta = consulta::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Consulta');
         $nefropediatria = nefropediatria::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Nefropediatria');
 
-        return view('beneficiario.show',compact('beneficiario','Notas','Nutricion','evaluaciones','consulta','nefropediatria', 'ExamenesOrina', 'micro'))->with(['id'=>$id]);
+        return view('beneficiario.show',compact('beneficiario','Notas','Nutricion','evaluaciones','consulta','nefropediatria', 'ExamenesOrina', 'microE'))->with(['id'=>$id]);
     }
     
     /**
