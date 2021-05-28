@@ -5,7 +5,7 @@
 @include('sidebar.beneficiario')
 
 <div class="container">
-  <h1 class="container text-center">Evaluación Final</h1>
+  <h1 class="container text-center">Evaluación Inicial</h1>
   <style>
         .form-check-input:hover{
           background-color:'#000';
