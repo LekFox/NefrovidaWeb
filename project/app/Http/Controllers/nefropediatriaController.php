@@ -59,7 +59,7 @@ class nefropediatriaController extends Controller
          $beneficiario = Beneficiario::find($id);
          $beneficiario->nefropediatria()->save($nefropediatria);
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Consulta Agregada Exitosamente');
+        return redirect('beneficiario/'.$id)->with('nuevo','Consulta Registrada Exitósamente');
     }
  
     /**
@@ -110,7 +110,7 @@ class nefropediatriaController extends Controller
             'tratamiento'=> request('tratamiento'),
             'medico'=> request('medico'),
         ]);
-        return redirect('beneficiario/'.$id)->with('editado','Cambios Realizados Exitósamente');
+        return redirect('beneficiario/'.$id)->with('editado','Cambios Consulta Guardados Exitósamente');
     }
 
     /**
