@@ -84,5 +84,8 @@ class Beneficiario extends Model
     public function nefropediatria()
     {
         return $this->hasMany(nefropediatria::class);
+    public function factoresDeRiesgo()
+    {
+        return $this->hasOne(FactorDeRiesgo::class);
     }
 }
