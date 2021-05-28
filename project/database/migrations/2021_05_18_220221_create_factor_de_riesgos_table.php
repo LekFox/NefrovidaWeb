@@ -17,7 +17,7 @@ class CreateFactorDeRiesgosTable extends Migration
             $table->id();
             $table->integer('pregunta_id');
             $table->foreignId('beneficiario_id');
-            $table->integer('respuesta');
+            $table->float('respuesta');
             $table->text('enfermedad')->nullable();
             $table->timestamps();
 

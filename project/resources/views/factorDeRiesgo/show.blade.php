@@ -27,7 +27,7 @@
       </h4>
       <br>
       <div class="form-group">
-        @if($riesgos[0]->respuesta == 1)
+        @if($riesgos[0]->respuesta == 10)
           <h5>Si, el paciente padece de Diabetes Mellitus.</h5>
         @endif
 
@@ -35,7 +35,7 @@
           <h5>No, el paciente no padece de Diabetes Mellitus.</h5>
         @endif
 
-        @if($riesgos[0]->respuesta == 2)
+        @if($riesgos[0]->respuesta == 0.5)
           <h5>Desconoce si padece de Diabetes Mellitus.</h5>
         @endif
       </div>
@@ -55,7 +55,7 @@
           <h5>No, los padres no padecen de ninguna enfermedad crónica.</h5>
         @endif
 
-        @if($riesgos[1]->respuesta == 2)
+        @if($riesgos[1]->respuesta == 0.5)
         <h5>Desconoce si padecen de alguna enfermedad crónica.</h5>
         @endif
       </div>
@@ -67,7 +67,7 @@
       </h4>
       <br>
       <div class="form-group">
-        @if($riesgos[2]->respuesta == 1)
+        @if($riesgos[2]->respuesta == 10)
           <h5>Si, el paciente está siendo o ha sido tratado por presión arterial alta.</h5>
         @endif
 
@@ -75,7 +75,7 @@
           <h5>No, el paciente no está siendo y no ha sido tratado por presión arterial alta.</h5>
         @endif
 
-        @if($riesgos[2]->respuesta == 2)
+        @if($riesgos[2]->respuesta == 0.5)
           <h5>Desconoce si tiene presión arterial alta.</h5>
         @endif
       </div>
@@ -83,11 +83,11 @@
       <br><br>
 
       <h4>
-        4.- ¿Tiene algún familiar que padezca enfermedad renal crónica (Es decir con tratamiento de diálisis peritoneal o hemodiálisis)?
+        4.- ¿Su papá, mamá o hermanos padecen enfermedad renal crónica (Es decir con tratamiento de diálisis peritoneal o hemodiálisis)?
       </h4>
       <br>
       <div class="form-group">
-        @if($riesgos[3]->respuesta == 1)
+        @if($riesgos[3]->respuesta == 10)
           <h5>Si, el paciente tiene un familiar que padece de una enfermedad renal crónica.</h5>
         @endif
 
@@ -95,7 +95,7 @@
           <h5>No, el paciente no tiene ningún familiar que padecezca de una enfermedad renal crónica.</h5>
         @endif
 
-        @if($riesgos[3]->respuesta == 2)
+        @if($riesgos[3]->respuesta == 0.5)
           <h5>Desconoce si tiene algún familiar que padezca de una enfermedad renal crónica.</h5>
         @endif
       </div>
@@ -115,7 +115,7 @@
           <h5>No, el paciente no se automedica.</h5>
         @endif
 
-        @if($riesgos[4]->respuesta == 2)
+        @if($riesgos[4]->respuesta == 0.5)
           <h5>Desconoce si se automedica con analgésicos de venta libre.</h5>
         @endif
       </div>
@@ -127,7 +127,7 @@
       </h4>
       <br>
       <div class="form-group">
-        @if($riesgos[5]->respuesta == 1)
+        @if($riesgos[5]->respuesta == 5)
         <h5>Si, el paciente está diagnosticado con VIH/SIDA.</h5>
         @endif
 
@@ -135,7 +135,7 @@
           <h5>No, el paciente no está diagnosticado con VIH/SIDA.</h5>
         @endif
 
-        @if($riesgos[5]->respuesta == 2)
+        @if($riesgos[5]->respuesta == 0.5)
         <h5>Desconoce si padece de VIH/SIDA.</h5>
         @endif
       </div>
@@ -147,7 +147,7 @@
       </h4>
       <br>
       <div class="form-group">
-        @if($riesgos[6]->respuesta == 1)
+        @if($riesgos[6]->respuesta == 10)
         <h5>Si, el paciente padece de infecciones urinarias.</h5>
         @endif
 
@@ -155,7 +155,7 @@
           <h5>No, el paciente no padece de infecciones urinarias.</h5>
         @endif
 
-        @if($riesgos[6]->respuesta == 2)
+        @if($riesgos[6]->respuesta == 0.5)
         <h5>Desconoce si padece de infecciones urinarias.</h5>
         @endif
       </div>
@@ -167,7 +167,7 @@
       </h4>
       <br>
       <div class="form-group">
-        @if($riesgos[7]->respuesta == 1)
+        @if($riesgos[7]->respuesta == 5)
         <h5>Si, el paciente tiene sobrepeso u obesidad.</h5>
         @endif
 
@@ -175,7 +175,7 @@
           <h5>No, el paciente no tiene sobrepeso u obesidad.</h5>
         @endif
 
-        @if($riesgos[7]->respuesta == 2)
+        @if($riesgos[7]->respuesta == 0.5)
         <h5>Desconoce si tiene sobrepeso u obesidad.</h5>
         @endif
       </div>
@@ -183,7 +183,7 @@
       <br><br>
 
       <h4>
-        9.- ¿Actualmente fuma o ha fumado en el pasado por más de 10 años?
+        9.- ¿Actualmente fuma o ha fumado?
       </h4>
       <br>
       <div class="form-group">
@@ -195,7 +195,7 @@
           <h5>No, el paciente no fuma o ha fumado en el pasado por más de 10 años.</h5>
         @endif
 
-        @if($riesgos[8]->respuesta == 2)
+        @if($riesgos[8]->respuesta == 0.5)
         <h5>Desconoce si ha fumado en el pasado por más de 10 años.</h5>
         @endif
       </div>
@@ -215,7 +215,7 @@
           <h5>No, el paciente no ingiere bebidas alcoholicas frecuentemente.</h5>
         @endif
 
-        @if($riesgos[9]->respuesta == 2)
+        @if($riesgos[9]->respuesta == 0.5)
         <h5>Desconoce si ingiere bebidas alcohólicas frecuentemente.</h5>
         @endif
       </div>
@@ -227,7 +227,7 @@
       </h4>
       <br>
       <div class="form-group">
-        @if($riesgos[10]->respuesta == 1)
+        @if($riesgos[10]->respuesta == 5)
         <h5>Si, el paciente consume o ingiere drogas.</h5>
         @endif
 
@@ -235,7 +235,7 @@
           <h5>No, el paciente no consume o ingiere drogas.</h5>
         @endif
 
-        @if($riesgos[10]->respuesta == 2)
+        @if($riesgos[10]->respuesta == 0.5)
         <h5>Desconoce si consume o ingiere drogas.</h5>
         @endif
       </div>
@@ -247,7 +247,7 @@
       </h4>
       <br>
       <div class="form-group">
-        @if($riesgos[11]->respuesta == 1)
+        @if($riesgos[11]->respuesta == 3)
         <h5>Si, el paciente nació con bajo peso o fue prematuro.</h5>
         @endif
 
@@ -255,10 +255,23 @@
           <h5>No, el paciente no nació con bajo peso y no fue prematuro.</h5>
         @endif
 
-        @if($riesgos[11]->respuesta == 2)
+        @if($riesgos[11]->respuesta == 0.5)
         <h5>Desconoce si nació con bajo peso o fue prematuro.</h5>
         @endif
       </div>
+      
+      <h2 class="text-right p-5">
+        TOTAL: {{$riesgos[0]->respuesta + $riesgos[1]->respuesta
+               + $riesgos[2]->respuesta + $riesgos[3]->respuesta
+               + $riesgos[4]->respuesta + $riesgos[5]->respuesta
+               + $riesgos[6]->respuesta + $riesgos[7]->respuesta
+               + $riesgos[8]->respuesta + $riesgos[9]->respuesta
+               + $riesgos[10]->respuesta + $riesgos[11]->respuesta
+               }}
+      </h2>
+      
+      
+
 
     </div>
 </div>
