@@ -16,11 +16,16 @@ class CreateFinalesEvaluacionTable extends Migration
         Schema::create('finales_evaluacion', function (Blueprint $table) {
             $table->id();
             $table->foreignId('pregunta_evaluacion_id');
+            $table->foreignId('beneficiario_id');
             $table->integer('respuesta');
             $table->timestamps();
             
 
             $table->foreign('pregunta_evaluacion_id')->references('id')->on('preguntas_evaluacion')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
+            $table->foreign('beneficiario_id')->references('id')->on('beneficiarios')
             ->onDelete('cascade')
             ->onUpdate('cascade');
 
