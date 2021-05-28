@@ -12,7 +12,7 @@
             </div>
             <br><br>
         </div>
-        <h3>Examen general de orina</h3>
+        <h3>General de Orina</h3>
         <div class="row">
             <div class= "col-sm">
             <table id="table_data" class="table table-bordered table-sm">
@@ -51,7 +51,7 @@
             {{$ExamenesOrina->links()}}
             </div>
         </div>
-        <h3>Depuración de creatinina en orina de 24 h</h3>
+        <h3>Depuración de Creatinina en Orina de 24 h</h3>
         <div class="row">
             <div class= "col-sm">
             <table id="table_data" class="table table-bordered table-sm">
@@ -90,7 +90,7 @@
             {{$DepuracionesCreatinina->links()}}
             </div>
         </div>
-        <h3>Química sanguínea</h3>
+        <h3>Química Sanguínea</h3>
         <div class="row">
             <div class= "col-sm">
             <table id="table_data" class="table table-bordered table-sm">
@@ -129,7 +129,7 @@
             {{$QuimicasSanguinea->links()}}
             </div>
         </div>
-        <h3>Examen de Microalbuminuría</h3>
+        <h3>Microalbuminuria</h3>
         <div class="row">
             <div class= "col-sm">
             <table id="table_data" class="table table-bordered table-sm">
@@ -156,7 +156,7 @@
                                 @csrf
                                 {{ @method_field('DELETE') }}
                                 <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
-                                <input type="submit" onclick="return confirm('¿Quiere Borrar el Examen de Microalbuminuría?')"  class="btn btn-outline-danger" value="Borrar">
+                                <input type="submit" onclick="return confirm('¿Quiere Borrar el Análisis de Microalbuminuria?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
                         </td>
                     </tr>

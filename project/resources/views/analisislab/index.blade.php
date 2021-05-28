@@ -19,7 +19,7 @@
 @endif
     @csrf
     {{ method_field('PATCH') }}
-    <h1 id="AnalisisLabTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Análisis de laboratorio para {{$beneficiario->nombreBeneficiario}}</h1>
+    <h1 id="AnalisisLabTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Análisis de Laboratorio para {{$beneficiario->nombreBeneficiario}}</h1>
   <div class="row">
     <div class="col">
       <a href="{{ url('/beneficiario/'.$beneficiario->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
@@ -32,31 +32,31 @@
     <div class="card-body">
       <div class= "row">
           <div class= "col text-center align-bottom">
-                <h5 class="card-title ">Selecciona el análisis de laboratorio que deseas registrar:</h5>
+                <h5 class="card-title ">Seleccione el Análisis de Laboratorio que Desea Registrar:</h5>
           </div>
         </div>
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/examenorina/create') }}" class="btn btn-outline-primary">Examen general de orina</a>
+                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/examenorina/create') }}" class="btn btn-outline-primary">General de Orina</a>
           </div>
         </div>
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/depuracioncreatinina/create') }}" class="btn btn-outline-primary">Depuración de creatinina en orina de 24 h</a>
+                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/depuracioncreatinina/create') }}" class="btn btn-outline-primary">Depuración de Creatinina en Orina de 24 h</a>
           </div>
         </div>
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/quimicasanguinea/create') }}" class="btn btn-outline-primary">Química sanguínea</a>
+                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/quimicasanguinea/create') }}" class="btn btn-outline-primary">Química Sanguínea</a>
           </div>
         </div>
         <br>
         <div class= "row">
           <div class= "col text-center align-bottom">
-                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/micro/create') }}" class="btn btn-outline-primary">Microalbuminuría</a>
+                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/micro/create') }}" class="btn btn-outline-primary">Microalbuminuria</a>
           </div>
         </div>
         <br>

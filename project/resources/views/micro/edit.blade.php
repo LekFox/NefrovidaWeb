@@ -27,7 +27,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Editar Examen de Microalbuminuría de {{ $micro->beneficiario->nombreBeneficiario }}</h1>
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Editar Análisis de {{ $micro->beneficiario->nombreBeneficiario }}</h1>
   <br>
   <a href="{{ url('/micro/'.$micro->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
   <br>
@@ -38,10 +38,22 @@
       <div class = "col-1">
       </div>
       <div class = "col">
-        <h3 class="text-center">Examen de Microalbuminuría</h3>
+        <h3 class="text-center">Análisis de Microalbuminuria</h3>
       </div>
       <div class = "col-3">
       </div>
+</div>
+<br>
+<div class="form-row">
+    <div class="col-4">
+    </div>
+    <div class="col-1">
+    </div>
+    <div class="col-5">
+    <div class="d-flex justify-content-center">
+        <p class="font-weight-bold">Valores de Referencia</p>
+    </div>
+    </div>
 </div>
 
 
@@ -131,7 +143,7 @@
 
 <div class="form-row">
     <div class="col-4">
-        <label for="nombre">Microalbumina/Creatinina (mg/g)</label>
+        <label for="nombre">Albumina/Creatinina (mg/g)</label>
     </div>
     <div class="col-2">
     </div>
