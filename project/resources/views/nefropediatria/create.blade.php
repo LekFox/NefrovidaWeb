@@ -107,8 +107,6 @@
         </div>
         <div class="text-center">
         <br>
-            <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-
             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
           </div>  
         </div>

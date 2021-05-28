@@ -4,8 +4,10 @@
 
 @include('sidebar.beneficiario')
 
-<div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/nefropediatria')}}" method="post">
+<div class="container"><form action="{{url('/nefropediatria/'.$nefropediatria->id)}}" method="post">
   @csrf
+  {{ method_field('PATCH') }}
+
   
   @if (count($errors)>0)
       
@@ -26,36 +28,34 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-x-diamond"></i> Registrar Consulta Nefropediatría</h1>
-  <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-shield"></i> Editar Consulta Nefropediatría</h1>
+  <a href="{{url('/beneficiario/'.$nefropediatria->beneficiario_id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 
-  
   <div class="container mt-3">
     <div class="stepwizard col">
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
-                <a href="#step-1" type="button" class="btn btn-default btn-circle" disabled="disabled">1</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i>Exploración Física</p>
-                <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
+                <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                <p id="timeline"><i class="bi bi-clipboard"></i> Exploración Física</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i> Análisis </p>
+                <p id="timeline"><i class="bi bi-clipboard"></i>Análisis</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i> Diagnóstico</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i> Diagnóstico </p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i>Plan</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i> Tratamiento</p>
             </div>
         </div>
     </div>
     <br>
     <form role="form" action="" method="post">
         <div class="row setup-content" id="step-1">
-            <div class="col-1">
+        <div class="col-1">
             </div>
             <h3 class="text-center"><i class="bi bi-clipboard"></i> Exploración Física</h3>
             
@@ -69,7 +69,6 @@
                     <div class="form-group">
                         <label for="peso">Peso (Kg)</label>
                         <input class="form-control" name="peso" value="{{ isset($nefropediatria->peso)?$nefropediatria->peso:old('peso') }}" id="peso" rows="6">
-                        <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
                     </div>
 
                     <div class="form-group">
@@ -108,7 +107,6 @@
         </div>
         <div class="text-center">
         <br>
-            <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
 
             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
           </div>  
@@ -118,7 +116,6 @@
             </div>
                 <div class="col-10">
                     <h3 class="text-center"><i class="bi bi-clipboard"></i> Análisis</h3>
-                    <br>
 
                 <div class="container">
                     <div class="form-group">
@@ -140,7 +137,6 @@
             </div>
                 <div class="col-10">
                     <h3 class="text-center"><i class="bi bi-clipboard"></i> Diagnóstico</h3>
-                    <br>
 
                 <div class="container">
                     <div class="form-group">
@@ -163,7 +159,7 @@
             </div>
                 <div class="col-10">
                     <h3 class="text-center"><i class="bi bi-clipboard"></i> Tratamiento</h3>
-                    <br>
+
 
                 <div class="container">
                     <div class="form-group">
@@ -173,7 +169,7 @@
                 
                     <div class="form-group">
                         <label for="medico">Médico</label>
-                        <input class="form-control" name="medico" value="{{ isset($nefropediatria->medico)?$nefropediatria->medicoa:old('medico') }}" id="medico" rows="6">
+                        <input class="form-control" name="medico" value="{{ isset($nefropediatria->medico)?$nefropediatria->medico:old('medico') }}" id="medico" rows="6">
                     </div>
             <div class="col-1">
                 </div>
@@ -181,7 +177,7 @@
         </div>
         <div class="text-center">
             <button class="btn btn-primary prevBtn btn-lg pull-left" type="button"><i class="bi bi-chevron-left"></i> Anterior</button>
-            <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
+            <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Guardar</button>
         </div> 
         </div>
 

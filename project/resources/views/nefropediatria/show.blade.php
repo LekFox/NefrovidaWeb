@@ -62,7 +62,7 @@
                     @csrf
                     {{ @method_field('DELETE') }}
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $nefropediatria->beneficiario->id }}">
-                    <button type="submit" onclick="return confirm('¿Quiere borrar la consulta? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                    <button type="submit" onclick="return confirm('¿Quiere Borrar la Consulta Nefropediátrica?')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
           </div>
         </div>
@@ -100,6 +100,7 @@
               </table>
         </div>
         <br>
+        <br>
         <div class="container">
             <table class="table table-sm">
                 <thead>
@@ -117,11 +118,12 @@
               </table>
         </div>
        <br>
-        <div class="container">
+       <br>
+       <div class="container">
             <table class="table table-sm">
                 <thead>
                     <tr>
-                        <th scope="col"><i class="bi bi-clipboard"></i>  Diagnóstico</th>
+                        <th scope="col"><i class="bi bi-clipboard"></i> Diagnóstico</th>
                         <th scope="col"></th>
                       </tr>
                 </thead>
@@ -129,6 +131,26 @@
                   <tr>
                     <th>Diagnóstico</th>
                     <td>{{ $nefropediatria->diagnostico }}</td>
+                  </tr>                
+                </tbody>
+              </table>
+        </div>
+       <br>
+       <br>
+        <div class="container">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col"><i class="bi bi-clipboard"></i>  Tratamiento</th>
+                        <th scope="col"></th>
+                      </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Tratamiento</th>
+                    <td>{{ $nefropediatria->tratamiento }}</td>
+                  </tr>
+                  <tr>
                     <th>Médico</th>
                     <td>{{ $nefropediatria->medico }}</td>
                   </tr>                
