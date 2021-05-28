@@ -34,20 +34,20 @@
     <div class="stepwizard col">
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
-                <a href="#step-1" type="button" class="btn btn-default btn-circle" disabled="disabled">1</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i>Exploración Física</p>
+                <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                <p id="timeline"><i class="bi bi-clipboard"></i> Exploración Física</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i> Análisis </p>
+                <p id="timeline"><i class="bi bi-clipboard"></i>Análisis</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i> Diagnóstico</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i> Diagnóstico </p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i>Tratamiento</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i> Tratamiento</p>
             </div>
         </div>
     </div>

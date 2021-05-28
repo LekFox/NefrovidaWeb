@@ -62,7 +62,7 @@
                     @csrf
                     {{ @method_field('DELETE') }}
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $nefropediatria->beneficiario->id }}">
-                    <button type="submit" onclick="return confirm('¿Quiere Borrar la Consulta Nefropediátrica?')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                    <button type="submit" onclick="return confirm('¿Quiere Borrar la Consulta de Nefropediatría?')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
           </div>
         </div>
