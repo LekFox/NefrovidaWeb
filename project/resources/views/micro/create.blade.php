@@ -47,7 +47,7 @@
 
 <div class="form-row">
     <div class="col-4">
-        <label for="nombre">Micro Albumina</label>
+        <label for="nombre">Micro Albumina (mg/dL)</label>
     </div>
     <div class="col-2">
     </div>
@@ -88,7 +88,7 @@
 
 <div class="form-row">
     <div class="col-4">
-        <label for="nombre">Creatinina</label>
+        <label for="nombre">Creatinina (mg/dL)</label>
     </div>
     <div class="col-2">
     </div>
@@ -130,7 +130,7 @@
 
 <div class="form-row">
     <div class="col-4">
-        <label for="nombre">Microalbumina/Creatinina</label>
+        <label for="nombre">Microalbumina/Creatinina (mg/g)</label>
     </div>
     <div class="col-2">
     </div>

@@ -11,22 +11,16 @@ class nefropediatria extends Model
 
     protected $fillable =[
         'beneficiario_id', 
-        'padecimiento',
-        'brazoD',
-        'brazoI',
-        'fCardiaca',
-        'fRespiratoria',
-        'temperatura',
         'peso',
         'talla',
-        'cabeza',
-        'torax',
-        'abdomen',
-        'extremidades',
-        'mental',
-        'observaciones',
+        'tension',
+        'temperatura',
+        'fCardiaca',
+        'fRespiratoria',
+        'analisis',
         'diagnostico',
         'tratamiento',
+        'medico',
     ];
 
     public function beneficiario()
