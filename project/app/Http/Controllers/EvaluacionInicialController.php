@@ -75,7 +75,7 @@ class EvaluacionInicialController extends Controller
 
         $id = request('beneficiario_id');
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Cuestionario Inicial registrado exitosamente.');
+        return redirect('beneficiario/'.$id)->with('nuevo','Evaluación Inicial registrada exitosamente.');
         
     }
 

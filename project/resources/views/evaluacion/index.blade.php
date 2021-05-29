@@ -10,7 +10,7 @@
             <br>  
                 @if($beneficiario->evaluacionInicial == NULL)
                 <h2 class="card-title bi bi-info-lg"><i class="bi bi-clipboard greennefro"></i> Evaluación Inicial</h2>
-                <p>No hay una evaluación inicial registrada.</p>
+                <p>No hay una Evaluación Inicial registrada.</p>
                 @endif
                 @if($beneficiario->evaluacionInicial != NULL)
                 <h2 class="card-title">Evaluación Inicial de {{$beneficiario->nombreBeneficiario}}</h2>

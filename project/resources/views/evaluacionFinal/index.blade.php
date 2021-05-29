@@ -10,7 +10,7 @@
             <br>  
                 @if($beneficiario->evaluacionFinal == NULL)
                 <h2 class="card-title bi bi-info-lg"><i class="bi bi-clipboard greennefro"></i> Evaluación Final</h2>
-                <p>No hay evaluación Final registrada.</p>
+                <p>No hay una Evaluación Final registrada.</p>
                 @endif
                 @if($beneficiario->evaluacionFinal != NULL)
                 <h2 class="card-title">Evaluación Final de {{$beneficiario->nombreBeneficiario}}</h2>
