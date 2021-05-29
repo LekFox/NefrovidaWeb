@@ -32,7 +32,7 @@
   <a href="{{url('/beneficiario/'.$consulta->beneficiario_id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 
   <div class="container mt-3">
-    <div class="stepwizard col">
+    <div id="none" class="stepwizard col">
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
                 <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>

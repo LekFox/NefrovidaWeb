@@ -10117,4 +10117,9 @@ h3 {
 #timeline {
   font-size:smaller;
   size: 1cm;
+  display:none;
+}
+
+#none {
+  display:none;
 }
