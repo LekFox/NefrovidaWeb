@@ -89,4 +89,9 @@ class Beneficiario extends Model
     {
         return $this->hasOne(FactorDeRiesgo::class);
     }
+
+    public function evaluacionInicial()
+    {
+        return $this->hasOne(EvaluacionInicial::class);
+    }
 }

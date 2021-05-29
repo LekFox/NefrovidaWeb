@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRespuestasEvaluacionTable extends Migration
+class CreateEvaluacionInicialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,20 @@ class CreateRespuestasEvaluacionTable extends Migration
      */
     public function up()
     {
-        Schema::create('respuestas_evaluacion', function (Blueprint $table) {
+        Schema::create('evaluacion_inicials', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pregunta_evaluacion_id');
+            $table->integer('pregunta_id');
             $table->foreignId('beneficiario_id');
-            $table->integer('respuesta');
+            $table->float('respuesta');
+            $table->string('sexo');
+            $table->string('edad');
+            $table->string('grado');
+            $table->string('grupo');
             $table->timestamps();
-            
-
-            $table->foreign('pregunta_evaluacion_id')->references('id')->on('preguntas_evaluacion')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
 
             $table->foreign('beneficiario_id')->references('id')->on('beneficiarios')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-
 
         });
     }
@@ -40,6 +38,6 @@ class CreateRespuestasEvaluacionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('respuestas_evaluacion');
+        Schema::dropIfExists('evaluacion_inicials');
     }
 }
