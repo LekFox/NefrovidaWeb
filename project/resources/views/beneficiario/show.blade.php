@@ -29,6 +29,7 @@
     @include('analisislab.card',['modo'=>'Index de'])
     @include('factorDeRiesgo.index')
     @include('evaluacion.index')
+    @include('evaluacionFinal.index')
     
     
 
