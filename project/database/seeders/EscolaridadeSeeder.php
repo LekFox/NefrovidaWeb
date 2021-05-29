@@ -17,7 +17,7 @@ class EscolaridadeSeeder extends Seeder
         DB::table('escolaridades')->insert([
             [
                 "id" => 1,
-                "nombreEscolaridad" => "Preparatoria",
+                "nombreEscolaridad" => "Analfabeta",
             ],
             [
                 "id" => 2,
@@ -29,15 +29,15 @@ class EscolaridadeSeeder extends Seeder
             ],
             [
                 "id" => 4,
-                "nombreEscolaridad" => "Universidad",
+                "nombreEscolaridad" => "Preparatoria",
             ],
             [
                 "id" => 5,
-                "nombreEscolaridad" => "Maestría",
+                "nombreEscolaridad" => "Universidad",
             ],
             [
                 "id" => 6,
-                "nombreEscolaridad" => "Analfabeta",
+                "nombreEscolaridad" => "Maestría",
             ],
         ]);
     }

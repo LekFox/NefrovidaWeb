@@ -92,6 +92,18 @@
         </div>
         <div class= "row">
           <div class= "col text-right align-bottom">
+                <h5 class="card-title ">DX de presión arterial por percentil:</h5>
+            </div>
+            <div class= "col text-left align-bottom">
+                @if($tamizaje->dxpresion == NULL)
+                <p class="font-weight-light" >No registrado / No aplica</p>
+                @else
+                <p class="font-weight-light" >{{ $tamizaje->dxpresion }}</p>
+                @endif
+            </div>
+        </div>
+        <div class= "row">
+          <div class= "col text-right align-bottom">
                 <h5 class="card-title ">Circunferencia en cintura:</h5>
             </div>
             <div class= "col text-left align-bottom">

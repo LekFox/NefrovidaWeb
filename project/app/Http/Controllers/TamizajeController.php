@@ -71,6 +71,7 @@ class TamizajeController extends Controller
             'imc' => $imc,
             'comentario' => request('comentario'),
             'dx' => request('dx'),
+            'dxpresion' => request('dxpresion'),
             'indiceCinturaCadera' => $indiceCinturaCadera,
         ]);
 
@@ -147,6 +148,7 @@ class TamizajeController extends Controller
             'imc' => $imc,
             'comentario' => request('comentario'),
             'dx' => request('dx'),
+            'dxpresion' => request('dxpresion'),
             'indiceCinturaCadera' => $indiceCinturaCadera,
         ]);
 
