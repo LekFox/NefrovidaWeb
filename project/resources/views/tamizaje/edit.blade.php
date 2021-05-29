@@ -59,6 +59,21 @@
         <small id="cinturaHelp" class="form-text text-muted">mg/dL</small>
       </div>
     </div>
+    <div class="form-row">
+      <div class="col-4">
+        <label for="nombre">DX de presión arterial por percentil</label>
+      </div>
+      <div class="col-2">
+        </div>
+      <div class="col-4">
+        <label for="nombre"></label>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="form-group">
+      <textarea class="form-control" id="dxpresion" name="dxpresion" maxlength="200" rows="1">{{ isset($tamizaje->dxpresion)?$tamizaje->dxpresion:old('dxpresion') }}</textarea>
+      </div>
+    </div>
     <br>
     <div class="form-row">
     <div class="col-4">

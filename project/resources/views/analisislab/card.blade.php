@@ -15,7 +15,7 @@
         <h3>General de Orina</h3>
         <div class="row">
             <div class= "col-sm">
-            <table id="table_data" class="table table-bordered table-sm">
+            <table id="table_data" class="table table-bordered table-sm table-hover table-responsive-sm">
     
                 <thead class="thead-light">
                     <tr>
@@ -54,7 +54,7 @@
         <h3>Depuración de Creatinina en Orina de 24 h</h3>
         <div class="row">
             <div class= "col-sm">
-            <table id="table_data" class="table table-bordered table-sm">
+            <table id="table_data" class="table table-bordered table-sm table-hover table-responsive-sm">
     
                 <thead class="thead-light">
                     <tr>
@@ -93,7 +93,7 @@
         <h3>Química Sanguínea</h3>
         <div class="row">
             <div class= "col-sm">
-            <table id="table_data" class="table table-bordered table-sm">
+            <table id="table_data" class="table table-bordered table-sm table-hover table-responsive-sm">
     
                 <thead class="thead-light">
                     <tr>
@@ -132,7 +132,7 @@
         <h3>Microalbuminuria</h3>
         <div class="row">
             <div class= "col-sm">
-            <table id="table_data" class="table table-bordered table-sm">
+            <table id="table_data" class="table table-bordered table-sm table-hover table-responsive-sm">
     
                 <thead class="thead-light">
                     <tr>

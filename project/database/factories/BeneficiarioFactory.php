@@ -33,7 +33,7 @@ class BeneficiarioFactory extends Factory
             'telefono' => $this->faker->phoneNumber,
             'direccion' => $this->faker->address,
             'estatus' => 'activo',
-            'escolaridade_id' => '1',
+            'escolaridade_id' => '4',
             //'seguimiento' => 'Si',
             // 'status' => $this->$status,
             // 'seguimiento' => $this->$seguimiento,

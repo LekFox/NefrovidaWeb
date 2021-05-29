@@ -27,6 +27,7 @@ class Tamizaje extends JsonResource
             'indiceCinturaCadera' => $this->indiceCinturaCadera,
             'comentario' => $this->comentario,
             'dx' => $this->dx,
+            'dxpresion' => $this->dxpresion,
             'imc' => $this->imc,
         ];
     }

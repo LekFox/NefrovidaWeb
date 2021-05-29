@@ -11,7 +11,7 @@ class Tamizaje extends Model
 
     protected $fillable =[
         'sistolica', 'diastolica', 'beneficiario_id', 'circunferenciaCintura', 'circunferenciaCadera',
-        'glucosaCapilar', 'talla', 'peso', 'indiceCinturaCadera', 'comentario', 'dx', 'imc',
+        'glucosaCapilar', 'talla', 'peso', 'indiceCinturaCadera', 'comentario', 'dx', 'imc', 'dxpresion',
     ];
 
     public function beneficiario()

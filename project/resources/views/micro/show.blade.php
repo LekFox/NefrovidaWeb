@@ -70,7 +70,7 @@
         </div>
         
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Análisis Microalbuminuria</th>

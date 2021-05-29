@@ -25,7 +25,7 @@ class CreateExamenOrinasTable extends Migration
                 ->nullable();
             $table->float('ph', 8, 2)
                 ->nullable();
-            $table->float('densidad', 8, 2)
+            $table->float('densidad', 9, 3)
                 ->nullable();
             $table->string('nitritos', 200)
                 ->default('0.2')

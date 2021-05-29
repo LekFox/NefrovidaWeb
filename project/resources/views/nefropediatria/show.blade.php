@@ -66,9 +66,25 @@
                 </form>
           </div>
         </div>
-
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
+                <thead>
+                    <tr>
+                        <th scope="col"><i class="bi bi-clipboard"></i>  Padecimiento</th>
+                        <th scope="col"></th>
+                      </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Padecimiento</th>
+                    <td>{{ $nefropediatria->padecimiento }}</td>
+                  </tr>                
+                </tbody>
+              </table>
+        </div>
+       <br>
+        <div class="container">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Exploración Física</th>
@@ -102,7 +118,7 @@
         <br>
         <br>
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i> Análisis</th>
@@ -120,7 +136,7 @@
        <br>
        <br>
        <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i> Diagnóstico</th>
@@ -136,9 +152,8 @@
               </table>
         </div>
        <br>
-       <br>
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Tratamiento</th>

@@ -68,7 +68,7 @@
         </div>
         
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Examen Macroscópico</th>
@@ -103,7 +103,7 @@
 
 
    <div class="container">
-    <table class="table table-sm">
+    <table class="table table-sm table-responsive-sm">
         <thead>
             <tr>
                 <th scope="col"><i class="bi bi-clipboard"></i> Examen Químico</th>
@@ -217,7 +217,7 @@
 <br>
 
 <div class="container">
-    <table class="table table-sm">
+    <table class="table table-sm table-responsive-sm">
         <thead>
             <tr>
                 <th scope="col"><i class="bi bi-clipboard"></i> Observaciones Microscópicas</th>

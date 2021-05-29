@@ -58,6 +58,21 @@
         <small id="cinturaHelp" class="form-text text-muted">mg/dL</small>
       </div>
     </div>
+    <div class="form-row">
+      <div class="col-4">
+        <label for="nombre">DX de presión arterial por percentil</label>
+      </div>
+      <div class="col-2">
+        </div>
+      <div class="col-4">
+        <label for="nombre"></label>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="form-group">
+      <textarea class="form-control" id="dxpresion" name="dxpresion" maxlength="200" rows="1">{{ isset($tamizaje->dxpresion)?$tamizaje->dxpresion:old('dxpresion') }}</textarea>
+      </div>
+    </div>
     <br>
     <div class="form-row">
     <div class="col-4">
@@ -107,11 +122,11 @@
     <br>
 
     <label for="dx">DX</label>
-      <div class="form-group">
+      <div class="form-group col-10">
       <textarea class="form-control" id="dx" name="dx" maxlength="200" rows="1">{{ isset($tamizaje->dx)?$tamizaje->dx:old('dx') }}</textarea>
       </div>
       <label for="comentario">Comentarios</label>
-      <div class="form-group">
+      <div class="form-group col-10">
       <textarea class="form-control" id="comentario" name="comentario" maxlength="200" rows="2">{{ isset($tamizaje->comentario)?$tamizaje->comentario:old('comentario') }}</textarea>
       </div>
     <div class="col text-center">

@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Datos Nutrimentales</th>
@@ -92,7 +92,7 @@
         </div>
        <br>
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Datos Clínicos</th>
@@ -144,7 +144,7 @@
         <br>
 
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Estilo de Vida</th>
@@ -166,7 +166,7 @@
        <br>
 
        <div class="container">
-        <table class="table table-sm">
+        <table class="table table-sm table-responsive-sm">
             <thead>
                 <tr>
                     <th scope="col"><i class="bi bi-clipboard"></i>  Datos Dietéticos</th>
@@ -216,7 +216,7 @@
       <br>
 
       <div class="container">
-        <table class="table table-sm">
+        <table class="table table-sm table-responsive-sm">
             <thead>
                 <tr>
                     <th scope="col"><i class="bi bi-clipboard"></i>  Recordatorio de 24 Horas</th>
@@ -254,7 +254,7 @@
     </div>
 
     <div class="container">
-        <table class="table table-sm">
+        <table class="table table-sm table-responsive-sm">
             <thead>
                 <tr>
                     <th scope="col"><i class="bi bi-clipboard"></i>  Datos Antropométricos</th>
@@ -281,7 +281,7 @@
 
 
    <div class="container">
-    <table class="table table-sm">
+    <table class="table table-sm table-responsive-sm">
         <thead>
             <tr>
                 <th scope="col"><i class="bi bi-clipboard"></i>  Necesidades Energéticas y Nutrimentales</th>
@@ -306,7 +306,7 @@
 
 <div class="col-3">
 <div class="container">
-    <table class="table table-sm">
+    <table class="table table-sm table-responsive-sm">
         <thead>
             <tr>
                 <th scope="col">Nutrimento</th>
@@ -333,7 +333,7 @@
 
 <div class="col-9">
     <div class="container">
-        <table class="table table-sm">
+        <table class="table table-sm table-responsive-sm">
             <thead>
 
             </thead>

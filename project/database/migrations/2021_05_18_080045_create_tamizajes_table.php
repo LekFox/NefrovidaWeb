@@ -35,6 +35,8 @@ class CreateTamizajesTable extends Migration
                 ->nullable();
             $table->string('dx', 200)
                 ->nullable();
+            $table->string('dxpresion', 200)
+                ->nullable();
             $table->timestamps();
         });
     }

@@ -68,7 +68,7 @@
         </div>
         
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-house-fill"></i>  Vivienda</th>
@@ -96,7 +96,7 @@
        <br>
 
        <div class="container">
-        <table class="table table-sm">
+        <table class="table table-sm table-responsive-sm">
             <thead>
                 <tr>
                     <th scope="col"><i class="bi bi-person-square"></i> Antecedentes Personales</th>
@@ -131,7 +131,7 @@
 
 
    <div class="container">
-    <table class="table table-sm">
+    <table class="table table-sm table-responsive-sm">
         <thead>
             <tr>
                 <th scope="col"><i class="bi bi-people-fill"></i> Antecedentes Familiares</th>
@@ -225,7 +225,7 @@
 <br>
 
 <div class="container">
-    <table class="table table-sm">
+    <table class="table table-sm table-responsive-sm">
         <thead>
             <tr>
                 <th scope="col"><i class="bi bi-journal-medical"></i> Antecedentes Gineco-obstétricos</th>
