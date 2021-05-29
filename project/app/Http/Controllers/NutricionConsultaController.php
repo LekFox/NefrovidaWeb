@@ -24,13 +24,20 @@ class NutricionConsultaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function createIMC($id)
+    {
+        $beneficiario=Beneficiario::findOrFail($id);
+        return view('nutriologia.createIMC',compact('beneficiario'));
+    }
+
+
     public function create($id)
     {
-
         // $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
         // return view('nutriologia.create',$datos);
         $beneficiario=Beneficiario::findOrFail($id);
-        return view('nutriologia.create',compact('beneficiario'));
+        return view('nutriologia.createIMC',compact('beneficiario'));
     }
 
     /**
@@ -107,7 +114,8 @@ class NutricionConsultaController extends Controller
          $beneficiario = Beneficiario::find($id);
          $beneficiario->nutricionconsulta()->save($consulta);
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Consulta agregada con éxito');
+        return view('nutriologia.edit',compact('consulta'));
+        // return redirect('beneficiario/'.$id)->with('nuevo','Consulta agregada con éxito');
     }
 
     /**
@@ -134,7 +142,7 @@ class NutricionConsultaController extends Controller
         //$datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
 
 
-        return view('nutriologia.edit',compact('consulta'));
+        return view('nutriologia.editcompleto',compact('consulta'));
     }
 
     /**
@@ -224,9 +232,17 @@ class NutricionConsultaController extends Controller
     {
         $consulta = nutricionConsulta::find($id);
         $id=$consulta->beneficiario_id;
-        $success = $consulta->delete();
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Consulta borrada con éxito');
+        if($consulta->ocupacion == null){
+            $success = $consulta->delete();
+            return redirect('beneficiario/'.$consulta->beneficiario->id.'/nutricion/create');
+        }
+        else{
+            $success = $consulta->delete();
+            return redirect('beneficiario/'.$id)->with('nuevo','Consulta borrada con éxito');
+        }
+
+        
 
         // return [
         //      'success' => $success,

@@ -4,8 +4,10 @@
 
 @include('sidebar.beneficiario')
 
-<div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/nutricion')}}" method="post">
+<div class="container"><form action="{{url('/nutricion/'.$consulta->id)}}" method="post">
   @csrf
+  {{ method_field('PATCH') }}
+
   
   @if (count($errors)>0)
       
@@ -27,7 +29,7 @@
 
   
   <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-basket"></i> Registrar Consulta</h1>
-  <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+  <a href="{{url('/beneficiario/'.$consulta->beneficiario_id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 
   
   <div class="container mt-3">
@@ -76,7 +78,7 @@
                 <div class="col-10">
                     <h3 class="text-center"><i class="bi bi-clipboard"></i> Datos Nutrimentales</h3>
                     <br>
-                    <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
+                    <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $consulta->beneficiario_id }}">
 
                 <div class="container">
 
@@ -100,6 +102,11 @@
 
 
                     <div class="text-center">
+                        {{-- <form action="{{url('/nutricion/'.$consulta->id)}}" class="d-inline" method="post">
+                            @csrf
+                            {{ @method_field('DELETE') }}
+                            <input type="submit"  class="btn btn-primary nextBtn btn-lg pull-right" value="Anterior">
+                        </form> </a> --}}
                       <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
                     </div>
                 </div>
@@ -426,12 +433,12 @@
 
                     <div class="form-group">
                         <label for="diagnostico">Diagnostico (Dx)</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6"></textarea>        
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6">{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}</textarea>        
                     </div>
 
                     <div class="form-group">
                         <label for="nota">Nota</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="nota" value="{{ isset($consulta->nota)?$consulta->nota:old('nota') }}" id="nota" rows="6"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="nota" value="{{ isset($consulta->nota)?$consulta->nota:old('nota') }}" id="nota" rows="6">{{ isset($consulta->nota)?$consulta->nota:old('nota') }}</textarea>
                     </div>
                    
                     <br><br>

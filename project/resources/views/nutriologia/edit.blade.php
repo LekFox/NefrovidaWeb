@@ -102,6 +102,11 @@
 
 
                     <div class="text-center">
+                        {{-- <form action="{{url('/nutricion/'.$consulta->id)}}" class="d-inline" method="post">
+                            @csrf
+                            {{ @method_field('DELETE') }}
+                            <input type="submit"  class="btn btn-primary nextBtn btn-lg pull-right" value="Anterior">
+                        </form> </a> --}}
                       <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
                     </div>
                 </div>
@@ -327,7 +332,7 @@
                 <div class="col-1">
                 </div>  
             </div>
-            <div class="row setup-content" id="step-6">
+            {{-- <div class="row setup-content" id="step-6">
 
                 <div class="col-1">
                 </div>  
@@ -358,11 +363,11 @@
                     <div class="col-1">
                     </div>  
                 </div>
-           
+            --}}
           
        
 
-          <div class="row setup-content" id="step-7">
+          <div class="row setup-content" id="step-6">
 
             <div class="col-1">
             </div>  
@@ -416,12 +421,16 @@
                 </div>  
             </div>
 
-            <div class="row setup-content" id="step-8">
+            <div class="row setup-content" id="step-7">
                 <div class="col-1">
                 </div>  
                 <div class="col-10">
                     <h3 class="text-center"><i class="bi bi-clipboard"></i> Plan de Alimentación</h3>
     
+                    <div class="form-group">
+                        <label for="imc"><strong>IMC: {{ isset($consulta->imc)?$consulta->imc:old('imc') }}</strong></label>
+                    </div>
+
                     <div class="form-group">
                         <label for="diagnostico">Diagnostico (Dx)</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" name="diagnostico" value="{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}" id="diagnostico" rows="6">{{ isset($consulta->diagnostico)?$consulta->diagnostico:old('diagnostico') }}</textarea>        
