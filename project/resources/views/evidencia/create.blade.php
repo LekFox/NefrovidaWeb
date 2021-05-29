@@ -4,11 +4,9 @@
 
 @include('sidebar.beneficiario')
 
-<div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/evidencia')}}" method="post">
+<div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/evidencia')}}" method="post" enctype="multipart/form-data">
   @csrf
   
-  {{-- @include('notas.form',['modo'=>'Crear'],['id'=>'2']) --}}
-
   @if (count($errors)>0)
       
       <div class="alert alert-danger" role="alert">
@@ -24,11 +22,13 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
   <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Registrar Evidencia de {{ $beneficiario->nombreBeneficiario }}</h1>
-  <br>
-  <a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+  <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+
   <br>
   <br>
 
@@ -46,8 +46,12 @@
 <br>
 
 
-<input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
 
+
+<form action="{{url('uploadproduct')}}" method="post" enctype="multipart/form-data">
+    @csrf
+
+<input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
 <div class="form-row">
     <div class="col-4">
         <label for="nombre">Nombre Archivo</label>
@@ -55,26 +59,35 @@
     <div class="col-2">
     </div>
     <div class="col-4">
+        <label for="nombre">Descripción Archivo</label>
     </div>
 </div>
+
 <div class="form-row">
     <div class="col-4">
-        <input type="text" placeholder="Product Name" class="form-control" name="name" id="name" rows="1">
+        <input type="text" placeholder="Nombre del Archivo" class="form-control" name="name" id="name" rows="1">
     </div>
     <div class="col-2">
     </div>
     <div class="col-4">
-        <input type="text" placeholder="Descripción" class="form-control" name="descripcion" id="descripcion" rows="1">
+        <input type="text" placeholder="Descripción del Archivo" class="form-control" name="descripcion" id="descripcion" rows="1">
         </div>
     </div>
 </div>
-    <input type="file" name="file" id="descripcion">
-    <input type="submit">
+
 <br>
+<br>
+
+<div class="col text-center">
+    <input type="file" name="file" id="file">
+    <input type="submit">
+</div>
 
 <div class="col text-center">
     <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
 </div>
+
+</form>
 
 
 <br>

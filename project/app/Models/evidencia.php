@@ -9,7 +9,6 @@ class evidencia extends Model
 {
     use HasFactory;
 
-
     protected $fillable =[
         'beneficiario_id', 
         'nombre',

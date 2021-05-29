@@ -9,6 +9,7 @@ use App\Models\QuimicaSanguinea;
 use App\Models\DepuracionCreatinina;
 use App\Models\nutricionConsulta;
 use App\Models\consulta;
+use App\Models\evidencia;
 use App\Models\nefropediatria;
 use Illuminate\Http\Request;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
@@ -44,11 +45,12 @@ class BeneficiarioController extends Controller
         $ExamenesOrina = ExamenOrina::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Orina');
         $microE = micro::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'micro');
         $consulta = consulta::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Consulta');
+        $evidencia = evidencia::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'evidencia');
         $nefropediatria = nefropediatria::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Nefropediatria');
         $QuimicasSanguinea = QuimicaSanguinea::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Sanguinea');
         $DepuracionesCreatinina = DepuracionCreatinina::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Creatinina');
 
-        return view('beneficiario.show',compact('beneficiario','Notas','Nutricion','evaluaciones','consulta','nefropediatria', 'ExamenesOrina', 'QuimicasSanguinea', 'DepuracionesCreatinina', 'microE'))->with(['id'=>$id]);
+        return view('beneficiario.show',compact('beneficiario','Notas','Nutricion','evaluaciones','consulta','nefropediatria', 'ExamenesOrina', 'QuimicasSanguinea', 'DepuracionesCreatinina', 'microE', 'evidencia'))->with(['id'=>$id]);
     }
     
     /**

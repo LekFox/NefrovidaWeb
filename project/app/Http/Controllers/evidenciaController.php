@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\evidencia;
 use Illuminate\Http\Request;
+use App\Models\Beneficiario;
+use App\Http\Resources\Beneficiario as BeneficiarioResource;
+use App\Models\evidencia;
 
 class evidenciaController extends Controller
 {
@@ -41,29 +43,16 @@ class evidenciaController extends Controller
         ]);
 
         $evidencia= new evidencia([
-            'padecimiento'=> request('padecimiento'),
-            'brazoD'=> request('brazoD'),
-            'brazoI'=> request('brazoI'),
-            'fCardiaca'=> request('fCardiaca'),
-            'fRespiratoria'=> request('fRespiratoria'),
-            'temperatura'=> request('temperatura'),
-            'peso'=> request('peso'),
-            'talla'=> request('talla'),
-            'cabeza'=> request('cabeza'),
-            'torax'=> request('torax'),
-            'abdomen'=> request('abdomen'),
-            'extremidades'=> request('extremidades'),
-            'mental'=> request('mental'),
-            'observaciones'=> request('observaciones'),
-            'diagnostico'=> request('diagnostico'),
-            'tratamiento'=> request('tratamiento'),
+            'nombre'=> request('nombre'),
+            'descripcion'=> request('descripcion'),
+            'file'=> request('file'),
         ]);
 
          $id = request('beneficiario_id');
          $beneficiario = Beneficiario::find($id);
          $beneficiario->evidencia()->save($evidencia);
 
-        return redirect('beneficiario/'.$id)->with('nuevo','EEvidencia Registrada Exitósamente');
+        return redirect('beneficiario/'.$id)->with('nuevo','Evidencia Registrada Exitósamente');
     }
 
     /**

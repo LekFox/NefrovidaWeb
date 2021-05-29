@@ -5,7 +5,7 @@
                 <div class="col">
                 </div>
                 <div class= "col text-center">
-                    <h2><i class="bi bi-heart greennefro"></i> Evidencias</h2> 
+                    <h2><i class="bi bi-file-earmark-plus greennefro"></i> Evidencias</h2> 
                 </div>
                 <div class= "col text-right">
                     <a href= "{{url('/beneficiario/'.$beneficiario->id.'/evidencia/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Evidencia</a>
@@ -17,7 +17,7 @@
             <div class= "col-sm">
                 <div class="col-sm text-center">
                     {{-- @if ($beneficiario->evidencia == NULL)
-                        <p>No Hay Evidencias Registradas</p>
+                        <p>No Hay Evidencias Registradas.</p>
                     @else
                     <p>ede</p>
                     @endif --}}
@@ -27,7 +27,7 @@
     
                 <thead class="thead-light">
                     <tr>
-                        <th id="center">Fecha de la evidencia</th>
+                        <th id="center">Fecha Evidencia</th>
                         <th id="center">Acciones</th>
                     </tr>
                 </thead>
