@@ -264,7 +264,7 @@
             <tbody>
               <tr>
                 <th>Edad</th>
-                <td>{{ $consulta->suenohoras }}</td>
+                <td>{{$consulta->beneficiario->age}}</td>
               </tr>
               <tr>
                 <th>Peso (kg)</th>
@@ -274,14 +274,6 @@
                 <th>Estatura (cm)</th>
                 <td>{{ $consulta->estatura }}</td>
               </tr>
-              <tr>
-                <th>IMC</th>
-                <td>{{ $consulta->suenohoras }}</td>
-              </tr>
-              {{-- <tr>
-                <th>PI</th>
-                <td>{{ $consulta->suenohoras }}</td>
-              </tr> --}}
             </tbody>
           </table>
     </div>
