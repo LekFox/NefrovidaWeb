@@ -66,7 +66,7 @@ class microController extends Controller
         $id = request('beneficiario_id');
         $beneficiario = Beneficiario::find($id);
         $beneficiario->micro()->save($micro);
-        return redirect('beneficiario/'.$id)->with('nuevo','Laboratorio Microalbuminuría Registrado Exitósamente.');
+        return redirect('beneficiario/'.$id)->with('nuevo','Análisis Microalbuminuria Registrado Exitósamente');
     }
 
     /**
@@ -122,7 +122,7 @@ class microController extends Controller
             'metodo' => request('metodo'),
             'nota'=> request('nota'),
         ]);
-        return redirect('beneficiario/'.$id)->with('editado','Cambios Realizados Exitósamente');
+        return redirect('beneficiario/'.$id)->with('editado','Cambios Análisis Microalbuminuria Guardados Exitósamente');
     }
 
     /**
@@ -137,7 +137,7 @@ class microController extends Controller
         $id=$micro->beneficiario_id;
         $success = $micro->delete();
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Laboratorio Microalbuminuría Borrado Exitósamente');
+        return redirect('beneficiario/'.$id)->with('nuevo','Análisis Microalbuminuria Borrado Exitósamente');
     }
 
 }

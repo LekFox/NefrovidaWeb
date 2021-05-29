@@ -62,7 +62,7 @@
                     @csrf
                     {{ @method_field('DELETE') }}
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $consulta->beneficiario->id }}">
-                    <button type="submit" onclick="return confirm('¿Quiere borrar los consulta? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                    <button type="submit" onclick="return confirm('¿Quiere Borrar la Consulta?')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
           </div>
         </div>

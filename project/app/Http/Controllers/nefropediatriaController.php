@@ -43,29 +43,23 @@ class nefropediatriaController extends Controller
         ]);
 
         $nefropediatria= new nefropediatria([
-            'padecimiento'=> request('padecimiento'),
-            'brazoD'=> request('brazoD'),
-            'brazoI'=> request('brazoI'),
-            'fCardiaca'=> request('fCardiaca'),
-            'fRespiratoria'=> request('fRespiratoria'),
-            'temperatura'=> request('temperatura'),
             'peso'=> request('peso'),
             'talla'=> request('talla'),
-            'cabeza'=> request('cabeza'),
-            'torax'=> request('torax'),
-            'abdomen'=> request('abdomen'),
-            'extremidades'=> request('extremidades'),
-            'mental'=> request('mental'),
-            'observaciones'=> request('observaciones'),
+            'tension'=> request('tension'),
+            'temperatura'=> request('temperatura'),
+            'fCardiaca'=> request('fCardiaca'),
+            'fRespiratoria'=> request('fRespiratoria'),
+            'analisis'=> request('analisis'),
             'diagnostico'=> request('diagnostico'),
             'tratamiento'=> request('tratamiento'),
+            'medico'=> request('medico'),
         ]);
 
          $id = request('beneficiario_id');
          $beneficiario = Beneficiario::find($id);
          $beneficiario->nefropediatria()->save($nefropediatria);
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Consulta Agregada Exitosamente');
+        return redirect('beneficiario/'.$id)->with('nuevo','Consulta Registrada Exitósamente');
     }
  
     /**
@@ -105,24 +99,18 @@ class nefropediatriaController extends Controller
         
         $id=$nefropediatria->beneficiario_id;
         $success = $nefropediatria->update([
-            'padecimiento'=> request('padecimiento'),
-            'brazoD'=> request('brazoD'),
-            'brazoI'=> request('brazoI'),
-            'fCardiaca'=> request('fCardiaca'),
-            'fRespiratoria'=> request('fRespiratoria'),
-            'temperatura'=> request('temperatura'),
             'peso'=> request('peso'),
             'talla'=> request('talla'),
-            'cabeza'=> request('cabeza'),
-            'torax'=> request('torax'),
-            'abdomen'=> request('abdomen'),
-            'extremidades'=> request('extremidades'),
-            'mental'=> request('mental'),
-            'observaciones'=> request('observaciones'),
+            'tension'=> request('tension'),
+            'temperatura'=> request('temperatura'),
+            'fCardiaca'=> request('fCardiaca'),
+            'fRespiratoria'=> request('fRespiratoria'),
+            'analisis'=> request('analisis'),
             'diagnostico'=> request('diagnostico'),
             'tratamiento'=> request('tratamiento'),
+            'medico'=> request('medico'),
         ]);
-        return redirect('beneficiario/'.$id)->with('editado','Cambios Realizados Exitósamente');
+        return redirect('beneficiario/'.$id)->with('editado','Cambios Consulta Guardados Exitósamente');
     }
 
     /**

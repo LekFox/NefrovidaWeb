@@ -65,7 +65,7 @@ class consultaController extends Controller
          $beneficiario = Beneficiario::find($id);
          $beneficiario->consulta()->save($consulta);
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Consulta Agregada Exitosamente');
+        return redirect('beneficiario/'.$id)->with('nuevo','Consulta Registrada Exitósamente');
     }
  
     /**
@@ -122,7 +122,7 @@ class consultaController extends Controller
             'diagnostico'=> request('diagnostico'),
             'tratamiento'=> request('tratamiento'),
         ]);
-        return redirect('beneficiario/'.$id)->with('editado','Cambios Realizados Exitósamente');
+        return redirect('beneficiario/'.$id)->with('editado','Cambios Consulta Guardados Exitósamente');
     }
 
     /**

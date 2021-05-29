@@ -17,23 +17,17 @@ class nefropediatrias extends Migration
             $table->id();
             $table->unsignedBigInteger('beneficiario_id')->nullable();
             $table->foreign("beneficiario_id")->references('id')->on('beneficiarios')->onDelete('set null');
-
-            $table->text("padecimiento")->nullable();
-            $table->string("brazoD")->nullable();
-            $table->string("brazoI")->nullable();
-            $table->string("fCardiaca")->nullable();
-            $table->string("fRespiratoria")->nullable();
-            $table->string("temperatura")->nullable();
+  
             $table->string("peso")->nullable();
             $table->string("talla")->nullable();
-            $table->string("cabeza")->nullable();
-            $table->string("torax")->nullable();
-            $table->string("abdomen")->nullable();
-            $table->string("extremidades")->nullable();
-            $table->text("mental")->nullable();
-            $table->text("observaciones")->nullable();
+            $table->string("tension")->nullable();
+            $table->string("temperatura")->nullable();
+            $table->string("fCardiaca")->nullable();
+            $table->string("fRespiratoria")->nullable();
+            $table->text("analisis")->nullable();
             $table->text("diagnostico")->nullable();
             $table->text("tratamiento")->nullable();
+            $table->string("medico")->nullable();            
 
             $table->timestamps();
         });

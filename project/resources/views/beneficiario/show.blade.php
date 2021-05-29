@@ -28,6 +28,10 @@
     @include('tamizaje.card',['modo'=>'Detalle de'])
     @include('evaluacion.index')
     @include('analisislab.card',['modo'=>'Index de'])
+    @include('factorDeRiesgo.index')
+    
+    
+
 </div>
 
 @endsection

@@ -17,6 +17,7 @@ use App\Http\Controllers\NutricionConsultaController;
 
 use App\Http\Controllers\consultaController;
 use App\Http\Controllers\nefropediatriaController;
+use App\Http\Controllers\RiesgosController;
 
 
 /*
@@ -86,3 +87,5 @@ Route::resource('evaluacion',evaluacionController::class)->middleware('auth');
 //Route::resource('preguntasEvaluacion',preguntasController::class)->middleware('auth');
 
 Route::post('/evaluacion/storeFinal', ['uses' => 'App\Http\Controllers\EvaluacionController@storeFinal']);
+
+Route::resource('riesgos',RiesgosController::class)->middleware('auth');

@@ -40,7 +40,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Examen de Microalbuminuría de {{$micro->beneficiario->nombreBeneficiario}}</h1>
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Análisis de {{$micro->beneficiario->nombreBeneficiario}}</h1>
   <br>
   <div class="row">
   <br>
@@ -56,7 +56,7 @@
       <div class= "row">
           <div class="col"></div>
           <div class= "col text-center align-bottom">
-                <h2 class="card-title "><i class="bi bi-clipboard"></i> Examen de Microalbuminuría</h2>
+                <h2 class="card-title "><i class="bi bi-clipboard"></i> Análisis de Microalbuminuria</h2>
           </div>
           <div class="col text-right">
                 <a href="{{url('/micro/'.$micro->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
@@ -64,7 +64,7 @@
                     @csrf
                     {{ @method_field('DELETE') }}
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $micro->beneficiario->id }}">
-                    <button type="submit" onclick="return confirm('¿Quiere Borrar el Examen de Microalbuminuría?')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                    <button type="submit" onclick="return confirm('¿Quiere Borrar el Análisis de Microalbuminuria?')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
           </div>
         </div>
@@ -73,7 +73,7 @@
             <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
-                        <th scope="col"><i class="bi bi-clipboard"></i>  Examen Microalbuminuría</th>
+                        <th scope="col"><i class="bi bi-clipboard"></i>  Análisis Microalbuminuria</th>
                         <th scope="col"></th>
                       </tr>
                 </thead>
@@ -108,7 +108,7 @@
                   </tr>
                   <tr>
                   <tr>
-                    <th>Microalbumina/Creatinina (mg/g)</th>
+                    <th>Albumina/Creatinina (mg/g)</th>
                     <td> 
                       @if($micro->microalbuminaCreatinina == NULL)
                         <p class="font-weight-light" >No registrado</p>                       

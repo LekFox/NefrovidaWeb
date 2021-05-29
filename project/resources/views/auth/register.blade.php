@@ -36,6 +36,7 @@
                                     <option disabled selected value> -- Selecciona Un Rol -- </option>
                                     <option value="Administrador">Administrador</option>
                                     <option value="Medico">Médico</option>
+                                    <option value="Nutriologo">Nutriólogo</option>
                                     <option value="Recepcion">Recepción</option>
                                 </select>
 

@@ -4,7 +4,6 @@
 
 @include('sidebar.beneficiario')
 
-
 <div class="container">
   <h1 class="container text-center">Evaluación Inicial</h1>
   <style>
@@ -15,10 +14,10 @@
           transition:.25s ease-in-out;
         }
   </style>
+  <br><br>
+  <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
 
-  
-
-  <form action="{{url('/evaluacion')}}" method="post" id="evaluacionInicial">
+  <form action="{{url('/evaluacion/storeFinal')}}" method="post" id="evaluacionFinal">
     @csrf
     <div class="form-group">
       <br><br><br><br>
@@ -39,7 +38,7 @@
       <br>
       
       
-    <button type="submit" class="btn btn-success" style="width:220px; height:50px;">Registrar Evaluación Inicial</button>
+    <button type="submit" class="btn btn-success" style="width:220px; height:50px;">Registrar Evaluación Final</button>
   </form>
   
 </div>

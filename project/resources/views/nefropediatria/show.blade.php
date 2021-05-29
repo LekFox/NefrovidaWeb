@@ -54,7 +54,7 @@
       <div class= "row">
           <div class="col"></div>
           <div class= "col text-center align-bottom">
-                <h2 class="card-title ">Consulta</h2>
+                <h2 class="card-title ">Consulta Nefropediatría</h2>
           </div>
           <div class="col text-right">
                 <a href="{{url('/nefropediatria/'.$nefropediatria->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
@@ -62,7 +62,7 @@
                     @csrf
                     {{ @method_field('DELETE') }}
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $nefropediatria->beneficiario->id }}">
-                    <button type="submit" onclick="return confirm('¿Quiere borrar la consulta? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                    <button type="submit" onclick="return confirm('¿Quiere Borrar la Consulta de Nefropediatría?')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
           </div>
         </div>
@@ -95,82 +95,51 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th>T.A. Brazo Derecho</th>
-                    <td>{{ $nefropediatria->brazoD }}</td>
-                    <th>T.A. Brazo Izquierdo</th>
-                    <td>{{ $nefropediatria->brazoI }}</td>
-                  </tr>
-                  <tr>
-                    <th>Frecuencia Cardíaca</th>
-                    <td>{{ $nefropediatria->fCardiaca }}</td>
-                    <th>Frecuencia Respiratoria</th>
-                    <td>{{ $nefropediatria->fRespiratoria }}</td>
-                  </tr>
-                  <tr>
-                    <th>Temperatura</th>
-                    <td>{{ $nefropediatria->temperatura }}</td>
-                    <th>Peso</th>
+                    <th>Peso (Kg)</th>
                     <td>{{ $nefropediatria->peso }}</td>
-                  </tr>
-                  <tr>
-                    <th>Talla</th>
+                    <th>Talla (cm)</th>
                     <td>{{ $nefropediatria->talla }}</td>
-                    <th>Cabeza y Cuello</th>
-                    <td>{{ $nefropediatria->cabeza }}</td>
                   </tr>
                   <tr>
-                    <th>Torax</th>
-                    <td>{{ $nefropediatria->torax }}</td>
-                    <th>Abdomen</th>
-                    <td>{{ $nefropediatria->abdomen }}</td>
+                    <th>Tensión Arterial (mmHg)</th>
+                    <td>{{ $nefropediatria->tension }}</td>
+                    <th>Temperatura (ºC)</th>
+                    <td>{{ $nefropediatria->temperatura }}</td>
                   </tr>
                   <tr>
-                    <th>Extremidades</th>
-                    <td>{{ $nefropediatria->extremidades }}</td>                    
+                    <th>Frecuencia Cardíaca (lat/min)</th>
+                    <td>{{ $nefropediatria->fCardiaca }}</td>
+                    <th>Frecuencia Respiratoria (res/min)</th>
+                    <td>{{ $nefropediatria->fRespiratoria }}</td>
                   </tr>
                 </tbody>
               </table>
         </div>
         <br>
+        <br>
         <div class="container">
             <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
-                        <th scope="col"><i class="bi bi-clipboard"></i>  Estado Neurológico y Mental</th>
+                        <th scope="col"><i class="bi bi-clipboard"></i> Análisis</th>
                         <th scope="col"></th>
                       </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th>Estado Neurológico y Mental</th>
-                    <td>{{ $nefropediatria->mental }}</td>
+                    <th>Análisis</th>
+                    <td>{{ $nefropediatria->analisis }}</td>
                   </tr>                
                 </tbody>
               </table>
         </div>
        <br>
-       <div class="container">
-            <table class="table table-sm table-responsive-sm">
-                <thead>
-                    <tr>
-                        <th scope="col"><i class="bi bi-clipboard"></i>  Otros</th>
-                        <th scope="col"></th>
-                      </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>Observaciones</th>
-                    <td>{{ $nefropediatria->observaciones }}</td>
-                  </tr>                
-                </tbody>
-              </table>
-        </div>
        <br>
        <div class="container">
             <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
-                        <th scope="col"><i class="bi bi-clipboard"></i>  Diagnóstico y Tratamiento</th>
+                        <th scope="col"><i class="bi bi-clipboard"></i> Diagnóstico</th>
                         <th scope="col"></th>
                       </tr>
                 </thead>
@@ -178,10 +147,27 @@
                   <tr>
                     <th>Diagnóstico</th>
                     <td>{{ $nefropediatria->diagnostico }}</td>
-                  </tr>
+                  </tr>                
+                </tbody>
+              </table>
+        </div>
+       <br>
+        <div class="container">
+            <table class="table table-sm table-responsive-sm">
+                <thead>
+                    <tr>
+                        <th scope="col"><i class="bi bi-clipboard"></i>  Tratamiento</th>
+                        <th scope="col"></th>
+                      </tr>
+                </thead>
+                <tbody>
                   <tr>
                     <th>Tratamiento</th>
                     <td>{{ $nefropediatria->tratamiento }}</td>
+                  </tr>
+                  <tr>
+                    <th>Médico</th>
+                    <td>{{ $nefropediatria->medico }}</td>
                   </tr>                
                 </tbody>
               </table>

@@ -32,7 +32,9 @@
             </div>
             <div class="col-sm text-center">
               <div class="dropdown ">
+                
                 <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="bi bi-plus-circle"></i>
                   Agregar Evaluación
                 </button>
                 <div class="dropdown-menu" >
