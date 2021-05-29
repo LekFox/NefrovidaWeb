@@ -42,15 +42,29 @@ class evidenciaController extends Controller
             'beneficiario_id' => 'required',
         ]);
 
+        $data = new evidencia();
+
+        $file = $request->file;
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $request->file->move('assets', $filename);
+        $data->file=$filename;
+
+        $data->nombre=$request->nombre;
+        $data->descripcion=$request->descripcion;
+
+        $data->save();
+
+
+        /*
         $evidencia= new evidencia([
             'nombre'=> request('nombre'),
             'descripcion'=> request('descripcion'),
             'file'=> request('file'),
-        ]);
+        ]);*/
 
          $id = request('beneficiario_id');
          $beneficiario = Beneficiario::find($id);
-         $beneficiario->evidencia()->save($evidencia);
+         /*$beneficiario->evidencia()->save($evidencia);*/
 
         return redirect('beneficiario/'.$id)->with('nuevo','Evidencia Registrada Exitósamente');
     }

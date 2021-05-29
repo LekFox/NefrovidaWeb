@@ -26,7 +26,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-eyedropper"></i> Registrar Evidencia de {{ $beneficiario->nombreBeneficiario }}</h1>
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-file-earmark-plus"></i> Registrar Evidencia de {{ $beneficiario->nombreBeneficiario }}</h1>
   <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 
   <br>
@@ -78,10 +78,21 @@
 <br>
 <br>
 
-<div class="col text-center">
-    <input type="file" name="file" id="file">
-    <input type="submit">
+<div class="form-row">
+    <div class="col-3"> 
+    </div>
+    <div class="col-4">
+        <input type="file" name="file" id="file" class="btn btn-primary">
+        <br>
+        <br>
+        <div class="col text-center">
+            <input class="btn btn-success" type="submit">
+        </div>
+    </div>
+    <div class="col-3">
+    </div>
 </div>
+
 
 <div class="col text-center">
     <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
