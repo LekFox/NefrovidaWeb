@@ -29,6 +29,7 @@
     @include('evaluacion.index')
     @include('analisislab.card',['modo'=>'Index de'])
     @include('factorDeRiesgo.index')
+    @include('evidencia.card',['id'=>$id])
     
     
 
