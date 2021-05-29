@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Stroage;
+
 use App\Models\Beneficiario;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use App\Models\evidencia;
@@ -36,7 +38,7 @@ class evidenciaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         request()->validate([
             'beneficiario_id' => 'required',
@@ -67,7 +69,65 @@ class evidenciaController extends Controller
         $beneficiario->notas()->save($evidencia);
 
         return redirect('beneficiario/'.$id)->with('nuevo','Evidencia Registrada Exitósamente');
+    }*/
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        request()->validate([
+            'beneficiario_id' => 'required',
+        ]);
+
+        $evidencia = new evidencia();
+
+        $file = $request->file;
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $request->file->move('assets', $filename);
+        $evidencia->file=$filename;
+
+        $evidencia->nombre=$request->nombre;
+        $evidencia->descripcion=$request->descripcion;
+
+        $evidencia->save();
+
+
+        
+        $evidencia= new evidencia([
+            'nombre'=> request('nombre'),
+            'descripcion'=> request('descripcion'),
+            'file'=> request('file'),
+        ]);
+
+        $id = request('beneficiario_id');
+        $beneficiario = Beneficiario::find($id);
+        $beneficiario->consulta()->save($evidencia);
+
+        return redirect('beneficiario/'.$id)->with('nuevo','Evidencia Registrada Exitósamente');
     }
+
+
+
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Notas  $notas
+     * @return \Illuminate\Http\Response
+     */
+    /*public function show($id)
+    {
+        $data = product::all();
+
+        $evidencia=evidencia::findOrFail($id);
+        return view('evidencia.show',compact('data'));
+        //return view('evidencia.show',compact('evidencia'));
+    }*/
 
     /**
      * Display the specified resource.
@@ -77,12 +137,12 @@ class evidenciaController extends Controller
      */
     public function show($id)
     {
-        $data = product::all();
-
         $evidencia=evidencia::findOrFail($id);
-        return view('evidencia.show',compact('data'));
-        //return view('evidencia.show',compact('evidencia'));
+        return view('evidencia.show',compact('evidencia'));
     }
+
+
+
 
     /**
      * Show the form for editing the specified resource.
