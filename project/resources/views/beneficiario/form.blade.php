@@ -148,8 +148,8 @@
     <button class="btn btn-success btn-lg" type="submit"><i class="bi bi-pencil-square"></i> {{$modo}}</button>
 </div>
 
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     $('.date').datepicker({  
        format: 'yyyy-mm-dd'
      });  
-</script> 
+</script>  --}}
