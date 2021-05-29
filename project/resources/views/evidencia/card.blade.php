@@ -28,6 +28,8 @@
                 <thead class="thead-light">
                     <tr>
                         <th id="center">Fecha Evidencia</th>
+                        <th id="center">Nombre</th>
+                        <th id="center">Descripción</th>
                         <th id="center">Acciones</th>
                     </tr>
                 </thead>
@@ -36,12 +38,14 @@
                     @foreach ($evidencia as $notas)
                     <tr>
                         <td id="center">{{$notas->created_at}}</td>
+                        <td id="center">{{$notas->nombre}}</td>
+                        <td id="center">{{$notas->descripcion}}</td>
                         <td id="center">
                             <a href= "{{url('/evidencia/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
                             <a href="{{url('/evidencia/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
-                                Editar
+                                Descargar
                             </a>
                             <form action="{{url('/evidencia/'.$notas->id)}}" class="d-inline" method="post">
                                 @csrf

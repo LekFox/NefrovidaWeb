@@ -51,7 +51,7 @@
 <form action="{{url('uploadproduct')}}" method="post" enctype="multipart/form-data">
     @csrf
 
-<input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
+
 <div class="form-row">
     <div class="col-4">
         <label for="nombre">Nombre Archivo</label>
@@ -65,12 +65,13 @@
 
 <div class="form-row">
     <div class="col-4">
-        <input type="text" placeholder="Nombre del Archivo" class="form-control" name="name" id="name" rows="1">
+        <input type="text" placeholder="Nombre del Archivo" class="form-control" name="nombre" id="nombre" rows="1">
     </div>
     <div class="col-2">
     </div>
     <div class="col-4">
         <input type="text" placeholder="Descripción del Archivo" class="form-control" name="descripcion" id="descripcion" rows="1">
+        <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
         </div>
     </div>
 </div>

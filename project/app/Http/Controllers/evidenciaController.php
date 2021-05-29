@@ -55,16 +55,16 @@ class evidenciaController extends Controller
         $data->save();
 
 
-        /*
+        
         $evidencia= new evidencia([
             'nombre'=> request('nombre'),
             'descripcion'=> request('descripcion'),
             'file'=> request('file'),
-        ]);*/
+        ]);
 
-         $id = request('beneficiario_id');
-         $beneficiario = Beneficiario::find($id);
-         /*$beneficiario->evidencia()->save($evidencia);*/
+        $id = request('beneficiario_id');
+        $beneficiario = Beneficiario::find($id);
+        $beneficiario->notas()->save($evidencia);
 
         return redirect('beneficiario/'.$id)->with('nuevo','Evidencia Registrada Exitósamente');
     }
@@ -77,8 +77,11 @@ class evidenciaController extends Controller
      */
     public function show($id)
     {
+        $data = product::all();
+
         $evidencia=evidencia::findOrFail($id);
-        return view('evidencia.show',compact('evidencia'));
+        return view('evidencia.show',compact('data'));
+        //return view('evidencia.show',compact('evidencia'));
     }
 
     /**
@@ -104,14 +107,19 @@ class evidenciaController extends Controller
         //
     }
 
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\evidencia  $evidencia
+     * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(evidencia $evidencia)
+    public function destroy($id)
     {
-        //
+        $evidencia = evidencia::find($id);
+        $id=$evidencia->beneficiario_id;
+        $success = $evidencia->delete();
+
+        return redirect('beneficiario/'.$id)->with('nuevo','Evidencia Borrada Exitósamente');
     }
 }
