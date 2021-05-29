@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class= "col-sm">
-            <table id="table_data" class="table table-bordered table-sm">
+            <table id="table_data" class="table table-bordered table-sm table-responsive-sm">
     
                 <thead class="thead-light">
                     <tr>

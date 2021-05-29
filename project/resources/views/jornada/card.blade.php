@@ -67,7 +67,7 @@
                 <div class="col text-center">
                     <h2 class="card-title bluenefro"><i class="bi bi-people"></i> Beneficiarios de la jornada {{ $jornada->nombre }}</h2>
                 </div>
-                <table class="table table-bordered table-sm">
+                <table class="table table-bordered table-sm table-responsive-sm">
                     <thead class="thead-light text-center">
                     <tr>
                     <th>Nombre</th>

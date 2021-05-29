@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Padecimiento</th>
@@ -84,7 +84,7 @@
         </div>
        <br>
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Exploración Física</th>
@@ -133,7 +133,7 @@
         </div>
         <br>
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Estado Neurológico y Mental</th>
@@ -150,7 +150,7 @@
         </div>
        <br>
        <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Otros</th>
@@ -167,7 +167,7 @@
         </div>
        <br>
        <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Diagnóstico y Tratamiento</th>

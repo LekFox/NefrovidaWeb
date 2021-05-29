@@ -84,12 +84,12 @@
   </div>
   <div class="form-row">
       <div class="col-4">
-        <input type="number" class="form-control" placeholder="PH" id="ph" name="ph" value="{{ isset($examenorina->ph)?$examenorina->ph:old('ph') }}">
+        <input type="number" step="0.01" class="form-control" placeholder="PH" id="ph" name="ph" value="{{ isset($examenorina->ph)?$examenorina->ph:old('ph') }}">
       </div>
       <div class="col-2">
       </div>
       <div class="col-4">
-        <input type="number" class="form-control" placeholder="Densidad" id="densidad" name="densidad" value="{{ isset($examenorina->densidad)?$examenorina->densidad:old('densidad') }}">
+        <input type="number" step="0.001" class="form-control" placeholder="Densidad" id="densidad" name="densidad" value="{{ isset($examenorina->densidad)?$examenorina->densidad:old('densidad') }}">
       </div>
     </div>
     <br>

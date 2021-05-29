@@ -67,7 +67,7 @@
 
   
         <div class="container">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive-sm">
                 <tbody>
                   <tr>
                     <th>Glucosa</th>
