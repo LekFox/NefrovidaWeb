@@ -125,6 +125,10 @@ class EvaluacionInicialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $evaluacionInicial = EvaluacionInicial::where('beneficiario_id', $id);
+        
+        $success = $evaluacionInicial->delete();
+
+        return redirect('beneficiario/'.$id)->with('eliminado','Evaluación Inicial eliminada exitosamente');
     }
 }
