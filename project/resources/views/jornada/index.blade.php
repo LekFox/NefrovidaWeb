@@ -64,7 +64,7 @@
 </div>
 <br>
 
-<table class="table table-light table-responsive-sm">
+<table class="table table-light table-hover table-responsive-sm">
     
     <thead class="greennefrobg whitenefro">
         <tr>
