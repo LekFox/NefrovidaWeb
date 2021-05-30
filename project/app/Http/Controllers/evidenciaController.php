@@ -62,24 +62,6 @@ class evidenciaController extends Controller
     }
 
 
-
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Notas  $notas
-     * @return \Illuminate\Http\Response
-     */
-    /*public function show($id)
-    {
-        $data = product::all();
-
-        $evidencia=evidencia::findOrFail($id);
-        return view('evidencia.show',compact('data'));
-        //return view('evidencia.show',compact('evidencia'));
-    }*/
-
     /**
      * Display the specified resource.
      *
@@ -93,17 +75,16 @@ class evidenciaController extends Controller
     }
 
 
-
-
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\evidencia  $evidencia
+     * @param  \App\Models\Notas  $notas
      * @return \Illuminate\Http\Response
      */
-    public function edit(evidencia $evidencia)
+    public function edit($id)
     {
-        //
+        $evidencia=evidencia::findOrFail($id);
+        return view('evidencia.edit',compact('evidencia'));
     }
 
     /**
@@ -115,7 +96,25 @@ class evidenciaController extends Controller
      */
     public function update(Request $request, evidencia $evidencia)
     {
-        //
+        request()->validate([
+            'beneficiario_id' => 'required',
+        ]);
+
+        $evidencia = new evidencia();
+        
+        $file = $file;
+        /*$filename = time().'.'.$file->getClientOriginalExtension();
+        $request->file->move('assets', $filename);
+        $evidencia->file=$filename;*/
+
+        $evidencia->nombre=$request->nombre;
+        $evidencia->descripcion=$request->descripcion;
+
+        $id = request('beneficiario_id');
+        $beneficiario = Beneficiario::find($id);
+        $beneficiario->notas()->save($evidencia);
+
+        return redirect('beneficiario/'.$id)->with('nuevo','Evidencia Registrada Exitósamente');
     }
 
 

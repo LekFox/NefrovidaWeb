@@ -4,8 +4,10 @@
 
 @include('sidebar.beneficiario')
 
-<div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/evidencia')}}" method="post" enctype="multipart/form-data">
+<div class="container"><form action="{{url('/evidencia/'.$evidencia->id)}}" method="post">
   @csrf
+  {{ method_field('PATCH') }}
+
   
   @if (count($errors)>0)
       
@@ -26,13 +28,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-file-earmark-plus"></i> Registrar Evidencia de {{ $beneficiario->nombreBeneficiario }}</h1>
-  <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
-
-  <br>
-  <br>
-
-<div>
+  
+  <h1 id="consultaTitulo" class="text-center bluenefro"><i class="bi bi-person-lines-fill"></i> Editar Evidencia de {{$evidencia->beneficiario->nombreBeneficiario}}</h1>
+  <div class="row">
+    <div class="col">
+      <a href="{{ url('/beneficiario/'.$evidencia->beneficiario->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+  <br><br>
+  
 <div class= "row">
       <div class = "col-1">
       </div>
@@ -44,8 +50,6 @@
 </div>
 
 <br>
-
-
 
 <div class="form-row">
     <div class="col-4">
@@ -60,13 +64,18 @@
 
 <div class="form-row">
     <div class="col-4">
-        <input type="text" placeholder="Nombre del Archivo" class="form-control" name="nombre" id="nombre" rows="1">
+        <input class="form-control" name="nombre" value="{{ isset($evidencia->nombre)?$evidencia->nombre:old('nombre') }}" id="nombre" rows="1">
     </div>
     <div class="col-2">
+    <div class="text-center">
+            <br>
+            <br>
+            <button class="btn btn-success btn-lg pull-right" type="submit"><i class="bi bi-pencil-square"></i> Guardar</button>
+        </div>
     </div>
     <div class="col-4">
-        <input type="text" placeholder="Descripción del Archivo" class="form-control" name="descripcion" id="descripcion" rows="1">
-        <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
+        <input class="form-control" name="descripcion" value="{{ isset($evidencia->descripcion)?$evidencia->descripcion:old('descripcion') }}" id="descripcion" rows="1">
+        <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $evidencia->beneficiario_id }}">
         </div>
     </div>
 </div>
@@ -74,20 +83,6 @@
 <br>
 <br>
 
-<div class="form-row">
-    <div class="col-3"> 
-    </div>
-    <div class="col-4">
-        <input type="file" name="file" id="file" class="btn btn-primary">
-        <br>
-        <br>
-        <div class="col text-center">
-            <input class="btn btn-success" type="submit">
-        </div>
-    </div>
-    <div class="col-3">
-    </div>
-</div>
 
 
 <br>
@@ -102,3 +97,5 @@
 </form>
 </div>
 @endsection
+       
+

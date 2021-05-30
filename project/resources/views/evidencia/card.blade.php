@@ -44,9 +44,6 @@
                             <a href= "{{url('/evidencia/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            <a href="{{url('/evidencia/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
-                                Descargar
-                            </a>
                             <form action="{{url('/evidencia/'.$notas->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
