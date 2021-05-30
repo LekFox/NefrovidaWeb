@@ -18,6 +18,7 @@ use App\Http\Controllers\NutricionConsultaController;
 use App\Http\Controllers\consultaController;
 use App\Http\Controllers\nefropediatriaController;
 use App\Http\Controllers\RiesgosController;
+use App\Http\Controllers\evidenciaController;
 
 
 /*
@@ -50,6 +51,7 @@ Route::resource('beneficiario.depuracioncreatinina', DepuracionCreatininaControl
 Route::resource('beneficiario.nutricion',NutricionConsultaController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.notas',NotasController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.consulta',consultaController::class)->shallow()->middleware('auth');
+Route::resource('beneficiario.evidencia',evidenciaController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.nefropediatria',nefropediatriaController::class)->shallow()->middleware('auth');
 
 
