@@ -38,45 +38,6 @@ class evidenciaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    /*public function store(Request $request)
-    {
-        request()->validate([
-            'beneficiario_id' => 'required',
-        ]);
-
-        $data = new evidencia();
-
-        $file = $request->file;
-        $filename = time().'.'.$file->getClientOriginalExtension();
-        $request->file->move('assets', $filename);
-        $data->file=$filename;
-
-        $data->nombre=$request->nombre;
-        $data->descripcion=$request->descripcion;
-
-        $data->save();
-
-
-        
-        $evidencia= new evidencia([
-            'nombre'=> request('nombre'),
-            'descripcion'=> request('descripcion'),
-            'file'=> request('file'),
-        ]);
-
-        $id = request('beneficiario_id');
-        $beneficiario = Beneficiario::find($id);
-        $beneficiario->notas()->save($evidencia);
-
-        return redirect('beneficiario/'.$id)->with('nuevo','Evidencia Registrada Exitósamente');
-    }*/
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         request()->validate([
@@ -84,7 +45,7 @@ class evidenciaController extends Controller
         ]);
 
         $evidencia = new evidencia();
-
+        
         $file = $request->file;
         $filename = time().'.'.$file->getClientOriginalExtension();
         $request->file->move('assets', $filename);
@@ -93,19 +54,9 @@ class evidenciaController extends Controller
         $evidencia->nombre=$request->nombre;
         $evidencia->descripcion=$request->descripcion;
 
-        $evidencia->save();
-
-
-        
-        $evidencia= new evidencia([
-            'nombre'=> request('nombre'),
-            'descripcion'=> request('descripcion'),
-            'file'=> request('file'),
-        ]);
-
         $id = request('beneficiario_id');
         $beneficiario = Beneficiario::find($id);
-        $beneficiario->consulta()->save($evidencia);
+        $beneficiario->notas()->save($evidencia);
 
         return redirect('beneficiario/'.$id)->with('nuevo','Evidencia Registrada Exitósamente');
     }
