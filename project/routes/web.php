@@ -19,6 +19,7 @@ use App\Http\Controllers\consultaController;
 use App\Http\Controllers\nefropediatriaController;
 use App\Http\Controllers\RiesgosController;
 use App\Http\Controllers\evidenciaController;
+use App\Http\Controllers\EvaluacionInicialController;
 
 
 /*
@@ -84,10 +85,12 @@ Route::get('/beneficiario/{beneficiario}/datos', [BeneficiarioController::class,
 
 // Route::post('beneficiario/fetch', 'BeneficiarioController@fetch')->name('beneficiario.fetch');
 
-Route::resource('evaluacion',evaluacionController::class)->middleware('auth');
+Route::resource('evaluacionInicial',EvaluacionInicialController::class)->middleware('auth');
 
 //Route::resource('preguntasEvaluacion',preguntasController::class)->middleware('auth');
 
-Route::post('/evaluacion/storeFinal', ['uses' => 'App\Http\Controllers\EvaluacionController@storeFinal']);
+//Route::post('/evaluacion/storeFinal', ['uses' => 'App\Http\Controllers\EvaluacionController@storeFinal']);
 
 Route::resource('riesgos',RiesgosController::class)->middleware('auth');
+
+Route::resource('evaluacionFinal',EvaluacionFinalController::class)->middleware('auth');

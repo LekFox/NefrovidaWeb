@@ -4,7 +4,7 @@
 
 @include('sidebar.beneficiario')
 
-<div class="container"><form action="{{url('/evaluacionInicial')}}" method="post">
+<div class="container"><form action="{{url('/evaluacionFinal')}}" method="post">
   @csrf
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/10.5.0/css/bootstrap.min.css"/>
@@ -14,7 +14,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
   
-  <h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-journal"></i> Registrar Evaluación Inicial</h1>
+  <h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-journal"></i> Registrar Evaluación Final</h1>
   <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
   <br>
   <br>
@@ -244,7 +244,7 @@
 
   <div class = "col text-center">
       <br><br>
-      <button class="btn btn-success btn-lg" type="submit"><i class="bi bi-pencil-square"></i> Registrar Cuestionario Inicial</button>
+      <button class="btn btn-success btn-lg" type="submit"><i class="bi bi-pencil-square"></i> Registrar Cuestionario Final</button>
   </div>
   <div class = "col"></div>
 

@@ -26,10 +26,11 @@
     @include('nefropediatria.card',['id'=>$id])
     @include('nutriologia.card',['id'=>$id])
     @include('tamizaje.card',['modo'=>'Detalle de'])
-    @include('evaluacion.index')
     @include('analisislab.card',['modo'=>'Index de'])
     @include('factorDeRiesgo.index')
     @include('evidencia.card',['id'=>$id])
+    @include('evaluacion.index')
+    @include('evaluacionFinal.index')
     
     
 
