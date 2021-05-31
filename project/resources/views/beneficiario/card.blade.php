@@ -32,6 +32,11 @@
                 <h4 class="font-weight-light">Dirección: {{ $beneficiario->direccion }}</h4>
                 <h4 class="font-weight-light">Escolaridad: {{ $beneficiario->escolaridade->nombreEscolaridad }}</h4>
                 <h4 class="font-weight-light">Estatus: {{ $beneficiario->estatus }}</h4>
+                @if($beneficiario->jornadas->isEmpty())
+                <h4 class="font-weight-light">Jornada: No asignado</h4>
+                @else
+                <h4 class="font-weight-light">Jornada: Asignado</h4>
+                @endif
             </div>
             <div class="col-sm">
                 <div class= "pt-xl-5">
@@ -48,9 +53,11 @@
                     
                 </div>
                 <div class= "pt-xl-5">
-                    <button type="button" class="btn btn-danger">
-                        Borrar beneficiario
-                    </button>
+                    <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-danger" value="Borrar">
+                </form>
                 </div>
             </div>
         </div>

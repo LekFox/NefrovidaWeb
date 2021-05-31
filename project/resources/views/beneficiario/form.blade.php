@@ -75,7 +75,7 @@
 
 <div class="form-group">
 <label for="telefono">Número de telefono</label>
-<input type="text" class="form-control" name="telefono" value="{{isset($beneficiario) ? $beneficiario->telefono: ''}}" id="telefono">
+<input type="text" class="form-control" name="telefono" maxlength="10" value="{{isset($beneficiario) ? $beneficiario->telefono: ''}}" id="telefono">
 
 </div>
 
@@ -96,9 +96,9 @@
         @if($modo == 'Editar')
             <option value="{{isset($beneficiario) ? $beneficiario->escolaridade_id: ''}}" selected>{{$beneficiario->escolaridade->nombreEscolaridad}}</option>
         @endif
-        <option value="1">Preparatoria</option>
         <option value="2">Primaria</option>
         <option value="3">Secundaria</option>
+        <option value="1">Preparatoria</option>
         <option value="4">Universidad</option>
         <option value="5">Maestría</option>
         <option value="6">Analfabeta</option>

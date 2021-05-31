@@ -48,7 +48,7 @@ class BeneficiarioController extends Controller
         $QuimicasSanguinea = QuimicaSanguinea::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Sanguinea');
         $DepuracionesCreatinina = DepuracionCreatinina::where('beneficiario_id', $id)->orderBy('id', 'desc')->paginate(3,['*'],'Creatinina');
 
-        return view('beneficiario.show',compact('beneficiario','Notas','Nutricion','consulta','nefropediatria', 'ExamenesOrina', 'QuimicasSanguinea', 'DepuracionesCreatinina', 'microE'))->with(['id'=>$id]);
+        return view('beneficiario.show',compact('beneficiario','Notas','Nutricion','consulta','nefropediatria', 'ExamenesOrina', 'QuimicasSanguinea', 'DepuracionesCreatinina', 'microE', 'evidencia'))->with(['id'=>$id]);
     }
     
     /**
@@ -65,7 +65,7 @@ class BeneficiarioController extends Controller
             'jornada_id' => 'required|numeric',
             'fechaNacimiento' => 'required',
             'sexo' => 'required',
-            'telefono' => 'required',
+            'telefono' => 'required|numeric',
             'direccion' => 'required',
             'escolaridade_id' => 'required',
             'estatus' => 'required',
@@ -121,7 +121,7 @@ class BeneficiarioController extends Controller
             'jornada_id' => 'required|numeric',
             'fechaNacimiento' => 'required',
             'sexo' => 'required',
-            'telefono' => 'required',
+            'telefono' => 'required|numeric',
             'direccion' => 'required',
             'escolaridade_id' => 'required',
             'estatus' => 'required',
