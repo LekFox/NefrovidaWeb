@@ -53,9 +53,11 @@
                     
                 </div>
                 <div class= "pt-xl-5">
-                    <button type="button" class="btn btn-danger">
-                        Borrar beneficiario
-                    </button>
+                    <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-danger" value="Borrar">
+                </form>
                 </div>
             </div>
         </div>
