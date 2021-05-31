@@ -16,7 +16,7 @@
     @csrf
     {{ @method_field('DELETE') }}
     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
-    <button type="submit" onclick="return confirm('¿Quieres borrar la Evaluación Inicial de {{$beneficiario->nombreBeneficiario}}? Esta acción no puede deshacerse.')" class="btn btn-outline-danger float-right"><i class="bi bi-trash-fill"></i> Eliminar Factores de Riesgo</button>
+    <button type="submit" onclick="return confirm('¿Quieres borrar la Evaluación Inicial de {{$beneficiario->nombreBeneficiario}}? Esta acción no puede deshacerse.')" class="btn btn-outline-danger float-right"><i class="bi bi-trash-fill"></i> Eliminar Evaluación Inicial</button>
     </form>
     
     
