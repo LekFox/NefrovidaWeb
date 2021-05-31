@@ -98,10 +98,10 @@
         @endif
         <option value="2">Primaria</option>
         <option value="3">Secundaria</option>
-        <option value="1">Preparatoria</option>
-        <option value="4">Universidad</option>
-        <option value="5">Maestría</option>
-        <option value="6">Analfabeta</option>
+        <option value="4">Preparatoria</option>
+        <option value="5">Universidad</option>
+        <option value="6">Maestría</option>
+        <option value="1">Analfabeta</option>
     </select>
 </div>
 
