@@ -75,7 +75,7 @@
 
 <div class="form-group">
 <label for="telefono">Número de telefono</label>
-<input type="text" class="form-control" name="telefono" value="{{isset($beneficiario) ? $beneficiario->telefono: ''}}" id="telefono">
+<input type="text" class="form-control" name="telefono" maxlength="10" value="{{isset($beneficiario) ? $beneficiario->telefono: ''}}" id="telefono">
 
 </div>
 
