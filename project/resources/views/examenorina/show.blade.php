@@ -135,7 +135,7 @@
             <th>Nitritos</th>
             <td> 
                 @if($examenorina->nitritos == NULL)
-                <p class="font-weight-light" >No registrado</p>
+                <p class="font-weight-light" >Negativo</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->nitritos }}</p>
                 @endif
@@ -145,7 +145,7 @@
             <th>Glucosa</th>
             <td> 
                 @if($examenorina->glucosa == NULL)
-                <p class="font-weight-light" >No registrado</p>
+                <p class="font-weight-light" >Negativo</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->glucosa }}</p>
                 @endif
@@ -155,7 +155,7 @@
             <th>Proteínas</th>
             <td> 
                 @if($examenorina->proteinas == NULL)
-                <p class="font-weight-light" >No registrado</p>
+                <p class="font-weight-light" >Negativo</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->proteinas }}</p>
                 @endif
@@ -165,7 +165,7 @@
             <th>Hemoglobina</th>
             <td> 
                 @if($examenorina->hemoglobina == NULL)
-                <p class="font-weight-light" >No registrado</p>
+                <p class="font-weight-light" >Negativo</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->hemoglobina }}</p>
                 @endif
@@ -175,7 +175,7 @@
             <th>Cuerpos Cetónicos</th>
             <td> 
                 @if($examenorina->cuerposCetonicos == NULL)
-                <p class="font-weight-light" >No registrado</p>
+                <p class="font-weight-light" >Negativo</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->cuerposCetonicos }}</p>
                 @endif
@@ -185,7 +185,7 @@
             <th>Bilirrubina</th>
             <td> 
                 @if($examenorina->bilirribuna == NULL)
-                <p class="font-weight-light" >No registrado</p>
+                <p class="font-weight-light" >Negativo</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->bilirribuna }}</p>
                 @endif
@@ -302,6 +302,16 @@
                 <p class="font-weight-light" >Ninguna</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->observaciones }}</p>
+                @endif
+            </td>
+          </tr>
+          <tr>
+            <th>Fecha de examen</th>
+            <td> 
+                @if($examenorina->fecharegistro == NULL)
+                <p class="font-weight-light" >No registrada</p>
+                @else
+                <p class="font-weight-light" >{{ $examenorina->fecharegistro }}</p>
                 @endif
             </td>
           </tr>

@@ -25,7 +25,8 @@ class CreateTamizajesTable extends Migration
                 ->nullable();
             $table->integer('circunferenciaCadera')
                 ->nullable();
-            $table->integer('glucosaCapilar');
+            $table->integer('glucosaCapilar')
+                ->nullable();
             $table->integer('talla');
             $table->float('peso', 8, 2);
             $table->float('imc', 10, 4);
