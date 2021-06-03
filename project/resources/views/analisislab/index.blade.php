@@ -4,6 +4,8 @@
 
 @include('sidebar.beneficiario')
 
+@cannot('nutriologo', App\Models\User::class)
+
 <div class="container">
 @if (Session::has('eliminado'))
     <div class="alert alert-success" role="alert"> {{Session::get('eliminado')}} </div>      
@@ -64,5 +66,13 @@
 </div>
 
 </div>
+@else
+
+<div class="container">
+<br><br><br><br><br><br>
+    <h2 class="text-center">ERROR: El personal de nutriología no puede registrar análisis de laboratorio, contacte al administrador.</h2>
+</div>
+@endif
+
 
 @endsection
