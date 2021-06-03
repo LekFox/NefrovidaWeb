@@ -53,6 +53,7 @@ class nutricionConsulta extends Model
         'diagnostico',
         'nota',
         'imc',
+        'fecha',
     ];
 
     public function beneficiario()

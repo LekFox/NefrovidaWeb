@@ -37,27 +37,27 @@
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
                 <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i> Datos Nutrimentales</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i>Datos Antropométricos </p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i>Datos Clínicos</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i>Datos Nutrimentales</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i> Estilo de Vida </p>
+                <p id="timeline"><i class="bi bi-clipboard"></i>Datos Clínicos </p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i> Datos Dietéticos</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i>Estilo de Vida </p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-5" type="button" class="btn btn-default btn-circle" disabled="disabled">5</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i>Recordatorio de 24 Horas</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i>Datos Dietéticos </p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-6" type="button" class="btn btn-default btn-circle" disabled="disabled">6</a>
-                <p id="timeline"><i class="bi bi-clipboard"></i> Datos Antropométricos</p>
+                <p id="timeline"><i class="bi bi-clipboard"></i>Recordatorio de 24 Horas </p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-7" type="button" class="btn btn-default btn-circle" disabled="disabled">7</a>
@@ -71,7 +71,7 @@
     </div>
     <br>
     <form role="form" action="" method="post">
-        <div class="row setup-content" id="step-1">
+        <div class="row setup-content" id="step-2">
 
             <div class="col-1">
             </div>
@@ -113,7 +113,7 @@
             </div>
         </div>
 
-        <div class="row setup-content" id="step-2">
+        <div class="row setup-content" id="step-3">
             <div class="col-1">
             </div>
             <h3 class="text-center"><i class="bi bi-clipboard"></i> Datos Clínicos</h3>
@@ -200,7 +200,7 @@
             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente <i class="bi bi-chevron-right"></i></button>
           </div>  
         </div>
-        <div class="row setup-content" id="step-3">
+        <div class="row setup-content" id="step-4">
             <div class="col-1">
             </div>
 
@@ -229,7 +229,7 @@
         </div>
         <div class="container">
 
-        <div class="row setup-content" id="step-4">
+        <div class="row setup-content" id="step-5">
             <div class="col-1">
             </div>
               <div class="col">
@@ -293,7 +293,7 @@
     </div>
 
 
-        <div class="row setup-content" id="step-5">
+        <div class="row setup-content" id="step-6">
 
             <div class="col-1">
             </div>  
@@ -332,7 +332,7 @@
                 <div class="col-1">
                 </div>  
             </div>
-            <div class="row setup-content" id="step-6">
+            <div class="row setup-content" id="step-1">
 
                 <div class="col-1">
                 </div>  
@@ -340,6 +340,13 @@
                     <h3 class="text-center"><i class="bi bi-clipboard"></i> Datos Antropométricos</h3>
 
                     <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="peso">Fecha de la consulta</label>
+                                    <input class="date form-control" type="date" name="fecha" value="{{ isset($consulta->fecha)?$consulta->fecha:old('fecha') }}" id="fecha">    
+                                </div>
+                            </div>
+                           
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="peso">Peso (kg)</label>
@@ -469,11 +476,11 @@
   <br>
 
   
-  <script type="text/javascript">
+  {{-- <script type="text/javascript">
       $('.date').datepicker({  
          format: 'yyyy-mm-dd'
        });  
-  </script>
+  </script> --}}
   <script>
    $(document).ready(function () {
   var navListItems = $('div.setup-panel div a'),

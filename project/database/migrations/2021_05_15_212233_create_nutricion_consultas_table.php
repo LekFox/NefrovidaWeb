@@ -61,6 +61,7 @@ class CreateNutricionConsultasTable extends Migration
             $table->text("diagnostico")->nullable();
             $table->text("nota")->nullable();
             $table->string("imc")->nullable();
+            $table->date("fecha")->nullable();
             $table->timestamps();
         });
     }

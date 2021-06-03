@@ -107,6 +107,7 @@ class NutricionConsultaController extends Controller
             'diagnostico'=> request('diagnostico'),
             'nota'=> request('nota'),
             'imc'=> $imc,
+            'fecha'=> request('fecha'),
             //'beneficiario_id' => request('beneficiario_id'),
         ]);
 
@@ -170,9 +171,21 @@ class NutricionConsultaController extends Controller
             $imc = $peso/$estatura;
             $imc = round($imc,2);
         }
+        
+        else if($consulta->imc != null){
+            $imc = $consulta->imc;
+        }
         else{
             $imc = null;
         }
+
+        if(request('fecha') != null){
+            $fecha = request('fecha');
+        }
+        else{
+            $fecha = $consulta->fecha;
+        }
+
         $success = $consulta->update([
             'ocupacion'=> request('ocupacion'),
             'horarioscomida'=> request('horarioscomida'),
@@ -216,6 +229,7 @@ class NutricionConsultaController extends Controller
             'diagnostico'=> request('diagnostico'),
             'nota'=> request('nota'),
             'imc'=> $imc,
+            'fecha'=> $fecha,
             //'beneficiario_id' => request('beneficiario_id'),
         ]);
 
@@ -233,14 +247,8 @@ class NutricionConsultaController extends Controller
         $consulta = nutricionConsulta::find($id);
         $id=$consulta->beneficiario_id;
 
-        if($consulta->ocupacion == null){
-            $success = $consulta->delete();
-            return redirect('beneficiario/'.$consulta->beneficiario->id.'/nutricion/create');
-        }
-        else{
-            $success = $consulta->delete();
-            return redirect('beneficiario/'.$id)->with('nuevo','Consulta borrada con éxito');
-        }
+        $success = $consulta->delete();
+        return redirect('beneficiario/'.$id)->with('nuevo','Consulta borrada con éxito');
 
         
 

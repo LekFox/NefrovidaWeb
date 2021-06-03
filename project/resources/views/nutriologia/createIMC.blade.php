@@ -30,6 +30,14 @@
 
 <div class="row">
     <div class="col-1"></div>
+    <div class="col-10">
+        <div class="form-group">
+            <label for="peso">Fecha de la consulta</label>
+            <input class="date form-control" type="date" name="fecha" value="{{ isset($consulta->fecha)?$consulta->fecha:old('fecha') }}" id="fecha">    
+        </div>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-1"></div>
     <div class="col-5">
         <div class="form-group">
             <label for="peso">Peso (kg)</label>
