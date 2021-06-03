@@ -31,14 +31,10 @@
       <div class="col 1">
        
           <label for="Fecha">Fecha</label>
-          <input class="date form-control" type="date" name="fecha" value="{{ isset($notas->fecha)?$notas->fecha:old('fecha') }}" id="fecha">    
+          <input class="date form-control" type="date" name="fecha" value="{{ isset($jornada->fecha)?$jornada->fecha:old('fecha') }}" id="fecha">    
       </div>
-      <div class="col 12">
-  
-      </div>
-      </div>
-     
     </div>
+</div>
 
 {{-- <div class="form-group">
     <label for="Fecha">Fecha</label>

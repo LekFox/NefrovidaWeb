@@ -70,6 +70,8 @@ class CreateExamenOrinasTable extends Migration
                 ->nullable();
             $table->string('observaciones', 200)
                 ->nullable();
+            $table->date("fecharegistro")
+                ->nullable();
             $table->timestamps();
         });
     }

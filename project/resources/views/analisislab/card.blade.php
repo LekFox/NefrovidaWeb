@@ -27,7 +27,7 @@
                 <tbody id="dynamic-row">
                     @foreach ($ExamenesOrina as $examenorina)
                     <tr>
-                        <td id="center">{{$examenorina->created_at}}</td>
+                        <td id="center">{{$examenorina->fecharegistro}}</td>
                         <td id="center">
                             <a href="{{url('/examenorina/'.$examenorina->id)}}" class="btn btn-outline-dark">
                                 Consultar

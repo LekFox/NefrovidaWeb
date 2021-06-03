@@ -42,42 +42,6 @@ class ExamenOrinaController extends Controller
             'beneficiario_id' => 'required',
         ]);
 
-        if (request('nitritos') == null) {
-            $nitritos = '0.2';
-        }
-        else {
-            $nitritos = request('nitritos');
-        }
-        if (request('glucosa') == null) {
-            $glucosa = '0.2';
-        }
-        else {
-            $glucosa = request('glucosa');
-        }
-        if (request('proteinas') == null) {
-            $proteinas = '0.2';
-        }
-        else {
-            $proteinas = request('proteinas');
-        }
-        if (request('hemoglobina') == null) {
-            $hemoglobina = '0.2';
-        }
-        else {
-            $hemoglobina = request('hemoglobina');
-        }
-        if (request('cuerposCetonicos') == null) {
-            $cuerposCetonicos = '0.2';
-        }
-        else {
-            $cuerposCetonicos = request('cuerposCetonicos');
-        }
-        if (request('bilirribuna') == null) {
-            $bilirribuna = '0.2';
-        }
-        else {
-            $bilirribuna = request('bilirribuna');
-        }
         if (request('urobilinogeno') == null) {
             $urobilinogeno = '0.2';
         }
@@ -91,12 +55,12 @@ class ExamenOrinaController extends Controller
             'aspecto' => request('aspecto'),
             'ph' => request('ph'),
             'densidad' => request('densidad'),
-            'nitritos' => $nitritos,
-            'glucosa' => $glucosa,
-            'proteinas' => $proteinas,
-            'hemoglobina' => $hemoglobina,
-            'cuerposCetonicos' => $cuerposCetonicos,
-            'bilirribuna' => $bilirribuna,
+            'nitritos' => request('nitritos'),
+            'glucosa' => request('glucosa'),
+            'proteinas' => request('proteinas'),
+            'hemoglobina' => request('hemoglobina'),
+            'cuerposCetonicos' => request('cuerposCetonicos'),
+            'bilirribuna' => request('bilirribuna'),
             'urobilinogeno' => $urobilinogeno,
             'leucocitos' => request('leucocitos'),
             'eritrocitosIntactos' => request('eritrocitosIntactos'),
@@ -109,6 +73,7 @@ class ExamenOrinaController extends Controller
             'nota' => request('nota'),
             'metodo' => request('metodo'),
             'observaciones' => request('observaciones'),
+            'fecharegistro' => request('fecharegistro'),
         ]);
 
          $id = request('beneficiario_id');
@@ -180,6 +145,7 @@ class ExamenOrinaController extends Controller
             'nota' => request('nota'),
             'metodo' => request('metodo'),
             'observaciones' => request('observaciones'),
+            'fecharegistro' => request('fecharegistro'),
         ]);
 
         return redirect('examenorina/'.$id)->with('editado','Cambios realizados con éxito');
