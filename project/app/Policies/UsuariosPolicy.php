@@ -43,6 +43,11 @@ class UsuariosPolicy
         return $user -> rol == 'Administrador';
     }
 
+    public function nutriologo(User $user)
+    {
+        return $user -> rol == 'Nutriologo';
+    }
+
     /**
      * Determine whether the user can update the model.
      *

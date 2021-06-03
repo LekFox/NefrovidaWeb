@@ -57,6 +57,7 @@
                 <h2 class="card-title ">Consulta Nefropediatría</h2>
           </div>
           <div class="col text-right">
+          @cannot('nutriologo', App\Models\User::class)
                 <a href="{{url('/nefropediatria/'.$nefropediatria->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
                 <form action="{{url('/nefropediatria/'.$nefropediatria->id)}}" class="d-inline" method="post">
                     @csrf
@@ -64,6 +65,7 @@
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $nefropediatria->beneficiario->id }}">
                     <button type="submit" onclick="return confirm('¿Quiere Borrar la Consulta de Nefropediatría?')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
+          @endcannot
           </div>
         </div>
         <div class="container">

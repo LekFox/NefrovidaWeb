@@ -7,6 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
         <h1 id="JornadaTitulo" class="bluenefro"><i class="bi bi-house-door-fill"></i> Inicio</h1>
+        <br>
             <div class="card">
 
                 <div class="card-body">
@@ -23,8 +24,8 @@
                         <img src="/img/jornada1.svg" class="w-50 bluenefro" alt="...">
                     </a>
                     <div class="carousel-caption d-none d-md-block">
-                        <h1 class="bluenefro font-weight-bold">Jornadas</h1>
-                        <h5 class="bluenefro">Haga clic en la imagen o <a href="jornada">aquí</a> para ir a las jornadas.</h5>
+                        <h1 class="whitenefro font-weight-bold">Jornadas</h1>
+                        
                     </div>
                     </div>
                     <div class="carousel-item">
@@ -32,8 +33,8 @@
                         <img src="/img/beneficiario.svg" class="w-50" alt="...">
                     </a>
                     <div class="carousel-caption d-none d-md-block">
-                        <h1 class="bluenefro font-weight-bold">Beneficiarios</h1>
-                        <h5 class="bluenefro">Haga clic en la imagen o <a href="beneficiario">aquí</a> para ir a los beneficiarios.</h5>
+                        <h1 class="whitenefro font-weight-bold">Beneficiarios</h1>
+                        
                     </div>
                     </div>
                     <div class="carousel-item">

@@ -7,10 +7,15 @@
             <div class= "col text-center">
                 <h2><i class="bi bi-eyedropper greennefro"></i> Análisis de Laboratorio</h2> 
             </div>
+            
             <div class= "col text-right">
-                <a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Análisis</a>
+                
+                    <a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Análisis</a>
+               
             </div>
+            
             <br><br>
+            
         </div>
         <h3>General de Orina</h3>
         <div class="row">
@@ -32,15 +37,19 @@
                             <a href="{{url('/examenorina/'.$examenorina->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
+                            @cannot('nutriologo', App\Models\User::class)
                             <a href="{{url('/examenorina/'.$examenorina->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
+                            @endcannot
+                            @cannot('nutriologo', App\Models\User::class)
                             <form action="{{url('/examenorina/'.$examenorina->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
                                 <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
                                 <input type="submit" onclick="return confirm('¿Quieres borrar el E.G.O.? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
+                            @endcannot
                         </td>
                     </tr>
                     @endforeach 
@@ -71,6 +80,7 @@
                             <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
+                            @cannot('nutriologo', App\Models\User::class)
                             <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
@@ -80,6 +90,7 @@
                                 <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
                                 <input type="submit" onclick="return confirm('¿Quieres borrar la Depuración de creatinina en orina de 24 h?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
+                            @endcannot
                         </td>
                     </tr>
                     @endforeach 
@@ -110,6 +121,7 @@
                             <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
+                            @cannot('nutriologo', App\Models\User::class)
                             <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
@@ -119,6 +131,7 @@
                                 <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
                                 <input type="submit" onclick="return confirm('¿Quieres borrar la Química sanguinea?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
+                            @endcannot
                         </td>
                     </tr>
                     @endforeach 
@@ -149,6 +162,7 @@
                             <a href="{{url('/micro/'.$micro->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
+                            @cannot('nutriologo', App\Models\User::class)
                             <a href="{{url('/micro/'.$micro->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
@@ -158,6 +172,7 @@
                                 <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
                                 <input type="submit" onclick="return confirm('¿Quiere Borrar el Análisis de Microalbuminuria?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
+                            @endcannot
                         </td>
                     </tr>
                     @endforeach 

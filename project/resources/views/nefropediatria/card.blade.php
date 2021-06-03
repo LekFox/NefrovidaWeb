@@ -8,7 +8,9 @@
                     <h2><i class="bi bi-x-diamond greennefro"></i> Nefropediatría</h2> 
                 </div>
                 <div class= "col text-right">
-                    <a href= "{{url('/beneficiario/'.$beneficiario->id.'/nefropediatria/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
+                    @cannot('nutriologo', App\Models\User::class)
+                        <a href= "{{url('/beneficiario/'.$beneficiario->id.'/nefropediatria/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
+                    @endcannot
                 </div>
                 <br><br>
             </div>
@@ -40,6 +42,7 @@
                             <a href= "{{url('/nefropediatria/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
+                            @cannot('nutriologo', App\Models\User::class)
                             <a href="{{url('/nefropediatria/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
@@ -48,6 +51,7 @@
                                 {{ @method_field('DELETE') }}
                                 <input type="submit" onclick="return confirm('¿Quiere Borrar la Consulta de Nefropediatría?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
+                            @endcannot
                         </td>
                     </tr>
                     @endforeach 

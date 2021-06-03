@@ -4,6 +4,8 @@
 
 @include('sidebar.beneficiario')
 
+@cannot('nutriologo', App\Models\User::class)
+
 <div class="container"><form action="{{url('/nefropediatria/'.$nefropediatria->id)}}" method="post">
   @csrf
   {{ method_field('PATCH') }}
@@ -264,4 +266,11 @@
 
 </form>
 </div>
+@else
+
+<div class="container">
+<br><br><br><br><br><br>
+    <h2 class="text-center">ERROR: El personal de nutriología no puede editar registros de nefropediatría, contacte al administrador.</h2>
+</div>
+@endif
 @endsection

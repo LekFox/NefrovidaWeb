@@ -28,7 +28,7 @@
           <div class= "col-sm">
                 <h2 class="card-title bluenefro">{{ $jornada->nombre }}</h2>
                 <br><br>
-                <h3 class="font-weight-light">Estado: {{ $jornada->estado }}</h3>
+                <!-- <h3 class="font-weight-light">Estado: {{ $jornada->estado }}</h3> -->
                 <h3 class="font-weight-light">Municipio: {{ $jornada->municipio }}</h3>
                 <h3 class="font-weight-light">Localidad: {{ $jornada->localidad }}</h3>
                 <h3 class="font-weight-light">Fecha: {{ $jornada->fecha }}</h3>
