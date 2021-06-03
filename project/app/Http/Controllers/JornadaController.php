@@ -167,6 +167,41 @@ class JornadaController extends Controller
         
         $jornada = Jornada::find($jornadaId);
         $jornada->beneficiarios()->attach(request('beneficiario_id'));
-        return redirect('jornada')->with('asignado','Beneficiario asignado con éxito');
+        return redirect('jornada/'.$jornadaId)->with('asignado','Beneficiario asignado con éxito');
+    }
+
+    public function anadirNuevoBeneficiario($id){
+        $jornada = Jornada::find($id);
+        return view('jornada.createBeneficiario', ["jornada" => $jornada]);
+    }
+
+    public function asignarNuevoBeneficiario(Request $request){
+        request()->validate([
+            'nombreBeneficiario' => 'required',
+            'jornada_id' => 'required|numeric',
+            'fechaNacimiento' => 'required',
+            'sexo' => 'required',
+            'telefono' => 'required|numeric',
+            'direccion' => 'nullable',
+            'escolaridade_id' => 'required',
+            'estatus' => 'required',
+            'seguimiento' => 'required',
+        ]);
+    
+
+        $beneficiario = Beneficiario::create([
+            'nombreBeneficiario' => request('nombreBeneficiario'),
+            'fechaNacimiento' => request('fechaNacimiento'),
+            'sexo' => request('sexo'),
+            'telefono' => request('telefono'),
+            'direccion' => request('direccion'),
+            'escolaridade_id' => request('escolaridade_id'),
+            'estatus' => request('estatus'),
+            'seguimiento' => request('seguimiento'),
+        ]);
+
+        $beneficiario->jornadas()->attach(request('jornada_id'));
+
+        return redirect('jornada/'.request('jornada_id'))->with('nuevo','Beneficiario agregada con éxito');
     }
 }

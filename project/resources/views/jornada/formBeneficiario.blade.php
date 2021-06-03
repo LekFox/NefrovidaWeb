@@ -17,10 +17,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
-@if ($modo == "Editar")
-    <a href="{{ url('beneficiario/'.$beneficiario->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
-@elseif ($modo == "Crear")
-    <a href="{{ url('beneficiario') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+@if ($modo == "Crear")
+    <a href="{{ url('jornada/'.$jornada->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 @else
     <a href="{{ url('beneficiario') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 @endif
@@ -32,35 +30,21 @@
 <input type="text" class="form-control" name="nombreBeneficiario" value="{{isset($beneficiario) ? $beneficiario->nombreBeneficiario: ''}}" id="nombreBeneficiario">
 
 </div>
-@if(empty($jornadas))
-  <fieldset disabled>
-@endif
 
 <div class="form-group">
 
 <label for="jornada_id">Jornada</label>
-    @if(empty($jornadas))
-        <select id="disabledSelect" class="custom-select">
-        <option selected>No existen jornadas</option>
-    @else
-        <select name="jornada_id" id="jornada_id" class="custom-select">
-        @if ($modo == "Editar")
-            {{-- Checa si se paso un beneficiario como argumento y si 
-            este beneficiario tiene una entrada en la tabla pivote beneficiario_jornada --}}
-            <option value="{{isset($beneficiario) && $beneficiario->jornadas->isEmpty() == false ? $beneficiario->jornadas[0]->pivot->jornada_id: ''}}" selected>{{$beneficiario->jornadas->isEmpty() ? "Selecciona una jornada" : $beneficiario->getJornadaName()}}</option>
-        @elseif ($modo == "Crear")
-            <option selected>Selecciona una Jornada</option>
-        @endif
+    <select name="jornada_id" id="jornada_id" class="custom-select">
+    @if ($modo == "Editar")
+        {{-- Checa si se paso un beneficiario como argumento y si 
+        este beneficiario tiene una entrada en la tabla pivote beneficiario_jornada --}}
+        <option value="{{isset($beneficiario) && $beneficiario->jornadas->isEmpty() == false ? $beneficiario->jornadas[0]->pivot->jornada_id: ''}}" selected>{{$beneficiario->jornadas->isEmpty() ? "Selecciona una jornada" : $beneficiario->getJornadaName()}}</option>
+    @elseif ($modo == "Crear")
+        <option value="{{isset($jornada) ? $jornada->id: ''}}" selected>{{isset($jornada) ? $jornada->nombre: 'Selecciona su jornada'}}</option>
     @endif
-    @foreach($jornadas as $jornada)
-        <option value={{$jornada['id']}}>{{$jornada['nombre']}}</option>
-    @endforeach
 </select>
 
 </div>
-@if(empty($jornadas))
-  </fieldset>
-@endif
 
 <div class="form-group">
     <label for="fechaNacimiento">Fecha de nacimiento</label>

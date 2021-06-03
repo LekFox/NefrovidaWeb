@@ -22,7 +22,7 @@
     <div class = "col-1">
     </div>
     <div class = "col">
-    <h3 class="text-center">Examen de Orina de</h3>
+    <h3 class="text-center"></h3>
     </div>
     <div class = "col-3">
     </div>
@@ -68,7 +68,7 @@
     <div class="col-2">
     </div>
     <div class="col-4">
-        <textarea type="number" class="form-control" placeholder="Superficie Corporal (m2)" id="superficieCorporal" name="superficieCorporal" maxlength="200" rows="1"></textarea>
+        <textarea type="number" class="form-control" placeholder="Calculo automático" id="superficieCorporal" name="superficieCorporal" maxlength="200" rows="1"></textarea>
     </div>
 </div>
 
@@ -220,7 +220,7 @@
 </div>
 <div class="form-row">
     <div class="col-4">
-        <textarea type="number" class="form-control" placeholder="Depuración de Creatina" id="creatininaDepuracion" name="creatininaDepuracion" maxlength="200" rows="1"></textarea>
+        <textarea type="number" class="form-control" placeholder="Calculo automático" id="creatininaDepuracion" name="creatininaDepuracion" maxlength="200" rows="1"></textarea>
     </div>
     <div class="col-2">
     </div>

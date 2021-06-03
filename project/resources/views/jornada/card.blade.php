@@ -10,6 +10,7 @@
         @endforeach 
         </ul>
     </div>
+
     
 @endif
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"/>
@@ -47,7 +48,7 @@
                     
                 </div>
                 <div class= "pt-xl-5">
-                    <a href="{{ url('beneficiario/create') }}">
+                    <a href="{{ url('jornada/'.$jornada->id.'/anadirNuevoBeneficiario') }}">
                     <button type="button" class="btn btn-success">
                         Añadir nuevo beneficiario
                     </button>
