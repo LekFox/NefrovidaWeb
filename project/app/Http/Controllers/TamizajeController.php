@@ -42,7 +42,6 @@ class TamizajeController extends Controller
             'beneficiario_id' => 'required',
             'sistolica' => 'required',
             'diastolica' => 'required',
-            'glucosaCapilar' => 'required',
             'talla' => 'required',
             'peso' => 'required',
         ]);
@@ -119,7 +118,6 @@ class TamizajeController extends Controller
             'id' => 'required',
             'sistolica' => 'required',
             'diastolica' => 'required',
-            'glucosaCapilar' => 'required',
             'talla' => 'required',
             'peso' => 'required',
         ]);

@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             //SIN LLAVES FORÁNEAS
             EscolaridadeSeeder::class,
+            UserSeeder::class,
             //USA LLAVES FORÁNEAS
         ]);
         // \App\Models\User::factory(10)->create();
