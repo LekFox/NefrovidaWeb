@@ -1,3 +1,4 @@
+@cannot('nutriologo', App\Models\User::class)
 
   @if (count($errors)>0)
       
@@ -456,3 +457,14 @@
 <div class="col text-center">
     <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i>Guardar</button>
 </div>
+
+@else
+
+<div class="container">
+<br><br><br><br><br><br>
+    <h2 class="text-center">ERROR: El personal de nutriología no puede editar registros de química sanguínea, contacte al administrador.</h2>
+</div>
+@endif
+
+
+

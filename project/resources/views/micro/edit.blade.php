@@ -4,6 +4,8 @@
 
 @include('sidebar.beneficiario')
 
+@cannot('nutriologo', App\Models\User::class)
+
 <div class="container"><form action="{{url('/micro/'.$micro->id)}}" method="post">
   @csrf
   {{ method_field('PATCH') }}
@@ -293,4 +295,14 @@
 
 </form>
 </div>
+@else
+
+<div class="container">
+<br><br><br><br><br><br>
+    <h2 class="text-center">ERROR: El personal de nutriología no puede editar registros de microalbuminuria, contacte al administrador.</h2>
+</div>
+@endif
+
+
+
 @endsection
