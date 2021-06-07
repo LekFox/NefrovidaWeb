@@ -89,7 +89,7 @@ Route::post('/beneficiarios/search', ['as' => 'search-beneficiarios', 'uses' => 
 Route::post('/beneficiarios/searchage', ['as' => 'search-beneficiarios-age', 'uses' => 'App\Http\Controllers\BeneficiarioController@searchBeneficiariosAge']);
 
 
-//Route::get('/usuarios',[App\Http\Controllers\registrarUsuariosController::class,'index'])->name('registrarUsuario')->middleware('auth');
+Route::get('/usuarios',[App\Http\Controllers\registrarUsuariosController::class,'index'])->name('registrarUsuario');
 
 Route::get('/beneficiario/{beneficiario}/datos', [BeneficiarioController::class, 'getBeneficiarioData'])->middleware('auth');
 //Route::get('/usuarios','App\Http\Controllers\registrarUsuariosController@index');

@@ -3,9 +3,6 @@
 @section('content')
 
 @include('sidebar.usuarios')
-
-@can('create', App\Models\User::class)
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -100,14 +97,4 @@
         </div>
     </div>
 </div>
-
-@else
-
-<div class="container">
-<br><br><br><br><br><br>
-    <h2 class="text-center">ERROR: Únicamente un administrador puede registrar nuevos usuarios en el sistema.</h2>
-</div>
-
-@endif
-
 @endsection

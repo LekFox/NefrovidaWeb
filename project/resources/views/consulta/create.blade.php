@@ -58,15 +58,19 @@
     <br>
     <form role="form" action="" method="post">
         <div class="row setup-content" id="step-1">
-
             <div class="col-1">
             </div>
-                <div class="col-10">
-                    <h3 class="text-center"><i class="bi bi-clipboard"></i> Padecimiento</h3>
-                    <br>
-                    <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
+            <div class="col-10">
+                <div class="form-group">
+                    <label for="peso">Fecha de la consulta</label>
+                    <input class="date form-control" type="date" name="fecha" value="{{ isset($consulta->fecha)?$consulta->fecha:old('fecha') }}" id="fecha">    
+                </div>
+                
+                <h3 class="text-center"><i class="bi bi-clipboard"></i> Padecimiento</h3>
+                <br>
+                <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
 
-                <div class="container">
+                    <div class="container">
                     <div class="form-group">
                         <label for="padecimiento">Padecimiento</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" name="padecimiento" value="{{ isset($consulta->padecimiento)?$consulta->padecimiento:old('padecimiento') }}" id="padecimiento" rows="6"></textarea>        
@@ -257,11 +261,11 @@
   <br>
 
   
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
       $('.date').datepicker({  
          format: 'yyyy-mm-dd'
        });  
-  </script>
+  </script> -->
   <script>
    $(document).ready(function () {
   var navListItems = $('div.setup-panel div a'),
