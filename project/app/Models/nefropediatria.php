@@ -11,6 +11,7 @@ class nefropediatria extends Model
 
     protected $fillable =[
         'beneficiario_id', 
+        'fecha', 
         'peso',
         'talla',
         'tension',

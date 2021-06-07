@@ -37,7 +37,7 @@
                 <tbody id="dynamic-row">
                     @foreach ($nefropediatria as $notas)
                     <tr>
-                        <td id="center">{{$notas->created_at}}</td>
+                        <td id="center">{{$notas->fecha}}</td>
                         <td id="center">
                             <a href= "{{url('/nefropediatria/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar

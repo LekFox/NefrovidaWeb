@@ -60,6 +60,22 @@
             
             <div class="container">
             <br>
+
+
+            <div class="row">
+                <div class="col-1">
+                </div>
+                <div class="col-10">
+                    <div class="form-group">
+                        <label for="fecha">Fecha Consulta</label>
+                        <input class="date form-control" type="date" name="fecha" value="{{ isset($nefropediatria->fecha)?$nefropediatria->fecha:old('fecha') }}" id="fecha">    
+                    </div>
+                </div>
+                <div class="col-1">
+                </div>
+            </div>
+
+
             <div class="row">
                 <div class="col-1">
                 </div>
@@ -204,11 +220,11 @@
   <br>
 
   
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
       $('.date').datepicker({  
          format: 'yyyy-mm-dd'
        });  
-  </script>
+  </script> -->
   <script>
    $(document).ready(function () {
   var navListItems = $('div.setup-panel div a'),

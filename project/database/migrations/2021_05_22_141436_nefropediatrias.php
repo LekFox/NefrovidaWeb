@@ -18,6 +18,7 @@ class nefropediatrias extends Migration
             $table->unsignedBigInteger('beneficiario_id')->nullable();
             $table->foreign("beneficiario_id")->references('id')->on('beneficiarios')->onDelete('set null');
   
+            $table->date("fecha")->nullable();
             $table->string("peso")->nullable();
             $table->string("talla")->nullable();
             $table->string("tension")->nullable();

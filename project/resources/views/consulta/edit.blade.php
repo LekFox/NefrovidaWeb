@@ -257,11 +257,11 @@
   <br>
 
   
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
       $('.date').datepicker({  
          format: 'yyyy-mm-dd'
        });  
-  </script>
+  </script> -->
   <script>
    $(document).ready(function () {
   var navListItems = $('div.setup-panel div a'),

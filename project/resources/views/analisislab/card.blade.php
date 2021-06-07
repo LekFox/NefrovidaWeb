@@ -157,7 +157,7 @@
                 <tbody id="dynamic-row">
                     @foreach ($microE as $micro)
                     <tr>
-                        <td id="center">{{$micro->created_at}}</td>
+                        <td id="center">{{$micro->fecha}}</td>
                         <td id="center">
                             <a href="{{url('/micro/'.$micro->id)}}" class="btn btn-outline-dark">
                                 Consultar

@@ -46,6 +46,20 @@
 <br>
 
 <div class="form-row">
+    <div class="col-2">
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label for="fecha">Fecha Análisis</label>
+            <input class="date form-control" type="date" name="fecha" value="{{ isset($micro->fecha)?$micro->fecha:old('fecha') }}" id="fecha">    
+        </div>
+    </div>
+    <div class="col-4">
+    </div>
+</div>
+<br>
+
+<div class="form-row">
     <div class="col-4">
     </div>
     <div class="col-1">
@@ -287,11 +301,11 @@
 <br>
 
   
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
       $('.date').datepicker({  
          format: 'yyyy-mm-dd'
        });  
-  </script>
+  </script> -->
 
 </form>
 </div>

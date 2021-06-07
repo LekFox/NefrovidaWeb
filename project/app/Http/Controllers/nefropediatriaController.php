@@ -43,6 +43,7 @@ class nefropediatriaController extends Controller
         ]);
 
         $nefropediatria= new nefropediatria([
+            'fecha'=> request('fecha'),
             'peso'=> request('peso'),
             'talla'=> request('talla'),
             'tension'=> request('tension'),
@@ -98,7 +99,16 @@ class nefropediatriaController extends Controller
         $nefropediatria=nefropediatria::findOrFail($id);
         
         $id=$nefropediatria->beneficiario_id;
+
+        if(request('fecha') != null){
+            $fecha = request('fecha');
+        }
+        else{
+            $fecha = $consulta->fecha;
+        }
+
         $success = $nefropediatria->update([
+            'fecha'=> $fecha,
             'peso'=> request('peso'),
             'talla'=> request('talla'),
             'tension'=> request('tension'),

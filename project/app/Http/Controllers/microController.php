@@ -56,6 +56,7 @@ class microController extends Controller
         }
         
         $micro = new micro([
+            'fecha' => request('fecha'),
             'microalbumina' => request('microalbumina'),
             'creatinina'=> request('creatinina'),
             'microalbuminaCreatinina' => $microalbuminaCreatinina,
@@ -114,8 +115,16 @@ class microController extends Controller
         else{
             $microalbuminaCreatinina = null;
         }
+
+        if(request('fecha') != null){
+            $fecha = request('fecha');
+        }
+        else{
+            $fecha = $consulta->fecha;
+        }
         
         $success = $micro->update([
+            'fecha'=> $fecha,
             'microalbumina' => request('microalbumina'),
             'creatinina'=> request('creatinina'),
             'microalbuminaCreatinina' => $microalbuminaCreatinina,

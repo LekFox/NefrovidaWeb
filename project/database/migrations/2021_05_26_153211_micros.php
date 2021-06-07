@@ -18,6 +18,7 @@ class Micros extends Migration
             $table->unsignedBigInteger('beneficiario_id')->nullable();
             $table->foreign("beneficiario_id")->references('id')->on('beneficiarios')->onDelete('set null');
 
+            $table->date("fecha")->nullable();
             $table->decimal('microalbumina', 5, 2)->nullable();
             $table->decimal('creatinina', 5, 2)->nullable();
             $table->string("microalbuminaCreatinina")->nullable();

@@ -78,6 +78,10 @@
                       </tr>
                 </thead>
                 <tbody>
+                <tr>
+                    <th>Fecha</th>
+                    <td>{{ $micro->fecha }}</td>
+                  </tr>
                   <tr>
                     <th>Micro Albumina (mg/dL)</th>
                     <td> 

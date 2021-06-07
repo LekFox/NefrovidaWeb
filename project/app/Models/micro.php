@@ -11,6 +11,7 @@ class micro extends Model
 
     protected $fillable =[
         'beneficiario_id', 
+        'fecha', 
         'microalbumina',
         'creatinina',
         'microalbuminaCreatinina',
