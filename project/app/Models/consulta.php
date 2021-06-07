@@ -11,6 +11,7 @@ class consulta extends Model
 
     protected $fillable =[
         'beneficiario_id', 
+        'fecha',
         'padecimiento',
         'brazoD',
         'brazoI',

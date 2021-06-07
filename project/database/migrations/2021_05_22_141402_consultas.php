@@ -18,6 +18,7 @@ class consultas extends Migration
             $table->unsignedBigInteger('beneficiario_id')->nullable();
             $table->foreign("beneficiario_id")->references('id')->on('beneficiarios')->onDelete('set null');
 
+            $table->date("fecha")->nullable();
             $table->text("padecimiento")->nullable();
             $table->string("brazoD")->nullable();
             $table->string("brazoI")->nullable();

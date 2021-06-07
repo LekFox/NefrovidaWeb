@@ -43,6 +43,7 @@ class consultaController extends Controller
         ]);
 
         $consulta= new consulta([
+            'fecha'=> request('fecha'),
             'padecimiento'=> request('padecimiento'),
             'brazoD'=> request('brazoD'),
             'brazoI'=> request('brazoI'),
@@ -104,7 +105,17 @@ class consultaController extends Controller
         $consulta=consulta::findOrFail($id);
         
         $id=$consulta->beneficiario_id;
+
+
+        if(request('fecha') != null){
+            $fecha = request('fecha');
+        }
+        else{
+            $fecha = $consulta->fecha;
+        }
+
         $success = $consulta->update([
+            'fecha'=> $fecha,
             'padecimiento'=> request('padecimiento'),
             'brazoD'=> request('brazoD'),
             'brazoI'=> request('brazoI'),

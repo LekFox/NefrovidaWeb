@@ -62,7 +62,7 @@
             </div>
             <div class="col-10">
                 <div class="form-group">
-                    <label for="peso">Fecha de la consulta</label>
+                    <label for="fecha">Fecha Consulta</label>
                     <input class="date form-control" type="date" name="fecha" value="{{ isset($consulta->fecha)?$consulta->fecha:old('fecha') }}" id="fecha">    
                 </div>
                 

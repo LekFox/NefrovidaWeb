@@ -62,6 +62,13 @@
     <form role="form" action="" method="post">
         <div class="row setup-content" id="step-1">
 
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="fecha">Fecha de la consulta</label>
+                        <input class="date form-control" type="date" name="fecha" value="{{ isset($consulta->fecha)?$consulta->fecha:old('fecha') }}" id="fecha">    
+                </div>
+            </div>
+
             <div class="col-1">
             </div>
                 <div class="col-10">

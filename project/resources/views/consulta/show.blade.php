@@ -72,6 +72,23 @@
             <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
+                        <th scope="col"><i class="bi bi-clipboard"></i>  Fecha Consulta</th>
+                        <th scope="col"></th>
+                      </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Fecha</th>
+                    <td>{{ $consulta->fecha }}</td>
+                  </tr>                
+                </tbody>
+              </table>
+        </div>
+       <br>
+        <div class="container">
+            <table class="table table-sm table-responsive-sm">
+                <thead>
+                    <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Padecimiento</th>
                         <th scope="col"></th>
                       </tr>
