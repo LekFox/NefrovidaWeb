@@ -44,8 +44,20 @@
 </div>
 
 <br>
+<div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-7">
+        <div class="form-group">
+            <label for="fecha">Fecha Evidencia</label>
+            <input class="date form-control" type="date" name="fecha" value="{{ isset($evidencia->fecha)?$evidencia>fecha:old('fecha') }}" id="fecha">    
+        </div>
+    </div>
+    <div class="col-3">
+    </div>
+</div>
 
-
+<br>
 
 <div class="form-row">
     <div class="col-4">
@@ -93,11 +105,11 @@
 <br>
 
   
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
       $('.date').datepicker({  
          format: 'yyyy-mm-dd'
        });  
-  </script>
+  </script> -->
 
 </form>
 </div>

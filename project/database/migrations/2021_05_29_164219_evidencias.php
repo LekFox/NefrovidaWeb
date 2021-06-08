@@ -18,6 +18,7 @@ class evidencias extends Migration
             $table->unsignedBigInteger('beneficiario_id')->nullable();
             $table->foreign("beneficiario_id")->references('id')->on('beneficiarios')->onDelete('set null');
   
+            $table->string("fecha")->nullable();
             $table->string("nombre")->nullable();
             $table->string("descripcion")->nullable();
             $table->string("file")->nullable(); 

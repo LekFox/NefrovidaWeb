@@ -75,6 +75,10 @@
                 </thead>
                 <tbody>
                   <tr>
+                    <th>Fecha</th>
+                    <td>{{ $evidencia->fecha }}</td>
+                  </tr> 
+                  <tr>
                     <th>Nombre</th>
                     <td>{{ $evidencia->nombre }}</td>
                   </tr>  

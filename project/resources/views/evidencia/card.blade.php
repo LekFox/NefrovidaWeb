@@ -37,7 +37,7 @@
                 <tbody id="dynamic-row">
                     @foreach ($evidencia as $notas)
                     <tr>
-                        <td id="center">{{$notas->created_at}}</td>
+                        <td id="center">{{$notas->fecha}}</td>
                         <td id="center">{{$notas->nombre}}</td>
                         <td id="center">{{$notas->descripcion}}</td>
                         <td id="center">

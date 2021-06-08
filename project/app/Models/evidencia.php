@@ -11,6 +11,7 @@ class evidencia extends Model
 
     protected $fillable =[
         'beneficiario_id', 
+        'fecha', 
         'nombre',
         'descripcion',
         'file',

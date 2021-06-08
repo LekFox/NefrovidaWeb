@@ -51,6 +51,7 @@ class evidenciaController extends Controller
         $request->file->move('assets', $filename);
         $evidencia->file=$filename;
 
+        $evidencia->fecha=$request->fecha;
         $evidencia->nombre=$request->nombre;
         $evidencia->descripcion=$request->descripcion;
 
