@@ -30,12 +30,12 @@ class RiesgosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         
-        $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
-        return view('factorDeRiesgo.create',$datos);
-
+        $beneficiario=Beneficiario::findOrFail($id);
+        
+        return view('factorDeRiesgo.create',compact('beneficiario'));
 
     }
 
@@ -83,7 +83,7 @@ class RiesgosController extends Controller
 
         $enfermedad = $request->input('enfermedad');
 
-        
+       
 
         FactorDeRiesgo::saveFactoresDeRiesgo($id, $data, $enfermedad);
 
@@ -107,13 +107,16 @@ class RiesgosController extends Controller
 
         $riesgos = FactorDeRiesgo::where('beneficiario_id',$id)->get();
 
-        
+       
 
         $beneficiario = Beneficiario::FindOrFail($id);
 
         //dd($riesgos);
         
         return view('factorDeRiesgo.show',['riesgos'=>$riesgos, 'beneficiario'=>$beneficiario]);
+
+        /*$antecedentes=Antecedente::findOrFail($id);
+        return view('antecedentes.show',compact('antecedentes'));*/
     }
 
     /**

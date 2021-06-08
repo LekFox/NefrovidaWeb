@@ -12,7 +12,7 @@
     <br><br>
     <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
     
-    <form action="{{url('/riesgos/'.$beneficiario->id)}}" class="d-inline" method="post">
+    <form action="{{url('riesgos/'.$beneficiario->id)}}" class="d-inline" method="post">
     @csrf
     {{ @method_field('DELETE') }}
     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">

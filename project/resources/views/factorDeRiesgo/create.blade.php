@@ -4,7 +4,7 @@
 
 @include('sidebar.beneficiario')
 
-<div class="container"><form action="{{url('/riesgos')}}" method="post">
+<div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/riesgos')}}" method="post"> 
   @csrf
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"/>
@@ -19,18 +19,7 @@
   <br>
   <br>
 
-
-  <div class="form-group"> 
-    <label for="beneficiario_id">Beneficiario</label>
-      <select  class="form-select" aria-label="Default select example" id="beneficiario_id"  name="beneficiario_id" required>
-        <option value="">Selecciona al beneficiario </option>
-        @foreach ($Beneficiario as $Beneficiario)
-        <option value={{$Beneficiario->id}}> {{$Beneficiario->nombreBeneficiario}}</option >
-        @endforeach
-        
-      </select>
-  </div>
-
+  <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
   <div class="form-group">
     <br><br>
     <h4>1.- ¿Padece Diabetes Mellitus?</h4>

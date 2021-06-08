@@ -24,8 +24,8 @@
             </div>
             <div class="col-sm text-center">
               <div class="dropdown ">
-              @if($beneficiario->factoresDeRiesgo == NULL)
-              <a href="{{ url('riesgos/create') }}" class="btn btn-primary btn-lg"><i class="bi bi-plus-circle"></i> Registrar Factores de Riesgo</a>
+              @if($beneficiario->factoresDeRiesgo == NULL) 
+              <a href="{{ url('/beneficiario/'.$beneficiario->id.'/riesgos/create') }}" class="btn btn-primary btn-lg"><i class="bi bi-plus-circle"></i> Registrar Factores de Riesgo</a>
               @endif
               @if($beneficiario->factoresDeRiesgo != NULL)
               <a href="{{ url('riesgos/'.$beneficiario->id)}}" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">

@@ -103,6 +103,7 @@ Route::resource('evaluacionInicial',EvaluacionInicialController::class)->middlew
 
 //Route::post('/evaluacion/storeFinal', ['uses' => 'App\Http\Controllers\EvaluacionController@storeFinal']);
 
+Route::resource('beneficiario.riesgos',RiesgosController::class)->middleware('auth');
 Route::resource('riesgos',RiesgosController::class)->middleware('auth');
 
 Route::resource('evaluacionFinal',EvaluacionFinalController::class)->middleware('auth');
