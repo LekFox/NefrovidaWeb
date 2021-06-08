@@ -18,20 +18,7 @@
   <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
   <br>
   <br>
-
-
-  <div class="form-group"> 
-    <label for="beneficiario_id">Beneficiario</label>
-      <select  class="form-select" aria-label="Default select example" id="beneficiario_id"  name="beneficiario_id" required>
-        <option value="">Selecciona al beneficiario </option>
-        @foreach ($Beneficiario as $Beneficiario)
-        <option value={{$Beneficiario->id}}> {{$Beneficiario->nombreBeneficiario}}</option >
-        @endforeach
-        
-      </select>
-  </div>
-  
-
+  <input type="hidden" id="beneficiario_id" name="beneficiario_id" value="{{ $beneficiario->id }}">
   <div class="form-group">
     <br><br>
     <h4>Sexo</h4>

@@ -27,7 +27,7 @@
             <div class="col-sm text-center">
               <div class="dropdown ">
               @if($beneficiario->evaluacionInicial == NULL)
-              <a href="{{ url('evaluacionInicial/create') }}" class="btn btn-primary btn-lg"><i class="bi bi-plus-circle"></i> Registrar Evaluación Inicial</a>
+              <a href="{{ url('beneficiario/'.$beneficiario->id.'/evaluacionInicial/create') }}" class="btn btn-primary btn-lg"><i class="bi bi-plus-circle"></i> Registrar Evaluación Inicial</a>
               @endif
               @if($beneficiario->evaluacionInicial != NULL)
               <a href="{{ url('evaluacionInicial/'.$beneficiario->id)}}" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">

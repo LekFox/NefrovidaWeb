@@ -24,10 +24,10 @@ class EvaluacionInicialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
-        return view('evaluacion.create', $datos);
+        $beneficiario=Beneficiario::findOrFail($id);
+        return view('evaluacion.create', compact('beneficiario'));
     }
 
     /**

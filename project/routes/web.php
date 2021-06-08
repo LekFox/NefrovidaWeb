@@ -98,6 +98,7 @@ Route::get('/beneficiario/{beneficiario}/datos', [BeneficiarioController::class,
 // Route::post('beneficiario/fetch', 'BeneficiarioController@fetch')->name('beneficiario.fetch');
 
 Route::resource('evaluacionInicial',EvaluacionInicialController::class)->middleware('auth');
+Route::resource('beneficiario.evaluacionInicial',EvaluacionInicialController::class)->middleware('auth');
 
 //Route::resource('preguntasEvaluacion',preguntasController::class)->middleware('auth');
 
