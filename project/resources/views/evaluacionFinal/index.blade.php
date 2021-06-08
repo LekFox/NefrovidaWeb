@@ -27,7 +27,7 @@
             <div class="col-sm text-center">
               <div class="dropdown ">
               @if($beneficiario->evaluacionFinal == NULL)
-              <a href="{{ url('evaluacionFinal/create') }}" class="btn btn-primary btn-lg"><i class="bi bi-plus-circle"></i> Registrar Evaluación Final</a>
+              <a href="{{ url('/beneficiario/'.$beneficiario->id.'/evaluacionFinal/create') }}" class="btn btn-primary btn-lg"><i class="bi bi-plus-circle"></i> Registrar Evaluación Final</a>
               @endif
               @if($beneficiario->evaluacionFinal != NULL)
               <a href="{{ url('evaluacionFinal/'.$beneficiario->id)}}" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">

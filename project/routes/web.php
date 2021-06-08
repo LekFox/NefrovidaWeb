@@ -108,3 +108,4 @@ Route::resource('beneficiario.riesgos',RiesgosController::class)->middleware('au
 Route::resource('riesgos',RiesgosController::class)->middleware('auth');
 
 Route::resource('evaluacionFinal',EvaluacionFinalController::class)->middleware('auth');
+Route::resource('beneficiario.evaluacionFinal',EvaluacionFinalController::class)->middleware('auth');
