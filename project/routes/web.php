@@ -12,7 +12,7 @@ use App\Http\Controllers\evaluacionController;
 use App\Http\Controllers\QuimicaSanguineaController;
 use App\Http\Controllers\microController;
 use App\Http\Controllers\DepuracionCreatininaController;
-use App\Http\Controllers\evaluacionFinalController;
+use App\Http\Controllers\EvaluacionFinalController;
 use App\Http\Controllers\NutricionConsultaController;
 
 use App\Http\Controllers\consultaController;
