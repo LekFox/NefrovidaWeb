@@ -70,6 +70,8 @@ class BeneficiarioController extends Controller
             'escolaridade_id' => 'required',
             'estatus' => 'required',
             'seguimiento' => 'required',
+            'descAfricana' => 'required',
+            'fecharegistro' => 'required',
         ]);
     
 
@@ -82,6 +84,8 @@ class BeneficiarioController extends Controller
             'escolaridade_id' => request('escolaridade_id'),
             'estatus' => request('estatus'),
             'seguimiento' => request('seguimiento'),
+            'descAfricana' => request('descAfricana'),
+            'fecharegistro' => request('fecharegistro'),
         ]);
 
         $beneficiario->jornadas()->attach(request('jornada_id'));
@@ -126,6 +130,8 @@ class BeneficiarioController extends Controller
             'escolaridade_id' => 'required',
             'estatus' => 'required',
             'seguimiento' => 'required',
+            'descAfricana' => 'required',
+            'fecharegistro' => 'required',
 
         ]);
         $beneficiario->update([
@@ -136,7 +142,9 @@ class BeneficiarioController extends Controller
             'direccion'  => $request->input('direccion'), 
             'escolaridade_id'  => $request->input('escolaridade_id'), 
             'estatus' => $request->input('estatus'),
-            'seguimiento' => $request->input('seguimiento')
+            'seguimiento' => $request->input('seguimiento'), 
+            'descAfricana' => $request->input('descAfricana'),
+            'fecharegistro' => $request->input('fecharegistro')
             ]);
         if ($beneficiario->jornadas->isEmpty())
         {

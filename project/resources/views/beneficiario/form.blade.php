@@ -131,6 +131,30 @@
     </select>
 </div>
 
+<div class="form-group">
+    <label for="estatus">Descendencia Africana</label>
+    <select name="descAfricana" class="custom-select" id="descAfricana">
+        @if($modo == 'Editar')
+            @if ($beneficiario->descAfricana == 1)
+                <option value="1" selected>Sí</option>
+            @else
+                <option value="0" selected>No</option>
+            @endif
+        @endif
+        <option value="0">No</option>
+        <option value="1">Sí</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col">
+            <label for="Fecha">Fecha de registro</label>
+            <input class="date form-control" type="date" name="fecharegistro" value="{{isset($beneficiario) && $beneficiario->fecharegistro != NULL ? $beneficiario->fecharegistro: ''}}" id="fecharegistro">    
+        </div>
+    </div>
+</div>
+
 <!--
     //Aun no estamos seguro que tipo de información es estatus
 

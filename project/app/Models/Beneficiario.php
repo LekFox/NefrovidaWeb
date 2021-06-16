@@ -11,7 +11,7 @@ class Beneficiario extends Model
     use HasFactory;
 
     protected $fillable =[
-        'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus', 'seguimiento'
+        'nombreBeneficiario', 'fechaNacimiento', 'sexo', 'telefono', 'direccion', 'escolaridade_id', 'estatus', 'seguimiento', 'descAfricana','fecharegistro'
     ];
 
     protected $table = "beneficiarios";
