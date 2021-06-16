@@ -72,6 +72,16 @@
             <table class="table table-sm table-responsive-sm">
                 <tbody>
                   <tr>
+                    <th>Fecha</th>
+                    <td> 
+                        @if($quimicasanguinea->fecharegistro == NULL)
+                          <p class="font-weight-light" >No registrado</p>
+                        @else
+                          <p class="font-weight-light" >{{ $quimicasanguinea->fecharegistro }}</p>
+                        @endif
+                    </td>
+                  </tr>
+                  <tr>
                     <th>Glucosa</th>
                     <td> 
                         @if($quimicasanguinea->glucosa == NULL)

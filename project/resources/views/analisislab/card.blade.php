@@ -75,7 +75,7 @@
                 <tbody id="dynamic-row">
                     @foreach ($DepuracionesCreatinina as $depuracioncreatinina)
                     <tr>
-                        <td id="center">{{$depuracioncreatinina->created_at}}</td>
+                        <td id="center">{{$depuracioncreatinina->fecharegistro}}</td>
                         <td id="center">
                             <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="btn btn-outline-dark">
                                 Consultar
@@ -116,7 +116,7 @@
                 <tbody id="dynamic-row">
                     @foreach ($QuimicasSanguinea as $quimicasanguinea)
                     <tr>
-                        <td id="center">{{$quimicasanguinea->created_at}}</td>
+                        <td id="center">{{$quimicasanguinea->fecharegistro}}</td>
                         <td id="center">
                             <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id)}}" class="btn btn-outline-dark">
                                 Consultar

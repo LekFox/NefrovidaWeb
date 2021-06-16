@@ -443,6 +443,18 @@
 <br>
 <br>
 
+<div class="form-group">
+    <div class="row">
+        <div class="col">
+            <label for="Fecha">Fecha de laboratorio</label>
+            <input class="date form-control" type="date" name="fecharegistro" id="fecharegistro">    
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
 <label for="comentario">Nota</label>
 <div class="form-group">
     <textarea class="form-control" id="nota" name="nota" maxlength="200" rows="2"></textarea>
@@ -453,3 +465,9 @@
 <div class="col text-center">
     <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
 </div>
+
+  <script type="text/javascript">
+      $('.date').datepicker({  
+         format: 'yyyy-mm-dd'
+       });  
+  </script>

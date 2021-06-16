@@ -11,7 +11,7 @@ class QuimicaSanguinea extends Model
     use HasFactory;
 
     protected $fillable = [
-        'beneficiario_id', 'glucosa', 'urea', 'bun', 'creatina', 'acidoUrico' , 'colesterolTotal', 'trigliceridos', 'nota', 'metodo',
+        'beneficiario_id', 'glucosa', 'urea', 'bun', 'creatina', 'acidoUrico' , 'colesterolTotal', 'trigliceridos', 'nota', 'metodo', 'fecharegistro',
     ];
 
     public function beneficiario()
