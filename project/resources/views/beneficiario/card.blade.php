@@ -35,7 +35,7 @@
                 @if($beneficiario->jornadas->isEmpty())
                 <h4 class="font-weight-light">Jornada: No asignado</h4>
                 @else
-                <h4 class="font-weight-light">Jornada: Asignado</h4>
+                <h4 class="font-weight-light">Jornada: <a href = "{{ url('jornada/'.$beneficiario->jornadas[0]->pivot->jornada_id) }}">{{ $beneficiario->getJornadaName() }}</a></h4>
                 @endif
             </div>
             <div class="col-sm">
