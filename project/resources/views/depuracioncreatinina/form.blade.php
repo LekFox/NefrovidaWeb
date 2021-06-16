@@ -292,7 +292,7 @@
     <div class="col-2">
     </div>
     <div class="col-6">
-        <input type="text" class="form-control" placeholder="Metodo" id="Metodo" name="Metodo" >
+        <input type="text" class="form-control" placeholder="Metodo" id="Metodo" name="Metodo" value="Turbidimetría">
     </div>
     <div class="col-2">
     </div>
