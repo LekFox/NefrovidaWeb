@@ -301,6 +301,18 @@
 <br>
 <br>
 
+<div class="form-group">
+    <div class="row">
+        <div class="col">
+            <label for="Fecha">Fecha de laboratorio</label>
+            <input class="date form-control" type="date" name="fecharegistro" value="{{isset($depuracioncreatinina) && $depuracioncreatinina->fecharegistro != NULL ? $depuracioncreatinina->fecharegistro: ''}}" id="fecharegistro">
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
 <label for="comentario">Nota</label>
 <div class="form-group">
     <textarea class="form-control" id="nota" name="nota" maxlength="200" rows="2">{{ isset($depuracioncreatinina->nota) ? $depuracioncreatinina->nota: '' }}</textarea>
@@ -318,3 +330,10 @@
     <h2 class="text-center">ERROR: El personal de nutriología no puede editar registros de depuración de creatinina, contacte al administrador.</h2>
 </div>
 @endif
+
+<script type="text/javascript">
+    $('.date').datepicker({  
+        format: 'yyyy-mm-dd'
+    });  
+</script>
+

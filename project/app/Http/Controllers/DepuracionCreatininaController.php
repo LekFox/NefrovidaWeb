@@ -48,6 +48,7 @@ class DepuracionCreatininaController extends Controller
             'creatininaDepuracion' => 'numeric|gte:0|nullable',
             'Metodo' => 'nullable',
             'nota' => 'nullable',
+            'fecharegistro' => 'required',
         ]);
         
         $superCorp = request('superficieCorporal');
@@ -77,6 +78,7 @@ class DepuracionCreatininaController extends Controller
             'nota'=> request('Metodo'),
             'metodo'=> request('nota'),
             'creatininaOrina' => request('creatininaOrina'),
+            'fecharegistro' => request('fecharegistro'),
         ]);
     
     $id = request('beneficiario_id');
@@ -126,6 +128,7 @@ class DepuracionCreatininaController extends Controller
             'creatininaDepuracion' => 'numeric|gte:0|nullable',
             'Metodo' => 'nullable',
             'nota' => 'nullable',
+            'fecharegistro' => 'required',
         ]);    
         
         //$superCorp = request('superficieCorporal');
@@ -151,6 +154,7 @@ class DepuracionCreatininaController extends Controller
             'nota'=> request('Metodo'),
             'metodo'=> request('nota'),
             'creatininaOrina' => request('creatininaOrina'),
+            'fecharegistro' => request('fecharegistro'),
         ]);
 
         return redirect('depuracioncreatinina/'.$id)->with('editado','Cambios realizados con éxito');

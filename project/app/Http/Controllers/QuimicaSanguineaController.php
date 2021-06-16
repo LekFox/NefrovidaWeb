@@ -48,6 +48,7 @@ class QuimicaSanguineaController extends Controller
             'trigliceridos' => 'numeric|gte:0|nullable',
             'Metodo' => 'nullable',
             'nota' => 'nullable',
+            'fecharegistro' => 'required',
         ]);
 
 
@@ -62,6 +63,7 @@ class QuimicaSanguineaController extends Controller
             'trigliceridos' => request('trigliceridos'),
             'nota'=> request('Metodo'),
             'metodo'=> request('nota'),
+            'fecharegistro' => request('fecharegistro'),
         ]);
 
     $id = request('beneficiario_id');
@@ -112,6 +114,7 @@ class QuimicaSanguineaController extends Controller
             'trigliceridos' => 'numeric|gte:0|nullable',
             'Metodo' => 'nullable',
             'nota' => 'nullable',
+            'fecharegistro' => 'required',
         ]);
 
             $quimicasanguinea = QuimicaSanguinea::findOrFail($id);
@@ -125,6 +128,7 @@ class QuimicaSanguineaController extends Controller
             'trigliceridos' => request('trigliceridos'),
             'nota'=> request('Metodo'),
             'metodo'=> request('nota'),
+            'fecharegistro' => request('fecharegistro'),
         ]);
 
         return redirect('quimicasanguinea/'.$id)->with('editado','Cambios realizados con éxito');
