@@ -18,7 +18,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
 
-<a href="{{ url('beneficiario') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+<a href="{{ url('beneficiario') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
 <br><br>
 <div class="card">
   <div class="card-body">
@@ -43,21 +43,55 @@
                     
                 </div>
                 <div class= "pt-xl-5">
+                    @can('social',App\Models\User::class)
                     <a href="{{url('/beneficiario/'.$beneficiario->id.'/edit')}}">
                     <button type="button" class="btn btn-primary">
                         Editar beneficiario
                     </button>
                     </a>
+                    @endcan
+                    @can('admin',App\Models\User::class)
+                    <a href="{{url('/beneficiario/'.$beneficiario->id.'/edit')}}">
+                    <button type="button" class="btn btn-primary">
+                        Editar beneficiario
+                    </button>
+                    </a>
+                    @endcan
+                    @can('procuracion',App\Models\User::class)
+                    <a href="{{url('/beneficiario/'.$beneficiario->id.'/edit')}}">
+                    <button type="button" class="btn btn-primary">
+                        Editar beneficiario
+                    </button>
+                    </a>
+                    @endcan
                 </div>
                 <div class= "pt-xl-2">
                     
                 </div>
                 <div class= "pt-xl-5">
+                @can('social',App\Models\User::class)
                     <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
                     @method('DELETE')
                     @csrf
                     <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-danger" value="Borrar">
                 </form>
+                @endcan
+
+                @can('admin',App\Models\User::class)
+                    <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-danger" value="Borrar">
+                </form>
+                @endcan
+
+                @can('procuracion',App\Models\User::class)
+                    <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-danger" value="Borrar">
+                </form>
+                @endcan
                 </div>
             </div>
         </div>

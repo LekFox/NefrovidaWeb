@@ -42,10 +42,40 @@ class UsuariosPolicy
     {
         return $user -> rol == 'Administrador';
     }
-
-    public function nutriologo(User $user)
+    
+    public function admin(User $user)
     {
-        return $user -> rol == 'Nutriologo';
+        return $user -> rol == 'Administrador';
+    }
+
+    public function procuracion(User $user)
+    {
+        return $user -> rol == 'Procuracion';
+    }
+
+    public function nutricion(User $user)
+    {
+        return $user -> rol == 'Nutricion';
+    }
+
+    public function psicologo(User $user)
+    {
+        return $user -> rol == 'Psicologia';
+    }
+
+    public function medica(User $user)
+    {
+        return $user -> rol == 'Medica';
+    }
+
+    public function social(User $user)
+    {
+        return $user -> rol == 'Social';
+    }
+
+    public function nefro(User $user)
+    {
+        return $user -> rol == 'Nefropediatria';
     }
 
     /**
