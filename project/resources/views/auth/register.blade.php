@@ -37,10 +37,19 @@
 
                                 <select name="rol" id="rol" class="form-control @error('rol') is-invalid @enderror" required>
                                     <option disabled selected value> -- Selecciona Un Rol -- </option>
-                                    <option value="Administrador">Administrador</option>
-                                    <option value="Medico">Médico</option>
-                                    <option value="Nutriologo">Nutriólogo</option>
+                                    <option value="Psicologia">Psicología</option>
+                                    <option value="Medica">Médica</option>
+                                    <option value="Nutricion">Nutrición</option>
+                                    <option value="Laboratorio">Laboratorio</option>
+                                    <option value="Social">Trabajo Social</option>
+                                    <option value="Nefropediatria">Nefropediatría</option>
+                                    <option value="Administrador">Dirección</option>
+                                    <option value="Procuracion">Procuración</option>
+
+                                    
+                                    
                                     <option value="Recepcion">Recepción</option>
+                                    
                                 </select>
 
                                 @error('rol')

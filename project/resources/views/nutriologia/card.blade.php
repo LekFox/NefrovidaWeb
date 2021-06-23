@@ -8,7 +8,17 @@
                     <h2><i class="bi bi-basket greennefro"></i> Nutrición</h2> 
                 </div>
                 <div class= "col text-right">
+                @can('nutricion', App\Models\User::class)
                     <a href= "{{url('/beneficiario/'.$beneficiario->id.'/nutricion/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
+                @endcan
+
+                @can('admin', App\Models\User::class)
+                    <a href= "{{url('/beneficiario/'.$beneficiario->id.'/nutricion/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
+                @endcan
+
+                @can('procuracion', App\Models\User::class)
+                    <a href= "{{url('/beneficiario/'.$beneficiario->id.'/nutricion/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
+                @endcan
                 </div>
                 <br><br>
             </div>
@@ -42,14 +52,47 @@
                             <a href= "{{url('/nutricion/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
+                            @can('nutricion', App\Models\User::class)
                             <a href="{{url('/nutricion/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
+                            
+                            
                             <form action="{{url('/nutricion/'.$notas->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
                                 <input type="submit" onclick="return confirm('¿Quieres borrar la consulta?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
+
+                            @endcan
+
+                            @can('admin', App\Models\User::class)
+                            <a href="{{url('/nutricion/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            
+                            
+                            <form action="{{url('/nutricion/'.$notas->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="submit" onclick="return confirm('¿Quieres borrar la consulta?')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+
+                            @endcan
+
+                            @can('procuracion', App\Models\User::class)
+                            <a href="{{url('/nutricion/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            
+                            
+                            <form action="{{url('/nutricion/'.$notas->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="submit" onclick="return confirm('¿Quieres borrar la consulta?')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+
+                            @endcan
                         </td>
                     </tr>
                     @endforeach 

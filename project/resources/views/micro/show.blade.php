@@ -59,6 +59,7 @@
                 <h2 class="card-title "><i class="bi bi-clipboard"></i> Análisis de Microalbuminuria</h2>
           </div>
           <div class="col text-right">
+          @can('lab', App\Models\User::class)
                 <a href="{{url('/micro/'.$micro->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
                 <form action="{{url('/micro/'.$micro->id)}}" class="d-inline" method="post">
                     @csrf
@@ -66,6 +67,27 @@
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $micro->beneficiario->id }}">
                     <button type="submit" onclick="return confirm('¿Quiere Borrar el Análisis de Microalbuminuria?')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
+          @endcan
+
+          @can('admin', App\Models\User::class)
+                <a href="{{url('/micro/'.$micro->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
+                <form action="{{url('/micro/'.$micro->id)}}" class="d-inline" method="post">
+                    @csrf
+                    {{ @method_field('DELETE') }}
+                    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $micro->beneficiario->id }}">
+                    <button type="submit" onclick="return confirm('¿Quiere Borrar el Análisis de Microalbuminuria?')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                </form>
+          @endcan
+
+          @can('procuracion', App\Models\User::class)
+                <a href="{{url('/micro/'.$micro->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
+                <form action="{{url('/micro/'.$micro->id)}}" class="d-inline" method="post">
+                    @csrf
+                    {{ @method_field('DELETE') }}
+                    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $micro->beneficiario->id }}">
+                    <button type="submit" onclick="return confirm('¿Quiere Borrar el Análisis de Microalbuminuria?')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                </form>
+          @endcan
           </div>
         </div>
         

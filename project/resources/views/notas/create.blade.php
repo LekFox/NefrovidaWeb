@@ -41,11 +41,52 @@
     <label for="tiponota">Tipo de nota</label>
     <select class="form-select" aria-label="Default select example" name="tiponota" id="tiponota">
       <option selected value="{{ isset($notas->tiponota)?$notas->tiponota:old('tiponota') }}">Selecciona uno</option>
+      
       <option value="General">General</option>
+
+      @can('medica', App\Models\User::class)
       <option value="Médica">Médica</option>
+      @endcan
+      @can('admin', App\Models\User::class)
+      <option value="Médica">Médica</option>
+      @endcan
+      @can('procuracion', App\Models\User::class)
+      <option value="Médica">Médica</option>
+      @endcan
+
+      @can('nutricion', App\Models\User::class)
       <option value="Nutrición">Nutrición</option>
+      @endcan
+      @can('admin', App\Models\User::class)
+      <option value="Nutrición">Nutrición</option>
+      @endcan
+      @can('procuracion', App\Models\User::class)
+      <option value="Nutrición">Nutrición</option>
+      @endcan
+
+      @can('lab', App\Models\User::class)
       <option value="Laboratorio">Laboratorio</option>
+      @endcan
+
+      @can('admin', App\Models\User::class)
+      <option value="Laboratorio">Laboratorio</option>
+      @endcan
+
+      @can('procuracion', App\Models\User::class)
+      <option value="Laboratorio">Laboratorio</option>
+      @endcan
+
+      @can('psicologo', App\Models\User::class)
       <option value="Psicología">Psicología</option>
+      @endcan
+
+      @can('admin', App\Models\User::class)
+      <option value="Psicología">Psicología</option>
+      @endcan
+
+      @can('procuracion', App\Models\User::class)
+      <option value="Psicología">Psicología</option>
+      @endcan
     </select>
   </div>
 

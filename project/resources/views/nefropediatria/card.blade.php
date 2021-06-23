@@ -5,12 +5,20 @@
                 <div class="col">
                 </div>
                 <div class= "col text-center">
-                    <h2><i class="bi bi-x-diamond greennefro"></i> Nefropediatría</h2> 
+                    <h2><i class="bi bi-x-diamond greennefro"></i> Nefropediatría </h2> 
                 </div>
                 <div class= "col text-right">
-                    @cannot('nutriologo', App\Models\User::class)
+                    @can('nefro', App\Models\User::class)
                         <a href= "{{url('/beneficiario/'.$beneficiario->id.'/nefropediatria/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
-                    @endcannot
+                    @endcan
+
+                    @can('admin', App\Models\User::class)
+                        <a href= "{{url('/beneficiario/'.$beneficiario->id.'/nefropediatria/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
+                    @endcan
+
+                    @can('procuracion', App\Models\User::class)
+                        <a href= "{{url('/beneficiario/'.$beneficiario->id.'/nefropediatria/create')}}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Consulta</a>
+                    @endcan
                 </div>
                 <br><br>
             </div>
@@ -42,7 +50,7 @@
                             <a href= "{{url('/nefropediatria/'.$notas->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            @cannot('nutriologo', App\Models\User::class)
+                            @can('nefro', App\Models\User::class)
                             <a href="{{url('/nefropediatria/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
@@ -51,7 +59,29 @@
                                 {{ @method_field('DELETE') }}
                                 <input type="submit" onclick="return confirm('¿Quiere Borrar la Consulta de Nefropediatría?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
-                            @endcannot
+                            @endcan
+
+                            @can('admin', App\Models\User::class)
+                            <a href="{{url('/nefropediatria/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            <form action="{{url('/nefropediatria/'.$notas->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="submit" onclick="return confirm('¿Quiere Borrar la Consulta de Nefropediatría?')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+                            @endcan
+
+                            @can('procuracion', App\Models\User::class)
+                            <a href="{{url('/nefropediatria/'.$notas->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            <form action="{{url('/nefropediatria/'.$notas->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="submit" onclick="return confirm('¿Quiere Borrar la Consulta de Nefropediatría?')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+                            @endcan
                         </td>
                     </tr>
                     @endforeach 

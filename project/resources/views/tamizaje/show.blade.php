@@ -57,6 +57,7 @@
                 <h2 class="card-title "><i class="bi bi-journal-medical"></i> Tamizaje</h2>
           </div>
           <div class="col text-right">
+            @can('nutricion', App\Models\User::class)
                 <a href="{{url('/tamizaje/'.$tamizaje->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
                 <form action="{{url('/tamizaje/'.$tamizaje->id)}}" class="d-inline" method="post">
                     @csrf
@@ -64,6 +65,27 @@
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $tamizaje->beneficiario->id }}">
                     <button type="submit" onclick="return confirm('¿Quieres borrar el tamizaje? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
+            @endcan
+
+            @can('admin', App\Models\User::class)
+                <a href="{{url('/tamizaje/'.$tamizaje->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
+                <form action="{{url('/tamizaje/'.$tamizaje->id)}}" class="d-inline" method="post">
+                    @csrf
+                    {{ @method_field('DELETE') }}
+                    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $tamizaje->beneficiario->id }}">
+                    <button type="submit" onclick="return confirm('¿Quieres borrar el tamizaje? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                </form>
+            @endcan
+
+            @can('procuracion', App\Models\User::class)
+                <a href="{{url('/tamizaje/'.$tamizaje->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
+                <form action="{{url('/tamizaje/'.$tamizaje->id)}}" class="d-inline" method="post">
+                    @csrf
+                    {{ @method_field('DELETE') }}
+                    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $tamizaje->beneficiario->id }}">
+                    <button type="submit" onclick="return confirm('¿Quieres borrar el tamizaje? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                </form>
+            @endcan
           </div>
         </div>
         <div class= "row">

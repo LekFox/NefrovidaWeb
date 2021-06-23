@@ -88,8 +88,19 @@
     </div>
     <br>
     <div class="row">
+    @can('social',App\Models\User::class)
         <div class="col-sm text-right">
-        <a id="beneficiarioAddB" href="{{ url('beneficiario/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Beneficiario</a>
+        <a id="beneficiarioAddB" href="{{ url('beneficiario/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Beneficiario </a>
+    @endcan
+    @can('admin',App\Models\User::class)
+        <div class="col-sm text-right">
+        <a id="beneficiarioAddB" href="{{ url('beneficiario/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Beneficiario </a>
+    @endcan
+    @can('procuracion',App\Models\User::class)
+        <div class="col-sm text-right">
+        <a id="beneficiarioAddB" href="{{ url('beneficiario/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Beneficiario </a>
+    @endcan
+    
     </div>
 </div>
 <br>
@@ -139,15 +150,47 @@
                 <a href="{{url('/beneficiario/'.$beneficiario->id)}}" class="btn btn-outline-dark">
                     Consultar
                 </a>
+                @can('social',App\Models\User::class)
                 <a href="{{url('/beneficiario/'.$beneficiario->id.'/edit')}}" class="btn btn-outline-secondary">
                     Editar
                 </a>
-                 
+                @endcan
+
+                @can('admin',App\Models\User::class)
+                <a href="{{url('/beneficiario/'.$beneficiario->id.'/edit')}}" class="btn btn-outline-secondary">
+                    Editar
+                </a>
+                @endcan
+
+                @can('procuracion',App\Models\User::class)
+                <a href="{{url('/beneficiario/'.$beneficiario->id.'/edit')}}" class="btn btn-outline-secondary">
+                    Editar
+                </a>
+                @endcan
+                
+                @can('social',App\Models\User::class)
                 <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
                     @method('DELETE')
                     @csrf
                     <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-outline-danger" value="Borrar">
                 </form>
+                @endcan
+
+                @can('admin',App\Models\User::class)
+                <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-outline-danger" value="Borrar">
+                </form>
+                @endcan
+
+                @can('procuracion',App\Models\User::class)
+                <form action="{{url('/beneficiario/'.$beneficiario->id)}}" class="d-inline" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <input type="submit" onclick="return confirm('¿Quieres borrar la beneficiario?')"  class="btn btn-outline-danger" value="Borrar">
+                </form>
+                @endcan
             </td>
         </tr>
         @endforeach

@@ -11,6 +11,8 @@
     </div>
     <br><br>
     <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
+
+    @can('social', App\Models\User::class)
     
     <form action="{{url('/evaluacionFinal/'.$beneficiario->id)}}" class="d-inline" method="post">
     @csrf
@@ -19,7 +21,30 @@
     <button type="submit" onclick="return confirm('¿Quieres borrar la Evaluación Final de {{$beneficiario->nombreBeneficiario}}? Esta acción no puede deshacerse.')" class="btn btn-outline-danger float-right"><i class="bi bi-trash-fill"></i> Eliminar Evaluación Final</button>
     </form>
     
+    @endcan
+
+    @can('admin', App\Models\User::class)
     
+    <form action="{{url('/evaluacionFinal/'.$beneficiario->id)}}" class="d-inline" method="post">
+    @csrf
+    {{ @method_field('DELETE') }}
+    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+    <button type="submit" onclick="return confirm('¿Quieres borrar la Evaluación Final de {{$beneficiario->nombreBeneficiario}}? Esta acción no puede deshacerse.')" class="btn btn-outline-danger float-right"><i class="bi bi-trash-fill"></i> Eliminar Evaluación Final</button>
+    </form>
+    
+    @endcan
+
+    @can('procuracion', App\Models\User::class)
+    
+    <form action="{{url('/evaluacionFinal/'.$beneficiario->id)}}" class="d-inline" method="post">
+    @csrf
+    {{ @method_field('DELETE') }}
+    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+    <button type="submit" onclick="return confirm('¿Quieres borrar la Evaluación Final de {{$beneficiario->nombreBeneficiario}}? Esta acción no puede deshacerse.')" class="btn btn-outline-danger float-right"><i class="bi bi-trash-fill"></i> Eliminar Evaluación Final</button>
+    </form>
+    
+    @endcan
+
     <br><br><br><br>
     <div class="text-left"> 
       <h4>

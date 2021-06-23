@@ -11,14 +11,33 @@
     </div>
     <br><br>
     <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
-    
+
+    @can('social', App\Models\User::class)
     <form action="{{url('riesgos/'.$beneficiario->id)}}" class="d-inline" method="post">
     @csrf
     {{ @method_field('DELETE') }}
     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
     <button type="submit" onclick="return confirm('¿Quieres borrar los factores de riesgo de {{$beneficiario->nombreBeneficiario}}? Esta acción no puede deshacerse.')" class="btn btn-outline-danger float-right"><i class="bi bi-trash-fill"></i> Eliminar Factores de Riesgo</button>
     </form>
-    
+    @endcan
+
+    @can('admin', App\Models\User::class)
+    <form action="{{url('riesgos/'.$beneficiario->id)}}" class="d-inline" method="post">
+    @csrf
+    {{ @method_field('DELETE') }}
+    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+    <button type="submit" onclick="return confirm('¿Quieres borrar los factores de riesgo de {{$beneficiario->nombreBeneficiario}}? Esta acción no puede deshacerse.')" class="btn btn-outline-danger float-right"><i class="bi bi-trash-fill"></i> Eliminar Factores de Riesgo</button>
+    </form>
+    @endcan
+
+    @can('procuracion', App\Models\User::class)
+    <form action="{{url('riesgos/'.$beneficiario->id)}}" class="d-inline" method="post">
+    @csrf
+    {{ @method_field('DELETE') }}
+    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+    <button type="submit" onclick="return confirm('¿Quieres borrar los factores de riesgo de {{$beneficiario->nombreBeneficiario}}? Esta acción no puede deshacerse.')" class="btn btn-outline-danger float-right"><i class="bi bi-trash-fill"></i> Eliminar Factores de Riesgo</button>
+    </form>
+    @endcan
     
     <br><br><br><br>
     <div class="text-left"> 

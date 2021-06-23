@@ -18,7 +18,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
 @if ($modo == "Crear")
-    <a href="{{ url('jornada/'.$jornada->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
+    <a href="{{ url('jornada/'.$jornada->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
 @else
     <a href="{{ url('beneficiario') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
 @endif
