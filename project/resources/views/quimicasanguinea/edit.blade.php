@@ -481,9 +481,10 @@
 
 
 
-  <script type="text/javascript">
+ <!-- <script type="text/javascript">
       $('.date').datepicker({  
          format: 'yyyy-mm-dd'
        });  
-  </script>
+  </script>-->
+  
   

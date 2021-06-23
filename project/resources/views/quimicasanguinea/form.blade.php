@@ -466,8 +466,9 @@
     <button class="btn btn-success" type="submit"><i class="bi bi-pencil-square"></i> Registrar</button>
 </div>
 
-  <script type="text/javascript">
+ <!-- <script type="text/javascript">
       $('.date').datepicker({  
          format: 'yyyy-mm-dd'
        });  
-  </script>
+  </script>-->
+  
