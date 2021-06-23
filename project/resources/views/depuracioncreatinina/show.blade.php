@@ -55,7 +55,7 @@
             <h2 class="card-title "><i class="bi bi-clipboard"></i> Depuración de Creatinina en Orina de 24 Hrs </h2>
           </div>
           <div class="col text-right">
-          @cannot('nutriologo', App\Models\User::class)
+          @can('lab', App\Models\User::class)
                 <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
                 <form action="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="d-inline" method="post">
                     @csrf
@@ -63,7 +63,27 @@
                     <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $depuracioncreatinina->beneficiario->id }}">
                     <button type="submit" onclick="return confirm('¿Quieres borrar la Depuración de Creatinina en Orina de 24 Hrs? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
                 </form>
-          @endcannot
+          @endcan
+
+          @can('admin', App\Models\User::class)
+                <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
+                <form action="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="d-inline" method="post">
+                    @csrf
+                    {{ @method_field('DELETE') }}
+                    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $depuracioncreatinina->beneficiario->id }}">
+                    <button type="submit" onclick="return confirm('¿Quieres borrar la Depuración de Creatinina en Orina de 24 Hrs? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                </form>
+          @endcan
+
+          @can('procuracion', App\Models\User::class)
+                <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>
+                <form action="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="d-inline" method="post">
+                    @csrf
+                    {{ @method_field('DELETE') }}
+                    <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $depuracioncreatinina->beneficiario->id }}">
+                    <button type="submit" onclick="return confirm('¿Quieres borrar la Depuración de Creatinina en Orina de 24 Hrs? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button>
+                </form>
+          @endcan
           </div>
         </div>        
 

@@ -78,6 +78,11 @@ class UsuariosPolicy
         return $user -> rol == 'Nefropediatria';
     }
 
+    public function lab(User $user)
+    {
+        return $user -> rol == 'Laboratorio';
+    }
+
     /**
      * Determine whether the user can update the model.
      *

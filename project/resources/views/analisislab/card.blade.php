@@ -9,9 +9,20 @@
             </div>
             
             <div class= "col text-right">
+            @can('lab', App\Models\User::class)
                 
                     <a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Análisis</a>
-               
+            @endcan
+
+            @can('admin', App\Models\User::class)
+                
+                    <a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Análisis</a>
+            @endcan
+
+            @can('procuracion', App\Models\User::class)
+                
+                    <a href="{{ url('/beneficiario/'.$beneficiario->id.'/analisislab') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Análisis</a>
+            @endcan
             </div>
             
             <br><br>
@@ -37,19 +48,47 @@
                             <a href="{{url('/examenorina/'.$examenorina->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            @cannot('nutriologo', App\Models\User::class)
+                            @can('lab', App\Models\User::class)
                             <a href="{{url('/examenorina/'.$examenorina->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
-                            @endcannot
-                            @cannot('nutriologo', App\Models\User::class)
+                            
+                           
                             <form action="{{url('/examenorina/'.$examenorina->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{ @method_field('DELETE') }}
                                 <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
                                 <input type="submit" onclick="return confirm('¿Quieres borrar el E.G.O.? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
-                            @endcannot
+                            @endcan
+
+                            @can('admin', App\Models\User::class)
+                            <a href="{{url('/examenorina/'.$examenorina->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            
+                           
+                            <form action="{{url('/examenorina/'.$examenorina->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quieres borrar el E.G.O.? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+                            @endcan
+
+                            @can('procuracion', App\Models\User::class)
+                            <a href="{{url('/examenorina/'.$examenorina->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            
+                           
+                            <form action="{{url('/examenorina/'.$examenorina->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quieres borrar el E.G.O.? Esta acción no puede deshacerse.')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+                            @endcan
                         </td>
                     </tr>
                     @endforeach 
@@ -80,7 +119,7 @@
                             <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            @cannot('nutriologo', App\Models\User::class)
+                            @can('lab', App\Models\User::class)
                             <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
@@ -90,7 +129,31 @@
                                 <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
                                 <input type="submit" onclick="return confirm('¿Quieres borrar la Depuración de creatinina en orina de 24 h?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
-                            @endcannot
+                            @endcan
+
+                            @can('admin', App\Models\User::class)
+                            <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            <form action="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quieres borrar la Depuración de creatinina en orina de 24 h?')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+                            @endcan
+
+                            @can('procuracion', App\Models\User::class)
+                            <a href="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            <form action="{{url('/depuracioncreatinina/'.$depuracioncreatinina->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quieres borrar la Depuración de creatinina en orina de 24 h?')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+                            @endcan
                         </td>
                     </tr>
                     @endforeach 
@@ -121,7 +184,7 @@
                             <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            @cannot('nutriologo', App\Models\User::class)
+                            @can('lab', App\Models\User::class)
                             <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
@@ -131,7 +194,31 @@
                                 <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
                                 <input type="submit" onclick="return confirm('¿Quieres borrar la Química sanguinea?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
-                            @endcannot
+                            @endcan
+
+                            @can('admin', App\Models\User::class)
+                            <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            <form action="{{url('/quimicasanguinea/'.$quimicasanguinea->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quieres borrar la Química sanguinea?')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+                            @endcan
+
+                            @can('procuracion', App\Models\User::class)
+                            <a href="{{url('/quimicasanguinea/'.$quimicasanguinea->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            <form action="{{url('/quimicasanguinea/'.$quimicasanguinea->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quieres borrar la Química sanguinea?')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+                            @endcan
                         </td>
                     </tr>
                     @endforeach 
@@ -162,7 +249,7 @@
                             <a href="{{url('/micro/'.$micro->id)}}" class="btn btn-outline-dark">
                                 Consultar
                             </a>
-                            @cannot('nutriologo', App\Models\User::class)
+                            @can('lab', App\Models\User::class)
                             <a href="{{url('/micro/'.$micro->id.'/edit')}}" class="btn btn-outline-secondary">
                                 Editar
                             </a>
@@ -172,7 +259,31 @@
                                 <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
                                 <input type="submit" onclick="return confirm('¿Quiere Borrar el Análisis de Microalbuminuria?')"  class="btn btn-outline-danger" value="Borrar">
                             </form> 
-                            @endcannot
+                            @endcan
+
+                            @can('admin', App\Models\User::class)
+                            <a href="{{url('/micro/'.$micro->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            <form action="{{url('/micro/'.$micro->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quiere Borrar el Análisis de Microalbuminuria?')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+                            @endcan
+
+                            @can('procuracion', App\Models\User::class)
+                            <a href="{{url('/micro/'.$micro->id.'/edit')}}" class="btn btn-outline-secondary">
+                                Editar
+                            </a>
+                            <form action="{{url('/micro/'.$micro->id)}}" class="d-inline" method="post">
+                                @csrf
+                                {{ @method_field('DELETE') }}
+                                <input type="hidden" id="id_beneficiario" name="id_beneficiario" value="{{ $beneficiario->id }}">
+                                <input type="submit" onclick="return confirm('¿Quiere Borrar el Análisis de Microalbuminuria?')"  class="btn btn-outline-danger" value="Borrar">
+                            </form> 
+                            @endcan
                         </td>
                     </tr>
                     @endforeach 
