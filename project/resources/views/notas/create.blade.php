@@ -4,7 +4,7 @@
 
 @include('sidebar.beneficiario')
 
-<div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/notas')}}" method="post">
+<div class="container"><form action="{{url('/beneficiario/'.$beneficiario->id.'/notas')}}" method="post" enctype="multipart/form-data">
 
   @csrf
   @if (count($errors)>0)
@@ -110,6 +110,13 @@
       <textarea class="form-control" id="exampleFormControlTextarea1" name="comentario" value="{{ isset($notas->localidad)?$notas->comentario:old('comentario') }}" id="comentario" rows="6"></textarea>
      
   </div>
+
+  <div class="form-row">
+    <div class="col-4">
+      <label for="archivo">Archivo (Opcional)</label>
+        <input type="file" name="file" id="file" class="btn btn-primary">
+    </div>
+</div>
   
   <div class = "col"></div>
   <div class = "col text-center">

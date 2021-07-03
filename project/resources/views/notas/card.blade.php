@@ -56,6 +56,24 @@
                 <p id="linebreak" class="text-break">{{ $notas->comentario }}</p>
             </div>
         </div>
+        <br>
+
+        @if ($notas->file != null)
+        <h6>Archivo:</h6>
+        <div class="container">
+            
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <div class= "col text-center">
+                          <iframe height="1000" width="1000" src="/assets/{{ $notas->file}}"></iframe>
+                        </div>
+                      </tr>
+                </thead>
+              </table>
+        @endif
+        
+        </div>
         
           <br>
      </div>

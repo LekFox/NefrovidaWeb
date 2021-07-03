@@ -25,11 +25,12 @@ class CreateNotasTable extends Migration
             $table->date("fecha");
             $table->string("comentario");
             $table->string("tiponota");
-            $table->foreignId("tipo_nota_id")
-            ->nullable()
-            ->constrained()
-            ->onUpdate('cascade')
-            ->onDelete('set null');
+            $table->string("file")->nullable(); 
+            // $table->foreignId("tipo_nota_id")
+            // ->nullable()
+            // ->constrained()
+            // ->onUpdate('cascade')
+            // ->onDelete('set null');
             // $table->foreign('beneficiario_id')->references('id')->on('beneficiarios')->onDelete('cascade');
 
         });

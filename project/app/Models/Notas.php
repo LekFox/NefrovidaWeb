@@ -10,7 +10,7 @@ class Notas extends Model
     use HasFactory;
 
     protected $fillable =[
-        'fecha', 'comentario', 'beneficiario_id', 'tiponota'
+        'fecha', 'comentario', 'beneficiario_id', 'tiponota', 'file',
     ];
 
     public function beneficiario()
