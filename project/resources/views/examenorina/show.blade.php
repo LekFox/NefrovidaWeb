@@ -93,6 +93,29 @@
             <table class="table table-sm table-responsive-sm">
                 <thead>
                     <tr>
+                        <th scope="col"><i class="bi bi-clipboard"></i>  Fecha</th>
+                        <th scope="col"></th>
+                      </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Fecha de examen</th>
+                      <td> 
+                      @if($examenorina->fecharegistro == NULL)
+                        <p class="font-weight-light" >No registrada</p>
+                      @else
+                        <p class="font-weight-light" >{{ $examenorina->fecharegistro }}</p>
+                      @endif
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+       <br>
+        <div class="container">
+            <table class="table table-sm table-responsive-sm">
+                <thead>
+                    <tr>
                         <th scope="col"><i class="bi bi-clipboard"></i>  Examen Macroscópico</th>
                         <th scope="col"></th>
                       </tr>
@@ -324,16 +347,6 @@
                 <p class="font-weight-light" >Ninguna</p>
                 @else
                 <p class="font-weight-light" >{{ $examenorina->observaciones }}</p>
-                @endif
-            </td>
-          </tr>
-          <tr>
-            <th>Fecha de examen</th>
-            <td> 
-                @if($examenorina->fecharegistro == NULL)
-                <p class="font-weight-light" >No registrada</p>
-                @else
-                <p class="font-weight-light" >{{ $examenorina->fecharegistro }}</p>
                 @endif
             </td>
           </tr>

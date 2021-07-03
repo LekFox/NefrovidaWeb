@@ -89,6 +89,7 @@
     </select>
 </div>
 
+<!-- Atributo solicitado en inicio, ahora obsoleto.
 <div class="form-group">
     <label for="estatus">Estatus</label>
     <select name="estatus" class="custom-select" id="estatus">
@@ -99,9 +100,10 @@
         <option value="Inactivo">Inactivo</option>
     </select>
 </div>
+-->
 
 <div class="form-group">
-    <label for="estatus">De seguimiento</label>
+    <label for="seguimiento">De seguimiento</label>
     <select name="seguimiento" class="custom-select" id="seguimiento">
         @if($modo == 'Editar')
             @if ($beneficiario->seguimiento == 1)

@@ -74,7 +74,7 @@ class AntecedenteController extends Controller
          $beneficiario = Beneficiario::find($id);
          $beneficiario->antecedentes()->save($antecedente);
 
-        return redirect('beneficiario/'.$id)->with('nuevo','Antecedentes registrados con éxito');
+        return redirect('beneficiario/'.$id)->with('nuevo','Historia Clínica registrada con éxito');
     }
 
     /**
@@ -158,6 +158,6 @@ class AntecedenteController extends Controller
         $antecedentes=Antecedente::findOrFail($id);
         $id_beneficiario = request('id_beneficiario');
         $success = $antecedentes->delete();
-        return redirect('beneficiario/'.$id_beneficiario)->with('eliminado','Antecedentes borrados con éxito');
+        return redirect('beneficiario/'.$id_beneficiario)->with('eliminado','Historia Clínica borrada con éxito');
     }
 }
