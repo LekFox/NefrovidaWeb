@@ -40,7 +40,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   
-  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-person-lines-fill"></i> Antecedentes de {{$antecedentes->beneficiario->nombreBeneficiario}}</h1>
+  <h1 id="AntecedentesTitulo" class="text-center bluenefro"><i class="bi bi-person-lines-fill"></i> Historia Clínica de {{$antecedentes->beneficiario->nombreBeneficiario}}</h1>
   <div class="row">
     <div class="col">
       <a href="{{ url('/beneficiario/'.$antecedentes->beneficiario->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar </a>
@@ -54,7 +54,7 @@
       <div class= "row">
           <div class="col"></div>
           <div class= "col text-center align-bottom">
-                <h2 class="card-title "><i class="bi bi-clipboard"></i> Antecedentes</h2>
+                <h2 class="card-title "><i class="bi bi-clipboard"></i> Historia Clínica</h2>
           </div>
           <div class="col text-right">
                 <a href="{{url('/antecedentes/'.$antecedentes->id.'/edit')}}" class="btn btn-outline-secondary"><i class="bi bi-pencil-fill"></i> Editar </a>

@@ -25,7 +25,8 @@ class CreateBeneficiariosTable extends Migration
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('set null');
-            $table->string("estatus", 50);
+            $table->string("estatus", 50)
+                ->nullable();
             $table->boolean('seguimiento')->default(1);
             $table->timestamps();
         });

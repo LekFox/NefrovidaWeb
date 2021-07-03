@@ -22,7 +22,7 @@ class Beneficiario extends JsonResource
             'telefono' => $this->telefono,
             'direccion' => $this->direccion,
             'escolaridade_id' => $this->escolaridade_id,
-            'estatus' => $this->estatus,
+            //'estatus' => $this->estatus,
             'seguimiento' => $this->seguimiento,
         ];
     }

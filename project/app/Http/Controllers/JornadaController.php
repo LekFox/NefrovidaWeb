@@ -184,7 +184,6 @@ class JornadaController extends Controller
             'telefono' => 'required|numeric',
             'direccion' => 'nullable',
             'escolaridade_id' => 'required',
-            'estatus' => 'required',
             'seguimiento' => 'required',
         ]);
     
@@ -196,7 +195,6 @@ class JornadaController extends Controller
             'telefono' => request('telefono'),
             'direccion' => request('direccion'),
             'escolaridade_id' => request('escolaridade_id'),
-            'estatus' => request('estatus'),
             'seguimiento' => request('seguimiento'),
         ]);
 
