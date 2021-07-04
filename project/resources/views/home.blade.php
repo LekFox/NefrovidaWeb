@@ -16,7 +16,6 @@
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -37,11 +36,6 @@
                         
                     </div>
                     </div>
-                    <div class="carousel-item">
-                    <img src="/img/lekfox.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                    </div>
-                    </div>
                 </div>
                 <a class="carousel-control-prev bg-secondary" href="#carouselExampleCaptions" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -59,5 +53,13 @@
            
         </div>
     </div>
+    <br>
+    <br>
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <img src="/img/lekfox.png" class="" width="200" alt="..." style="opacity:0.5;">
+        </div>
+    </div>
+    
 </div>
 @endsection

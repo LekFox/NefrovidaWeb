@@ -106,6 +106,41 @@
                     </form>
                 </div>
             </div>
+            <br>
+            <div class="card">
+                <div class="card-header">Lista de usuarios:</div>
+                    <table class="table table-bordered table-sm table-responsive-sm">
+                        <thead class="thead-light text-center">
+                        <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                        </tr>
+                        </thead>
+        
+                        <tbody id="dynamic-row" class="text-center">
+                            
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                
+                                
+                                <td>
+                                <a href="#">
+                                    Consultar
+                                </a>
+                                
+                                </td>
+                            </tr>
+                            
+                            
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
