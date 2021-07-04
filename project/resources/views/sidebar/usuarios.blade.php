@@ -13,7 +13,7 @@
             <a href="#" class="list-group-item list-group-item-action bg-light"><i class="bi bi-bar-chart-line-fill"></i> Reportes</a>
             {{-- <a href="{{url('/usuarios')}}" class="list-group-item list-group-item-action bg-success active"><i class="bi bi-person-plus-fill"></i> Registrar Usuario</a> --}}
             @can('create', App\Models\User::class)
-            <a href="{{url('/register')}}" class="list-group-item list-group-item-action bg-success active"><i class="bi bi-person-plus-fill"></i> Registrar Usuario</a>
+            <a href="{{url('/register')}}" class="list-group-item list-group-item-action bg-success active"><i class="bi bi-person-plus-fill"></i> Gestión de Usuarios</a>
             @endcan
 
             
