@@ -37,13 +37,13 @@
                 <div class= "pt-xl-5">
                     
                 </div>
-                <div class= "pt-xl-5">
+                <!--<div class= "pt-xl-5">
                     <a href="{{url('/jornada/'.$jornada->id.'/anadirBeneficiario')}}">
                     <button type="button" class="btn btn-primary">
                         Añadir beneficiario existente
                     </button>
                     </a>
-                </div>
+                </div>-->
                 <div class= "pt-xl-2">
                     
                 </div>
