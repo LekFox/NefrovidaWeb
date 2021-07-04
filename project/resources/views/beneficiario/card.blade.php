@@ -32,6 +32,11 @@
                 <h4 class="font-weight-light">Dirección: {{ $beneficiario->direccion }}</h4>
                 <h4 class="font-weight-light">Escolaridad: {{ $beneficiario->escolaridade->nombreEscolaridad }}</h4>
                 <h4 class="font-weight-light">Estatus: {{ $beneficiario->estatus }}</h4>
+                @if($beneficiario->seguimiento === 1)
+                    <h4 class="font-weight-light">Seguimiento: Si</h4>
+                @else
+                    <h4 class="font-weight-light" >Seguimiento: No</h4>
+                @endif
                 @if($beneficiario->jornadas->isEmpty())
                 <h4 class="font-weight-light">Jornada: No asignado</h4>
                 @else
