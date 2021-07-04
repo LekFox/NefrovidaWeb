@@ -32,6 +32,14 @@
   <br>
 
 <div>
+<div class="form-group">
+        <div class="row">
+            <div class="col">
+            <label for="Fecha">Fecha de examen</label>
+            <input class="date form-control" type="date" name="fecharegistro" value="{{ isset($examenorina->fecharegistro)?$examenorina->fecharegistro:old('fecharegistro') }}" id="fecharegistro">    
+            </div>
+        </div>
+</div>
 <div class= "row">
       <div class = "col-1">
       </div>
@@ -276,14 +284,6 @@
       <label for="comentario">Observaciones</label>
       <div class="form-group">
       <textarea class="form-control" id="observaciones" name="observaciones" maxlength="200" rows="2">{{ isset($examenorina->observaciones)?$examenorina->observaciones:old('observaciones') }}</textarea>
-      </div>
-      <div class="form-group">
-        <div class="row">
-          <div class="col">
-          <label for="Fecha">Fecha de examen</label>
-          <input class="date form-control" type="date" name="fecharegistro" value="{{ isset($examenorina->fecharegistro)?$examenorina->fecharegistro:old('fecharegistro') }}" id="fecharegistro">    
-            </div>
-          </div>
       </div>
       <label for="comentario">Nota</label>
       <div class="form-group">

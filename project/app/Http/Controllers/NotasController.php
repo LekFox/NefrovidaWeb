@@ -6,6 +6,8 @@ use App\Models\Notas;
 use App\Models\Beneficiario;
 use App\Models\tipoNota;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Stroage;
+
 use App\Http\Resources\Notas as NotasResource;
 use App\Http\Resources\Beneficiario as BeneficiarioResource;
 use App\Http\Resources\tipoNota as tipoNotaResource;
@@ -55,36 +57,35 @@ class NotasController extends Controller
      */
     public function store(Request $request)
     {
-        //$beneficiario_id=auth()->beneficiario()->id();
-        // $datos['Beneficiario']=BeneficiarioResource::collection(Beneficiario::all());
-        // $beneficiario_id =  $datos->id();
-        // $request['beneficiario_id'] = $beneficiario_id;
-        //$beneficiario_id=Beneficiario::
+        
         request()->validate([
             'fecha' => 'required',
             'comentario' => 'required',
             'beneficiario_id' => 'required',
             'tiponota' => 'required',
         ]);
-    
-        // $status = Beneficiario::where(['name'=>'sample_status'])->firstOrFail();
-        // $order->order_status_id = $status->id;
-        // $order->save();
-        // Notas::create($request->all());
-        // Notas::create([
-        //     //'beneficiario_id' => request('beneficiario_id'),
-        //     'tipoNota_id' => 1,
+        
+        $nota = new Notas();
+
+        if( $request->file != null) {
+        $file = $request->file;
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $request->file->move('assets', $filename);
+        $nota->file=$filename;
+        }
+
+        $nota->fecha=$request->fecha;
+        $nota->comentario=$request->comentario;
+        $nota->tiponota=$request->tiponota;
+
+        // $nota= new Notas([
+        //     // 'tipoNota_id' => 1,
         //     'fecha' => request('fecha'),
         //     'comentario' => request('comentario'),
+        //     'tiponota' => request('tiponota'),
+        //     'file' => $filename,
+        //     //'beneficiario_id' => request('beneficiario_id'),
         // ]);
-
-        $nota= new Notas([
-            'tipoNota_id' => 1,
-            'fecha' => request('fecha'),
-            'comentario' => request('comentario'),
-            'tiponota' => request('tiponota'),
-            //'beneficiario_id' => request('beneficiario_id'),
-        ]);
 
          $id = request('beneficiario_id');
          $beneficiario = Beneficiario::find($id);
@@ -140,13 +141,20 @@ class NotasController extends Controller
             'tiponota' => 'required',
         ]);
 
+        if( $request->file != null) {
+            $file = $request->file;
+            $filename = time().'.'.$file->getClientOriginalExtension();
+            $request->file->move('assets', $filename);
+            }
+
         $id=$notas->beneficiario_id;
 
         $success = $notas->update([
-            'tipoNota_id' => 1,
+            // 'tipoNota_id' => 1,
             'fecha' => request('fecha'),
             'comentario' => request('comentario'),
             'tiponota' => request('tiponota'),
+            'file' => $filename,
         ]);
 
         return redirect('beneficiario/'.$id)->with('editado','Cambios realizados con éxito');
