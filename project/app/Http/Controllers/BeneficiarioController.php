@@ -70,7 +70,7 @@ class BeneficiarioController extends Controller
             'escolaridade_id' => 'required',
             'seguimiento' => 'required',
             'descAfricana' => 'required',
-            'fecharegistro' => 'required',
+            'fecharegistro' => 'nullable',//'required',
         ]);
     
 
@@ -83,7 +83,7 @@ class BeneficiarioController extends Controller
             'escolaridade_id' => request('escolaridade_id'),
             'seguimiento' => request('seguimiento'),
             'descAfricana' => request('descAfricana'),
-            'fecharegistro' => request('fecharegistro'),
+            //'fecharegistro' => request('fecharegistro'),
         ]);
 
         $beneficiario->jornadas()->attach(request('jornada_id'));
@@ -128,7 +128,7 @@ class BeneficiarioController extends Controller
             'escolaridade_id' => 'required',
             'seguimiento' => 'required',
             'descAfricana' => 'required',
-            'fecharegistro' => 'required',
+            'fecharegistro' => 'nullable',//'required',
 
         ]);
         $beneficiario->update([
@@ -140,7 +140,7 @@ class BeneficiarioController extends Controller
             'escolaridade_id'  => $request->input('escolaridade_id'), 
             'seguimiento' => $request->input('seguimiento'), 
             'descAfricana' => $request->input('descAfricana'),
-            'fecharegistro' => $request->input('fecharegistro')
+            //'fecharegistro' => $request->input('fecharegistro')
             ]);
         if ($beneficiario->jornadas->isEmpty())
         {
@@ -156,9 +156,10 @@ class BeneficiarioController extends Controller
 
     public function destroy(Beneficiario $beneficiario)
     {
+        $jornadaId = $beneficiario->jornadas[0]->pivot->jornada_id;
         $beneficiario->jornadas()->detach();
         $success = $beneficiario->delete();
-        return redirect('beneficiario')->with('eliminado','Beneficiario borrado con éxito');
+        return redirect('jornada/'.$jornadaId)->with('asignado','Beneficiario eliminado con éxito');
     }
 
     // Permite buscar un beneficiario a partir del request AJAX.

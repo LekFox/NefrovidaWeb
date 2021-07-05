@@ -51,11 +51,15 @@
     <input class="date form-control" type="date" name="fechaNacimiento" value="{{isset($beneficiario) ? $beneficiario->fechaNacimiento: ''}}" id="fechaNacimiento">    
 </div>
 
+<!--
+
+    //Eliminado a petición del cliente
 <div class="form-group">
 <label for="direccion">Dirección</label>
 <input type="text" class="form-control" name="direccion" value="{{isset($beneficiario) ? $beneficiario->direccion: ''}}" id="direccion">
 
 </div>
+-->
 
 <div class="form-group">
 <label for="telefono">Número de telefono</label>
@@ -110,6 +114,22 @@
                 <option value="{{isset($beneficiario) ? $beneficiario->seguimiento: ''}}" selected>Sí</option>
             @else
                 <option value="{{isset($beneficiario) ? $beneficiario->seguimiento: ''}}" selected>No</option>
+            @endif
+        @endif
+        <option value="0">No</option>
+        <option value="1">Sí</option>
+    </select>
+</div>
+
+
+<div class="form-group">
+    <label for="estatus">Descendencia Africana</label>
+    <select name="descAfricana" class="custom-select" id="descAfricana">
+        @if($modo == 'Editar')
+            @if ($beneficiario->descAfricana == 1)
+                <option value="1" selected>Sí</option>
+            @else
+                <option value="0" selected>No</option>
             @endif
         @endif
         <option value="0">No</option>

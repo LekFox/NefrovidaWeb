@@ -20,6 +20,18 @@
 
 <input type="hidden" value = "{{$quimicasanguinea->id}}" id = "quimicasanguinea_id" name = "quimicasanguinea_id">
 
+<div class="form-group">
+    <div class="row">
+        <div class="col">
+            <label for="Fecha">Fecha de laboratorio</label>
+            <input class="date form-control" type="date" name="fecharegistro" value="{{isset($quimicasanguinea) && $quimicasanguinea->fecharegistro != NULL ? $quimicasanguinea->fecharegistro: ''}}" id="fecharegistro">
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
 <div class="form-row">
     <div class="col-4">
     </div>
@@ -441,18 +453,6 @@
         <input type="text" class="form-control" placeholder="Metodo" id="Metodo" name="Metodo" value="{{isset($quimicasanguinea->metodo) ? $quimicasanguinea->metodo: ''}}">
     </div>
     <div class="col-2">
-    </div>
-</div>
-
-<br>
-<br>
-
-<div class="form-group">
-    <div class="row">
-        <div class="col">
-            <label for="Fecha">Fecha de laboratorio</label>
-            <input class="date form-control" type="date" name="fecharegistro" value="{{isset($quimicasanguinea) && $quimicasanguinea->fecharegistro != NULL ? $quimicasanguinea->fecharegistro: ''}}" id="fecharegistro">
-        </div>
     </div>
 </div>
 

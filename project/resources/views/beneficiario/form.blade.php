@@ -67,12 +67,15 @@
     <input class="date form-control" type="date" name="fechaNacimiento" value="{{isset($beneficiario) ? $beneficiario->fechaNacimiento: ''}}" id="fechaNacimiento">    
 </div>
 
+<!--
+
+    //Cliente pidio retirar este campo
 <div class="form-group">
 <label for="direccion">Dirección</label>
 <input type="text" class="form-control" name="direccion" value="{{isset($beneficiario) ? $beneficiario->direccion: ''}}" id="direccion">
 
 </div>
-
+-->
 <div class="form-group">
 <label for="telefono">Número de telefono</label>
 <input type="text" class="form-control" name="telefono" maxlength="10" value="{{isset($beneficiario) ? $beneficiario->telefono: ''}}" id="telefono">
@@ -148,6 +151,9 @@
     </select>
 </div>
 
+<!--
+    //Requisito de socios formadores retirar este input
+
 <div class="form-group">
     <div class="row">
         <div class="col">
@@ -156,7 +162,7 @@
         </div>
     </div>
 </div>
-
+-->
 <!--
     //Aun no estamos seguro que tipo de información es estatus
 
