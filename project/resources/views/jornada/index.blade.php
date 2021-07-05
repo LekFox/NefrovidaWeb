@@ -59,7 +59,17 @@
     <br>
     <div class="row">
         <div class="col-sm text-right">
+        @can('social', App\Models\User::class)
         <a id="beneficiarioAddB" href="{{ url('jornada/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Jornada</a>
+        @endcan
+
+        @can('admin', App\Models\User::class)
+        <a id="beneficiarioAddB" href="{{ url('jornada/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Jornada</a>
+        @endcan
+
+        @can('procuracion', App\Models\User::class)
+        <a id="beneficiarioAddB" href="{{ url('jornada/create') }}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Registrar Jornada</a>
+        @endcan
     </div>
 </div>
 <br>
@@ -91,15 +101,46 @@
                 <a href="{{url('/jornada/'.$jornada->id)}}" class="btn btn-outline-dark">
                     Consultar
                 </a>
+                @can('social', App\Models\User::class)
                 <a href="{{url('/jornada/'.$jornada->id.'/edit')}}" class="btn btn-outline-secondary">
                     Editar
                 </a>
+                
                  
                 <form action="{{url('/jornada/'.$jornada->id)}}" class="d-inline" method="post">
                     @csrf
                     {{ @method_field('DELETE') }}
                     <input type="submit" onclick="return confirm('¿Quieres borrar la jornada?')"  class="btn btn-outline-danger" value="Borrar">
                 </form>
+                @endcan
+
+                @can('admin', App\Models\User::class)
+                <a href="{{url('/jornada/'.$jornada->id.'/edit')}}" class="btn btn-outline-secondary">
+                    Editar
+                </a>
+                
+                 
+                <form action="{{url('/jornada/'.$jornada->id)}}" class="d-inline" method="post">
+                    @csrf
+                    {{ @method_field('DELETE') }}
+                    <input type="submit" onclick="return confirm('¿Quieres borrar la jornada?')"  class="btn btn-outline-danger" value="Borrar">
+                </form>
+                @endcan
+
+                @can('procuracion', App\Models\User::class)
+                <a href="{{url('/jornada/'.$jornada->id.'/edit')}}" class="btn btn-outline-secondary">
+                    Editar
+                </a>
+                
+                 
+                <form action="{{url('/jornada/'.$jornada->id)}}" class="d-inline" method="post">
+                    @csrf
+                    {{ @method_field('DELETE') }}
+                    <input type="submit" onclick="return confirm('¿Quieres borrar la jornada?')"  class="btn btn-outline-danger" value="Borrar">
+                </form>
+                @endcan
+
+               
             </td>
         </tr>
         @endforeach
