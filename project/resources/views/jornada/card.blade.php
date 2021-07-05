@@ -49,9 +49,23 @@
                 </div>
                 <div class= "pt-xl-5">
                     <a href="{{ url('jornada/'.$jornada->id.'/anadirNuevoBeneficiario') }}">
+                    @can('social', App\Models\User::class)
                     <button type="button" class="btn btn-success">
                         Añadir nuevo beneficiario
                     </button>
+                    @endcan
+
+                    @can('admin', App\Models\User::class)
+                    <button type="button" class="btn btn-success">
+                        Añadir nuevo beneficiario
+                    </button>
+                    @endcan
+
+                    @can('procuracion', App\Models\User::class)
+                    <button type="button" class="btn btn-success">
+                        Añadir nuevo beneficiario
+                    </button>
+                    @endcan
                     </a>
                 </div>
             </div>
