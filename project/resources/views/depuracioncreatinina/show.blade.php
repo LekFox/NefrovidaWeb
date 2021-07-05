@@ -144,31 +144,74 @@
                 <tr>
                     <th>Creatinina en Suero</th>
                     <td> 
-                        @if($depuracioncreatinina->creatininaSuero == NULL)
+
+                        <div class="form-row">
+                        <div class="col-4">
+                          @if($depuracioncreatinina->creatininaSuero == NULL)
                           <p class="font-weight-light" >No registrado</p>
-                        @else
-                          <p class="font-weight-light" >{{ $depuracioncreatinina->creatininaSuero }}</p>
-                        @endif
+                          @else
+                            <p class="font-weight-light" >{{ $depuracioncreatinina->creatininaSuero }}</p>
+                          @endif          
+                        </div>
+                        <div class="col-2">
+                        </div>
+                            
+                        <div class="col-4">
+                          <p class="font-weight-light" >0.5 - 1 mg/dL Mujer</p>
+                            <br>
+                          <p class="font-weight-light" >0.7 - 1.2 mg/dL Hombre</p>
+                        </div>
+                      </div>
+
                     </td>
                 </tr>
                 <tr>
                     <th>Creatinina en Orina</th>
                     <td> 
-                        @if($depuracioncreatinina->creatininaOrina == NULL)
-                          <p class="font-weight-light" >No registrado</p>
-                        @else
-                          <p class="font-weight-light" >{{ $depuracioncreatinina->creatininaOrina }}</p>
-                        @endif
+
+                      <div class="form-row">
+                        <div class="col-4">
+                          @if($depuracioncreatinina->creatininaOrina == NULL)
+                            <p class="font-weight-light" >No registrado</p>
+                          @else
+                            <p class="font-weight-light" >{{ $depuracioncreatinina->creatininaOrina }}</p>
+                          @endif                        
+                        </div>
+                        <div class="col-2">
+                        </div>
+                            
+                        <div class="col-4">
+                          <p class="font-weight-light" >28 - 217 mg/dL Mujer</p>
+                            <br>
+                          <p class="font-weight-light" >39 - 259 mg/dL Hombre</p>
+                        </div>
+                      </div>
+
                     </td>
                 </tr>
                 <tr>
                     <th>Depuracion de Creatinina</th>
                     <td> 
-                        @if($depuracioncreatinina->creatininaDepuracion == NULL)
-                          <p class="font-weight-light" >No registrado</p>
-                        @else
-                          <p class="font-weight-light" >{{ $depuracioncreatinina->creatininaDepuracion }}</p>
-                        @endif
+
+                        <div class="form-row">
+                        <div class="col-4">
+                          @if($depuracioncreatinina->creatininaDepuracion == NULL)
+                            <p class="font-weight-light" >No registrado</p>
+                          @else
+                            <p class="font-weight-light" >{{ $depuracioncreatinina->creatininaDepuracion }}</p>
+                          @endif                   
+                        </div>
+                        <div class="col-2">
+                        </div>
+                            
+                        <div class="col-4">
+                          <p class="font-weight-light" >88 - 128 mg/dL Mujer</p>
+                            <br>
+                          <p class="font-weight-light" >97 - 137 mg/dL Hombre</p>
+                        </div>
+                      </div>
+
+
                     </td>
                 </tr>  
                 <tr>

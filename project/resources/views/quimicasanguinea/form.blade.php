@@ -18,6 +18,18 @@
 
 <input type="hidden" value = "{{$beneficiario->id}}" id = "beneficiario_id" name = "beneficiario_id">
 
+<div class="form-group">
+    <div class="row">
+        <div class="col">
+            <label for="Fecha">Fecha de laboratorio</label>
+            <input class="date form-control" type="date" name="fecharegistro" id="fecharegistro">    
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
 <div class="form-row">
     <div class="col-4">
     </div>
@@ -443,17 +455,6 @@
 <br>
 <br>
 
-<div class="form-group">
-    <div class="row">
-        <div class="col">
-            <label for="Fecha">Fecha de laboratorio</label>
-            <input class="date form-control" type="date" name="fecharegistro" id="fecharegistro">    
-        </div>
-    </div>
-</div>
-
-<br>
-<br>
 
 <label for="comentario">Nota</label>
 <div class="form-group">

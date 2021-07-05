@@ -65,14 +65,14 @@ class JornadaController extends Controller
             'municipio' => 'required',
         ]);
     
-        Jornada::create([
+        $jornada = Jornada::create([
             'nombre' => request('nombre'),
             'fecha' => request('fecha'),
             'localidad' => request('localidad'),
             'municipio' => request('municipio'),
         ]);
-
-        return redirect('jornada')->with('nuevo','Jornada agregada con éxito');
+        $jornadaId = $jornada->id;
+        return redirect('jornada/'.$jornadaId)->with('nuevo','Jornada agregada con éxito');
     }
 
     /**

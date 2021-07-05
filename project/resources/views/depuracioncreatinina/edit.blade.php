@@ -28,6 +28,19 @@
     </div>
 </div>
 <br>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col">
+            <label for="Fecha">Fecha de laboratorio</label>
+            <input class="date form-control" type="date" name="fecharegistro" value="{{isset($depuracioncreatinina) && $depuracioncreatinina->fecharegistro != NULL ? $depuracioncreatinina->fecharegistro: ''}}" id="fecharegistro">
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
 <div class="form-row">
     <div class="col-4">
         <label for="nombre">Talla</label>
@@ -295,18 +308,6 @@
         <input type="text" class="form-control" placeholder="Metodo" id="Metodo" name="Metodo" value="{{ isset($depuracioncreatinina->metodo) ? $depuracioncreatinina->metodo: '' }}">
     </div>
     <div class="col-2">
-    </div>
-</div>
-
-<br>
-<br>
-
-<div class="form-group">
-    <div class="row">
-        <div class="col">
-            <label for="Fecha">Fecha de laboratorio</label>
-            <input class="date form-control" type="date" name="fecharegistro" value="{{isset($depuracioncreatinina) && $depuracioncreatinina->fecharegistro != NULL ? $depuracioncreatinina->fecharegistro: ''}}" id="fecharegistro">
-        </div>
     </div>
 </div>
 

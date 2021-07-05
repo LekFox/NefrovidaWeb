@@ -75,8 +75,8 @@ class DepuracionCreatininaController extends Controller
             'superficieCorporal'=> $superCorp,
             'creatininaSuero' => request('creatininaSuero'),
             'creatininaDepuracion' => $creatiDepuracion,
-            'nota'=> request('Metodo'),
-            'metodo'=> request('nota'),
+            'nota'=> request('nota'),
+            'metodo'=> request('Metodo'),
             'creatininaOrina' => request('creatininaOrina'),
             'fecharegistro' => request('fecharegistro'),
         ]);
@@ -151,8 +151,8 @@ class DepuracionCreatininaController extends Controller
             'superficieCorporal'=> $superCorp,
             'creatininaSuero' => request('creatininaSuero'),
             'creatininaDepuracion' => $creatiDepuracion,
-            'nota'=> request('Metodo'),
-            'metodo'=> request('nota'),
+            'nota'=> request('nota'),
+            'metodo'=> request('Metodo'),
             'creatininaOrina' => request('creatininaOrina'),
             'fecharegistro' => request('fecharegistro'),
         ]);
