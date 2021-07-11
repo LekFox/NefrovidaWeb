@@ -37,6 +37,8 @@
    
     @include('nutriologia.card',['id'=>$id])
 
+    @include('notaspsic.index',['id'=>$id])
+
     @include('notas.index',['id'=>$id])
     @include('evidencia.card',['id'=>$id])
     

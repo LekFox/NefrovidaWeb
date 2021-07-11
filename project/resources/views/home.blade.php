@@ -11,7 +11,9 @@
             <div class="card">
 
                 <div class="card-body">
-                    <div class="col text-center">
+                    <!-- 
+                        ********** MENÚ CARRUSEL RETIRADO POR PETICIÓN DE LA ORGANIZACIÓN *************
+                         <div class="col text-center">
                     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -47,6 +49,32 @@
                 </a>
                 </div>
                     </div>
+                -->
+                <div class= "row">
+                <div class= "col text-center align-bottom">
+                <a href="{{ url('/jornada') }}" class="btn btn-outline-secondary"><i class="bi bi-calendar3"></i> Jornadas</a>
+                </div>
+                </div>
+                <br>
+                <div class= "row">
+                <div class= "col text-center align-bottom">
+                        <a href="{{ url('/beneficiario') }}" class="btn btn-outline-secondary"><i class="bi bi-people-fill"></i> Beneficiarios</a>
+                </div>
+                </div>
+                <br>
+                <div class= "row">
+                <div class= "col text-center align-bottom">
+                        <a href="#" class="btn btn-outline-secondary"><i class="bi bi-arrow-left-right"></i> Comparar Jornadas</a>
+                </div>
+                </div>
+                <br>
+                <div class= "row">
+                <div class= "col text-center align-bottom">
+                        <a href="#" class="btn btn-outline-secondary"><i class="bi bi-bar-chart-line-fill"></i> Reportes</a>
+                </div>
+                </div>
+                
+                
                 </div>
 
             </div>
