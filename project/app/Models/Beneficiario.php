@@ -37,6 +37,11 @@ class Beneficiario extends Model
         return $this->hasMany(Notas::class);
     }
 
+    public function notaspsic()
+    {
+        return $this->hasMany(NotasPsic::class);
+    }
+
     //Regresa los registros de Antecedentes de un beneficiario
     public function antecedentes(){
         return $this->hasOne(Antecedente::class);

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JornadaController;
 use App\Http\Controllers\BeneficiarioController;
 use App\Http\Controllers\NotasController;
+use App\Http\Controllers\NotasPsicController;
 use App\Http\Controllers\AntecedenteController;
 use App\Http\Controllers\TamizajeController;
 use App\Http\Controllers\AnalisisLabController;
@@ -60,6 +61,7 @@ Route::resource('beneficiario.depuracioncreatinina', DepuracionCreatininaControl
 //Route::resource('nutricion',NutricionConsultaController::class)->middleware('auth');
 Route::resource('beneficiario.nutricion',NutricionConsultaController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.notas',NotasController::class)->shallow()->middleware('auth');
+Route::resource('beneficiario.notaspsic',NotasPsicController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.consulta',consultaController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.evidencia',evidenciaController::class)->shallow()->middleware('auth');
 Route::resource('beneficiario.nefropediatria',nefropediatriaController::class)->shallow()->middleware('auth');
