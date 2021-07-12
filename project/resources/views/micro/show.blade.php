@@ -100,7 +100,7 @@
                       </tr>
                 </thead>
                 <tbody>
-                <tr>
+                  <tr>
                     <th>Fecha</th>
                     <td>{{ $micro->fecha }}</td>
                   </tr>
@@ -112,7 +112,7 @@
 
                   <tr>
                     <th>Micro Albumina (mg/dL)</th>
-                    <td> 
+                    <td>
                       @if($micro->microalbumina == NULL)
                         <p class="font-weight-light" >No registrado</p>                          
                         @else
