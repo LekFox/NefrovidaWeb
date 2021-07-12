@@ -3,9 +3,6 @@
 @section('content')
 
 @include('sidebar.usuarios')
-
-@can('create', App\Models\User::class)
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -37,19 +34,10 @@
 
                                 <select name="rol" id="rol" class="form-control @error('rol') is-invalid @enderror" required>
                                     <option disabled selected value> -- Selecciona Un Rol -- </option>
-                                    <option value="Psicologia">Psicología</option>
-                                    <option value="Medica">Médica</option>
-                                    <option value="Nutricion">Nutrición</option>
-                                    <option value="Laboratorio">Laboratorio</option>
-                                    <option value="Social">Trabajo Social</option>
-                                    <option value="Nefropediatria">Nefropediatría</option>
-                                    <option value="Administrador">Dirección</option>
-                                    <option value="Procuracion">Procuración</option>
-
-                                    
-                                    
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Medico">Médico</option>
+                                    <option value="Nutriologo">Nutriólogo</option>
                                     <option value="Recepcion">Recepción</option>
-                                    
                                 </select>
 
                                 @error('rol')
@@ -106,52 +94,7 @@
                     </form>
                 </div>
             </div>
-            <br>
-            <div class="card">
-                <div class="card-header">Lista de usuarios:</div>
-                    <table class="table table-bordered table-sm table-responsive-sm">
-                        <thead class="thead-light text-center">
-                        <tr>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Rol</th>
-                        <th>Acciones</th>
-                        </tr>
-                        </thead>
-        
-                        <tbody id="dynamic-row" class="text-center">
-                            
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                
-                                
-                                <td>
-                                <a href="#">
-                                    Consultar
-                                </a>
-                                
-                                </td>
-                            </tr>
-                            
-                            
-                        </tbody>
-
-                    </table>
-                </div>
-            </div>
         </div>
     </div>
 </div>
-
-@else
-
-<div class="container">
-<br><br><br><br><br><br>
-    <h2 class="text-center">ERROR: Únicamente un administrador puede registrar nuevos usuarios en el sistema.</h2>
-</div>
-
-@endif
-
 @endsection

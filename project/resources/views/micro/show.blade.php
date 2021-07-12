@@ -104,6 +104,12 @@
                     <th>Fecha</th>
                     <td>{{ $micro->fecha }}</td>
                   </tr>
+
+                  <tr>
+                    <th>Valor Referencia Micro Albumina (mg/dL)</th>
+                    <td>0.00 - 30.00</td>
+                  </tr>
+
                   <tr>
                     <th>Micro Albumina (mg/dL)</th>
                     <td> 
@@ -118,6 +124,12 @@
                         @endif
                     </td>
                   </tr>
+
+                  <tr>
+                    <th>Valor Referencia Creatinina (mg/dL)</th>
+                    <td>10.00 - 300.00</td>
+                  </tr>
+
                   <tr>
                     <th>Creatinina (mg/dL)</th>
                     <td> 
@@ -132,7 +144,12 @@
                         @endif
                     </td>
                   </tr>
+                  
                   <tr>
+                    <th>Valor Referencia Albumina/Creatinina (mg/g)</th>
+                    <td>0.00 - 30.00</td>
+                  </tr>
+
                   <tr>
                     <th>Albumina/Creatinina (mg/g)</th>
                     <td> 
