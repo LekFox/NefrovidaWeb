@@ -17,8 +17,12 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
+@if($beneficiario->jornadas->isEmpty())
+    <a href="{{ url('beneficiario') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
+@else
+    <a href="{{ url('jornada/'.$beneficiario->jornadas[0]->pivot->jornada_id) }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
+@endif
 
-<a href="{{ url('beneficiario') }}" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Regresar</a>
 <br><br>
 <div class="card">
   <div class="card-body">
