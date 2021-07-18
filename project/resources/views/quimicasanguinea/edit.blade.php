@@ -373,7 +373,7 @@
         <div class="d-flex justify-content-center">
             <div class="form-row">
                 <div class="col-4">
-                    <input class="form-control" type="text" placeholder="2.4" disabled>
+                    <input class="form-control" type="text" placeholder="125" disabled>
                 </div>
                 <div class="col-1">
                     <div class="d-flex justify-content-center">
@@ -381,7 +381,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <input class="form-control" type="text" placeholder="6" disabled>
+                    <input class="form-control" type="text" placeholder="200" disabled>
                 </div>
                 <div class="col-3">
                     <p>mg/dL</p>
@@ -413,7 +413,7 @@
         <div class="d-flex justify-content-center">
             <div class="form-row">
                 <div class="col-4">
-                    <input class="form-control" type="text" placeholder="2.4" disabled>
+                    <input class="form-control" type="text" placeholder="10" disabled>
                 </div>
                 <div class="col-1">
                     <div class="d-flex justify-content-center">
@@ -421,7 +421,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <input class="form-control" type="text" placeholder="6" disabled>
+                    <input class="form-control" type="text" placeholder="150" disabled>
                 </div>
                 <div class="col-3">
                     <p>mg/dL</p>

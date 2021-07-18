@@ -104,71 +104,171 @@
                   <tr>
                     <th>Glucosa</th>
                     <td> 
-                        @if($quimicasanguinea->glucosa == NULL)
-                          <p class="font-weight-light" >No registrado</p>
-                        @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->glucosa }}</p>
-                        @endif
+
+                      <div class="form-row">
+                        <div class="col-4">
+                          @if($quimicasanguinea->glucosa == NULL)
+                            <p class="font-weight-light" >No registrado</p>
+                          @else
+                            <p class="font-weight-light" >{{ $quimicasanguinea->glucosa }}</p>
+                          @endif         
+                        </div>
+
+                        <div class="col-2">
+                        </div>
+                        
+                        <div class="col-4">
+                          <p class="font-weight-light" >70 - 100 mg/dL</p>
+                        </div>
+                      </div>
+
+
                     </td>
                   </tr>
                   <tr>
                     <th>Urea</th>
                     <td> 
-                        @if($quimicasanguinea->urea == NULL)
-                          <p class="font-weight-light" >No registrado</p>
-                        @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->urea }}</p>
-                        @endif
+
+                      <div class="form-row">
+                        <div class="col-4">
+                          @if($quimicasanguinea->urea == NULL)
+                            <p class="font-weight-light" >No registrado</p>
+                          @else
+                            <p class="font-weight-light" >{{ $quimicasanguinea->urea }}</p>
+                          @endif        
+                        </div>
+
+                        <div class="col-2">
+                        </div>
+                        
+                        <div class="col-4">
+                          <p class="font-weight-light" >15 - 45 mg/dL</p>
+                        </div>
+                      </div>
+
+
                     </td>
                   </tr>
                   <tr>
                     <th>Bun</th>
                     <td> 
-                        @if($quimicasanguinea->bun == NULL)
-                          <p class="font-weight-light" >No registrado</p>
-                        @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->bun }}</p>
-                        @endif
+
+                      <div class="form-row">
+                        <div class="col-4">
+                          @if($quimicasanguinea->bun == NULL)
+                            <p class="font-weight-light" >No registrado</p>
+                          @else
+                            <p class="font-weight-light" >{{ $quimicasanguinea->bun }}</p>
+                          @endif      
+                        </div>
+
+                        <div class="col-2">
+                        </div>
+                        
+                        <div class="col-4">
+                          <p class="font-weight-light" >7 - 15 mg/dL</p>
+                        </div>
+                      </div>
+                    
+
                     </td>
                   </tr> 
                   <tr>
                     <th>Creatinina</th>
                     <td> 
-                        @if($quimicasanguinea->creatina == NULL)
-                          <p class="font-weight-light" >No registrado</p>
-                        @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->creatina }}</p>
-                        @endif
+
+                      <div class="form-row">
+                        <div class="col-4">
+                          @if($quimicasanguinea->creatina == NULL)
+                              <p class="font-weight-light" >No registrado</p>
+                          @else
+                            <p class="font-weight-light" >{{ $quimicasanguinea->creatina }}</p>
+                          @endif         
+                        </div>
+                        <div class="col-2">
+                        </div>
+                            
+                        <div class="col-4">
+                          <p class="font-weight-light" >0.5 - 1 mg/dL Mujer</p>
+                            <br>
+                          <p class="font-weight-light" >0.7 - 1.2 mg/dL Hombre</p>
+                            <br>
+                          <p class="font-weight-light" >0.30 - 0.50 mg/dL 4-7 años</p>
+                            <br>
+                          <p class="font-weight-light" >0.60 - 0.80 mg/dL 8-10 años</p>
+                        </div>
+                      </div>
+
+                        
                     </td>
                   </tr> 
                   <tr>
                     <th>Acido Urico</th>
                     <td> 
-                        @if($quimicasanguinea->acidoUrico == NULL)
-                          <p class="font-weight-light" >No registrado</p>
-                        @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->acidoUrico }}</p>
-                        @endif
+
+                      <div class="form-row">
+                        <div class="col-4">
+                          @if($quimicasanguinea->acidoUrico == NULL)
+                            <p class="font-weight-light" >No registrado</p>
+                          @else
+                            <p class="font-weight-light" >{{ $quimicasanguinea->acidoUrico }}</p>
+                          @endif         
+                        </div>
+                        <div class="col-2">
+                        </div>
+                            
+                        <div class="col-4">
+                          <p class="font-weight-light" >2.4 - 6 mg/dL Mujer</p>
+                            <br>
+                          <p class="font-weight-light" >3.4 - 7 mg/dL Hombre</p>
+                        </div>
+                      </div>
+
                     </td>
                   </tr>
                   <tr>
                     <th>Colesterol Total</th>
                     <td> 
-                        @if($quimicasanguinea->colesterolTotal == NULL)
-                          <p class="font-weight-light" >No registrado</p>
-                        @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->colesterolTotal }}</p>
-                        @endif
+
+                      <div class="form-row">
+                        <div class="col-4">
+                          @if($quimicasanguinea->colesterolTotal == NULL)
+                            <p class="font-weight-light" >No registrado</p>
+                          @else
+                            <p class="font-weight-light" >{{ $quimicasanguinea->colesterolTotal }}</p>
+                          @endif       
+                        </div>
+                        <div class="col-2">
+                        </div>
+                            
+                        <div class="col-4">
+                          <p class="font-weight-light" >125 - 200 mg/dL Mujer</p>
+                        </div>
+                      </div>
+
                     </td>
                   </tr>  
                   <tr>
                     <th>Trigliceridos</th>
-                    <td> 
-                        @if($quimicasanguinea->trigliceridos == NULL)
-                          <p class="font-weight-light" >No registrado</p>
-                        @else
-                          <p class="font-weight-light" >{{ $quimicasanguinea->trigliceridos }}</p>
-                        @endif
+                    <td>
+
+                      <div class="form-row">
+                        <div class="col-4">
+                          @if($quimicasanguinea->trigliceridos == NULL)
+                            <p class="font-weight-light" >No registrado</p>
+                          @else
+                            <p class="font-weight-light" >{{ $quimicasanguinea->trigliceridos }}</p>
+                          @endif     
+                        </div>
+                        <div class="col-2">
+                        </div>
+                            
+                        <div class="col-4">
+                          <p class="font-weight-light" >10 - 150 mg/dL Mujer</p>
+                        </div>
+                      </div>
+
+                       
                     </td>
                   </tr>  
                    <tr>

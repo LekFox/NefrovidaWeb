@@ -61,8 +61,8 @@ class QuimicaSanguineaController extends Controller
             'acidoUrico' => request('acidoUrico'),
             'colesterolTotal' => request('colesterolTotal'),
             'trigliceridos' => request('trigliceridos'),
-            'nota'=> request('Metodo'),
-            'metodo'=> request('nota'),
+            'nota'=> request('nota'),
+            'metodo'=> request('Metodo'),
             'fecharegistro' => request('fecharegistro'),
         ]);
 
@@ -126,8 +126,8 @@ class QuimicaSanguineaController extends Controller
             'acidoUrico' => request('acidoUrico'),
             'colesterolTotal' => request('colesterolTotal'),
             'trigliceridos' => request('trigliceridos'),
-            'nota'=> request('Metodo'),
-            'metodo'=> request('nota'),
+            'nota'=> request('nota'),
+            'metodo'=> request('Metodo'),
             'fecharegistro' => request('fecharegistro'),
         ]);
 
